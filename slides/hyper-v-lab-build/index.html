@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h3>SQL Server Lab in Hyper-V</h3>
+						Using Hyper-V Client and PowerShell to build an SQL Server lab.
+						<p></p>
+						<font size="5"><table>
+							<tr><td><b>Author:</b></td><td>Shawn Melton</td></tr>
+							<tr><td><b>Date:</b></td><td>November 14, 2016</td></tr>
+						</table></font>
+				</section>
+				<section>
+					<h3>Table of Contents</h3>
+					<table>
+						<tr>
+							<td>Virtual Network Switch</td>
+							<td><a href="#/2">Slide</a></td>
+						</tr>
+						<tr>
+							<td>Create a VM</td>
+							<td><a href="#/6">Slide</a></td>
+						</tr>
+						<tr>
+							<td>Building a Template</td>
+							<td><a href="#/10">Slide</a></td>
+						</tr>
+						<tr>
+							<td>Create a VM Using the Template</td>
+							<td><a href="#/16">Slide</a></td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<section>
+						<h3>Virtual Network Switch (p1)</h3>
+						<p>Build two types of connections for the VMs to communicate</p>
+						<ol>
+							<li>Internal (so they can talk to each other)</li>
+							<li>External (allow Internet access to each VM)</li>
+						</ol>
+					</section>
+					<section>
+						<p align="left"><b>External</b>: Your preference, but some will create an external connection for each physical connection on the host machine. This simply gives you the option to switch your VM(s) to the connection you are using at that time for Internet access.</p>
+					</section>
+				</section>
+				<section>
+						<h3>Virtual Network Switch (p2)</h3>
+						<p align="left">Pull the adapter to use into a variable:</p>
+						<image class="stretch" src="img/1_CurrentNetAdapters.png"></image>
+						<pre><code class="powershell" data-trim data-noescape>
+								$wifi = Get-NetAdapter | where name -eq "Wi-Fi"
+						</code></pre> 
+				</section>
+				<section>
+					<h3>Virtual Network Switch (p3)</h3>
+					<p align="left">Use the $wifi variable to build the external switch</p>
+					<image class="stretch" src="img/2_BuildWiFiSwitch.png"></image>
+					<pre><code class="powershell" data-trim data-noescape>
+# Issuing this command will cause your Internet connection to reset
+New-VMSwitch -Name "External-WiFi" -AllowManagemnetOS $true -NetAdapterName $wifi.Name
+					</code></pre>
+				</section>
+				<section>
+					<section>
+						<h3> Virtual Network Switch (p4)</h3>
+						<p align="left">Create an internal connection.</p>
+						<image class="stretch" src="img/3_BuildInternalSwitch.png"></image>
+						<pre><code class="powershell" data-trim data-noescape>
+#include the CIDR block for easier reference, if desired
+New-VMSwitch -Name "Internal-10.0.2.0/24" -SwitchType Internal
+						</code></pre>
+					</section>
+					<section>
+						<p align="left">Once you create these switches you will notice your own host machine now have "vEthernet (Virtual Switch Name)". clsModify the "Internal" NIC to be an IP address for your lab subnet.</p>
+						<pre><code class="powershell" data-trim data-noescape>
+Get-NetAdapter 'vEthernet*'
+Get-NetAdapter 'vEthernet (Internal-10.0.2.0 24)' | New-NetIPAddress -AddressFamily 'IPv4' -IPAddress '10.0.2.5' -PrefixLength 24 -DefaultGateway '10.0.2.1'
+Get-NetAdapter 'vEthernet (Internal-10.0.2.0 24)' | Set-DnsClientServerAddress -ServerAddresses '10.0.2.10'
+						</code></pre>
+						<image class="stretch" src="img/3a_BuildInternalSwitch.png"></image>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Create a VM</h3>
+							<ul>
+								<li>Name > W12R2DC</li>
+								<li>RAM Startup > 1GB</li>
+								<li>System drive > 20GB</li>
+								<li>Mount the ISO file</li>
+							</ul>
+					<pre><code class="powershell" data-trim data-noescape>
+New-VM -Name 'W12R2DC' -MemoryStartupBytes 1GB -SwitchName "Internal-10.0.2.0/24" -NewVHDPath 'C:\VirtualMachines\W12R2DC\W12R2DC-SystemDrive.vhdx' -NewVHDSize 20GB
+Set-VMDvdDrive -VMName 'W12R2DC' -ControllerNumber 1 -Path 'E:\Software\OS\Windows_2012_R2_English.iso'
+Start-VM W12R2DC
+					</code></pre>
+						<image class="stretch" src="img/4_BuildVM.png"></image>
+					</section>
+					<section>
+						<section>
+							<p align="left">After starting the VM you can see the ISO has booted successfully.</p>
+							<image class="stretch" src="img/4a_BuildVM.png"></image>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h3>Hyper-V Checkpoints</h3>
+					<p align="left">Checkpoints provide a way to save the current state of the VM, <a href="http://windowsitpro.com/hyper-v/snapshots-renamed-checkpoints" target="_blank">used to be known as snapshots</a>.</p>
+					<image class="stretch" src="img/4b_BuildVM_Checkpoint.png"></image>
+					<pre><code class="powershell" data-trim data-noescape>
+Get-VM -Name W12R2DC | Checkpoint-VM -SnapshotName 'PS-Default-RenameComputer'
+					</code></pre>
+				</section>
+				<section>
+					<section>
+						<h3>Save/Stop VM</h3>
+						<ul>
+							<li>Saving - Like a bookmark to where you left off.</li>
+							<li>Stopping - Graceful powerdown, or just turn it off</li>
+						</ul>
+						<pre><code class="powershell" data-trim data-noescape>
+# Save VM state
+Save-VM -Name W12R2DC
+
+# Stop it (graceful shutdown)
+Stop-VM -Name W12R2DC
+
+# Both commands support piping, so save all running VMs
+Get-VM | Save-VM
+						</code></pre>
+					</section>
+					<section>
+						<p align="left">Save-VM and Stop-VM overlap in functionality so it is your preference to which you use. Both commands below save the state of the VM.
+						<pre><code class="powershell" data-trim data-noescape>
+Save-VM -Name W12R2DC
+
+Stop-VM -Name W12R2DC -Save
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h3>Connecting to the VM</h3>
+					<p align="left">Hyper-V's VM Connection...no native "Connect-VM" to date.</p>
+					<image class="stretch" src="img/4c_BuildVM_vmconnect.png"></image>
+					<pre><code class="powershell" data-trim data-noescape>
+# connect to localhost Hyper-V server, and W12R2DC VM
+vmconnect localhost w12r2dc
+					</code></pre>
+				</section>
+				<section>
+						<h3>Building a Template</h3>
+						<p>Configure OS to use as a template.</p>
+				</section>
+				<section>
+					<section>
+						<h3>Windows Server Core</h3>
+						<p align="left">Window Server 2012 R2 Core Edition configured using just PowerShell.</p>
+						<p align="left">Basic task to do for server to setup as a template:</p>
+						<ol>
+							<li>Set PowerShell to default shell (instead of cmd)</li>
+							<li>Install roles/features</li>
+							<li>Disable Firewall Profiles</li>
+						</ol>
+						<p align="left"><small>Configuring the NIC and renaming the computer will be done when you build the server to use it.</small></p>
+					</section>
+					<section>
+						<h3>sconfig</h3>
+						<p align="left">Using sconfig gives you a menu driven option:</p>
+						<image class="stretch" src="img/sconfig.png"></image>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Set PowerShell to default shell</h3>
+						<ol>
+							<li>Open regedit via cmd shell, browse to:
+							<pre><code>HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\AlternateShells\AvailableShells</code></pre></li>
+							<li>Change the permission on the key "AvailableShells" to enable "Full Control" for local Administrators account.</li>
+							<li>Then create a string key based on the following:
+								<ul>
+									<li>Name: 40000</li>
+									<li>Value Data: powershell.exe -noexit</li>
+								</ul>
+							</li>
+							<li>Log off and back on to have PowerShell prompt as your shell.</li>
+						</ol>
+					</section>
+					<section>
+						<image class="stretch" src="img/5_PowerShellDefaultShell.png"></image>
+					</section>
+				</section>
+				<section>
+					<h3>Installing Roles/Features</h3>
+					<p align="left">Only a few roles I add to the template, for both Core and Full Editions:</p>
+					<ul>
+						<li>.NET 3.5 Core</li>
+						<li>Active Directory Tools</li>
+					</ul>
+					<pre><code class="powershell" data-trim data-noescape>
+# See all that are available
+Get-WindowsFeature
+
+# need the OS ISO still mounted for this one
+Install-WindowsFeature -Name Net-Framework-Core -Source 'D:\source\sxs'
+
+# Install AD tools (they come in handy on any server)
+Install-WindowsFeature -Name RSAT-AD-PowerShell,RSAT-ADDS-Tools
+					</code></pre>						
+				</section>
+				<section>
+					<h3>Disable Firewall Profiles</h3>
+					<p align="left">Will make it easier to just turn off all the firewall profiles on your lab servers.</p>
+					<pre><code class="powershell" data-trim data-noescape>
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+					</code></pre>						
+				</section>
+				<section>
+					<section>
+						<h3>sysprep</h3>
+						<pre><code class="powershell" data-trim data-noescape>
+Set-Location C:\Windows\system32\sysprep
+.\sysprep.exe /oobe /generalize /shutdown /mode:vm
+						</code></pre>
+						<image class="stretch" src="img/6_sysprep.png"></image>
+						<p align="left">Once the VM shuts down copy the VHDX file to another location to save as your template.</p>
+					</section>
+				</section>
+				<section>
+					<h3>Create a VM using the template</h3>
+				</section>
+				<section>
+					<h3>Prep the Template File</h3>
+					<p align="left">First thing is just create a directory for your new VM and copy the template VHDX file into it, naming appropriately.</p>
+					<image class="stretch" src="img/7_BuildNewVMFromTemplate.png"></image>
+				</section>
+				<section>
+					<h3>Create a new VM</h3>
+					<p align="left">Create a VM and add the VHDX file to it.</p>
+					<pre><code class="powershell" data-trim data-noescape>
+New-VM -Name 'SQL12S01' -MemoryStartupBytes 1GB -SwitchName "Internal-10.0.2.0/24" -VHDPath 'C:\VirtualMachines\SQL12S01\SQL12S01-SystemDrive.vhdx'
+Start-VM SQL12S01
+					</code></pre>
+					<image class="stretch" src="img/7a_BuildNewVMFromTemplate.png"></image>
+				</section>
+				<section>
+					<h3>Configure Internal NIC</h3>
+				<pre><code class="powershell" data-trim data-noescape>
+# Only one adapter to deal with
+Get-NetAdapter | New-NetIPAddress -AddressFamily 'IPv4' -IPAddress '10.0.2.20' -PrefixLength 24 -DefaultGateway '10.0.2.1'
+Get-NetAdapter | Set-DnsClientServerAddress -ServerAddresses '10.0.2.10'
+				</code></pre>					
+				</section>
+				<section>
+					<h3>Rename the computer</h3>
+					<p align="left">Leaving off "-Restart" you will get a warning about restarting before it takes <effect class=""></effect></p>
+					<pre><code class="powershell" data-trim data-noescape>
+# To restart
+Rename-Computer -NewName SQL12S01 -Restart
+					</code></pre>					
+				</section>
+				<section>
+					<h3>Next steps</h3>
+					<p align="left">You can utilize sysprep to build a template for the full version of Window Server 2012 R2 if you would like.</p>
+					<p align="left">You can follow all the steps up to this point to build multiple Core Edition servers. Which can be used to run SQL Server 2014+ and all components, except SSRS. SSRS requires the full GUI edition of Windows Server.</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+			Reveal.configure({slideNumber: 'c/t'});
+		</script>
+	</body>
+</html>
