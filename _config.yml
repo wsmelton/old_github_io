@@ -5,3 +5,6 @@ title: "Shawn Melton"
 description: "Life in the day of PowerShell and SQL Server"
 
 theme: jekyll-theme-slate
+
+navbar-links:
+  About Me: "aboutme"
