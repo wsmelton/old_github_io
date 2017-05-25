@@ -1,11 +1,13 @@
 ## Welcome
 
-You can use the [editor on GitHub](https://github.com/wsmelton/wsmelton.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-<ul>
+This is a basic blog that has no fancy bells and whistles. 
+
 {% for post in site.posts %}
-	<li>
-	<a href="{{ post.url }}">{{ post.title }}</a>
+
+	<a href="{{ post.url | prepend: site.baseurl }}
+	<h2>{{ post.title }}</h2>
 	{{ post.excerpt }}
-	</li>
+	<p>
+	Posted on {{ post.date | date_to_string }}
+	</p>
 {% endfor %}
-</ul>
