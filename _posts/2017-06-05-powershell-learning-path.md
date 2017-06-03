@@ -6,7 +6,7 @@ categories: [powershell,github,dbatools]
 bigimg: /img/powershell_learning_banner.png
 ---
 
-How much do you automate in your job? This is not necessarily specific to SQL Server, whether you work as a system administrator or even business analyst. There are areas of your job that can be, and should be, automated. Ok, now back to SQL Server specifics...
+How much do you automate in your job? The question is not necessarily specific to SQL Server, whether you work as a system administrator or even business analyst. There are areas of your job that can be, and should be, automated. Ok, now back to SQL Server specifics...
 
 # Day-To-Day Task
 
