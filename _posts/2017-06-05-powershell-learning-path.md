@@ -3,7 +3,7 @@ layout: post
 title: PowerShell Learning Path
 date: 2016-12-24 06:30
 categories: [powershell,github,dbatools]
-bigimg: /img/powershell_learning_banner.png
+bigimg: /img/powershell_learning_banner1.png
 ---
 
 How much do you automate in your job? The question is not necessarily specific to SQL Server, whether you work as a system administrator or even business analyst. There are areas of your job that can be, and should be, automated. Ok, now back to SQL Server specifics...
