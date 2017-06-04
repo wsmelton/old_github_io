@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PowerShell Learning Path
-date: 2016-12-24 06:30
+date: 2017-06-05 09:00
 categories: [powershell,github,dbatools]
 bigimg: /img/powershell_learning_banner1.png
 ---
