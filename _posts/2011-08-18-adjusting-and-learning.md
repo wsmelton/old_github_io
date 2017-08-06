@@ -4,7 +4,7 @@ title: Adjusting and learning
 date: 2011-08-18 08:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 Short and sweet post here...not the sugar sweet, the awesome sweet!!!

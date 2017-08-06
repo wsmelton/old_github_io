@@ -4,7 +4,7 @@ title: Search-SqlErrorLog
 date: 2014-12-22 08:00
 author: meltondba
 comments: true
-categories: [powershell, sql-server, scripts]
+tags: [powershell, sqlserver]
 ---
 
 I have had a thought on how I might write this function for some time and finally decided to just sit down and do it.

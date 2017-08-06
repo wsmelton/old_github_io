@@ -4,7 +4,6 @@ title: MCP Benefits
 date: 2010-07-08 09:06
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 Certifications...it's a hot topic for some people.  The main argument comes from those that get them and those that don't.  If you are a student of <a href="http://sqlchicken.com/sql-university/" target="_blank">SQL University</a> you may have caught Thomas LaRock's (<a href="http://thomaslarock.com/" target="_blank">blog</a> `|` <a href="http://www.twitter.com/sqlrockstar" target="_blank">twitter</a>) lecture on <a href="http://thomaslarock.com/2010/07/sql-university-certification-week/" target="_blank">Certification Week</a>

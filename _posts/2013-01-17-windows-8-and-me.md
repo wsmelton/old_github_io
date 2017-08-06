@@ -4,7 +4,6 @@ title: Windows 8 And Me
 date: 2013-01-17 07:00
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 <p>Finally purchasing a laptop, I ended up passing the deadline to get one loaded with Windows 7. So I have been working on Windows 8 now for about 3 or 4 months probably. </p> <p>I have an <a href="http://h10025.www1.hp.com/ewfrf/wc/product?product=5316987&amp;lc=en&amp;cc=us&amp;dlc=en&amp;lang=en&amp;cc=us">HP Pavilion g6-2238dx</a>, the prime reason I picked this particular model was price at Best Buy and it had a quad-core processor. It came with 4GB of RAM and have since moved this up to 8GB. </p> <p>Overall Windows 8 is not that bad. It is a bit more drastic of a change than people may have experienced between Windows XP and Vista. With a laptop, at least with HP, there are gestures you can use on the mouse pad. Which at times this gets annoying depending on how you are used to use a mouse pad. It does take getting used to.</p> <p>The biggest thing I hear about is that Microsoft took away the famed “start” button that showed up on the bottom left of the screen. Which it does not just show up on the task bar anymore but it did not go away. You just have to put your mouse at the bottom left corner to make it appear, then click.</p> 

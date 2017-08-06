@@ -4,7 +4,6 @@ title: How To Remember Everything in One Step
 date: 2011-01-19 23:11
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 Before I get to that step let me tell you a story...I try to keep up with webcast and virtual presentations as much as I can, especially ones that deal with either SQL Server or PowerShell. I do tend to miss a lot of them. I do find the needle in the hay stack every now and then though.

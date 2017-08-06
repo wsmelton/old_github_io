@@ -4,7 +4,7 @@ title: Calc-MaxSample
 date: 2013-11-13 10:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (<a href="http://sqlblog.com/blogs/aaron_bertrand/default.aspx" target="_blank">blog</a> `|` <a href="http://twitter.com/AaronBertrand" target="_blank">twitter</a>) blog post <a href="http://sqlblog.com/blogs/aaron_bertrand/archive/2011/01/31/how-i-use-powershell-to-collect-performance-counter-data.aspx" target="_blank">here</a>.

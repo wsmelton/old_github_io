@@ -4,7 +4,7 @@ title: Build your own StackExchange Database
 date: 2015-07-20 07:00
 author: meltondba
 comments: true
-categories: [general,powershell,scripts]
+tags: [powershell]
 ---
 
 ![](/img/flickr_filecabinet.jpg "Source: Flickr (adesigna)")

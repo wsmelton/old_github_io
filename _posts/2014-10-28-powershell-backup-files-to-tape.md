@@ -4,7 +4,7 @@ title: Backup Files to Tape
 date: 2014-10-28 08:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan. So I took it to mean that it was not actually seeing them as over a day old and therefore skipped them. I decided to change it to 21 hours instead of one day and that seemed to work for this client.

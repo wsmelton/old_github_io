@@ -2,7 +2,7 @@
 layout: post
 title: Building AD Domain on Windows Core Edition
 date: 2016-12-03 11:42
-categories: [general,powershell]
+tags: [powershell]
 ---
 
 This is a follow up post <a href="2016-11-14-hyper-v-lab-for-sql-server.md" target="_blank">on building an Hyper-V lab</a> to learn SQL Server.

@@ -4,7 +4,6 @@ title: I am Biml (Bacon Integrated Markup Language)
 date: 2014-11-03 06:00
 author: meltondba
 comments: true
-categories: [biml,business-intelligence]
 ---
 
 Wouldn’t it be awesome if that is what it was really called? Maybe not, so what does Biml really stand for?

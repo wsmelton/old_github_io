@@ -2,7 +2,6 @@
 layout: post
 title: Updates and Work
 date: 2016-10-10 08:00
-categories: [general]
 bigimg: /img/blueprint.png
 ---
 

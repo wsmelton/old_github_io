@@ -4,7 +4,7 @@ title: SSMS 2012–Object Reference issue with Maintenance Plans
 date: 2014-07-21 08:00
 author: meltondba
 comments: true
-categories: [sql-server]
+tags: [sqlserver]
 ---
 
 I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was <a href="http://www.sqlteam.com/forums/topic.asp?TOPIC_ID=182869" target="_blank">this one on SQLTeam’s forum site</a>, the post by “prett”, and note that this is posted back in 2013:

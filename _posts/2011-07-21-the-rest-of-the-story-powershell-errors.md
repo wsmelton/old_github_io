@@ -4,7 +4,7 @@ title: The rest of the story (PowerShell errors)
 date: 2011-07-21 08:00
 author: meltondba
 comments: true
-categories: [powershell]
+tags: [powershell]
 ---
 
 So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.

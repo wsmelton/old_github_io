@@ -4,7 +4,6 @@ title: To be mentored or not to be
 date: 2015-01-30 15:48
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 This happens to be the first post of 2015 for me, and actually one of the few non-technical post I have written. Paul Randal recently posted on Twitter offering to mentor a select number individuals.

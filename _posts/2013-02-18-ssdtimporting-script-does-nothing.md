@@ -4,7 +4,7 @@ title: SSDT–Importing Script Does Nothing
 date: 2013-02-18 07:00
 author: meltondba
 comments: true
-categories: [sql-server]
+tags: [sqlserver]
 ---
 
 I have been working with <a href="http://msdn.microsoft.com/en-us/data/tools.aspx" target="_blank">SSDT</a> the past few months at my day job, in order to get a database versioned. I am also trying to use it for a few things with a side job as well.

@@ -4,7 +4,7 @@ title: "Check-InstanceConfig (part 2)"
 date: 2013-12-09 09:00
 author: meltondba
 comments: true
-categories: [powershell,sql-server,scripts]
+tags: [powershell,sqlserver]
 ---
 
 In the <a href="/2013-12-04-ps-check-instanceconfig-part-1" target="_blank">previous post</a> I discussed the data table that holds the default values for the configuration options in SQL Server 2000 up to SQL Server 2014.

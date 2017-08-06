@@ -19,27 +19,25 @@ title: "Shawn Melton"
 # Short description of your site
 description: "Life in the day of PowerShell and SQL Server"
 
+# --- Outputting options --- #
+# More information can be found on Jekyll's site
+timezone: "America/Chicago"
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
 # --- Navigation bar options --- #
 
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Categories: "categories"
-  Publications: "publications"
-  Resources:
-#    - VS Code: "vscode"
-    - PowerShell: "powershell"
-    - StackExchange: "stackexchange"
-    - Slides: "http://blog.wsmelton.info/slides"
-#    - Tools: "toolsoftrade"
-#    - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
-#    - Learn markdown: "http://www.markdowntutorial.com/"
-#    - GitHub Pages: "https://pages.github.com/"
-#  Author's home: "http://deanattali.com"
 
+nav-search: "search"
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-#avatar: "/img/CurrentProfile.png"
+avatar: "/img/myavatar.jpg"
 
 # --- Footer options --- #
 
@@ -54,7 +52,7 @@ author:
   google-plus: +yourname   # eg. +DeanAttali or 109424658772469020925
   linkedin: wshawnmelton  # eg. daattali
   xing: yourname      # eg. daattali
-  stackoverflow: yourlink  # eg. "3943160/daattali"
+  stackoverflow: 847990/shawn-melton  # eg. "3943160/daattali"
   snapchat: yourname  # eg. daattali
   instagram: yourname # eg. daattali
   youtube: yourlink   # eg. user/daattali or channel/daattali
@@ -70,7 +68,7 @@ footer-links-active:
   github: true
   linkedin: true
   xing: false
-  stackoverflow: false
+  stackoverflow: true
   snapchat: false
   instagram: false
   youtube: false
@@ -85,7 +83,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-#url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "blog.wsmelton.info"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
@@ -100,6 +98,10 @@ google_analytics: "UA-85098649-1"
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
 excerpt_length: 50
+
+# Character used to separate site title and description in HTML document title
+# and RSS feed title
+title-separator: "-"
 
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
@@ -135,11 +137,13 @@ link-tags: false
 
 # Exclude these files from production site
 exclude:
+  - CHANGELOG.md
+  - CNAME
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
   - LICENSE
   - README.md
-  - CNAME
   - Vagrantfile
 
 # prose.io config
@@ -181,6 +185,13 @@ prose:
           help: "Enter date of post."
           placeholder: "yyyy-mm-dd"
           alterable: true
+      - name: "image"
+        field:
+          element: "text"
+          label: "Image"
+          help: "Add a thumbnail image to your post."
+          placeholder: "Thumbnail"
+          alterable: true
       - name: "published"
         field:
           element: "checkbox"
@@ -194,5 +205,3 @@ gems:
   - jekyll-sitemap
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
-
-theme: jekyll-theme-midnight

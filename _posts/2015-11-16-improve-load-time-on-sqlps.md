@@ -4,7 +4,7 @@ title: Improve Load Time on SQLPS
 date: 2015-11-16 07:30
 author: meltondba
 comments: true
-categories: [sql-server,powershell]
+tags: [sqlserver,powershell]
 ---
 
 Over the month of November a fellow PowerShell enthusiast, Mike Fal (<a href="http://www.mikefal.net" target="_blank">blog</a>`|`<a href="http://twitter.com/mike_fal" target="_blank">@Mike_Fal</a>), did a <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">series on the SQL Server PowerShell module</a> (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">answered a question on DBA.SE</a> that I figured out by tweaking a particular file for this module, so thought I would share more details.

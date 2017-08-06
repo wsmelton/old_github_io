@@ -2,7 +2,7 @@
 layout: post
 title: Hyper-V Lab for SQL Server
 date: 2016-11-14 08:00
-categories: [general,powershell,sql-server]
+tags: [powershell,sqlserver]
 bigimg: /img/server_racks.png
 ---
 

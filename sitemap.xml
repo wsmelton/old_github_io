@@ -1,374 +1,56 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-<url>
-  <loc>http://blog.wsmelton.info/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/aboutme/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/categories/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/publications/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/powershell/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/stackexchange/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2016-10-10-updates-and-work/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-12-11-windows-10-and-sscm-disappearing/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-12-02-modifying-sql-server-startup-parameters/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-11-16-improve-load-time-on-sqlps/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-10-26-dynamically-build-rdp-files/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page2/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-09-16-parse-deadlock-graph-from-system_health-session/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-07-20-build-your-own-stackexchange-database/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-02-06-dont-just-do-it-love-doing-it/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-01-30-to-be-mentored-or-not-to-be/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-12-08-tidbit-sql-server-maintenance-plan-logging/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-01-17-windows-8-and-me/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-10-27-mentoree/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-01-19-how-to-remember-everything-in-1-one-step/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-08-02-with-power-comes-great-responsibility/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-08-01-how-do-i-open-powershell-and-something-else-toopart-2/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-07-08-mcp-benefits/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-04-28-sql-server-features/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-04-18-step-1-start-new-blog/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-05-02-book-review-sql-in-a-nutshell/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-04-23-book-review-project-management/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-07-28-comments-anyone-vote-for-the-cause/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-04-27-remebering-why/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2015-10-22-sql-server-feed-the-beast/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-12-22-powershell-and-sql-server-search-sqlerrorlog/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-12-15-tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-12-01-filezilla-logs-to-sql-server-via-powershell/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-11-17-sql-server-group-by-in-powershell/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-11-11-max-user-connections-set-to-one-oops/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-10-20-sql-server-data-tools-a-spork-of-sorts-part-two/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-10-15-sql-server-data-tools-a-spork-of-sorts-part-one/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-10-02-sql-server-prerequisites-net-framework/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-09-23-the-treasures-of-the-sql-server-error-log/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-07-30-sql-server-activity-monitor-script/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-07-21-ssms-2012object-reference-issue-with-maintenance-plans/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-12-09-ps-ccheck-instanceconfig-part-2/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-12-04-ps-ccheck-instanceconfig-part-1/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-10-10-xml-glad-that-is-over/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-02-18-ssdtimporting-script-does-nothing/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2012-01-10-if-you-find-it-show-them/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-06-03-keeping-up-with-the-jones-or-microsoft/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-10-28-powershell-backup-files-to-tape/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-09-15-ctrl-plus-alt-plus-what/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-11-13-ps-c-calc-maxsample/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-11-05-powershell-tidbit-492/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-10-30-ps-c-create-serverdirectory/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-10-23-with-powershell-comes-great-things/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2013-10-17-to-the-future/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-08-18-adjusting-and-learning/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-08-01-what-a-few-lines-of-code-can-do/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-07-21-the-rest-of-the-story-powershell-errors/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-04-28-what-os-permissions-does-sql-server-have/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-04-21-get-those-acls-with-powershell/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2010-07-30-how-do-i-open-powershell-and-something-else-toopart-1/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-01-21-training-for-the-master-from-the-masters/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2011-01-27-books-i-get-to-read-e-books/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/2014-11-03-i-am-biml-bacon-integrated-markup-language/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page3/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page4/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page5/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page6/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page7/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page8/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page9/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page10/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page11/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
-<url>
-  <loc>http://blog.wsmelton.info/page12/</loc>
-  <lastmod>2016-10-13T15:41:56+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    {% unless post.published == false %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      {% if post.sitemap.lastmod %}
+        <lastmod>{{ post.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif post.date %}
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if post.sitemap.changefreq %}
+        <changefreq>{{ post.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if post.sitemap.priority %}
+        <priority>{{ post.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.5</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+  {% for page in site.pages %}
+    {% unless page.sitemap.exclude == "yes" %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+      {% if page.sitemap.lastmod %}
+        <lastmod>{{ page.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+      {% elsif page.date %}
+        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      {% if page.sitemap.changefreq %}
+        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+      {% else %}
+        <changefreq>monthly</changefreq>
+      {% endif %}
+      {% if page.sitemap.priority %}
+        <priority>{{ page.sitemap.priority }}</priority>
+      {% else %}
+        <priority>0.3</priority>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
 </urlset>

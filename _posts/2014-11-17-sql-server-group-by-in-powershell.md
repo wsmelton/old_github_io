@@ -4,7 +4,7 @@ title: SQL Server GROUP BY in PowerShell
 date: 2014-11-17 08:00
 author: meltondba
 comments: true
-categories: [powershell,sql-server,scripts]
+tags: [powershell,sqlserver]
 ---
 
 I usually don't have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client's server, and find out how many tables each database had.

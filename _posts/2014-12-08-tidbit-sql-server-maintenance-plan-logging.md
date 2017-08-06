@@ -4,7 +4,6 @@ title: SQL Server Maintenance Plan Logging
 date: 2014-12-08 08:00
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 Whether you are an advocate of Maintenance Plans or not, they have their place in some situations. However, when you do use them there is one thing you should understand that is turned on by default with every maintenance plan you create: **report and logging**. I am not sure why, but Microsoft decided that any sub-plan that exist within a maintenance plan should have a log created for it by date.

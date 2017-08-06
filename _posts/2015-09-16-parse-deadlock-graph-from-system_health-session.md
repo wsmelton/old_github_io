@@ -4,7 +4,7 @@ title: Parse Deadlock Graph from System_Health session
 date: 2015-09-16 07:00
 author: meltondba
 comments: true
-categories: [general,sql-server]
+tags: [sqlserver]
 ---
 
 Way back in October (2014) I published the post: <a href="http://wsmelton.github.io/2013-10-10-xml-glad-that-is-over/" target="_blank">XML, Glad that is over</a> (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway...

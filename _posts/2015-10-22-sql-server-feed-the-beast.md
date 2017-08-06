@@ -4,7 +4,7 @@ title: SQL Server - Feed the Beast
 date: 2015-10-22 08:00
 author: meltondba
 comments: true
-categories: [powershell,sql-server,scripts]
+tags: [powershell,sqlserver]
 ---
 
 _This content was originally posted on [here](https://www.pythian.com/blog/sql-server-fast-food/)._

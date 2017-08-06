@@ -4,7 +4,7 @@ title: "SQL Server Data Tools: A spork of sorts (part one)"
 date: 2014-10-15 08:00
 author: meltondba
 comments: true
-categories: [sql-server,business-intelligence]
+tags: [sqlserver]
 ---
 
 Prior to SQL Server 2012 the Business Intelligence (BI) toolset was made up of just Business Intelligence Development Studio (BIDS). Easy to install as it was part of the SQL Server installation media. Now with database development tools you had to go the route of getting a license for Visual Studio where it allowed you to create database projects. Oh, how that is all changing now, and in some ways go back in time.

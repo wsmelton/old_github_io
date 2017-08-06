@@ -4,7 +4,7 @@ title: CTRL plus ALT plus what?
 date: 2014-09-15 08:00
 author: meltondba
 comments: true
-categories: [powershell,windows-server]
+tags: [powershell]
 ---
 
 Depending on how far back you go in the technology field you all remember having to use CTRL+ALT+DELETE to change your password for your domain account.

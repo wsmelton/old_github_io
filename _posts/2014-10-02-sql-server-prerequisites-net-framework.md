@@ -4,7 +4,7 @@ title: SQL Server Prerequisites .NET Framework
 date: 2014-10-02 07:00
 author: meltondba
 comments: true
-categories: [sql-server,powershell,scripts]
+tags: [sqlserver,powershell]
 ---
 
 As of SQL Server 2012 the <a href="http://msdn.microsoft.com/en-us/library/ms143506.aspx" target="_blank">.NET Framework prerequisite</a> of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.

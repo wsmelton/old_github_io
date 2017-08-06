@@ -4,7 +4,7 @@ title: Get those ACLs with PowerShell
 date: 2011-04-21 13:31
 author: meltondba
 comments: true
-categories: [powershell]
+tags: [powershell]
 ---
 
 If I want to view the access permissions to a particular directory in Windows I can always go to the folder itself and check the security properties on the folder:

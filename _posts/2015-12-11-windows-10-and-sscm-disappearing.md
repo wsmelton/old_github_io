@@ -4,7 +4,6 @@ title: Windows 10 and SSCM disappearing
 date: 2015-12-11 08:00
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 I have been using Windows 10 since it was released on my main (well only) laptop. I found some issues with the SQL Server management tools through the upgrade process, specifically SQL Server Configuration Manager (SSCM). The issue I had was SSCM disappearing from the Start Menu when I upgraded to Windows 10. I also had a repeat of this issue after applying the <a href="https://support.microsoft.com/en-us/kb/3116908" target="_blank">latest update to Windows 10 for December 2015</a>.

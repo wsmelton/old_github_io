@@ -4,7 +4,6 @@ title: SQL Server Features
 date: 2010-04-28 22:01
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 Every wonder how new features get added to SQL Server editions?  Well I saw a tweet from Jonathan Kehayias (<a href="http://sqlblog.com/blogs/jonathan_kehayias" target="_blank">blog </a> `|` <a href="http://www.twitter.com/sqlsarg" target="_blank">twitter</a>) that reminded me of how.  <a href="https://connect.microsoft.com/SQLServer/feedback/details/554852/ssms-add-new-server-connection-to-an-existing-query-window?wa=wsignin1.0" target="_blank">Click here</a> to see the suggestion mentioned in the tweet.

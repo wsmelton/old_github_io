@@ -4,7 +4,6 @@ title: Don't just do it, love doing it
 date: 2015-02-06 07:00
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 I attended a meeting today with the founder of the company I am now employed by. It was a session to hear the story and the background of the company and founder himself. It was very interesting. One part of the discussion near the end was a subject area that I think can define a person's character and demeanor to some extent. It was regarding dealing with the policy and tools required for various processes that are to be used in my day-to-day responsibilities.

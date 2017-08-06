@@ -4,7 +4,6 @@ title: Training for the Master from the Masters
 date: 2011-01-21 00:54
 author: meltondba
 comments: true
-categories: [training]
 ---
 
 ![](/img/sniper.jpg)

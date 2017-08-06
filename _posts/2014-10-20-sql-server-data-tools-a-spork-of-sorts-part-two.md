@@ -4,7 +4,7 @@ title: "SQL Server Data Tools: A spork of sorts (part two)"
 date: 2014-10-20 08:00
 author: meltondba
 comments: true
-categories: [sql-server,business-intelligence]
+tags: [sqlserver]
 ---
 
 In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.

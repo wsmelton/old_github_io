@@ -4,7 +4,7 @@ title: To the future…
 date: 2013-10-17 10:00
 author: meltondba
 comments: true
-categories: [powershell,azure]
+tags: [powershell]
 ---
 
 I decided to jump into playing with Windows Azure today. I heard on Twitter yesterday that Azure had SQL Server 2014 CTP2 available. After waiting about 30 minutes I was able to login and see this:

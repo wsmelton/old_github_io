@@ -4,7 +4,7 @@ title: Dynamically Build RDP Files
 date: 2015-10-26 08:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 _This post was originally published 26 July 2011, updated the script and the post since I have learned a good bit on PowerShell since the original post._

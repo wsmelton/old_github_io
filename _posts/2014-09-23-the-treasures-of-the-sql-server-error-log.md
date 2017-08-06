@@ -4,7 +4,7 @@ title: The treasures of the SQL Server Error Log
 date: 2014-09-23 08:00
 author: meltondba
 comments: true
-categories: [sql-server,powershell,scripts]
+tags: [sqlserver,powershell]
 ---
 
 I am fairly active on <a href="http://dba.stackexchange.com/users/507/shawn-melton" target="_blank">Database Administrators QA</a> site on <a href="http://stackexchange.com/users/451873/shawn-melton?tab=accounts" target="_blank">StackExchange.com</a>.  On average, most questions you find folks asking are about troubleshooting some error they are getting running code or some application is returning. I have noticed one of the most common comments we end up adding to a question is “have you looked in the error log” or “what error messages show up in the error log”, at least with <a href="http://dba.stackexchange.com/questions/tagged/sql-server" target="_blank">SQL Server related questions</a>.

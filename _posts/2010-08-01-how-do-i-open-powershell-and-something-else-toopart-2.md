@@ -4,7 +4,7 @@ title: How do I open PowerShell? And something else too…Part 2
 date: 2010-08-01 23:00
 author: meltondba
 comments: true
-categories: [general, powershell]
+tags: [powershell]
 ---
 
 This is a two part post on me opening PowerShell and then finding out something peculiar…You can see part one <a href="/2010-07-30-how-do-i-open-powershell-and-something-else-toopart-1" target="_blank">here</a>.

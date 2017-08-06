@@ -2,7 +2,7 @@
 layout: post
 title: PowerShell Editors
 date: 2016-10-19 22:00
-categories: [general,powershell]
+tags: [powershell]
 bigimg: /img/code_editor.png
 ---
 

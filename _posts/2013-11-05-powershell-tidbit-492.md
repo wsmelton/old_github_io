@@ -4,7 +4,7 @@ title: PowerShell Tidbit #492
 date: 2013-11-05 08:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 I do remote support work now as a DBA and have clients that provide my password for VPN login or Active Directory login. I usually access their network through a central remote server that I will use to manage their SQL Server environment. As some of you may know there is no way to change your password through remote desktop until it expires and prompts you to upon login. Depending on the version of Active Directory they are running you may get a little bubble down by the clock that you can use as well, but I tend to miss that most of the time.

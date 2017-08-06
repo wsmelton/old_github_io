@@ -4,7 +4,6 @@ title: Comments Anyone - Vote for the Cause
 date: 2010-07-28 08:05
 author: meltondba
 comments: true
-categories: [documentation]
 ---
 
 I recently attended Quest's Virtual Conference on <a href="http://www.vconferenceonline.com/shows/summer10/performance/" target="_blank">Performance and Wait Events</a> back on July 21. Which by the way is on demand until August 23, 2010 so get over there and start a watching while you can.  Honestly I did not get to watch everything live so I have some things to go back and watch as well.

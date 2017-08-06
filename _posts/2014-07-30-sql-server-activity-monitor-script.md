@@ -4,7 +4,7 @@ title: SQL Server Activity Monitor Script
 date: 2014-07-30 13:00
 author: wsmelton
 comments: true
-categories: [sql-server,scripts]
+tags: [sqlserver]
 ---
 
 You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference]("http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx"). I work over VPN supporting clients remotely and it never been that useful to me.

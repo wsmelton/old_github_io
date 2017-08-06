@@ -4,7 +4,7 @@ title: Create-ServerDirectory
 date: 2013-10-30 11:00
 author: meltondba
 comments: true
-categories: [powershell,scripts]
+tags: [powershell]
 ---
 
 If you have to do it more than once, script it and blog about it…

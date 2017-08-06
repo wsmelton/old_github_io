@@ -3,7 +3,7 @@ layout: page
 title: StackExchange Database
 date: 2015-07-20 06:00
 author: meltondba
-categories: [scripts]
+tags: [scripts]
 comments: false
 ---
 

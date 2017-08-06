@@ -4,7 +4,6 @@ title: With power comes great responsibility.
 date: 2010-08-02 05:53
 author: meltondba
 comments: true
-categories: [general]
 ---
 ![](/img/withpower.jpg)
 

@@ -2,7 +2,7 @@
 layout: post
 title: Extended Events - Fetching API Cursors
 date: 2016-11-23 20:00
-categories: [general,powershell,xevents]
+tags: [sqlserver]
 ---
 
 Forum questions can sometimes cause distractions for me just because they pique my interest at times, especially when I see someone say "Extended Event (XE) session is not showing the expensive query". Extended Events are just...

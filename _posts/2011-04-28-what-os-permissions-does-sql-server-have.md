@@ -4,7 +4,7 @@ title: What OS permissions does SQL Server have?
 date: 2011-04-28 09:00
 author: meltondba
 comments: true
-categories: [powershell]
+tags: [powershell]
 ---
 
 If you set the service account for the SQL Server services up at installation you are ahead of the game when dealing with securing your SQL Server installation. However there are some environments where the DBA does not do the initial installation of SQL Server. That requires the DBA to go back and configure a custom account for the services after the installation.

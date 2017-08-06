@@ -4,7 +4,6 @@ title: Book Review - SQL In A Nutshell
 date: 2010-05-02 19:48
 author: meltondba
 comments: true
-categories: [review]
 ---
 
 | *Title* | SQL In A Nutshell – Desktop Quick Reference

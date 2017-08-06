@@ -4,7 +4,7 @@ title: "Check-InstanceConfig (part 1)"
 date: 2013-12-04 09:00
 author: meltondba
 comments: true
-categories: [powershell,sql-server,scripts]
+tags: [powershell,sqlserver]
 ---
 
 I was reading a blog post Mike Walsh published on Linchpin People last week: <a href="http://www.linchpinpeople.com/check-sql-server-configuration/" target="_blank">SQL Server Configuration Check Script</a>.

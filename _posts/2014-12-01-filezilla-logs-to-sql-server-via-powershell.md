@@ -4,7 +4,7 @@ title: FileZilla Logs to SQL Server via PowerShell
 date: 2014-12-01 08:00
 author: meltondba
 comments: true
-categories: [powershell,sql-server,scripts]
+tags: [powershell,sqlserver]
 ---
 
 I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I'm a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.

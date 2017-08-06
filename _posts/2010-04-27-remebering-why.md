@@ -4,7 +4,6 @@ title: Remembering Why
 date: 2010-04-27 08:25
 author: meltondba
 comments: true
-categories: [documentation]
 ---
 
 You have someone come to you and say they want to implement "it" on  the database or SQL Server instance.  Or it could be maybe you hear a  conversation about implementing "it".  Unlike me, I don't recall things  "word for word" but remember reading about "it" not being a good idea in  certain circumstances or at all.

@@ -4,7 +4,7 @@ title: What a few lines of code can do
 date: 2011-08-01 08:00
 author: meltondba
 comments: true
-categories: [powershell]
+tags: [powershell]
 ---
 
 You find out PowerShell is fun when you start playing with it and actually try to perform a task with it. I have been using it the past few months to try and decrease the time it takes me to perform a scan of a SQL Server. What I mean by scan is I work with the IASE Security Technical Implementation Guide checklist (STIG). You can find the checklist for SQL Server <a href="http://iase.disa.mil/stigs/app_security/database/sql.html" target="_blank">here</a>, they have not published one for SQL 2008 so I just use the SQL 2005 checklist for now.

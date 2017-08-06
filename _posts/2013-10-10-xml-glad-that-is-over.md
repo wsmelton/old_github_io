@@ -4,7 +4,7 @@ title: XML, glad that is over
 date: 2013-10-10 08:00
 author: meltondba
 comments: true
-categories: [sql-server,xevents,deadlocks]
+tags: [sqlserver]
 ---
 
 XML can be one of those things you come across and say “ah, there has got to be a better way”. It is something I have held off working with in SQL Server. However with things for SQL Server performance (e.g. query plans) and such it is hard to stay away from it, if you are a true DBA. My particular desire to understand it more came about after find the deadlock graphs accessible from the <a href="http://technet.microsoft.com/en-us/library/ff877955.aspx" target="_blank">System Health</a> session in SQL Server 2008 R2. [Side note about the link, Microsoft I found only wrote up an article on it for SQL Server 2012 but it has been there since SQL Server 2008.]

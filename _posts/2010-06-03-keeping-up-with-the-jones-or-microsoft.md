@@ -4,7 +4,7 @@ title: Keeping up with the Jones or Microsoft
 date: 2010-06-03 07:52
 author: meltondba
 comments: true
-categories: [sql-server]
+tags: [sqlserver]
 ---
 
 You ever wonder how people keep up with when service packs, hotfixes, or cumulative updates (aka CUs) are released by Microsoft?

@@ -4,7 +4,7 @@ title: Max User Connections set to one (oops)
 date: 2014-11-11 07:00
 author: meltondba
 comments: true
-categories: [sql-server,powershell,scripts]
+tags: [sqlserver,powershell]
 ---
 
 I frequent <a href="http://dba.stackexchange.com" target="_blank">Database Administrators</a> forum over on Stack Exchange Network, and came across a <a href="http://dba.stackexchange.com/q/81019/507" target="_blank">question</a> that intrigued me enough to play around with the setting noted in the first sentence: <a href="http://msdn.microsoft.com/en-us/library/ms187030.aspx" target="_blank">Maximum number of concurrent connections</a>. What happens when you set this to one, and how do you set it back to default?

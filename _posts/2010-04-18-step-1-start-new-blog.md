@@ -4,7 +4,6 @@ title: Step 1 – Start New Blog
 date: 2010-04-18 19:23
 author: meltondba
 comments: true
-categories: [general]
 ---
 
 Well like many people in 2010 they decided (or try) to start a blog in their particular field of work/study, or just for personal use.  My decision is two-fold.  (1) I want to do it in my field of work and/or study, then also (2) for doing book reviews for publishers.

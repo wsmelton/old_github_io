@@ -4,7 +4,7 @@ title: Modifying SQL Server Startup Parameters
 date: 2015-12-02 08:00
 author: meltondba
 comments: true
-categories: [sql-server,powershell,scripts]
+tags: [sqlserver,powershell,scripts]
 ---
 
 <a href="https://youtu.be/8s3C1him6Lk" target="_blank">Mike, Mike, Mike, Mike, Mike</a>....guess what I figured out? Well it all started by reading Mike Fal's post on <a href="http://www.mikefal.net/2015/12/01/managing-sql-server-services-with-powershell/" target="_blank">Managing SQL Server Services with #PowerShell</a>. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.

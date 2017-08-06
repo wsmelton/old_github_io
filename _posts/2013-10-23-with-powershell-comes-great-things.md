@@ -4,7 +4,7 @@ title: With PowerShell comes great things
 date: 2013-10-23 11:00
 author: meltondba
 comments: true
-categories: [powershell,training]
+tags: [powershell]
 ---
 
 I have been working with PowerShell since sometime around 2010 I think. I don’t recall the exact date because it started somewhat slowly. The previous employers I worked for were not environments I could really take advantage of it very well. I now work as a consultant so I have gotten much more involved in learning the advanced side of PowerShell.

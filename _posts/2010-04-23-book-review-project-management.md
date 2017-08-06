@@ -4,7 +4,6 @@ title: Project Management
 date: 2010-04-23 07:01
 author: meltondba
 comments: true
-categories: [review]
 ---
 
 |*Title:* | SharePoint for Project Management

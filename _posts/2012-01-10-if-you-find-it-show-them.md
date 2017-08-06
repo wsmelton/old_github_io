@@ -4,7 +4,7 @@ title: If you find it, show them
 date: 2012-01-10 08:00
 author: meltondba
 comments: true
-categories: [sql-server]
+tags: [sqlserver]
 ---
 
 I was tooling around in SSMS the other day. In this particular instance I was granting a login instance-level permissions to test out a third party application at work. I did not want to give it sysadmin privileges for this so I just started out with giving it VIEW SERVER STATE (which most DMVs require in order to query them) and VIEW ANY DATABASE. [If you have never heard of these permissions, check out this little tidbit of info <a href="http://www.mssqltips.com/sqlservertip/1714/server-level-permissions-for-sql-server-2005-and-sql-server-2008/" target="_blank">here</a> from Brian Kelley (<a href="http://www.truthsolutions.com/" target="_blank">b</a>`|`<a href="http://twitter.com/kbriankelley" target="_blank">t</a>).)

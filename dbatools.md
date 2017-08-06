@@ -7,12 +7,12 @@ css: "/css/index.css"
 <div class="list-filters">
   <a href="/" class="list-filter">All posts</a>
   <a href="/powershell" class="list-filter">PowerShell</a>
-  <a href="/dbatools" class="list-filter">dbatools</a>
-  <span class="list-filter filter-selected">VS Code</span>
+  <span class="list-filter filter-selected">dbatools</span>
+  <a href="/vscode" class="list-filter">VS Code</a>
 </div>
 
 <div class="posts-list">
-  {% for post in site.tags.vscode %}
+  {% for post in site.tags.dbatools %}
   <article>
     <a class="post-preview" href="{{ post.url | prepend: site.baseurl }}">
 	    <h2 class="post-title">{{ post.title }}</h2>

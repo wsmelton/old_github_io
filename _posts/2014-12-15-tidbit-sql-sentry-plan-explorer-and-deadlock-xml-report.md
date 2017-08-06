@@ -4,7 +4,7 @@ title: SQL Sentry Plan Explorer and Deadlock XML Report
 date: 2014-12-15 08:00
 author: meltondba
 comments: true
-categories: [sql-server]
+tags: [sqlserver]
 ---
 
 OK, I just found one of those things that I can remember reading about but forgot until I saw it again. Back in October I had the privilege of being the recipient of a SQL Sentry Plan Explorer Pro license via one of their contest:
