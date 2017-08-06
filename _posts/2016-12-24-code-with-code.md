@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Code with Code (for Windows)
+permalink: /code-with-code/
 date: 2016-12-24 06:30
-tags: [powershell,dbatools]
+tags: [dbatools,vscode]
 ---
 
 In a<a href="/2016-10-19-powershell-editors" target="_blank"> previous post on PowerShell Editors</a> I included Visual Studio Code (Code) in that list. In this post I wanted to introduce Code a bit more to you, and walk you through how you can interact with GitHub repositories. I mean now a days, who doesn't have a GitHub account?
