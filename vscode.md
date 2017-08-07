@@ -7,8 +7,8 @@ css: "/css/index.css"
 <div class="list-filters">
   <a href="/" class="list-filter">All posts</a>
   <a href="/powershell" class="list-filter">PowerShell</a>
-  <a href="/dbatools" class="list-filter">dbatools</a>
   <span class="list-filter filter-selected">VS Code</span>
+  <a href="/dbatools" class="list-filter">dbatools</a>
 </div>
 
 <div class="posts-list">
