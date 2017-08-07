@@ -3,7 +3,7 @@ layout: post
 title: PowerShell Learning Path
 permalink: /powershell-learning-path/
 date: 2017-06-05 09:00
-tags: [powershell,dbatools]
+tags: [powershell]
 bigimg: /img/powershell_learning_banner1.png
 ---
 
