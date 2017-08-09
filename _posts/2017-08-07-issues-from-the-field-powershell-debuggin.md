@@ -6,6 +6,7 @@ permalink: /debugging-powershell
 date: 2017-08-07 02:00
 tags: [powershell,vscode]
 bigimg: /img/fly-swatter-149265_640.png
+publish: false
 ---
 
 ## The what and why
@@ -23,7 +24,6 @@ I am an avid user of [Visual Studio Code](https://code.visualstudio.com) (VS Cod
 ## Real use-case
 
 So in showing you how to debug, I thought it would be helpful to try and walk you through an true-to-life use case that I worked on this past week.
-
 
 
 
