@@ -25,7 +25,7 @@ timezone: "America/Chicago"
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:title/
-paginate: 10
+paginate: 25
 paginate_path: "/page:num/"
 
 # --- Navigation bar options --- #
