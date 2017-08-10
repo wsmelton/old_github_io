@@ -6,7 +6,6 @@ permalink: /debugging-powershell
 date: 2017-08-07 02:00
 tags: [powershell,vscode]
 bigimg: /img/fly-swatter-149265_640.png
-publish: false
 ---
 
 ## The what and why
