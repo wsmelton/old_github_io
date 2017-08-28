@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Code with Code (for Windows)
-permalink: /vscode
+permalink: /vs-code
 date: 2016-12-24 06:30
 tags: [dbatools,vscode]
 ---
