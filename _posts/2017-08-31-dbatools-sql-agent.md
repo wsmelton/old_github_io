@@ -2,10 +2,9 @@
 layout: post
 title: dbatools and an Agent
 permalink: /dbatools-sqlagent/
-date: 2017-08-31 07:00
+date: 2017-08-30 03:30
 tags: [dbatools]
 bigimg: /img/dbatools-agent.png
-published: false
 ---
 
 ### Our mission:
