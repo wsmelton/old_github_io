@@ -7,7 +7,7 @@ tags: [dbatools]
 bigimg: /img/dbatools-agent.png
 ---
 
-### Our mission:
+### The mission:
 
 > Tell every DBA around the world about a secret formula that will give them powers.
 
