@@ -9,7 +9,7 @@ bigimg: /img/dbatools-agent.png
 
 ### Our mission:
 
-> tell every DBA around the world about a secret formula that will give them powers.
+> Tell every DBA around the world about a secret formula that will give them powers.
 
 What power do you think that is? Freedom! Freedom to go work on projects that you want to do versus constantly putting out fires. Freedom to go learn something new.
 
@@ -23,7 +23,7 @@ You can use `Find-DbaCommand` to explore all the commands in the module, this wi
 
 One main thing I have seen folks post about in forums and ask questions about on Slack or Twitter is how to utilize the module via an Agent step. This is possible but at this time can only be done in a particular manner. 
 
-You have two options for running PowerShell code via a Agent step. 
+You have two options for running PowerShell code via an Agent step. 
 
 1. PowerShell 
 2. Operating System (CmdExec)
@@ -81,7 +81,7 @@ Get-DbaDatabaseSpace -SqlInstance $server -IncludeSystemDBs |
 	Write-DbaDataTable -SqlInstance $server -Database db1 -Table FreeSpace -AutoCreateTable
 ```
 
-I'm just writing my data out to the table "db1.dbo.FreeSpace". If you have more than one server you need to capture to, just add them as a comma-seperated list to the `$server` variable.
+I'm just writing my data out to the table "db1.dbo.FreeSpace". If you have more than one server you need to capture to, just add them as a comma-separated list to the `$server` variable.
 
 #### Create the Agent Job
 
