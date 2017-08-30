@@ -91,7 +91,6 @@ To add this to a job step we simply need to make it all one line and format it w
 USE [msdb]
 GO
 
-BEGIN TRANSACTION
 DECLARE @ReturnCode INT
 SELECT @ReturnCode = 0
 
@@ -120,7 +119,6 @@ EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'dbatools
 		@flags=0
 EXEC @ReturnCode = msdb.dbo.sp_update_job @job_id = @jobId, @start_step_id = 1
 EXEC @ReturnCode = msdb.dbo.sp_add_jobserver @job_id = @jobId, @server_name = N'(local)'
-COMMIT TRANSACTION
 GO
 ```
 
