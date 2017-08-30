@@ -5,7 +5,7 @@ permalink: /dbatools-sqlagent/
 date: 2017-08-31 07:00
 tags: [dbatools]
 bigimg: /img/dbatools-agent.png
-publish: false
+published: false
 ---
 
 ### Our mission:
