@@ -38,9 +38,9 @@ One other thing I've come across is that importing the module into the sqlps hos
 
 #### Operating System Step
 
-The good news is you can use the CmdExec step and call `PowerShell.exe` with your code passed in, or reference a file to run it successfully. Now one caveat to using dbatools module at all is ensuring either the Agent service account has the proper access to the target servers. It will depend on what command(s) you want to use as to what exact access is required. The commands for example that access Windows level information would need local administrator rights for some parts and PowerShell remoting. Where the commands that are simply going to perform an action or get information from a SQL Server, simply need login access to that instance. 
+The good news is you can use the CmdExec step and call `PowerShell.exe` with your code passed in or reference a file to run it successfully. Now one caveat to using dbatools module at all is ensuring either the Agent service account has the proper access to the target servers. It will depend on what command(s) you want to use as to what exact access is required. The commands for example that access Windows level information would need local administrator rights for some parts and PowerShell remoting. Where the commands that are simply going to perform an action or get information from a SQL Server, simply need login access to that instance. 
 
-An alternative, and recommended practice, to granting all those rights to the Agent service account is to simply configure a proxy account for the CmdExec subsystem. You can then just grant that account access to the target servers. You can find out how to create a proxy account in the <a href="https://docs.microsoft.com/en-us/sql/ssms/agent/create-a-sql-server-agent-proxy" target="_blank">documentation for SQL Server</a>.
+An alternative, and the recommended practice, to granting all those rights to the Agent service account is to simply configure a proxy account for the CmdExec subsystem. You can then just grant that account access to the target servers. You can find out how to create a proxy account in the <a href="https://docs.microsoft.com/en-us/sql/ssms/agent/create-a-sql-server-agent-proxy" target="_blank">documentation for SQL Server</a>.
 
 ### A Sample Job
 
@@ -63,7 +63,7 @@ Using that find command again, using "table" as the search term, I found `Out-Db
 1. Take the output from Get-DbaDatabaseSpace and convert it to a data table.
 2. Then take that data table and dump it into a table.
 
-Checking the help for `Write-DbaDataTable`, I will use the `-AutoCreateTable` parameter to have it create the table if it does not already exist. The cool part of this one: if the table already exist it will simply append the data to that table for me.
+Checking the help for `Write-DbaDataTable`, I will use the `-AutoCreateTable` parameter to have it create the table if it does not already exist. The cool part of this one: if the table already exists it will simply append the data to that table for me.
 
 <iframe src="https://giphy.com/embed/ujUdrdpX7Ok5W" width="280" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
