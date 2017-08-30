@@ -30,7 +30,7 @@ You have two options for running PowerShell code via an Agent step.
 
 #### PowerShell Step
 
-The bad news, at least at the time of this post, is that the PowerShell step cannot be used to run dbatools safely. This step type in Agent does not put you in the same PowerShell host as if you are just running `PowerShell.exe`. You are placed in the `sqlps.exe` host and the SQLSERVER provider. In that environment it varies based on what version of SQL Server you run, but the main thing is the dbatools module does not interact well with the module for SQL Server. We have some custom types and format files that tend to conflict with the modules for SQL Server.
+The bad news, at least at the time of this post, is that the PowerShell step cannot be used to run dbatools safely. This step type in Agent does not put you in the same PowerShell host as if you are just running `PowerShell.exe`. You are placed in the `sqlps.exe` host and the SQLSERVER provider. In that environment, it varies based on what version of SQL Server you run, but the main thing is the dbatools module does not interact well with the module for SQL Server. We have some custom types and format files that tend to conflict with the modules for SQL Server.
 
 One other thing I've come across is that importing the module into the sqlps host won't actually work because of the tab completion that is now part of the module (TEPP). You will get an error similar to this when you try to import the module via a PowerShell step in Agent:
 
