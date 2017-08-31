@@ -1,6 +1,6 @@
 ---
 layout: post
-title: dbatools and SQL Agent
+title: dbatools and a SQL Agent
 permalink: /dbatools-sqlagent/
 date: 2017-08-30 03:30
 tags: [dbatools]
