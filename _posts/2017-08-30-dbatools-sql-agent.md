@@ -1,6 +1,6 @@
 ---
 layout: post
-title: dbatools and an Agent
+title: dbatools and SQL Agent
 permalink: /dbatools-sqlagent/
 date: 2017-08-30 03:30
 tags: [dbatools]
@@ -123,6 +123,16 @@ GO
 ```
 
 ![](/img/dbatools-agent_captureddata.png)
+
+##### Use a File
+
+If you desire to use a file instead of inline code you just replace that `@command` with this call to PowerShell:
+
+```sql
+@command=N'powershell.exe -ExecutionPolicy Bypass -File D:\ScriptRepo\GetDatabaseSpace.ps1 
+```
+
+All the code that was previously called is simply put into that file. It is easier to read in the Agent job but does require that you maintain security on the external files to ensure they are not altered unintentionally.
 
 ### To Be Continued
 
