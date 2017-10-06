@@ -4,7 +4,7 @@ title: Tools of the Trade
 date: 2014-10-15 06:00
 author: meltondba
 comments: false
-publish: false
+published: false
 ---
 
 This page is going to list out some of the tools I use for various things and I break them up into categories for organization.
