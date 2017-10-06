@@ -6,11 +6,12 @@ permalink: /debugging-powershell
 date: 2017-08-07 02:00
 tags: [powershell,vscode]
 bigimg: /img/fly-swatter-149265_640.png
+published: false
 ---
 
 ## The what and why
 
-Debugging code can be a fun undertaking whether you just want to figure out why something broke or how it works. As well, in the age of "everything is a module" in PowerShell we can't discount having the ability to troubleshoot why a function or command does not do what is expected. 
+Debugging code can be a fun undertaking whether you just want to figure out why something broke or how it works. As well, in the age of "everything is a module" in PowerShell we can't discount having the ability to troubleshoot why a function or command does not do what is expected.
 
 An alternative is to just fill your script(s) with `Write-Output` and `Write-Debug` statements. Which work, but is time consuming to put in on something you already wrote. As well, removing it and hoping you don't forgot a statement can be a bit embarrassing to deal with if you already released the changes.
 
@@ -24,7 +25,7 @@ If you have never had to debug code whether it was PowerShell or even more forma
 
 ### Debugger
 
-By definition: 
+By definition:
 
 > A program designed to help detect, locate, and correct errors in another program. It allows the developer to step through the execution of the process and its threads, monitoring memory, variables, and other elements of process and thread context. [Reference: Microsoft Debugging Terminology](https://msdn.microsoft.com/en-us/library/windows/desktop/ms679306(v=vs.85).aspx)
 
@@ -37,7 +38,7 @@ Now it does not serve much purpose to debug your script if you execute it and it
 In the PowerShell debugger there are three types of breakpoints:
 1. Line
 2. Variable
-3. Command. 
+3. Command.
 
 They are exactly what you would think as well. The most common used is the line breakpoint. The line breakpoint means it will stop at that statement on the line you set the breakpoint, it will not execute it. The variable and command allow you to set a breakpoint either when a variable changes value or before the specified command is about to execute.
 
