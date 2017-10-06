@@ -4,7 +4,7 @@ title: Visual Studio Community
 permalink: /vs-community/
 date: 2020-09-11 08:00
 tags: [dbatools]
-publish: false
+published: false
 ---
 
 I have typed a good bit in the past year evangelizing about Visual Studio Code. It was not the first development tool I used for PowerShell. Contributing with <a href="https://dbatools.io" target="blank">dbatools</a> module I actually started out using the big brother Visual Studio 2015 Community Edition (referred to as just "VS"). The PowerShell extension in this editor is maintained by <a href="https://github.com/adamdriscoll/poshtools" target="_blank">Adam Driscoll</a>. VS is now at version 2017 and the <a href="https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561" target="_blank">PowerShell Tools for Visual Studio</a> has had a ton of improvements since I last used it. So I thought I would take you through how to get VS setup for contributing to a GitHub project. We will obviously use dbatools as the example. :grin:
