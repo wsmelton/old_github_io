@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Debugging in PowerShell
+title: PowerShell Debugging
 subtitle: A field of issues to solve
-permalink: /debugging-powershell
-date: 2017-08-07 02:00
+permalink: /powershell-debugging
+date: 2017-10-30 12:30
 tags: [powershell,vscode]
 bigimg: /img/fly-swatter-149265_640.png
-published: false
 ---
 
 ## The what and why
@@ -15,7 +14,7 @@ Debugging code can be a fun undertaking whether you just want to figure out why 
 
 An alternative is to just fill your script(s) with `Write-Output` and `Write-Debug` statements. Which work, but is time consuming to put in on something you already wrote. As well, removing it and hoping you don't forgot a statement can be a bit embarrassing to deal with if you already released the changes.
 
-Using either the PowerShell debugger itself or debugging features in your PowerShell editor of choice makes it much more efficient to find bugs and work on them.
+Using either the PowerShell debugger itself or debugging features in your PowerShell editor of choice makes it much more efficient to both discover bugs and dig into how something may work.
 
 _TL;DR_: This post will go over debugging as it pertains to PowerShell and the editor Visual Studio Code ("VS Code" or just "Code").
 
@@ -48,13 +47,15 @@ I am an avid user of [Code](https://code.visualstudio.com). It offers the abilit
 
 ### VS Code and PowerShell
 
-One thing to understand using Code is there is a difference between the `PowerShell.exe` host and the PowerShell host in Code with the PowerShell extension. The host you interact and use in Code is custom built and accessed through the PowerShell Integrated Terminal. This is a completely custom host built via the [PowerShellEditorServices](https://github.com/PowerShell/PowerShellEditorServices/issues). So there are some things that may act a bit different regarding output and functionality. The writers of the PowerShell extension try to make the experience as close to the PowerShell.exe host but there are some limitations; either in Code itself or just has not been built into the service yet. The service and the extension, together, give you the total experience in Code for PowerShell development.
+One thing to understand using Code is there is a difference between the temrinal that runs `PowerShell.exe` host, and the PowerShell Integrated Terminal that is part of the PowerShell extension. When you first open a PS1 file or set the format of a file to PowerShell, that integarted terminal is going to start up. This is a custom built host and one that is important to both the editor and debugger. This intergrated terminal is a completely custom host built via the [PowerShellEditorServices](https://github.com/PowerShell/PowerShellEditorServices/issues). With a custom host you simply need to understand it just does not work the same as the PowerShell host.
 
-The integrated terminal and editor work in tandem with each other. So for example the intellisense experience. If you import a module under the terminal then intellisense will be available in the editor for that module.
+The authors of the PowerShell extension do their best to have the experience as close to the PowerShell host but there are some limitations. Majority of them are around Code itself just not offering the ability. They try to work around it when possible but in other areas it is just not possible (e.g. progress bars). The service and the extension, together, give you the total experience in Code for PowerShell development.
+
+Just make sure to keep it in the back of your mind when your script is not executing or doing something you expect. Just give it a quick test in the PowerShell host and verify.
 
 ### Code Launch Configuration
 
-Before you can start debugging any language in Code you have to configure it for that language. The first time you try to hit **F5 to start debugging** you will get a prompt to configure a launch configuration. (_I have seen some issues reporting in VS Code's repository that this may change in the future, but as of this post has not_). Once you select PowerShell it will throw in 4 options or methods you can use to debug PowerShell code. In this post, and my general practice, I only use the interactive configuration to debug modules as it works the best so far. I remove all other configurations to keep things simple and will only go over the interactive configuration. The interactive configuration will look like the below json:
+Before you can start debugging any language in Code you have to configure it for that language. The first time you try to hit **F5 to start debugging** you will get a prompt to configure a launch configuration. (_I have seen some issues reporting in VS Code's repository that this may change in the future, but as of this post has not_). Once you select PowerShell it will throw in 4 options or methods you can use to debug PowerShell code. In this post, and my general practice, I only use the interactive configuration to debug modules as it works the best for me. I remove all other configurations to keep things simple. You can always play around with each one as you want to learn what they do. The interactive configuration will look like the below json:
 
 ```json
 {
@@ -65,7 +66,7 @@ Before you can start debugging any language in Code you have to configure it for
 }
 ```
 
-This configuration will start the debugger, launch the integrated terminal and set focus to it. Once you are in the integrated terminal make sure you have breakpoints set for the function you want to debug, and then load the module into that debug session then execute the command/function you want to debug. If all works correctly you should stop at the first breakpoint you set in that function.
+This configuration will start the debugger, launch the integrated terminal and set focus to it. Once you are in the integrated terminal make sure you have breakpoints set for the function you want to debug, and then load the module into that debug session and execute the command/function you want to debug. If all works correctly you should stop at the first breakpoint you set in that function.
 
 ### Code Step'n
 
@@ -117,8 +118,8 @@ Now when you get to a point where you have multiple breakpoints this is where th
 
 In the ISE `Set-PSBreakpoint` is used to set other types of breakpoints. In Code they are done in various ways from the UI perspective. The [documentation goes over the additional options](https://code.visualstudio.com/docs/editor/debugging#_breakpoints) pretty well and I'm not going to repeat that in this post.
 
-## PowerShell Module Debugging Requirement
+## Summary
 
-
+Debugging can be a frustrating experience and a learning experience at the same time. You may know how something "should" work but when you debug it shows you what it is doing. I have had a few eye openers when debugging code, it is pure fun. In my next post I will walk you through one of those experiences where I learned something by debugging. The next post will have some more pretty pictures as well.
 
 Header image provided via [pixabay](https://pixabay.com/en/fly-swatter-flyswatter-fly-flap-bug-149265/)
