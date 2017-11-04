@@ -12,9 +12,13 @@ I have worked in various operation support roles in my career. Which while some 
 
 PowerShell has been in my world since sometime around Summer of 2010, then SQL Server since 2007 or so. In my career I have primarily been a system administrator type, supporting whatever ran in the company I worked under. When I moved to military contracting in 2008 I actually did a year of Unix Administration, and then settled into full time DBA world in 2009. While I enjoy all components of SQL Server, I am keen on the Business Intelligence parts.
 
-### certifications
+### awards
 
-Yeah I have a few Microsoft SQL Server certs (2005 and 2008), also have cert in AWS Architecture.
+![](/img/MVP_Logo_Horizontal_Secondary_White_RGB_300ppi.png)
+
+As of November 2017 I am a [PowerShell MVP](https://www.mvp.microsoft.com/en-US/Overview) in the category [Microsoft Cloud and Datacenter Management MVP](https://www.mvp.microsoft.com/en-us/PublicProfile/5002856?fullName=Shawn%20%20Melton).
+
+
 
 ### my resume
 
