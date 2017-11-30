@@ -2,33 +2,85 @@
 layout: post
 title: Visual Studio Community
 permalink: /vs-community/
-date: 2020-09-11 08:00
+date: 2017-12-01 08:00
 tags: [dbatools]
 published: false
 ---
 
-I have typed a good bit in the past year evangelizing about Visual Studio Code. It was not the first development tool I used for PowerShell. Contributing with <a href="https://dbatools.io" target="blank">dbatools</a> module I actually started out using the big brother Visual Studio 2015 Community Edition (referred to as just "VS"). The PowerShell extension in this editor is maintained by <a href="https://github.com/adamdriscoll/poshtools" target="_blank">Adam Driscoll</a>. VS is now at version 2017 and the <a href="https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561" target="_blank">PowerShell Tools for Visual Studio</a> has had a ton of improvements since I last used it. So I thought I would take you through how to get VS setup for contributing to a GitHub project. We will obviously use dbatools as the example. :grin:
-
-It is only fair that since I have used VS before to give you both sides of the coin. I like VS and Code, it is just Code has become my go-to editor now. However, I would like to share what VS offers so you can make an educated decision on what editor you would like to use. You could say VS is the big bother to Code but it offers a completely different experience in developing PowerShell than Code does, so you cannot really compare them directly apples-for-apples. Once you get familiar with the interface and toolbars though, it becomes pretty easy to use.
+I have typed a good bit in the past year evangelizing about Visual Studio Code. Contributing with <a href="https://dbatools.io" target="blank">dbatools</a> module I actually started out using the big brother Visual Studio 2015 Community Edition (referred to as just "VS"). The PowerShell extension in this editor is maintained by <a href="https://github.com/adamdriscoll/poshtools" target="_blank">Adam Driscoll</a>. VS is now at version 2017 and the <a href="https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561" target="_blank">PowerShell Tools for Visual Studio</a> has had a ton of improvements since I last used it. In this post I thought I would take you through getting VS 2017 installed and setup for PowerShell development. I will also go over how to get VS setup for contributing to a GitHub project. We will obviously use dbatools as the example repository. :grin:
 
 ### Install
 
-I am not going to touch on installing VS itself as that can be pretty drawn out process to try and document here. You can see a pretty good walk-through on the install from <a href="https://youtu.be/R6dZJ-FEypk" target="_blank">this YouTube video on VS channel</a>.
+_One thing to just note: when you start the install of VS itself just go see a movie or something as it takes a while._
 
-One thing to just note is when you start the install of VS itself just go see a movie or something, it takes a while. At some point it will give you a prompt to select a workload and individual components, you can skip these if you want. Just close that window. When all is done you should see a screen that shows the below, you will just click on "Launch":
+First step is to download the installer from [here](https://visualstudio.com/free-developer-offers). I will walk through the installation for Visual Studio Community.
 
+The following will be the order of screens/prompts you will get on the installation (at least at current date):
 
+Click continue
 
-Next thing is to make sure you have the extensions needed for GitHub and PowerShell. You can go into Tools > Extensions and Updates. Then just do a search for the following two extensions and install them:
+![](/img/vs-install_1.png)
+
+![](/img/vs-install_2.png)
+
+At this point you are prompted to select a workload and individual components. You can go through and select the ones you desire, but I am opting to skip this process right now. (Adding more workloads does add on time for the install process).
+
+![](/img/vs-install_3.png)
+
+After a bit you will see a screen show the installation progress:
+
+![](/img/vs-install_4.png)
+
+Once that is completed you can click on "Launch" button:
+
+![](/img/vs-install_5.png)
+
+One final step before VS opens is to sign into your Live account, this is primarily utilized for VSTS and other various services associated with it.
+
+![](/img/vs-install_6.png)
+
+![](/img/vs-install_7.png)
+
+You should now be presented with something similar to this:
+
+![](/img/vs-install_8.png)
+
+### Extensions
+
+Now that we have VS installed we will need to add some extensions before we can develop with PowerShell. There are only two extensions needed:
 
 1. GitHub Extension for Visual Studio (created by: GitHub, Inc)
 2. PowerShell Tools for Visual Studio (created by: Adam Driscoll).
+
+Start going to Tools > Extensions and Updates...
+
+![](/img/vs-install_9.png)
+
+(1) Select "Online", (2) Search for "PowerShell" then (3) select "PowerShell Tools for Visual Studio" and click Download
+
+![](/img/vs-install_10.png)
+
+Then perform the same steps for "GitHub"
+
+![](/img/vs-install_11.png)
+
+Once that download completes you can close that window, and then exit out of Visual Studio. It will vary but after a few seconds you will se the VSIX Installer open up and being installing the extensions.
+
+It will first initialize and then give you a prompt to click "Modify" for the install to continue:
+
+![](/img/vs-install_12.png)
+
+![](/img/vs-install_13.png)
+
+On my machine the install of the PowerShell extension took close to a full hour. Once the extensions install are complete, just click "Close":
+
+![](/img/vs-install_14.png)
 
 ### Versions
 
 The remainder of this post and screenshots focusses on the following build of VS and each extension on my machine:
 
-- Visual Studio Community 2017 - 15.3.3
-- GitHub Extension for VS - 2.3.2.32
+- Visual Studio Community 2017 - 15.4.5
+- GitHub Extension for VS - 2.3.6.391
 - PowerShell Tools for VS - 3.0.585
 
