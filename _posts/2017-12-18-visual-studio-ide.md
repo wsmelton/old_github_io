@@ -9,6 +9,18 @@ published: false
 
 I have typed a good bit in the past year evangelizing about Visual Studio Code on social media and other forms. As a major contributor for the PowerShell module <a href="https://dbatools.io" target="blank">dbatools</a> I have made VS Code my primary development tool. You may not know that I actually started out using the big brother Visual Studio 2015 Community Edition ("VS") before I found VS Code. VS, now at version 2017, and the <a href="https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561" target="_blank">PowerShell Tools for Visual Studio</a> have come a long way since I last used them. The PowerShell extension in VS is maintained by <a href="https://github.com/adamdriscoll/poshtools" target="_blank">Adam Driscoll</a>. In this post, I thought I would take you through getting VS 2017 installed and setup for PowerShell development. I will go over how to get VS setup for contributing to a GitHub project. _We will obviously use dbatools as the example repository._
 
+<!-- TOC -->
+
+- [Install](#install)
+- [Extensions](#extensions)
+- [Versions](#versions)
+- [VS - Solutions, Projects and now Folders](#vs---solutions-projects-and-now-folders)
+- [Starting New](#starting-new)
+- [Starting From Current GitHub Project](#starting-from-current-github-project)
+	- [Cloning the Repository](#cloning-the-repository)
+
+<!-- /TOC -->
+
 ### Install
 
 The first step is to download the installer from [here](https://visualstudio.com/free-developer-offers). You will also need to [download Git for Windows](https://git-scm.com/download/win) on your machine. The install for Git is very basic (just click next), so I will not go over that installation. I will walk through the installation of Visual Studio 2017 Community Edition below showing the screenshots in the order I received:
