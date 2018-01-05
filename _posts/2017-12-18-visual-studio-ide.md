@@ -107,7 +107,7 @@ I like to have the test files put in a test folder, so you can create a folder a
 
 I only set the root module, this will be what is run when you do `Import-Module MyFirstModule`. I then gave it a description and adjust the version information to my preferences. You can use the GUI to adjust the other information in the manifest or simply open the "psd1" file in the editor. It is just your preference, although I did find that updating the file directly does not seem to update the UI properties for some reason (not sure if this is a bug or not).
 
-I'm not going to go over module design and such in this post, but after you get done updating the manifest you are ready to start developing your new module. I'm going to next go over how to with a currently published project on GitHub, dbatools.
+I'm not going to go over module design and such in this post, but after you get done updating the manifest you are ready to start developing your new module. I'm going to next touch on starting with a currently published project on GitHub, dbatools.
 
 ### Starting From Current GitHub Project
 
