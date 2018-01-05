@@ -2,9 +2,8 @@
 layout: post
 title: Visual Studio Community
 permalink: /vs-community/
-date: 2017-12-18 08:00
+date: 2018-01-04 19:35
 tags: [dbatools]
-published: false
 ---
 
 I have typed a good bit in the past year evangelizing about Visual Studio Code on social media and other forms. As a major contributor for the PowerShell module <a href="https://dbatools.io" target="blank">dbatools</a> I have made VS Code my primary development tool. You may not know that I actually started out using the big brother Visual Studio 2015 Community Edition ("VS") before I found VS Code. VS, now at version 2017, and the <a href="https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561" target="_blank">PowerShell Tools for Visual Studio</a> have come a long way since I last used them. The PowerShell extension in VS is maintained by <a href="https://github.com/adamdriscoll/poshtools" target="_blank">Adam Driscoll</a>. In this post, I thought I would take you through getting VS 2017 installed and setup for PowerShell development. I will go over how to get VS setup for contributing to a GitHub project. _We will obviously use dbatools as the example repository._
@@ -18,6 +17,7 @@ I have typed a good bit in the past year evangelizing about Visual Studio Code o
 - [Starting New](#starting-new)
 - [Starting From Current GitHub Project](#starting-from-current-github-project)
 	- [Cloning the Repository](#cloning-the-repository)
+- [Caveats with PowerShell Projects](#caveats-with-powershell-projects)
 
 <!-- /TOC -->
 
@@ -127,3 +127,8 @@ Just click on the "Clone" button and it will begin to pull down all the files fo
 
 If you click on the "Solutions and Folders" button you will notice with the dbatools repository there is a solution file found. This is the C# project for the "dbatools.dll" and library source code. If you are interested, selecting the "sln" file will open that view in Solutions Explorer and you can traverse the code for that side of the module.
 
+### Caveats with PowerShell Projects
+
+With projects already on GitHub or hosted from another provider, unless the author uploaded the project as a Visual Studio PowerShell module project you will not be able to utilize features of the extension. Sadly there is no method or process in Visual Studio that lets "import" a non-project into a project template. Your only option would be to manually add the folders directly to the project file (via xml elements) and then you can add the files all at one time. It is a very manual process sadly.
+
+Some time down the road maybe Adam or someone from the VS team will offer the ability to import folders and files into a project more easily, but right now it is an all manual process. If you are comfortable using Visual Studio you will find the time worth it, because it would just be a one time thing with the exception of new files from the repository being added upstream.
