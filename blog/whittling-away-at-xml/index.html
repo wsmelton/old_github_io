@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Shawn Melton">
+<meta name="description" content="XML can be one of those things you come across and say “ah, there has got to be a better way”. It is something I have held off working with in SQL Server. However with things for SQL Server performance (e.g. query plans) and such it is hard to stay away from it, if you are a true DBA. My particular desire to understand it more came about after find the deadlock graphs accessible from the System Health session in SQL Server 2008 R2.">
+
+<meta property="og:title" content="Whittling away at XML" />
+<meta property="og:description" content="XML can be one of those things you come across and say “ah, there has got to be a better way”. It is something I have held off working with in SQL Server. However with things for SQL Server performance (e.g. query plans) and such it is hard to stay away from it, if you are a true DBA. My particular desire to understand it more came about after find the deadlock graphs accessible from the System Health session in SQL Server 2008 R2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/whittling-away-at-xml/" />
+
+
+
+<meta property="article:published_time" content="2013-10-10T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2013-10-10T08:00:00-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Whittling away at XML 
+
+</title>
+<link rel="canonical" href="http://blog.wsmelton.info/blog/whittling-away-at-xml/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.4259507%20-0500%20CDT%20m%3d%2b0.392995901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.4259507%20-0500%20CDT%20m%3d%2b0.392995901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.4259507%20-0500%20CDT%20m%3d%2b0.392995901">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="http://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Shawn Melton</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/"><span>latest</span></a></li>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/blog"><span>all</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
+                    
+                        <li class="nav-tags"><a href="http://blog.wsmelton.info/tags"><span>tags</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://blog.wsmelton.info/projects/"><span>projects</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Whittling away at XML
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu 10 Oct 2013 08:00 CDT'>10 Oct 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>XML can be one of those things you come across and say “ah, there has got to be a better way”. It is something I have held off working with in SQL Server. However with things for SQL Server performance (e.g. query plans) and such it is hard to stay away from it, if you are a true DBA. My particular desire to understand it more came about after find the deadlock graphs accessible from the <a href="http://technet.microsoft.com/en-us/library/ff877955.aspx" target="_blank">System Health</a> session in SQL Server 2008 R2. [Side note about the link, Microsoft I found only wrote up an article on it for SQL Server 2012 but it has been there since SQL Server 2008.]</p>
+
+<p>So how do you pull it out? I think ever one is lead to <a href="http://www.sqlservercentral.com/articles/deadlock/65658/" target="_blank">this article</a> on SQLServerCentral, by Jonathan Kehayias (<a href="http://www.sqlskills.com/blogs/jonathan/" target="_blank">blog</a> <code>|</code> <a href="http://twitter.com/SQLPoolBoy" target="_blank">twitter</a>). So that is how I normally pull it out.</p>
+
+<p><img src="/img/deadlocks_xevents_xml.png" alt="" /></p>
+
+<p>However that just provides a list of rows with the full XML document in each. Which if you only get a few and you never get them again, you might be alright with this…not so much for me. I wanted more information and a pretty table that parsed it all out. This is where I needed to figure out the XML stuff. I looked around the Internet trying to see if folks had already done this type of script, no luck.</p>
+
+<p>I am actually pretty shocked that I could not find a script already, maybe my Bing-fu or Google-fu is off. Most of my searches pointed me toward parsing the XML graphs from Profiler…not going there.</p>
+
+<p>Well I let this subject die down for a while, put it on the back burner (much like my blogging schedule) until a few days ago. I was perusing through previous PASS Summit Sessions and came upon Kendal Van Dyke’s (<a href="http://www.kendalvandyke.com/" target="_blank">blog</a> <code>|</code> <a href="http://twitter.com/SQLDBA" target="_blank">twitter</a>) session on “Working with XML In SQL Server”, <a href="http://softconference.com/pass/sessionDetail.asp?SID=274804" target="_blank">here</a>. [<em>You will need a login to access this presentation, just go ahead and sign up because it is worth it.</em>]. After watching that a few times it provided a greater understanding of what you can do with XML documents.</p>
+
+<p>That led me to try to find a script that parses through the Profiler deadlock graphs since I understood the XML querying stuff a bit more. I could get one that provided output similar to what I wanted and just whittle it down to what I need. I came across a script by Wayne Sheffield right <a href="http://blog.waynesheffield.com/wayne/code-library/shred-deadlock-graph/" target="_blank">here</a>.</p>
+
+<p>After a bit of work going through it I ended up with the output:</p>
+
+<p><img src="/img/deadlocks_xevents.png" alt="" /></p>
+
+<p>Now the script to get the output can be downloaded here: <a href="https://gist.github.com/wsmelton/43888ac05b7eee5bce65a58ed941881a" target="_blank">SystemHealth_Parsed_DeadlockInfo.sql</a>.</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85098649-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

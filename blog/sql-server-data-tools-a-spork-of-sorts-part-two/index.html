@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Shawn Melton">
+<meta name="description" content="In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.
+If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1 (another interesting post to read response to this in the comments).">
+
+<meta property="og:title" content="SQL Server Data Tools: A spork of sorts (part two)" />
+<meta property="og:description" content="In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.
+If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1 (another interesting post to read response to this in the comments)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/sql-server-data-tools-a-spork-of-sorts-part-two/" />
+
+
+
+<meta property="article:published_time" content="2014-10-20T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-10-20T08:00:00-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     SQL Server Data Tools: A spork of sorts (part two) 
+
+</title>
+<link rel="canonical" href="http://blog.wsmelton.info/blog/sql-server-data-tools-a-spork-of-sorts-part-two/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3309503%20-0500%20CDT%20m%3d%2b0.297995501">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3309503%20-0500%20CDT%20m%3d%2b0.297995501">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3309503%20-0500%20CDT%20m%3d%2b0.297995501">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="http://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Shawn Melton</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/"><span>latest</span></a></li>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/blog"><span>all</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
+                    
+                        <li class="nav-tags"><a href="http://blog.wsmelton.info/tags"><span>tags</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://blog.wsmelton.info/projects/"><span>projects</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SQL Server Data Tools: A spork of sorts (part two)
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 20 Oct 2014 08:00 CDT'>20 Oct 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.</p>
+
+<p>If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on <a href="http://blogs.msdn.com/b/mattm/archive/2013/07/02/sql-server-data-tools-business-intelligence-ssdt-bi-for-sql-server-2014-ctp1.aspx" target="_blank">SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1</a> (another interesting post to read response to this in the comments). This is where it was told that you will not be able to install SSDT BI on a new machine with SQL Server 2014 installation media. It became a separate download. You would get this download from <a href="http://msdn.microsoft.com/en-us/data/hh297027" target="_blank">Microsoft SQL Server Data Tools</a> page on MSDN, scroll down to the bottom of the page to find SSDT-BI download links for VS 2012 and VS 2013.</p>
+
+<p>I opted to just go ahead and move to Visual Studio 2013 version and downloaded that from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42313" target="_blank">here</a>. If you have installed the version for VS 2012 before it has not changed from that installation process. I will go over the installation for VS 2013 version to just provide a walkthrough for those that may be just starting out.</p>
+
+<p>You start out with a file named “SSDTBI_x86_ENU.exe&rdquo;, yeah no 64-bit version still. After the download is complete just double click. Now this is a basic clicking next through the wizard and I will just point out a few notes from my experience installing this on a new Windows 7 machine.</p>
+
+<ul>
+<li>The file downloaded is going to extract the files to a directory of your choice. If you end up having to cancel and start over, you go into that extracted directory and run the setup.exe file. You are actually going to get the SQL Server Installation Center similar to this:</li>
+</ul>
+
+<p><img src="/img/spork_p2_1.png" alt="" /></p>
+
+<p>Just click on “New SQL Server stand-alone installation…” and it will bring you to the starting point of accepting the license terms.</p>
+
+<ul>
+<li>It states in the feature selection that .NET Framework 4.5 is installed through this media. In my instance it actually did not install this and failed with a feature rule check. Might be worth verifying that is installed if you are on a new machine.</li>
+</ul>
+
+<p><img src="/img/spork_p2_2.png" alt="" /></p>
+
+<ul>
+<li>Also note above what it is also going to install, Visual Studio 2012. If you don’t believe it, check out my own laptop:</li>
+</ul>
+
+<p><img src="/img/spork_p2_3.png" alt="" /></p>
+
+<p>Once you get done with the installation you are ready to get started with Business Intelligence development.</p>
+
+<p><img src="/img/spork_p2_4.png" alt="" /></p>
+
+<p>Happy learning!</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85098649-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

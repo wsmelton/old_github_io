@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Shawn Melton">
+<meta name="description" content="As of SQL Server 2012 the .NET Framework prerequisite of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.">
+
+<meta property="og:title" content="SQL Server Prerequisites .NET Framework" />
+<meta property="og:description" content="As of SQL Server 2012 the .NET Framework prerequisite of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/sql-server-prerequisites-.net-framework/" />
+
+
+
+<meta property="article:published_time" content="2014-10-02T07:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-10-02T07:00:00-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     SQL Server Prerequisites .NET Framework 
+
+</title>
+<link rel="canonical" href="http://blog.wsmelton.info/blog/sql-server-prerequisites-.net-framework/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.35795%20-0500%20CDT%20m%3d%2b0.324995201">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.35795%20-0500%20CDT%20m%3d%2b0.324995201">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.35795%20-0500%20CDT%20m%3d%2b0.324995201">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="http://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Shawn Melton</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/"><span>latest</span></a></li>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/blog"><span>all</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
+                    
+                        <li class="nav-tags"><a href="http://blog.wsmelton.info/tags"><span>tags</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://blog.wsmelton.info/projects/"><span>projects</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SQL Server Prerequisites .NET Framework
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu 2 Oct 2014 07:00 CDT'>2 Oct 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>As of SQL Server 2012 the <a href="http://msdn.microsoft.com/en-us/library/ms143506.aspx" target="_blank">.NET Framework prerequisite</a> of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.</p>
+
+<p>The PowerShell Windows cmdlet that is used in this instance will be:</p>
+
+<ul>
+<li><a href="http://technet.microsoft.com/en-us/library/jj205469.aspx" target="_blank"><code>Get-WindowsFeature</code></a></li>
+<li><a href="http://technet.microsoft.com/en-us/library/jj205467.aspx" target="_blank"><code>Install-WindowsFeature</code></a>
+(Windows Server 2008 R2 you will use <a href="http://msdn.microsoft.com/en-us/library/ee662309.aspx" target="_blank"><code>Add-WindowsFeature</code></a>).</li>
+</ul>
+
+<p>The .NET 3.5 SP1 feature in Windows Server is referenced as <code>Net-Framework-Core</code> in PowerShell. You can find this by calling the command:</p>
+
+<pre><code class="language-powershell">Get-WindowsFeature Net*
+</code></pre>
+
+<p><img src="/img/netframeworkcore_ps.png" alt="" /></p>
+
+<p>The below script is going first verify it is not installed and then will enable the feature (or technically install it I guess). In order to do this though you will need the OS media as you have to pass in the source path to <code>&lt;drive letter&gt;:\sources\sxs</code>. <strong>Note: You have to execute this in an elevated PowerShell console, so &ldquo;Run as Administrator&rdquo;.</strong></p>
+
+<pre><code class="language-powershell">#verify installed first
+(Get-WindowsFeature Net-Framework-Core).Installed
+
+#Add feature
+Install-WindowsFeature Net-Framework-Core -source 'G:\sources\sxs'
+</code></pre>
+
+<p>When you run this command you will see a status &ldquo;bar&rdquo; of sorts appear while it is performing the installation. Once completed you should see output that lets you know it was successful.</p>
+
+<p>Now if you happen to see any errors you might reference the <a href="http://support.microsoft.com/kb/2734782" target="_blank">KB 2734782 - .NET Framework 3.5 installation error</a> as there are various reasons why this command might fail.</p>
+
+<h3 id="a-small-update-to-this-post">A small update to this post&hellip;</h3>
+
+<p>I recently came across a server that I was getting the <code>0x800f0906</code> error and went through the article above verifying Internet access from the server and having mounted the ISO for the OS properly. I came across a blog post that brings up the possibility that you need to <a href="http://blogs.technet.com/b/joscon/archive/2012/11/14/how-to-update-local-source-media-to-add-roles-and-features.aspx" target="_blank">update the local source media</a> on the server.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85098649-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

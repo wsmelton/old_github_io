@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Shawn Melton">
+<meta name="description" content="I have been working with SSDT the past few months at my day job, in order to get a database versioned. I am also trying to use it for a few things with a side job as well.
+So, a simple task to start with is create a new SQL Database Project, and import a script (.sql) file to bring in all the database objects. You would think it was simple until you go through the process, get no errors and no objects in your project.">
+
+<meta property="og:title" content="SSDT–Importing Script Does Nothing" />
+<meta property="og:description" content="I have been working with SSDT the past few months at my day job, in order to get a database versioned. I am also trying to use it for a few things with a side job as well.
+So, a simple task to start with is create a new SQL Database Project, and import a script (.sql) file to bring in all the database objects. You would think it was simple until you go through the process, get no errors and no objects in your project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/ssdtimporting-script-does-nothing/" />
+
+
+
+<meta property="article:published_time" content="2013-02-18T07:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2013-02-18T07:00:00-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     SSDT–Importing Script Does Nothing 
+
+</title>
+<link rel="canonical" href="http://blog.wsmelton.info/blog/ssdtimporting-script-does-nothing/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.4279497%20-0500%20CDT%20m%3d%2b0.394994901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.4279497%20-0500%20CDT%20m%3d%2b0.394994901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.4279497%20-0500%20CDT%20m%3d%2b0.394994901">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="http://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Shawn Melton</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/"><span>latest</span></a></li>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/blog"><span>all</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
+                    
+                        <li class="nav-tags"><a href="http://blog.wsmelton.info/tags"><span>tags</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://blog.wsmelton.info/projects/"><span>projects</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SSDT–Importing Script Does Nothing
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 18 Feb 2013 07:00 CDT'>18 Feb 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I have been working with <a href="http://msdn.microsoft.com/en-us/data/tools.aspx" target="_blank">SSDT</a> the past few months at my day job, in order to get a database versioned. I am also trying to use it for a few things with a side job as well.</p>
+
+<p>So, a simple task to start with is create a new SQL Database Project, and import a script (.sql) file to bring in all the database objects. You would think it was simple until you go through the process, get no errors and no objects in your project.</p>
+
+<p><img src="/img/importmenu_thumb.jpg" alt="" /></p>
+
+<p><img src="/img/importscriptfinish_thumb.jpg" alt="" /></p>
+
+<p>Mother Hubbard, what the heck is the matter? No errors, and the summary log does not give any help either. Well, I got curious so I opened up the script in Visual Studio and received this message:</p>
+
+<p><img src="/img/importproblem_thumb.jpg" alt="" /></p>
+
+<p>Select “Yes”, and then save the file. Repeat the steps above and voila it works, at least for me. You will also notice it took a good bit more time to complete.</p>
+
+<p><img src="/img/importsuccess_thumb.jpg" alt="" /></p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85098649-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+
