@@ -9,15 +9,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I usually don&rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&rsquo;s server, and find out how many tables each database had.
+Now something like this can easily be done in T-SQL for a single database with this bit of code:
+SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND type=&#39;U&#39;  The above works but then you have to write the additional code to execute that against every database on a given server.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="SQL Server GROUP BY in PowerShell" />
+<meta property="og:description" content="I usually don&rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&rsquo;s server, and find out how many tables each database had.
+Now something like this can easily be done in T-SQL for a single database with this bit of code:
+SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND type=&#39;U&#39;  The above works but then you have to write the additional code to execute that against every database on a given server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/sql-server-group-by-in-powershell/" />
 
 
 
+<meta property="article:published_time" content="2014-11-17T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-11-17T08:00:00-06:00"/>
 
 
 
@@ -33,10 +40,10 @@
 <title>
 
 
-     404 Page not found 
+     SQL Server GROUP BY in PowerShell 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/sql-server-group-by-in-powershell/">
 
 
 
@@ -54,9 +61,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3049498%20-0500%20CDT%20m%3d%2b0.271995001">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3049498%20-0500%20CDT%20m%3d%2b0.271995001">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3049498%20-0500%20CDT%20m%3d%2b0.271995001">
     
 
 
@@ -607,15 +614,75 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SQL Server GROUP BY in PowerShell
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 17 Nov 2014 08:00 CDT'>17 Nov 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I usually don&rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&rsquo;s server, and find out how many tables each database had.</p>
+
+<p>Now something like this can easily be done in T-SQL for a single database with this bit of code:</p>
+
+<pre><code class="language-sql">SELECT COUNT(*) AS TotalCount
+FROM sys.all_objects
+WHERE is_ms_shipped = 0 AND type='U'
+</code></pre>
+
+<p>The above works but then you have to write the additional code to execute that against every database on a given server. I prefer to use PowerShell one-liners to get things like this done, at least when I can.</p>
+
+<p>In this instance I figured out how I can by introducing you to the <a href="http://technet.microsoft.com/en-us/library/ee176864.aspx" target="_blank">Group-Object</a> cmdlet. This cmdlet can have a property passed to it and will provide a count based on the number of objects it finds based on that property. So what is done above can easily be accomplished using these two lines (ok isn&rsquo;t a one-liner):</p>
+
+<pre><code class="language-powershell">Import-Module SQLPS -DisableNameChecking
+$s = New-Object Microsoft.SqlServer.Management.Smo.Server ORKO
+($s.Databases).Tables | Group-Object Parent | select Count, Name
+</code></pre>
+
+<p>The above will output the below against my local instance of SQL Server 2012:</p>
+
+<p><img src="/img/groupobject.png" alt="" /></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

@@ -9,15 +9,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="Short and sweet post here&hellip;not the sugar sweet, the awesome sweet!!!
+So I&rsquo;m still working on the script I talked about in a previous post. I wanted to try to drop using the parameter and try to work it all out in the script if it comes across more than one instance.
+So I came up with this, initially:
+$regInstance = (Get-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server&#39;).InstalledInstances if ($regInstance.Count -gt 1) { &quot;More than one instance found on server.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Adjusting and learning" />
+<meta property="og:description" content="Short and sweet post here&hellip;not the sugar sweet, the awesome sweet!!!
+So I&rsquo;m still working on the script I talked about in a previous post. I wanted to try to drop using the parameter and try to work it all out in the script if it comes across more than one instance.
+So I came up with this, initially:
+$regInstance = (Get-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server&#39;).InstalledInstances if ($regInstance.Count -gt 1) { &quot;More than one instance found on server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/adjusting-and-learning/" />
 
 
 
+<meta property="article:published_time" content="2011-08-18T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2011-08-18T08:00:00-06:00"/>
 
 
 
@@ -33,10 +42,10 @@
 <title>
 
 
-     404 Page not found 
+     Adjusting and learning 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/adjusting-and-learning/">
 
 
 
@@ -54,9 +63,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.4659491%20-0500%20CDT%20m%3d%2b0.432994301">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.4659491%20-0500%20CDT%20m%3d%2b0.432994301">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.4659491%20-0500%20CDT%20m%3d%2b0.432994301">
     
 
 
@@ -607,15 +616,84 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Adjusting and learning
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu 18 Aug 2011 08:00 CDT'>18 Aug 2011</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Short and sweet post here&hellip;not the sugar sweet, the awesome sweet!!!</p>
+
+<p>So I&rsquo;m still working on the script I talked about in a <a href="/2011-08-01-what-a-few-lines-of-code-can-do" target="_blank">previous post</a>. I wanted to try to drop using the parameter and try to work it all out in the script if it comes across more than one instance.</p>
+
+<p>So I came up with this, initially:</p>
+
+<pre><code class="language-powershell">$regInstance = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances
+if ($regInstance.Count -gt 1)
+{
+   &quot;More than one instance found on server.&quot;
+   foreach ($ins in $regInstance)
+   {
+     $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$ins
+     $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+   }
+}
+else
+{
+   $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$ins
+   $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+}
+</code></pre>
+
+<p>So that was nice, but you probably already noticed an issue? The way it is written the <code>$fullpath</code> will only have the last value it hits in the foreach loop, if more than one SQL instance exist. That will not work. So where do we turn&hellip;hash tables. How you might ask? While we pause for station identification, go read this <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2011/07/05/automatically-create-a-powershell-hash-table.aspx" target="_blank">post</a> from The Scripting Guy! Blog.</p>
+
+<p>The example in that post that helped me was adding 100 intergers as key/value pairs in a hash table. I could capture both the InstalledInstances and the Instance Names values, and keep them associated with each other  in a hash table. This improves the options I have of reusing this snippet in other scripts possibly. (One example comes to mind is being able to pass the instance name in SMO scripts.)</p>
+
+<p>So the 18 lines of code from above, turned into this:</p>
+
+<pre><code class="language-powershell">#create hash table
+$hashInst = @{}
+#populate hash table with values
+$inst = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances
+foreach ($i in $inst)
+{
+   $hashInst.Add($i,(Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$i)
+}
+</code></pre>
+
+<p>A total of just 6 lines of code for readability, could go down to 3 if you put the foreach on one line.</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

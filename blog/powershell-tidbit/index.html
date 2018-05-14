@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I do remote support work now as a DBA and have clients that provide my password for VPN login or Active Directory login. I usually access their network through a central remote server that I will use to manage their SQL Server environment. As some of you may know there is no way to change your password through remote desktop until it expires and prompts you to upon login. Depending on the version of Active Directory they are running you may get a little bubble down by the clock that you can use as well, but I tend to miss that most of the time.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="PowerShell Tidbit" />
+<meta property="og:description" content="I do remote support work now as a DBA and have clients that provide my password for VPN login or Active Directory login. I usually access their network through a central remote server that I will use to manage their SQL Server environment. As some of you may know there is no way to change your password through remote desktop until it expires and prompts you to upon login. Depending on the version of Active Directory they are running you may get a little bubble down by the clock that you can use as well, but I tend to miss that most of the time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/powershell-tidbit/" />
 
 
 
+<meta property="article:published_time" content="2013-11-05T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2013-11-05T08:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     PowerShell Tidbit 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/powershell-tidbit/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3989507%20-0500%20CDT%20m%3d%2b0.365995901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3989507%20-0500%20CDT%20m%3d%2b0.365995901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3989507%20-0500%20CDT%20m%3d%2b0.365995901">
     
 
 
@@ -607,15 +610,69 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    PowerShell Tidbit
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue 5 Nov 2013 08:00 CDT'>5 Nov 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I do remote support work now as a DBA and have clients that provide my password for VPN login or Active Directory login. I usually access their network through a central remote server that I will use to manage their SQL Server environment. As some of you may know there is no way to change your password through remote desktop until it expires and prompts you to upon login. Depending on the version of Active Directory they are running you may get a little bubble down by the clock that you can use as well, but I tend to miss that most of the time.</p>
+
+<p>So I wanted an alternative so I could change it when I needed to, as some clients do not have as strict a policy regarding password changes as I would like. I took the web and came across a nice post by the Scripting Guys <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/17/how-to-change-a-user-s-active-directory-password-with-powershell.aspx" target="_blank">here</a>.</p>
+
+<p>I was not really interested in using this as a function, just needed the commands to use. This article has the exact thing you need so go read it…</p>
+
+<p>The one thing I needed to add was knowing the full AD path of my user account. You all know what yours is right?</p>
+
+<p>Well you can use <code>gpresult /R</code> to get that information. All I did was put a bit of PowerShell flare into it. If you are not familiar with the results of this command go ahead and issue it on your computer, if you are part of a domain. It will give you the domain information about the computer and your current login. I like looking at this every so often to check the policies that are applied in the domain.</p>
+
+<p>Anyway there are two AD paths that are returned with this command, I only want the second one. It always returns the computer account first and then your login. So this command provides me that and puts in the clipboard for me:</p>
+
+<pre><code class="language-powershell">gpresult /R | Where {$_ -match &quot;CN=&quot;} | select -Skip 1 | clip
+</code></pre>
+
+<p>Combine this with the commands from the article:</p>
+
+<pre><code class="language-powershell">$acct = [adsi]&quot;LDAP://&lt;paste result here&gt;&quot;
+$acct.psbase.invoke(&quot;SetPassword&quot;,&quot;MyNewPassword&quot;)
+$acct.psbase.CommitChanges()
+</code></pre>
+
+<p>You may normally see me write functions for this, but for this particular area I like to see it as it works, just to be safe. You may also see the “invoke” command take a while on some domains, just depends on the architecture I guess.</p>
+
+<p>Once you hit enter on the CommitChanges command your password has been updated.</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

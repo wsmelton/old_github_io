@@ -9,15 +9,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="If I want to view the access permissions to a particular directory in Windows I can always go to the folder itself and check the security properties on the folder:
+But that is boring, lets use PowerShell!!!
+The cmdlet (commandlet) of choice for this is going to be: Get-Acl
+I will let you dive into this command and try to figure it out, but this is the one-liner I use most often that gives me the information I want to know about the SQL Server directory:">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Get those ACLs with PowerShell" />
+<meta property="og:description" content="If I want to view the access permissions to a particular directory in Windows I can always go to the folder itself and check the security properties on the folder:
+But that is boring, lets use PowerShell!!!
+The cmdlet (commandlet) of choice for this is going to be: Get-Acl
+I will let you dive into this command and try to figure it out, but this is the one-liner I use most often that gives me the information I want to know about the SQL Server directory:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/get-those-acls-with-powershell/" />
 
 
 
+<meta property="article:published_time" content="2011-04-21T13:31:00-06:00"/>
+
+<meta property="article:modified_time" content="2011-04-21T13:31:00-06:00"/>
 
 
 
@@ -33,10 +42,10 @@
 <title>
 
 
-     404 Page not found 
+     Get those ACLs with PowerShell 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/get-those-acls-with-powershell/">
 
 
 
@@ -54,9 +63,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.4869513%20-0500%20CDT%20m%3d%2b0.453996501">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.4869513%20-0500%20CDT%20m%3d%2b0.453996501">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.4869513%20-0500%20CDT%20m%3d%2b0.453996501">
     
 
 
@@ -607,15 +616,71 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Get those ACLs with PowerShell
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Thu 21 Apr 2011 13:31 CDT'>21 Apr 2011</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>If I want to view the access permissions to a particular directory in Windows I can always go to the folder itself and check the security properties on the folder:</p>
+
+<p><img src="/img/securitytab.jpg" alt="" /></p>
+
+<p>But that is boring, lets use PowerShell!!!</p>
+
+<p>The cmdlet (<em>commandlet</em>) of choice for this is going to be: <a href="http://technet.microsoft.com/en-us/library/dd347635.aspx" target="_blank"><code>Get-Acl</code></a></p>
+
+<p>I will let you dive into this command and try to figure it out, but this is the one-liner I use most often that gives me the information I want to know about the SQL Server directory:</p>
+
+<pre><code class="language-powershell">$a = (Get-Acl -Path 'D:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL')
+$a.Access | Select-Object FileSystemRights, AccessControlType, IdentityReference, IsInherited | ft -auto
+</code></pre>
+
+<p>Here is a screenshot of the output:</p>
+
+<p><img src="/img/folder_acl.jpg" alt="" /></p>
+
+<p>Now that is for a folder, what if I wanted to do it for a Registry hive as well? It works the same way with the exception of two things: (1) Your &ldquo;Path&rdquo; is changed to the registry hive of choice (HKLM, HKCU, etc) and (2) the &ldquo;Select-Object&rdquo; portion. Instead of &ldquo;FileSystemRights&rdquo; you would change that to &ldquo;RegistryRights&rdquo;, like so:</p>
+
+<pre><code class="language-powershell">$a = (Get-Acl -Path 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server')
+$a.Access | Select-Object RegistryRights, AccessControlType, IdentityReference, IsInherited | ft -auto
+</code></pre>
+
+<p>Here is screenshot of the output:</p>
+
+<p><img src="/img/hklm_acl1.jpg" alt="" /></p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

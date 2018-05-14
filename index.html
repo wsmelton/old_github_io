@@ -1,78 +1,698 @@
----
-layout: page
-title: Shawn Melton
-subtitle: Life in the day of PowerShell and SQL Server
-css: "/css/index.css"
----
-<div class="list-filters">
-  <a href="/" class="list-filter filter-selected">All posts</a>
-  <a href="/powershell" class="list-filter">PowerShell</a>
-  <a href="/vscode" class="list-filter">VS Code</a>
-  <a href="/dbatools" class="list-filter">dbatools</a>
-</div>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<div class="posts-list">
-  {% for post in paginator.posts %}
-  <article class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-	  <h2 class="post-title">{{ post.title }}</h2>
+<head>
+	<meta name="generator" content="Hugo 0.40.3" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Shawn Melton">
+<meta name="description" content="Life in the day of PowerShell and SQL Server">
 
-	  {% if post.subtitle %}
-	  <h3 class="post-subtitle">
-	    {{ post.subtitle }}
-	  </h3>
-	  {% endif %}
-    </a>
+<meta property="og:title" content="Shawn Melton" />
+<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://blog.wsmelton.info/" />
 
-    <p class="post-meta">
-      Posted on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
 
-    <div class="post-entry-container">
-      {% if post.image %}
-      <div class="post-image">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <img src="{{ post.image }}">
-        </a>
-      </div>
-      {% endif %}
-      <div class="post-entry">
-        {{ post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = post.excerpt | number_of_words %}
-        {% if post.content != post.excerpt or excerpt_word_count > site.excerpt_length %}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
-      </div>
+
+<meta property="og:updated_time" content="2018-01-04T19:35:00-06:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<title>
+
+
+     Shawn Melton 
+
+</title>
+<link rel="canonical" href="http://blog.wsmelton.info/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.6219491%20-0500%20CDT%20m%3d%2b0.588994301">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.6219491%20-0500%20CDT%20m%3d%2b0.588994301">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.6219491%20-0500%20CDT%20m%3d%2b0.588994301">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/favicon.ico"
+
+>
+
+
+
+  <link href="http://blog.wsmelton.info/index.xml" rel="alternate" type="application/rss+xml" title="Shawn Melton" />
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="http://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
+            
+            <a href="/"><div class="name">Shawn Melton</div></a>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/"><span>latest</span></a></li>
+                    
+                        <li class="nav-"><a href="http://blog.wsmelton.info/blog"><span>all</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
+                    
+                        <li class="nav-tags"><a href="http://blog.wsmelton.info/tags"><span>tags</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://blog.wsmelton.info/projects/"><span>projects</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
     </div>
+</section>
 
-    {% if post.tags.size > 0 %}
-    <div class="blog-tags">
-      Tags:
-      {% if site.link-tags %}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
-      {% endfor %}
-      {% else %}
-        {{ post.tags | join: ", " }}
-      {% endif %}
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="http://blog.wsmelton.info/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        
+
+        
+        </div>
     </div>
-    {% endif %}
+</section>
 
-   </article>
-  {% endfor %}
-</div>
+<section class="main">
+    <div class="container">
+        <div class="content">
+            
+            
+            
+            
+                <div class="page-heading">Latest Posts</div>
+                <ul>
+                    
+                        <li class="post-item">
+    
+    <span class="meta"><time datetime='2018-01-04T19:35:00-06:00'>4 Jan 2018</time></span>
+    
+    <a href="http://blog.wsmelton.info/blog/visual-studio-community/"><span>Visual Studio Community</span></a>
+</li>
 
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-  {% if paginator.previous_page %}
-  <li class="previous">
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-  </li>
-  {% endif %}
-  {% if paginator.next_page %}
-  <li class="next">
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-  </li>
-  {% endif %}
-</ul>
-{% endif %}
+                    
+                        <li class="post-item">
+    
+    <span class="meta"><time datetime='2017-10-30T12:30:00-06:00'>30 Oct 2017</time></span>
+    
+    <a href="http://blog.wsmelton.info/blog/powershell-debugging/"><span>PowerShell Debugging</span></a>
+</li>
+
+                    
+                        <li class="post-item">
+    
+    <span class="meta"><time datetime='2017-08-30T03:30:00-06:00'>30 Aug 2017</time></span>
+    
+    <a href="http://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/"><span>dbatools and a SQL Agent</span></a>
+</li>
+
+                    
+                        <li class="post-item">
+    
+    <span class="meta"><time datetime='2017-08-07T02:00:00-06:00'>7 Aug 2017</time></span>
+    
+    <a href="http://blog.wsmelton.info/blog/debugging-dbatools/"><span>Debugging dbatools</span></a>
+</li>
+
+                    
+                        <li class="post-item">
+    
+    <span class="meta"><time datetime='2017-06-05T09:00:00-06:00'>5 Jun 2017</time></span>
+    
+    <a href="http://blog.wsmelton.info/blog/powershell-learning-path/"><span>PowerShell Learning Path</span></a>
+</li>
+
+                    
+                    
+                        
+                    
+                </ul>
+            
+        </div>
+    </div>
+</section>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-85098649-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+
+

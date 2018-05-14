@@ -9,15 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (blog | twitter) blog post here.
+This gave me a starting point, however I also noticed that with the use of the basic Get-Counter cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Calc-MaxSample" />
+<meta property="og:description" content="I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (blog | twitter) blog post here.
+This gave me a starting point, however I also noticed that with the use of the basic Get-Counter cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/calc-maxsample/" />
 
 
 
+<meta property="article:published_time" content="2013-11-13T10:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2013-11-13T10:00:00-06:00"/>
 
 
 
@@ -33,10 +38,10 @@
 <title>
 
 
-     404 Page not found 
+     Calc-MaxSample 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/calc-maxsample/">
 
 
 
@@ -54,9 +59,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3949507%20-0500%20CDT%20m%3d%2b0.361995901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3949507%20-0500%20CDT%20m%3d%2b0.361995901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3949507%20-0500%20CDT%20m%3d%2b0.361995901">
     
 
 
@@ -607,15 +612,95 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Calc-MaxSample
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed 13 Nov 2013 10:00 CDT'>13 Nov 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (<a href="http://sqlblog.com/blogs/aaron_bertrand/default.aspx" target="_blank">blog</a> <code>|</code> <a href="http://twitter.com/AaronBertrand" target="_blank">twitter</a>) blog post <a href="http://sqlblog.com/blogs/aaron_bertrand/archive/2011/01/31/how-i-use-powershell-to-collect-performance-counter-data.aspx" target="_blank">here</a>.</p>
+
+<p>This gave me a starting point, however I also noticed that with the use of the basic <a href="http://technet.microsoft.com/en-us/library/dd367892.aspx" target="_blank">Get-Counter</a> cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information.</p>
+
+<p>You would want to calculate this based on the –SampleInterval value. A few examples of this can be found in the comments on Aaron’s blog post. If you want to cover a 2 hour period and get a sample every 30 seconds, you would set MaxSamples to 240.</p>
+
+<p>This is a mathematical equation that I did not want to have to keep doing every time. So I decided to build a small function that I added to my PowerShell ISE profile. I don’t use the the console all that much anymore with PowerShell 4.0. The below function includes a bit of help information as well. So, once you load this function into the console or your profile you can use Get-Help cmdlet if needed.</p>
+
+<pre><code class="language-powershell">&lt;#
+.Synopsis
+  Assist calculating the max sample for Get-Counter
+.DESCRIPTION
+  Calculates from the sampling value and the hours desired what the max sample value should be for the Get-Counter cmdlet
+.EXAMPLE
+  Cal-MaxSample -secSample 15 -hours 3
+   This example based on the SampleInterval and the number of hours desired output what the MaxSample value should be
+.PARAMETER secSample
+    The SampleInterval value to be used in Get-Counter command, Int32 value between 2 - 60. The default value for
+   Get-Counter command is 1 (one)
+.PARAMETER hours
+   The number of hours desired for capturing performance counter data with Get-Counter command
+#&gt;
+function Calc-MaxSample
+{
+   [CmdletBinding()]
+    [OutputType([int])]
+   Param
+    (
+       [Parameter(Mandatory=$true,
+                   Position=0)]
+       [ValidateRange(2,60)]
+        [int32]
+       $secSample,
+       [Parameter(Mandatory=$true,
+                    Position=1)]
+       [int]
+        $hours
+   )
+   [int]$calValue = (($hours * 60) * 60) / $secSample
+   Write-Host &quot;Based on following calculation: (($hours * 60) * 60) / $secSample)&quot; -ForegroundColor Yellow -BackgroundColor Red
+    Write-Host &quot;MaxSample value = $calValue&quot; -ForegroundColor Yellow -BackgroundColor DarkGray
+}
+</code></pre>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

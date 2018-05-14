@@ -9,15 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="If you have to do it more than once, script it and blog about it…
+function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or instance name of SQL Server to run assessment against [Parameter(Mandatory=$true,Position=0)] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string]$location, [Parameter(Mandatory=$true,Position=1, ValueFromPipeline=$true, HelpMessage=&#39;Provide a single or comma separated list of server names.&#39; )] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string[]]$server ) foreach ($s in $server) { $dirName = $s.Replace(&quot;\&quot;,&quot;_&quot;) $fullPath = &quot;$location\$dirName&quot; if(Test-Path $fullPath) { Write-Warning &quot;The path $fullPath already exist&quot; } else { New-Item -Path $fullPath -ItemType Directory | Out-Null if(Test-Path $fullPath){ Write-Host &quot;$fullPath created successfully&quot; } else { Write-Warning &quot;Some issue occurred creating the directory&quot; } } } }  So a few examples:">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Create-ServerDirectory" />
+<meta property="og:description" content="If you have to do it more than once, script it and blog about it…
+function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or instance name of SQL Server to run assessment against [Parameter(Mandatory=$true,Position=0)] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string]$location, [Parameter(Mandatory=$true,Position=1, ValueFromPipeline=$true, HelpMessage=&#39;Provide a single or comma separated list of server names.&#39; )] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string[]]$server ) foreach ($s in $server) { $dirName = $s.Replace(&quot;\&quot;,&quot;_&quot;) $fullPath = &quot;$location\$dirName&quot; if(Test-Path $fullPath) { Write-Warning &quot;The path $fullPath already exist&quot; } else { New-Item -Path $fullPath -ItemType Directory | Out-Null if(Test-Path $fullPath){ Write-Host &quot;$fullPath created successfully&quot; } else { Write-Warning &quot;Some issue occurred creating the directory&quot; } } } }  So a few examples:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/create-serverdirectory/" />
 
 
 
+<meta property="article:published_time" content="2013-10-30T11:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2013-10-30T11:00:00-06:00"/>
 
 
 
@@ -33,10 +38,10 @@
 <title>
 
 
-     404 Page not found 
+     Create-ServerDirectory 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/create-serverdirectory/">
 
 
 
@@ -54,9 +59,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.4049477%20-0500%20CDT%20m%3d%2b0.371992901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.4049477%20-0500%20CDT%20m%3d%2b0.371992901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.4049477%20-0500%20CDT%20m%3d%2b0.371992901">
     
 
 
@@ -607,15 +612,99 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Create-ServerDirectory
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed 30 Oct 2013 11:00 CDT'>30 Oct 2013</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>If you have to do it more than once, script it and blog about it…</p>
+
+<pre><code class="language-powershell">function Create-ServerDirectory
+{
+    [CmdletBinding()]
+    Param
+    (
+        # server name or instance name of SQL Server to run assessment against
+        [Parameter(Mandatory=$true,Position=0)]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [string]$location,
+
+        [Parameter(Mandatory=$true,Position=1,
+            ValueFromPipeline=$true,
+            HelpMessage='Provide a single or comma separated list of server names.' )]
+        [ValidateNotNull()]
+        [ValidateNotNullOrEmpty()]
+        [string[]]$server
+    )
+
+    foreach ($s in $server) {
+        $dirName = $s.Replace(&quot;\&quot;,&quot;_&quot;)
+        $fullPath = &quot;$location\$dirName&quot;
+        if(Test-Path $fullPath) {
+            Write-Warning &quot;The path $fullPath already exist&quot;
+        }
+        else {
+            New-Item -Path $fullPath -ItemType Directory | Out-Null
+            if(Test-Path $fullPath){
+                Write-Host &quot;$fullPath created successfully&quot;
+            }
+            else {
+                Write-Warning &quot;Some issue occurred creating the directory&quot;
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>So a few examples:</p>
+
+<pre><code class="language-powershell">Create-ServerDirectory –location c:\temp –server &quot;Server1&quot;,&quot;Server2&quot;,&quot;Server1\Instance1&quot;,&quot;Server3&quot;
+
+#OR
+
+$list = “Server1”,”Server2”,”Server1\Instance1”,”Server3”
+Create-ServerDirectory –location c:\temp –server $list
+
+#OR
+
+&quot;Some cmdlet that passes your server name down pipeline&quot; | foreach {Create-ServerDirectory –location c:\temp –server $_}
+</code></pre>
+
+<p>Carry on…</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

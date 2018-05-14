@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Backup Files to Tape" />
+<meta property="og:description" content="I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/backup-files-to-tape/" />
 
 
 
+<meta property="article:published_time" content="2014-10-28T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-10-28T08:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     Backup Files to Tape 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/backup-files-to-tape/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3299516%20-0500%20CDT%20m%3d%2b0.296996801">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3299516%20-0500%20CDT%20m%3d%2b0.296996801">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3299516%20-0500%20CDT%20m%3d%2b0.296996801">
     
 
 
@@ -607,15 +610,79 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Backup Files to Tape
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue 28 Oct 2014 08:00 CDT'>28 Oct 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan. So I took it to mean that it was not actually seeing them as over a day old and therefore skipped them. I decided to change it to 21 hours instead of one day and that seemed to work for this client.</p>
+
+<p>Either way I needed to delete the old backups that I know were already backed up to tape. To do this I wrote up this function that will simply return a bit of information on the file like name, last access, last write, and attribute values. The attribute will show &ldquo;Normal&rdquo; if the file has been backed up (or the archive bit cleared) and &ldquo;Archive&rdquo; if it still has to be backed up.</p>
+
+<p><strong>Now I would caution you to do your own verification as to whether the file actually exist on your backup media (tape, disk, etc.).</strong> There are multiple things that can modify the archive bit, so use at your own discretion.</p>
+
+<pre><code class="language-powershell">function Verify-FileBackedUp ($rootdir,[switch]$recurse)
+{
+  # if value &quot;archive&quot; is shown means file has not been backed up
+  # if value &quot;normal&quot; is shown means file has been backed up, or the archive bit cleared
+  if ($recurse)
+  {
+    dir $rootdir -recurse | where {-not $_.PSIsContainer} | select FullName, LastAccessTime, LastWriteTime,
+      @{Label=&quot;FileBackedUp&quot;;Expression={(Get-ItemProperty $_.FullName).Attributes}}
+  }
+  else
+  {
+    dir $rootdir | where {-not $_.PSIsContainer} |
+      select FullName, LastAccessTime, LastWriteTime,
+      @{Label=&quot;FileBackedUp&quot;;Expression={(Get-ItemProperty$_.FullName).Attributes}
+  }
+}
+</code></pre>
+
+<p>A sample output would look something like below:</p>
+
+<p><img src="/img/verify_filebackup.png" alt="" /></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

@@ -9,15 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="Over the month of November a fellow PowerShell enthusiast, Mike Fal (blog|@Mike_Fal), did a series on the SQL Server PowerShell module (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just answered a question on DBA.SE that I figured out by tweaking a particular file for this module, so thought I would share more details.
+WARNING: You are modifying the files at your own risk.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Improve Load Time on SQLPS" />
+<meta property="og:description" content="Over the month of November a fellow PowerShell enthusiast, Mike Fal (blog|@Mike_Fal), did a series on the SQL Server PowerShell module (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just answered a question on DBA.SE that I figured out by tweaking a particular file for this module, so thought I would share more details.
+WARNING: You are modifying the files at your own risk." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/improve-load-time-on-sqlps/" />
 
 
 
+<meta property="article:published_time" content="2015-11-16T07:30:00-06:00"/>
+
+<meta property="article:modified_time" content="2015-11-16T07:30:00-06:00"/>
 
 
 
@@ -33,10 +38,10 @@
 <title>
 
 
-     404 Page not found 
+     Improve Load Time on SQLPS 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/improve-load-time-on-sqlps/">
 
 
 
@@ -54,9 +59,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.2459501%20-0500%20CDT%20m%3d%2b0.212995301">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.2459501%20-0500%20CDT%20m%3d%2b0.212995301">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.2459501%20-0500%20CDT%20m%3d%2b0.212995301">
     
 
 
@@ -607,15 +612,79 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Improve Load Time on SQLPS
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 16 Nov 2015 07:30 CDT'>16 Nov 2015</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Over the month of November a fellow PowerShell enthusiast, Mike Fal (<a href="http://www.mikefal.net" target="_blank">blog</a><code>|</code><a href="http://twitter.com/mike_fal" target="_blank">@Mike_Fal</a>), did a <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">series on the SQL Server PowerShell module</a> (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">answered a question on DBA.SE</a> that I figured out by tweaking a particular file for this module, so thought I would share more details.</p>
+
+<p><em><strong>WARNING: You are modifying the files at your own risk. You have been warned.</strong></em></p>
+
+<p>If you are not familiar with the files involved with a module, you can read more on that <a href="https://technet.microsoft.com/en-us/library/dd878324(v=vs.85).aspx" target="_blank">here</a>. The file I found most interesting is the &ldquo;<em>SqlPsPostScript.PS1</em>&rdquo; file, located in the SQLPS module folder for the given version of SQL Server:</p>
+
+<pre><code>C:\Program Files (x86)\Microsoft SQL Server\&lt;version&gt;\Tools\PowerShell\Modules\SQLPS\
+</code></pre>
+
+<p>This file is being called after the module is loaded as a nested module. You can find all of this by reading through the manifest file for SQLPS, <code>SQLPS.PSD1</code>.</p>
+
+<p>The post script file does a handful things:</p>
+
+<ul>
+<li>Sets the location of your session to SQLSERVER:\ (the provider)</li>
+<li>Has a function that does the same thing, if you just enter &ldquo;SQLSERVER:&rdquo; at the prompt instead of typing the Set-Location. Could be a waste of 47 characters to me.</li>
+<li>Loads the DAC assemblies for managing and creating DAC packages with PowerShell.</li>
+<li>Loads the SQLAS module, if not already loaded.</li>
+</ul>
+
+<p>Now the most annoying thing I always have with the SQLPS module is that it puts me in the location of the provider after it loads. I stop that by simply commenting out that first line in the file. A <code>Measure-Command</code> on loading the module before and after, shaves off a whole second (time is money).</p>
+
+<p>The other thing I found was the warnings on the WMI service the poster on DBA.SE was getting, was strictly due to the SQLAS module being loaded. Which in the documentation I linked to in that question shows that this module utilizes WMI. Which that begs the question for Microsoft: Why you put WMI management into SQLAS, and not SQLPS?</p>
+
+<p>Now the module itself when loading also loads numerous DLL files, which all those contain the magic that is SQLPS.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

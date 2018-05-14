@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="Whether you are an advocate of Maintenance Plans or not, they have their place in some situations. However, when you do use them there is one thing you should understand that is turned on by default with every maintenance plan you create: report and logging. I am not sure why, but Microsoft decided that any sub-plan that exist within a maintenance plan should have a log created for it by date.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="SQL Server Maintenance Plan Logging" />
+<meta property="og:description" content="Whether you are an advocate of Maintenance Plans or not, they have their place in some situations. However, when you do use them there is one thing you should understand that is turned on by default with every maintenance plan you create: report and logging. I am not sure why, but Microsoft decided that any sub-plan that exist within a maintenance plan should have a log created for it by date." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/sql-server-maintenance-plan-logging/" />
 
 
 
+<meta property="article:published_time" content="2014-12-08T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-12-08T08:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     SQL Server Maintenance Plan Logging 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/sql-server-maintenance-plan-logging/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.2959496%20-0500%20CDT%20m%3d%2b0.262994801">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.2959496%20-0500%20CDT%20m%3d%2b0.262994801">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.2959496%20-0500%20CDT%20m%3d%2b0.262994801">
     
 
 
@@ -607,15 +610,65 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SQL Server Maintenance Plan Logging
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 8 Dec 2014 08:00 CDT'>8 Dec 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Whether you are an advocate of Maintenance Plans or not, they have their place in some situations. However, when you do use them there is one thing you should understand that is turned on by default with every maintenance plan you create: <strong>report and logging</strong>. I am not sure why, but Microsoft decided that any sub-plan that exist within a maintenance plan should have a log created for it by date.</p>
+
+<p>I have lost count of how many times I come across servers and review their default log directory to find thousands of small text files from years back of maintenance plan logs. How large the files are is based on what actions are being performed within the sub-plan of the maintenance plan.</p>
+
+<p>You will generally find the log directory with files that are similar to this:</p>
+
+<p><img src="/img/maintenanceplanreportfiles1.png" alt="" /></p>
+
+<p>Now to see how this is configured if you open up a maintenance plan you will find a button on the top of that window pane to open up the reporting setup:</p>
+
+<p><img src="/img/maintenanceplan_reportloggingsetup.png" alt="" /></p>
+
+<p><img src="/img/maintenanceplan_reportloggingsetup2.png" alt="" /></p>
+
+<p>I will on every occasion simply uncheck the box for &ldquo;Generate a test file report&rdquo; because I do not need hundreds of files created that are simply going to show &ldquo;successful&rdquo; attempts:</p>
+
+<p><img src="/img/maintenanceplanreportfile.png" alt="" /></p>
+
+<p>If my maintenance plan is failing I will just use the output file that is configured on a SQL Agent job step, under the Advanced page. There, by default, it will do the one thing you can&rsquo;t have the report and logging in maintenance plan do: overwrite my log file each time. I only need one log file to check in the event something failed.</p>
+
+<p><img src="/img/maintenanceplan_sqlagentstepoutputconfig.png" alt="" /></p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&ldquo;http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;). I work over VPN supporting clients remotely and it never been that useful to me.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="SQL Server Activity Monitor Script" />
+<meta property="og:description" content="You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&ldquo;http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;). I work over VPN supporting clients remotely and it never been that useful to me." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/sql-server-activity-monitor-script/" />
 
 
 
+<meta property="article:published_time" content="2014-07-30T13:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-07-30T13:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     SQL Server Activity Monitor Script 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/sql-server-activity-monitor-script/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3719504%20-0500%20CDT%20m%3d%2b0.338995601">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3719504%20-0500%20CDT%20m%3d%2b0.338995601">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3719504%20-0500%20CDT%20m%3d%2b0.338995601">
     
 
 
@@ -607,15 +610,109 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SQL Server Activity Monitor Script
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed 30 Jul 2014 13:00 CDT'>30 Jul 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&ldquo;<a href="http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;">http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;</a>). I work over VPN supporting clients remotely and it never been that useful to me.</p>
+
+<p>I liked all the information it showed but just did not like having to use the UI it provided to filter and such. So I did a trace against an instance while I opened Activity Monitor to pull out what query it was running to populate the active sessions.</p>
+
+<p>So this post is pretty much just a bookmark for the script:</p>
+
+<pre><code class="language-sql">SELECT [Session ID] = s.session_id
+    ,[User Process] = CONVERT(CHAR(1), s.is_user_process)
+    ,[Login] = s.login_name
+    ,[Database] = ISNULL(db_name(p.dbid), N'')
+    ,[Task State] = ISNULL(t.task_state, N'')
+    ,[Command] = ISNULL(r.command, N'')
+    ,[Application] = ISNULL(s.program_name, N'')
+    ,[Wait Time (ms)] = ISNULL(w.wait_duration_ms, 0)
+    ,[Wait Type] = ISNULL(w.wait_type, N'')
+    ,[Wait Resource] = ISNULL(w.resource_description, N'')
+    ,[Blocked By] = ISNULL(CONVERT(VARCHAR, w.blocking_session_id), '')
+    ,[Head Blocker] = CASE
+        WHEN r2.session_id IS NOT NULL
+            AND (
+                r.blocking_session_id = 0
+                OR r.session_id IS NULL
+                )
+            THEN '1'
+        ELSE ''
+        END
+    ,[Total CPU (ms)] = s.cpu_time
+    ,[Total Physical I/O (MB)] = (s.reads + s.writes) * 8 / 1024
+    ,[Memory Use (KB)] = s.memory_usage * 8192 / 1024
+    ,[Open Transactions] = ISNULL(r.open_transaction_count, 0)
+    ,[Login Time] = s.login_time
+    ,[Last Request Start Time] = s.last_request_start_time
+    ,[Host Name] = ISNULL(s.host_name, N'')
+    ,[Net Address] = ISNULL(c.client_net_address, N'')
+    ,[Execution Context ID] = ISNULL(t.exec_context_id, 0)
+    ,[Request ID] = ISNULL(r.request_id, 0)
+    ,[Workload Group] = N''
+FROM sys.dm_exec_sessions s
+LEFT JOIN sys.dm_exec_connections c ON (s.session_id = c.session_id)
+LEFT JOIN sys.dm_exec_requests r ON (s.session_id = r.session_id)
+LEFT JOIN sys.dm_os_tasks t ON (
+        r.session_id = t.session_id
+        AND r.request_id = t.request_id
+        )
+LEFT JOIN (
+    SELECT *
+        ,ROW_NUMBER() OVER (
+            PARTITION BY waiting_task_address &lt;br /&gt;            ORDER BY wait_duration_ms DESC
+            ) AS row_num
+    FROM sys.dm_os_waiting_tasks
+    ) w ON (t.task_address = w.waiting_task_address)
+    AND w.row_num = 1
+LEFT JOIN sys.dm_exec_requests r2 ON (s.session_id = r2.blocking_session_id)
+LEFT JOIN sys.sysprocesses p ON (s.session_id = p.spid)
+WHERE s.is_user_process = 1
+ORDER BY s.session_id;
+</code></pre>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

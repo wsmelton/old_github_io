@@ -9,15 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="Way back in October (2014) I published the post: XML, Glad that is over (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway&hellip;
+It was brought up to me recently on an answer I provided on DBA.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Parse Deadlock Graph from System_Health session" />
+<meta property="og:description" content="Way back in October (2014) I published the post: XML, Glad that is over (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway&hellip;
+It was brought up to me recently on an answer I provided on DBA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/parse-deadlock-graph-from-system_health-session/" />
 
 
 
+<meta property="article:published_time" content="2015-09-16T07:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2015-09-16T07:00:00-06:00"/>
 
 
 
@@ -33,10 +38,10 @@
 <title>
 
 
-     404 Page not found 
+     Parse Deadlock Graph from System_Health session 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/parse-deadlock-graph-from-system_health-session/">
 
 
 
@@ -54,9 +59,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.2519502%20-0500%20CDT%20m%3d%2b0.218995401">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.2519502%20-0500%20CDT%20m%3d%2b0.218995401">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.2519502%20-0500%20CDT%20m%3d%2b0.218995401">
     
 
 
@@ -607,15 +612,59 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Parse Deadlock Graph from System_Health session
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed 16 Sep 2015 07:00 CDT'>16 Sep 2015</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Way back in October (2014) I published the post: <a href="http://wsmelton.github.io/2013-10-10-xml-glad-that-is-over/" target="_blank">XML, Glad that is over</a> (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway&hellip;</p>
+
+<p>It was brought up to me recently on <a href="http://dba.stackexchange.com/a/54812/507" target="_blank">an answer I provided on DBA.StackExchange.com</a>, that I needed a 2014 version. When in fact this is required starting on SQL Server 2012 because the Event XML output changed started in this release. You can find an excellent write-up of this from Jonathan Kehayias <a href="https://www.sqlskills.com/blogs/jonathan/extended-events-changes-in-sql-server-2012/" target="_blank">here</a>.</p>
+
+<p>I <a href="https://github.com/wshawnmelton/Toolbox/blob/master/SystemHealth_Parsed_DeadlockInfo.sql" target="_blank">moved the script to my GitHub repository</a>, and provided an update so it can be run on SQL Server 2012 and higher. The comments now include what has to be changed to make it run on SQL Server 2008.</p>
+
+<p>Enjoy.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

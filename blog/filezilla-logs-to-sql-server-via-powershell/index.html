@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="FileZilla Logs to SQL Server via PowerShell" />
+<meta property="og:description" content="I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/filezilla-logs-to-sql-server-via-powershell/" />
 
 
 
+<meta property="article:published_time" content="2014-12-01T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-12-01T08:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     FileZilla Logs to SQL Server via PowerShell 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/filezilla-logs-to-sql-server-via-powershell/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.2969493%20-0500%20CDT%20m%3d%2b0.263994501">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.2969493%20-0500%20CDT%20m%3d%2b0.263994501">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.2969493%20-0500%20CDT%20m%3d%2b0.263994501">
     
 
 
@@ -607,15 +610,63 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    FileZilla Logs to SQL Server via PowerShell
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 1 Dec 2014 08:00 CDT'>1 Dec 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.</p>
+
+<p>Through a bit of searching I found a few articles that talked about how ugly the logs for FileZilla actually are and <a href="http://strivinglife.com/words/Post/Parse-FileZilla-Server-logs-with-Log-Parser" target="_blank">found one that utilized LogParser</a> to change them into W3C formatted files. Which I decided to go a step further and just put them into a SQL Server table.</p>
+
+<p>My intention was to have a SQL Agent job, with a PowerShell step, that would look at the log file directory and import the log for that day into a table created for that day. _I am not fond of putting dates into a table name, but in this situation I did not particularly want to put much effort into setting this up._ I spent an hour or so troubleshooting what turned out to be this &ldquo;log_2014-11-14&rdquo; needed to actually be &ldquo;[log_2014-11-14]&rdquo; (with the brackets) in the query for LogParser, mostly because of the stupid error message being returned in PowerShell.</p>
+
+<p>The complete code I use in the job step is below. I have had this running for a few days now and it works well enough. I then just went through and created a few procedures to pull out the information I wanted, using a parameter to just pass in the date of the table I wanted to pull.</p>
+
+<p>You can find the complete script <a href="https://gist.github.com/wshawnmelton/ee4ef5f489a8867169c7">here</a>.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/powershell">powershell</a>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

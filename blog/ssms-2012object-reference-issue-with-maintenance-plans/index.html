@@ -9,15 +9,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was this one on SQLTeam’s forum site, the post by “prett”, and note that this is posted back in 2013: The Maintenance Plan is actually built with few services which Microsoft releases such as SSIS and SQL Server Job Agent, hence if you want to schedule the maintenance plan then your server needs to have SSIS in order to build the maintenance plan, and Job Agent in order to run at regular periods.">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="SSMS 2012–Object Reference issue with Maintenance Plans" />
+<meta property="og:description" content="I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was this one on SQLTeam’s forum site, the post by “prett”, and note that this is posted back in 2013: The Maintenance Plan is actually built with few services which Microsoft releases such as SSIS and SQL Server Job Agent, hence if you want to schedule the maintenance plan then your server needs to have SSIS in order to build the maintenance plan, and Job Agent in order to run at regular periods." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/ssms-2012object-reference-issue-with-maintenance-plans/" />
 
 
 
+<meta property="article:published_time" content="2014-07-21T08:00:00-06:00"/>
+
+<meta property="article:modified_time" content="2014-07-21T08:00:00-06:00"/>
 
 
 
@@ -33,10 +36,10 @@
 <title>
 
 
-     404 Page not found 
+     SSMS 2012–Object Reference issue with Maintenance Plans 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/ssms-2012object-reference-issue-with-maintenance-plans/">
 
 
 
@@ -54,9 +57,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.3779494%20-0500%20CDT%20m%3d%2b0.344994601">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.3779494%20-0500%20CDT%20m%3d%2b0.344994601">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.3779494%20-0500%20CDT%20m%3d%2b0.344994601">
     
 
 
@@ -607,15 +610,75 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    SSMS 2012–Object Reference issue with Maintenance Plans
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Mon 21 Jul 2014 08:00 CDT'>21 Jul 2014</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was <a href="http://www.sqlteam.com/forums/topic.asp?TOPIC_ID=182869" target="_blank">this one on SQLTeam’s forum site</a>, the post by “prett”, and note that this is posted back in 2013:
+<blockquote>The Maintenance Plan is actually built with few services which Microsoft releases such as SSIS and SQL Server Job Agent, hence if you want to schedule the maintenance plan then your server needs to have SSIS in order to build the maintenance plan, and Job Agent in order to run at regular periods.
+This error message &ldquo;Object reference not set to an instance of an object&rdquo; occurs because of one of the required component was not available on the server.</blockquote></p>
+
+<p>SQL Server 2005 started out requiring SSIS to be installed for maintenance plans to run, however when <a href="http://technet.microsoft.com/en-us/library/bb283536(v=sql.90).aspx#BKMK_DatabaseEngine" target="_blank">Service Pack 2 was released</a> they removed that requirement. As far as I know after that any release of SQL Server kept that same functionality.</p>
+
+<p>Well I came across this issue on my VMWare View desktop that I utilize for one particular client. I was getting this pretty little box every time I tried to create a new maintenance plan on a newly built SQL Server 2012 Failover Cluster Instance:</p>
+
+<p><img src="/img/ssms_object_reference.png" alt="" /></p>
+
+<p>The version of SSMS I was using:</p>
+
+<p><img src="/img/ssms_object_reference2.png" alt="" /></p>
+
+<p>I thought I would apply Service Pack 2 to try and resolve it and noted during that installation it was showing “SQLExpress”. Which did bring to mind that I had installed SQL Server 2012 Management Studio for Express when it was announced that it was the full version of SSMS now. I confirmed this by going to the “Setup Bootstrap” and checking the Summary files for the previous installations on the desktop. I found this:</p>
+
+<p><img src="/img/ssms_object_reference3.png" alt="" /></p>
+
+<p>So I went to Programs and Features and removed it. I then located the installation media for SQL Server 2012 Standard Edition and installed the Management Tools. Then for good measure applied Service Pack 2 for SQL Server 2012:</p>
+
+<p><img src="/img/ssms_object_reference4.png" alt="" /></p>
+
+<p>Low and behold, that solved my issue. I hope those in the future can find this bit of information useful.</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/sqlserver">sqlserver</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>

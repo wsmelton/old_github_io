@@ -9,15 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+<meta name="description" content="You have someone come to you and say they want to implement &ldquo;it&rdquo; on the database or SQL Server instance. Or it could be maybe you hear a conversation about implementing &ldquo;it&rdquo;. Unlike me, I don&rsquo;t recall things &ldquo;word for word&rdquo; but remember reading about &ldquo;it&rdquo; not being a good idea in certain circumstances or at all.
+One particular thing I know of that will get the blog post rolling is posting on a forum &ldquo;how can I schedule or how often should I shrink my database(s)?">
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="" />
+<meta property="og:title" content="Remembering Why" />
+<meta property="og:description" content="You have someone come to you and say they want to implement &ldquo;it&rdquo; on the database or SQL Server instance. Or it could be maybe you hear a conversation about implementing &ldquo;it&rdquo;. Unlike me, I don&rsquo;t recall things &ldquo;word for word&rdquo; but remember reading about &ldquo;it&rdquo; not being a good idea in certain circumstances or at all.
+One particular thing I know of that will get the blog post rolling is posting on a forum &ldquo;how can I schedule or how often should I shrink my database(s)?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/remembering-why/" />
 
 
 
+<meta property="article:published_time" content="2010-04-27T08:25:00-06:00"/>
+
+<meta property="article:modified_time" content="2010-04-27T08:25:00-06:00"/>
 
 
 
@@ -33,10 +38,10 @@
 <title>
 
 
-     404 Page not found 
+     Remembering Why 
 
 </title>
-<link rel="canonical" href="">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/remembering-why/">
 
 
 
@@ -54,9 +59,9 @@
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.686951%20-0500%20CDT%20m%3d%2b0.653996201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-13%2020%3a01%3a06.5649494%20-0500%20CDT%20m%3d%2b0.531994601">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-13%2020%3a01%3a06.5649494%20-0500%20CDT%20m%3d%2b0.531994601">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-13%2020%3a01%3a06.5649494%20-0500%20CDT%20m%3d%2b0.531994601">
     
 
 
@@ -607,15 +612,53 @@
     </div>
 </section>
 
-<section class="main">
-    <div class="container f04">
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
         <div class="content">
-            <div class="num">404</div>
-	    <div class="detail">Sorry, this page does not exist.</div>
-	    <div class="suggestion"><a href="/">Visit home page</a></div>
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Remembering Why
+
+</div>
+
+                    <div class="initials"><a href="http://blog.wsmelton.info/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Tue 27 Apr 2010 08:25 CDT'>27 Apr 2010</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>You have someone come to you and say they want to implement &ldquo;it&rdquo; on  the database or SQL Server instance.  Or it could be maybe you hear a  conversation about implementing &ldquo;it&rdquo;.  Unlike me, I don&rsquo;t recall things  &ldquo;word for word&rdquo; but remember reading about &ldquo;it&rdquo; not being a good idea in  certain circumstances or at all.</p>
+
+<p>One particular thing I know of that  will get the blog post rolling is posting on a forum  &ldquo;how can I schedule or how often should I shrink my database(s)?&rdquo;.  Which I  had this come up recently when a customer put in a request to have a  shrink job added prior to the backup occurring each day.  (Wait keep  reading first&hellip;).  I asked them why they thought they needed a shrink  job.  The customer returned with &ldquo;we are trying to make them as small as  possible for zipping and shipping the data off to the customer&rdquo;.  Which  a few lines into the conversation I found he was referring to the  backup file, and trying to make it as small as possible.</p>
+
+<p>I read a good bit of blogs and articles (at least try too).  I know from all that reading that shrinking the database can cause server fragmentation.  If you designed and configured the database right to begin with, there should be no reason to continually shrink the database (or at most very, very, very few occasions where you need to).  As well, all shrinking is going to do is cause the database to grow when more data is written.</p>
+
+<p>Anyway, all that got me to thinking&hellip;where do I keep all those &ldquo;justification&rdquo; articles as to why you don&rsquo;t do this or that?  Sad to say, I can&rsquo;t remember where I keep it or even if I do have such a document laying around.  So&hellip;what else is a blog for than for documenting things you want to keep up with, and share with other people too.  So from this post I will try to start working on a page (title yet to be determined) that includes my favorite articles on why you don&rsquo;t do certain things.  (I will update this post with the link once I create and publish it.)</p>
+
+<p>Hopefully the ambition to do this stays with me.  I will have to look at first checking with those authors to make sure they are aware I&rsquo;m doing it :).  I know there are a few &ldquo;wiki&rdquo; sites that gather some of this information for you, and will include those as well.</p>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
         </div>
     </div>
 </section>
+
 
 
 <script>
