@@ -6,10 +6,20 @@
     <description>Recent content on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jan 2018 19:35:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 13 May 2018 20:00:00 -0600</lastBuildDate>
     
 	<atom:link href="http://blog.wsmelton.info/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Github Issue Templates</title>
+      <link>http://blog.wsmelton.info/blog/github-issue-templates/</link>
+      <pubDate>Sun, 13 May 2018 20:00:00 -0600</pubDate>
+      
+      <guid>http://blog.wsmelton.info/blog/github-issue-templates/</guid>
+      <description>Who has not heard of GitHub yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being PowerShell.
+The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow.</description>
+    </item>
     
     <item>
       <title>Visual Studio Community</title>
