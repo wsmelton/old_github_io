@@ -9,20 +9,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.
-It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is available to me for my perusing.">
+<meta name="description" content="Who has not heard of GitHub yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being PowerShell.
+The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow.">
 
-<meta property="og:title" content="The rest of the story (PowerShell errors)" />
-<meta property="og:description" content="So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.
-It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is available to me for my perusing." />
+<meta property="og:title" content="Github Issue Templates" />
+<meta property="og:description" content="Who has not heard of GitHub yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being PowerShell.
+The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wsmelton.info/blog/the-rest-of-the-story-powershell-errors/" />
+<meta property="og:url" content="http://blog.wsmelton.info/blog/github-issue-templates/" />
 
 
 
-<meta property="article:published_time" content="2011-07-21T08:00:00-06:00"/>
+<meta property="article:published_time" content="2018-05-13T20:00:00-06:00"/>
 
-<meta property="article:modified_time" content="2018-05-13T19:43:27-05:00"/>
+<meta property="article:modified_time" content="2018-05-13T21:35:18-05:00"/>
 
 
 
@@ -38,10 +38,10 @@ It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is av
 <title>
 
 
-     The rest of the story (PowerShell errors) 
+     Github Issue Templates 
 
 </title>
-<link rel="canonical" href="http://blog.wsmelton.info/blog/the-rest-of-the-story-powershell-errors/">
+<link rel="canonical" href="http://blog.wsmelton.info/blog/github-issue-templates/">
 
 
 
@@ -59,9 +59,9 @@ It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is av
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-15%2000%3a05%3a12.9688117%20%2b0000%20GMT%20m%3d%2b0.364999801">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-15%2000%3a05%3a12.9688117%20%2b0000%20GMT%20m%3d%2b0.364999801">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-15%2000%3a05%3a12.9688117%20%2b0000%20GMT%20m%3d%2b0.364999801">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-05-15%2000%3a05%3a12.8428133%20%2b0000%20GMT%20m%3d%2b0.239000601">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-15%2000%3a05%3a12.8428133%20%2b0000%20GMT%20m%3d%2b0.239000601">
+    <link rel="stylesheet" href="/css/main.css?t=2018-05-15%2000%3a05%3a12.8428133%20%2b0000%20GMT%20m%3d%2b0.239000601">
     
 
 
@@ -638,7 +638,7 @@ It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is av
                 <div class="title-container">
                     <div class="page-heading">
 
-    The rest of the story (PowerShell errors)
+    Github Issue Templates
 
 </div>
 
@@ -646,7 +646,7 @@ It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is av
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Thu 21 Jul 2011 08:00 CDT'>21 Jul 2011</div>
+                    <div class="date" title='Sun 13 May 2018 20:00 CDT'>13 May 2018</div>
                     
                     
 		    <div class="reading-time"><div class="middot"></div>3 minutes read</div>
@@ -654,52 +654,100 @@ It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is av
                 </div>
             </div>
             <div class="markdown">
-                <p>So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.</p>
+                
 
-<p>It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is available to me for my perusing.</p>
+<p>Who has not heard of <a href="https://github.com">GitHub</a> yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being <a href="https://github.com/powershell">PowerShell</a>.</p>
 
-<p>Open up PowerShell firing off a few commands as such:</p>
+<p>The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow. The users can come by the repository on GitHub and submit issues from anything between a bug report to a feature request. Some repositories also utilize this workflow for support, to a small degree.</p>
 
-<pre><code class="language-powershell">[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Smo') | Out-Null
-$s = New-Object 'Microsoft.SqlServer.Management.Smo.Server' MyInstance
-</code></pre>
+<p>I happen to be a maintainer for the <a href="https://dbatools.io">dbatools</a> PowerShell module. The module is available from the PowerShell Gallery but the code itself is developed and managed on GitHub.</p>
 
-<p>So good so far. I then go to check a few things to find out what the build number is and what the directory path is for the instance.</p>
+<h2 id="new-template-ui">New Template UI</h2>
 
-<p><code>$s.Information.version</code></p>
+<p>GitHub posted on their <a href="https://blog.github.com/changelog/">changelog</a> at the start of May that they have added &ldquo;<a href="https://blog.github.com/changelog/2018-05-02-mutiple-template-choice/">Multiple template choices</a>&rdquo;. Prior to this you only had an option to create one issue template. So if you wanted users different types of information based on a bug report or feature request, you had to add all the information in sections. You can see an example of this with the <a href="https://github.com/sqlcollaborative/dbatools/commit/80d95e7d556ebc9bc9c0ba59af2f69592b16e522#diff-01777e4a9846fea5f3fcc8fe40d44680">old issue template</a> we had with dbatools project.</p>
 
-<p>This will give you the Major, Minor, Build, and Revision information of that instance. It returns that no issue. However the next command returns nothing:</p>
+<p>We now have multiple template options to chose from based on your need or issue. Now when you go to our <a href="https://github.com/sqlcollaborative/dbatools/issues">issues</a> and click on the &ldquo;New Issue&rdquo; button you are taken to a page that gives you <a href="https://github.com/sqlcollaborative/dbatools/issues/new/choose">choices</a>:</p>
 
-<p><code>$s.Information.RootDirectory</code></p>
+<p><img src="/img/github_issue_choose.png" alt="" /></p>
 
-<p>What this should have given me is the path to the files for that instance on the server. The <code>\MSSQL10_50.InstanceName\MSSQL\</code> path. However all it did was send me back to a prompt, without any output or error message. So I decided to just look at all of the information to see if it returned anything.</p>
+<h2 id="setup">Setup</h2>
 
-<p><code>$s.Information</code></p>
+<p><em>Do note you will have to be an admin in the repository to perform these steps.</em></p>
 
-<p>Which that line returns an error that looked like this:</p>
+<p>To get started with this it takes just one or two steps:</p>
 
-<pre><code>format-default : An exception occurred while executing a Transact-SQL statement or batch.
-+ CategoryInfo : NotSpecified: (:) [format-default], ExecutionFailureException
-+ FullyQualifiedErrorId : Microsoft.SqlServer.Management.Common.ExecutionFailureException,Microsoft...
-</code></pre>
+<ul>
+<li>Go to the Settings of the repository</li>
+</ul>
 
-<p>Which did not really help me, but I had an idea it had something to do with my permissions not being setup correctly. So I took that CategoryInfo line and popped it into the mighty <a href="http://en.wikipedia.org/wiki/Oracle_%28The_Matrix%29" target="_blank">Oracle</a> (aka Google). The first link that came up was a blog post from 2009 by Michiel Wories on <a href="http://blogs.msdn.com/b/mwories/archive/2009/06/08/powershell-tips-tricks-getting-more-detailed-error-information-from-powershell.aspx" target="_blank">how to get more detailed error information from PowerShell</a>. Which stemmed from a blog post Allen White (<a href="http://sqlblog.com/blogs/allen_white/default.aspx" target="_blank">b</a><code>|</code><a href="http://twitter.com/SQLRunr" target="_blank">t</a>) had written on actually how to <a href="http://sqlblog.com/blogs/allen_white/archive/2009/06/08/handling-errors-in-powershell.aspx" target="_blank">handle errors in PowerShell</a>.</p>
+<p><img src="/img/github_issue_settings.png" alt="" /></p>
 
-<p>Apparently the message outputted to the console does not include all of the error. There is an &ldquo;InnerException&rdquo; that has all the meat of the error. To get that you can execute the command below. Now I believe you can only do this if you are working interactively with the console. If you are running a script you would need to check Allen&rsquo;s post to see how you can capture the error itself when your script is executed.</p>
+<ul>
+<li>Under the &ldquo;Features&rdquo; section you will see a button  &ldquo;Set up templates&rdquo;, click on that button.</li>
+</ul>
 
-<p><code>$error[0] | Format-List InnerException -Force</code></p>
+<p><img src="/img/github_issue_settings_2.png" alt="" /></p>
 
-<p>From the output of this command I see the rest of the story:</p>
+<ul>
+<li>You are now presented with a screen that shows no templates created.</li>
+</ul>
 
-<pre><code>An exception occurred while executing a Transact-SQL statement or batch. ---&amp;gt; The EXECUTE permission was denied on the ojbect 'xp_instance_regread', database 'mssqlsystemresource', schema 'sys'.
-The EXECUTE permissions was denied...on and on.
-</code></pre>
+<p><img src="/img/github_issue_settings_3.png" alt="" /></p>
 
-<p>Each object that should have been returned from executing <code>$s.Information</code> shows the <code>EXECUTE permission denied</code> message for that object. Which by itself is cool because you see what is happening in the background, and I now know what is being executed to return that information to me.</p>
+<ul>
+<li>You can select the drop down</li>
+</ul>
 
-<p>So now you know how to get to this information when you get an error in PowerShell that just may not give you enough info to go on. I am now off to get my permissions fixed.</p>
+<p><img src="/img/github_issue_settings_4.png" alt="" /></p>
+
+<ul>
+<li>The two canned templates included are for bug and feature request.</li>
+<li>Add each one and then you will see an option to &ldquo;Preview and Edit&rdquo;</li>
+</ul>
+
+<p><img src="/img/github_issue_settings_5.png" alt="" /></p>
+
+<ul>
+<li>From there you can an option to do 3 things:</li>
+</ul>
+
+<p><img src="/img/github_issue_settings_6.png" alt="" /></p>
+
+<ol>
+<li>Close the preview</li>
+<li>Delete the template</li>
+<li>Edit the template</li>
+</ol>
+
+<p>You can see out-of-the-box that they provide a very good template, but you are free to edit to your required information desired.</p>
+
+<p>Once you have all those templates added and edited, you will need to use the &ldquo;Propose changes&rdquo; button on the top right to commit the changes. Clicking on that button simply provides the usual form to commit changes to the repository:</p>
+
+<p><img src="/img/github_issues_settings_7.png" alt="" /></p>
+
+<blockquote>
+<p>NOTE: The templates have to be committed to the default branch of the repository in order for them to be accessed/usable.</p>
+</blockquote>
+
+<p>Once you commit and merge the changes you will find the templates are created under the following directory of the repository: <code>.github\ISSUE_TEMPLATES</code>.</p>
+
+<p><img src="/img/github_issues_settings_8.png" alt="" /></p>
+
+<h2 id="reminder">Reminder</h2>
+
+<p>Obviously this is a new feature on GitHub, but the only bug I have found is if you edit a custom template outside of the interface/process I noted above it disappears from the choose prompt. I am not sure why and have not found any reports of this yet.</p>
+
+<p>But do just note that if you want to edit the templates it is best to go through the Settings &gt; Set up templates workflow.</p>
 
                 <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/dbatools">dbatools</a>
+                  
+                  </div>
+                  <br />
                 
                 <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
             </div>
