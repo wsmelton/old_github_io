@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vscode on Shawn Melton</title>
-    <link>http://blog.wsmelton.info/tags/vscode/</link>
+    <link>https://blog.wsmelton.info/tags/vscode/</link>
     <description>Recent content in Vscode on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Dec 2016 06:30:00 -0600</lastBuildDate>
     
-	<atom:link href="http://blog.wsmelton.info/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wsmelton.info/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Code with Code (for Windows)</title>
-      <link>http://blog.wsmelton.info/blog/code-with-code-for-windows/</link>
+      <link>https://blog.wsmelton.info/blog/code-with-code-for-windows/</link>
       <pubDate>Sat, 24 Dec 2016 06:30:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/code-with-code-for-windows/</guid>
+      <guid>https://blog.wsmelton.info/blog/code-with-code-for-windows/</guid>
       <description>In aprevious post on PowerShell Editors I included Visual Studio Code (Code) in that list. In this post I wanted to introduce Code a bit more to you, and walk you through how you can interact with GitHub repositories. I mean now a days, who doesn&amp;rsquo;t have a GitHub account?
 Now I will make a caveat that I&amp;rsquo;m not going to go into the workflow and details of how Git works.</description>
     </item>

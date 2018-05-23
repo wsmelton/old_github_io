@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dbatools on Shawn Melton</title>
-    <link>http://blog.wsmelton.info/tags/dbatools/</link>
+    <link>https://blog.wsmelton.info/tags/dbatools/</link>
     <description>Recent content in Dbatools on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 13 May 2018 20:00:00 -0600</lastBuildDate>
     
-	<atom:link href="http://blog.wsmelton.info/tags/dbatools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wsmelton.info/tags/dbatools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Github Issue Templates</title>
-      <link>http://blog.wsmelton.info/blog/github-issue-templates/</link>
+      <link>https://blog.wsmelton.info/blog/github-issue-templates/</link>
       <pubDate>Sun, 13 May 2018 20:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/github-issue-templates/</guid>
+      <guid>https://blog.wsmelton.info/blog/github-issue-templates/</guid>
       <description>Who has not heard of GitHub yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being PowerShell.
 The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow.</description>
     </item>
     
     <item>
       <title>dbatools and a SQL Agent</title>
-      <link>http://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/</link>
+      <link>https://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/</link>
       <pubDate>Wed, 30 Aug 2017 03:30:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/</guid>
+      <guid>https://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/</guid>
       <description>The mission:  Tell every DBA around the world about a secret formula that will give them powers.
  What power do you think that is? Freedom! Freedom to go work on projects that you want to do versus constantly putting out fires. Freedom to go learn something new.
 What is this secret formula? PowerShell and the dbatools module. This module is meant to make our jobs as a DBA easier and our time managing SQL Server environments more efficient.</description>
@@ -34,10 +34,10 @@ What is this secret formula? PowerShell and the dbatools module. This module is 
     
     <item>
       <title>Debugging dbatools</title>
-      <link>http://blog.wsmelton.info/blog/debugging-dbatools/</link>
+      <link>https://blog.wsmelton.info/blog/debugging-dbatools/</link>
       <pubDate>Mon, 07 Aug 2017 02:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/debugging-dbatools/</guid>
+      <guid>https://blog.wsmelton.info/blog/debugging-dbatools/</guid>
       <description>Keeping it Real I thought it would be helpful to walk you through a true-to-life scenario that I had where I needed to debug the dbatools module. An issue was filed on the repository that pointed out in certain cases multiple login failed messages are written to the SQL Server instance passed into a command when a credential is provided. The login failure is generally showing as the Windows account running the PowerShell session (powershel.</description>
     </item>
     

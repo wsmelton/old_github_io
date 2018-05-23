@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripts on Shawn Melton</title>
-    <link>http://blog.wsmelton.info/tags/scripts/</link>
+    <link>https://blog.wsmelton.info/tags/scripts/</link>
     <description>Recent content in Scripts on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Dec 2015 08:00:00 -0600</lastBuildDate>
     
-	<atom:link href="http://blog.wsmelton.info/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.wsmelton.info/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Modifying SQL Server Startup Parameters</title>
-      <link>http://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</link>
+      <link>https://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</guid>
+      <guid>https://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</guid>
       <description>Mike, Mike, Mike, Mike, Mike&amp;hellip;.guess what I figured out? Well it all started by reading Mike Fal&amp;rsquo;s post on Managing SQL Server Services with #PowerShell. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.
 If you go search right now for using PowerShell to alter the startup parameters for SQL Server&amp;hellip;go ahead&amp;hellip;.</description>
     </item>
     
     <item>
       <title>StackDb PowerShell Module</title>
-      <link>http://blog.wsmelton.info/fixed/projects/</link>
+      <link>https://blog.wsmelton.info/fixed/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wsmelton.info/fixed/projects/</guid>
+      <guid>https://blog.wsmelton.info/fixed/projects/</guid>
       <description>Maybe you are tired of AdventureWorks or if you are still old school with Northwnd and Pubs? Brent Ozar has for many years now been using [StackOverflow database](&amp;ldquo;http://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/&amp;quot;) in his training and demos. As StackExchange (SE) started providing public [archives of the SE network sites](&amp;ldquo;https://archive.org/details/stackexchange&amp;quot;).
 I wanted to be able to build out a sample database on all of these archives as I needed, so wrote a PowerShell module.</description>
     </item>
