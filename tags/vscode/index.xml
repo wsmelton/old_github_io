@@ -6,10 +6,20 @@
     <description>Recent content in Vscode on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Dec 2016 06:30:00 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 08:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://blog.wsmelton.info/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>VS Code Profile</title>
+      <link>https://blog.wsmelton.info/blog/vs-code-profile/</link>
+      <pubDate>Thu, 07 Jun 2018 08:00:00 -0500</pubDate>
+      
+      <guid>https://blog.wsmelton.info/blog/vs-code-profile/</guid>
+      <description>If you have not started using Visual Studio Code just yet you can take a look at the intro videos on the basics. One item that is dug into the documentation that I have commonly seen asked on SO a few times is around the PowerShell extension and the extension&amp;rsquo;s Integrated Terminal.
+The main question asked is around creating the profile, or they already have a profile for PowerShell but the integrated terminal is not &amp;ldquo;seeing&amp;rdquo; it (or picking it up).</description>
+    </item>
     
     <item>
       <title>Code with Code (for Windows)</title>

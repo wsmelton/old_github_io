@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.wsmelton.info/blog/vs-code-profile/</loc>
+    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.wsmelton.info/blog/github-issue-templates/</loc>
     <lastmod>2018-05-13T21:35:18-05:00</lastmod>
   </url>
@@ -344,7 +349,7 @@
   
   <url>
     <loc>https://blog.wsmelton.info/blog/</loc>
-    <lastmod>2018-05-13T21:35:18-05:00</lastmod>
+    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -379,7 +384,7 @@
   
   <url>
     <loc>https://blog.wsmelton.info/</loc>
-    <lastmod>2018-05-13T21:35:18-05:00</lastmod>
+    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -402,7 +407,7 @@
   
   <url>
     <loc>https://blog.wsmelton.info/tags/vscode/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   

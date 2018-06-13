@@ -59,9 +59,9 @@ This gave me a starting point, however I also noticed that with the use of the b
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-05-23%2014%3a01%3a27.7318681%20%2b0000%20GMT%20m%3d%2b0.335954001">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-05-23%2014%3a01%3a27.7318681%20%2b0000%20GMT%20m%3d%2b0.335954001">
-    <link rel="stylesheet" href="/css/main.css?t=2018-05-23%2014%3a01%3a27.7318681%20%2b0000%20GMT%20m%3d%2b0.335954001">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-06-13%2014%3a01%3a06.7249009%20%2b0000%20GMT%20m%3d%2b0.380000501">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-06-13%2014%3a01%3a06.7249009%20%2b0000%20GMT%20m%3d%2b0.380000501">
+    <link rel="stylesheet" href="/css/main.css?t=2018-06-13%2014%3a01%3a06.7249009%20%2b0000%20GMT%20m%3d%2b0.380000501">
     
 
 
@@ -722,11 +722,15 @@ function Calc-MaxSample
 
 
 <script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-85098649-1', 'auto');
-ga('send', 'pageview');
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-85098649-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
