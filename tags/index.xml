@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 May 2018 20:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 15:10:52 -0500</lastBuildDate>
     
 	<atom:link href="https://blog.wsmelton.info/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Azure</title>
+      <link>https://blog.wsmelton.info/tags/azure/</link>
+      <pubDate>Fri, 10 Aug 2018 15:10:52 -0500</pubDate>
+      
+      <guid>https://blog.wsmelton.info/tags/azure/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dbatools</title>

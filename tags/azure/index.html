@@ -9,25 +9,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="&rdquo;)
-Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
-If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about.">
+<meta name="description" content="Life in the day of PowerShell and SQL Server">
 
-<meta property="og:title" content="Build your own StackExchange Database" />
-<meta property="og:description" content="&rdquo;)
-Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
-If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.wsmelton.info/blog/build-your-own-stackexchange-database/" /><meta property="article:published_time" content="2015-07-20T07:00:00-06:00"/>
-<meta property="article:modified_time" content="2018-05-13T19:43:27-05:00"/>
+<meta property="og:title" content="Azure" />
+<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.wsmelton.info/tags/azure/" />
+<meta property="og:updated_time" content="2018-08-10T15:10:52-05:00"/>
 
 <title>
 
 
-     Build your own StackExchange Database 
+     Azure 
 
 </title>
-<link rel="canonical" href="https://blog.wsmelton.info/blog/build-your-own-stackexchange-database/">
+<link rel="canonical" href="https://blog.wsmelton.info/tags/azure/">
 
 
 
@@ -45,9 +41,9 @@ If you at least answered yes to the first and last question, I am here to help. 
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
-    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.3602334%20%2b0000%20GMT%20m%3d%2b0.675362501">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.3602334%20%2b0000%20GMT%20m%3d%2b0.675362501">
+    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.3602334%20%2b0000%20GMT%20m%3d%2b0.675362501">
     
 
 
@@ -60,6 +56,8 @@ If you at least answered yes to the first and last question, I am here to help. 
 >
 
 
+
+  <link href="https://blog.wsmelton.info/tags/azure/index.xml" rel="alternate" type="application/rss+xml" title="Shawn Melton" />
 
 
 
@@ -610,67 +608,38 @@ If you at least answered yes to the first and last question, I am here to help. 
         
 
         
+            <a href="https://blog.wsmelton.info/tags/azure/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        
 
         
         </div>
     </div>
 </section>
 
-
-<section class="main post non-narrow zero-top-spacing">
+<section class="main">
     <div class="container">
         <div class="content">
-            <div class="front-matter">
-                <div class="title-container">
-                    <div class="page-heading">
+            <div class="page-heading">
 
-    Build your own StackExchange Database
+    Azure
 
 </div>
 
-                    <div class="initials"><a href="https://blog.wsmelton.info/"></a></div>
-                </div>
-                <div class="meta">
-                    
-                    <div class="date" title='Mon 20 Jul 2015 07:00 CDT'>20 Jul 2015</div>
-                    
-                    
-		    <div class="reading-time"><div class="middot"></div>One minute read</div>
-                    
-                </div>
-            </div>
             <div class="markdown">
-                <p><img src="/img/flickr_filecabinet.jpg &quot;Source: Flickr (adesigna" alt="" />&rdquo;)</p>
-
-<p>Have you ever wanted to be like <del>Mike</del> Brent and <a href="http://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/" target="_blank">have your own local, sample StackExchange database</a>? Do you know what PowerShell is?</p>
-
-<p>If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: <a href="/stackexchange/" target="_blank">StackExchange</a> and you will see what I am talking about.</p>
-
-<p>Is it the best PowerShell script for doing the job? Possibly. It accomplishes what I want it to, which is enough for me. I caveat this on the page, but to not let your hopes get to high I was not able to load the StackOverflow data with this script. It is more than likely just my laptop could not handle that much data. If I get a chance, I will try using this on a more beefy server to see if it will work.</p>
-
-<p>Good luck and happy data-fishing.</p>
-
-                <br>
-                
-                  <div class="tags">
-                    <strong>Tags:</strong>
-                  
-                    <a href="/tags/powershell">powershell</a>
-                  
-                  </div>
-                  <br />
-                
-                <p class="back-to-posts"><a href="/blog/">Back to posts</a></p>
-            </div>
-            <br>
-            <div class="disqus">
                 
             </div>
+            
+            <nav class="section-items">
+                <ul>
+                
+                    <li><a href="/blog/azure-automation-bug/">Azure Automation Bug</a></li>
+                
+                </ul>
+            </nav>
             
         </div>
     </div>
 </section>
-
 
 
 <script type="application/javascript">

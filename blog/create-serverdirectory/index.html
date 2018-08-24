@@ -16,24 +16,8 @@ function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or ins
 <meta property="og:description" content="If you have to do it more than once, script it and blog about it…
 function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or instance name of SQL Server to run assessment against [Parameter(Mandatory=$true,Position=0)] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string]$location, [Parameter(Mandatory=$true,Position=1, ValueFromPipeline=$true, HelpMessage=&#39;Provide a single or comma separated list of server names.&#39; )] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string[]]$server ) foreach ($s in $server) { $dirName = $s.Replace(&quot;\&quot;,&quot;_&quot;) $fullPath = &quot;$location\$dirName&quot; if(Test-Path $fullPath) { Write-Warning &quot;The path $fullPath already exist&quot; } else { New-Item -Path $fullPath -ItemType Directory | Out-Null if(Test-Path $fullPath){ Write-Host &quot;$fullPath created successfully&quot; } else { Write-Warning &quot;Some issue occurred creating the directory&quot; } } } }  So a few examples:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.wsmelton.info/blog/create-serverdirectory/" />
-
-
-
-<meta property="article:published_time" content="2013-10-30T11:00:00-06:00"/>
-
+<meta property="og:url" content="https://blog.wsmelton.info/blog/create-serverdirectory/" /><meta property="article:published_time" content="2013-10-30T11:00:00-06:00"/>
 <meta property="article:modified_time" content="2018-05-13T19:43:27-05:00"/>
-
-
-
-
-
-
-
-
-
-
-
 
 <title>
 
@@ -59,9 +43,9 @@ function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or ins
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-06-20%2014%3a01%3a49.3216247%20%2b0000%20GMT%20m%3d%2b0.532986201">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-06-20%2014%3a01%3a49.3216247%20%2b0000%20GMT%20m%3d%2b0.532986201">
-    <link rel="stylesheet" href="/css/main.css?t=2018-06-20%2014%3a01%3a49.3216247%20%2b0000%20GMT%20m%3d%2b0.532986201">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.3002341%20%2b0000%20GMT%20m%3d%2b0.615363601">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.3002341%20%2b0000%20GMT%20m%3d%2b0.615363601">
+    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.3002341%20%2b0000%20GMT%20m%3d%2b0.615363601">
     
 
 
@@ -725,7 +709,7 @@ Create-ServerDirectory –location c:\temp –server $list
 
 
 
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

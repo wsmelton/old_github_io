@@ -16,24 +16,8 @@ In most instances if you use the SQL Server Configuration Manager (SSCM) to set 
 <meta property="og:description" content="If you set the service account for the SQL Server services up at installation you are ahead of the game when dealing with securing your SQL Server installation. However there are some environments where the DBA does not do the initial installation of SQL Server. That requires the DBA to go back and configure a custom account for the services after the installation.
 In most instances if you use the SQL Server Configuration Manager (SSCM) to set the service account it should configure all the file, registry, and operating system permissions SQL Server needs for you." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.wsmelton.info/blog/what-os-permissions-does-sql-server-have/" />
-
-
-
-<meta property="article:published_time" content="2011-04-28T09:00:00-06:00"/>
-
+<meta property="og:url" content="https://blog.wsmelton.info/blog/what-os-permissions-does-sql-server-have/" /><meta property="article:published_time" content="2011-04-28T09:00:00-06:00"/>
 <meta property="article:modified_time" content="2018-05-13T19:43:27-05:00"/>
-
-
-
-
-
-
-
-
-
-
-
 
 <title>
 
@@ -59,9 +43,9 @@ In most instances if you use the SQL Server Configuration Manager (SSCM) to set 
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-06-20%2014%3a01%3a49.3396264%20%2b0000%20GMT%20m%3d%2b0.550987901">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-06-20%2014%3a01%3a49.3396264%20%2b0000%20GMT%20m%3d%2b0.550987901">
-    <link rel="stylesheet" href="/css/main.css?t=2018-06-20%2014%3a01%3a49.3396264%20%2b0000%20GMT%20m%3d%2b0.550987901">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.3192349%20%2b0000%20GMT%20m%3d%2b0.634364301">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.3192349%20%2b0000%20GMT%20m%3d%2b0.634364301">
+    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.3192349%20%2b0000%20GMT%20m%3d%2b0.634364301">
     
 
 
@@ -690,7 +674,7 @@ Where-Object {$_.AccountList -like &quot;*SQL*&quot;} | Format-Table UserRight -
 
 
 
-<script>
+<script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;

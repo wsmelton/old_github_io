@@ -9,25 +9,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 <meta name="author" content="Shawn Melton">
-<meta name="description" content="&rdquo;)
-Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
-If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about.">
+<meta name="description" content="Long time, no post&hellip;
+I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &ldquo;new VM&rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.
+Being that it is Azure Automation I am opted to use the AzureRm module as much as I can.">
 
-<meta property="og:title" content="Build your own StackExchange Database" />
-<meta property="og:description" content="&rdquo;)
-Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
-If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about." />
+<meta property="og:title" content="Azure Automation Bug" />
+<meta property="og:description" content="Long time, no post&hellip;
+I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &ldquo;new VM&rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.
+Being that it is Azure Automation I am opted to use the AzureRm module as much as I can." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.wsmelton.info/blog/build-your-own-stackexchange-database/" /><meta property="article:published_time" content="2015-07-20T07:00:00-06:00"/>
-<meta property="article:modified_time" content="2018-05-13T19:43:27-05:00"/>
+<meta property="og:url" content="https://blog.wsmelton.info/blog/azure-automation-bug/" /><meta property="article:published_time" content="2018-08-10T15:10:52-05:00"/>
+<meta property="article:modified_time" content="2018-08-10T15:28:32-05:00"/>
 
 <title>
 
 
-     Build your own StackExchange Database 
+     Azure Automation Bug 
 
 </title>
-<link rel="canonical" href="https://blog.wsmelton.info/blog/build-your-own-stackexchange-database/">
+<link rel="canonical" href="https://blog.wsmelton.info/blog/azure-automation-bug/">
 
 
 
@@ -45,9 +45,9 @@ If you at least answered yes to the first and last question, I am here to help. 
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
-    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.1782332%20%2b0000%20GMT%20m%3d%2b0.493363501">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-08-24%2012%3a28%3a35.1012329%20%2b0000%20GMT%20m%3d%2b0.416363901">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-24%2012%3a28%3a35.1012329%20%2b0000%20GMT%20m%3d%2b0.416363901">
+    <link rel="stylesheet" href="/css/main.css?t=2018-08-24%2012%3a28%3a35.1012329%20%2b0000%20GMT%20m%3d%2b0.416363901">
     
 
 
@@ -624,7 +624,7 @@ If you at least answered yes to the first and last question, I am here to help. 
                 <div class="title-container">
                     <div class="page-heading">
 
-    Build your own StackExchange Database
+    Azure Automation Bug
 
 </div>
 
@@ -632,30 +632,34 @@ If you at least answered yes to the first and last question, I am here to help. 
                 </div>
                 <div class="meta">
                     
-                    <div class="date" title='Mon 20 Jul 2015 07:00 CDT'>20 Jul 2015</div>
+                    <div class="date" title='Fri 10 Aug 2018 15:10 CDT'>10 Aug 2018</div>
                     
                     
-		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
                     
                 </div>
             </div>
             <div class="markdown">
-                <p><img src="/img/flickr_filecabinet.jpg &quot;Source: Flickr (adesigna" alt="" />&rdquo;)</p>
+                <p>Long time, no post&hellip;</p>
 
-<p>Have you ever wanted to be like <del>Mike</del> Brent and <a href="http://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/" target="_blank">have your own local, sample StackExchange database</a>? Do you know what PowerShell is?</p>
+<p>I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &ldquo;new VM&rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.</p>
 
-<p>If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: <a href="/stackexchange/" target="_blank">StackExchange</a> and you will see what I am talking about.</p>
+<p>Being that it is Azure Automation I am opted to use the <a href="https://powershellgallery.com/packages/azurerm">AzureRm</a> module as much as I can. I have been going back and forth trying to figure out a few things around Azure DSC and configurations I am writing for the project. When I happened upon a bug in the AzureRm module.</p>
 
-<p>Is it the best PowerShell script for doing the job? Possibly. It accomplishes what I want it to, which is enough for me. I caveat this on the page, but to not let your hopes get to high I was not able to load the StackOverflow data with this script. It is more than likely just my laptop could not handle that much data. If I get a chance, I will try using this on a more beefy server to see if it will work.</p>
+<p>I have already submitted an issue to the repository for this <a href="https://github.com/Azure/azure-powershell/issues/6899">here</a>. The gist is the <code>Import-AzureRmDscConfiguration</code> is not validating the characters in the configuration name itself. Which causes you to have false hopes 😞.</p>
 
-<p>Good luck and happy data-fishing.</p>
+<p>When you go to delete the configuration via the portal you get a lovely error that actually tells you it is an invalid name and cannot complete the operation. The only way to drop it is to use the PowerShell command <code>Remove-AzureRmDscConfiguration</code>.</p>
+
+<p>The irony of all this is you can sit there thinking everything is hunky dory and being wondering for days why hitting the compile button in the portal does not work. You can also run <code>Start-AzureRmDscCompilationJob</code> until you are blue or dead from starvation because it runs and completes the compilation, but does not output anything or give any error.</p>
+
+<p>Just a heads up until that is fixed on the module side&hellip;.hopefully you didn&rsquo;t spend a few days wondering why the configurations were not working. Not saying I did of course it was just one or two days of my time 🌧️.</p>
 
                 <br>
                 
                   <div class="tags">
                     <strong>Tags:</strong>
                   
-                    <a href="/tags/powershell">powershell</a>
+                    <a href="/tags/azure">azure</a>
                   
                   </div>
                   <br />
