@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vscode on Shawn Melton</title>
-    <link>https://blog.wsmelton.info/tags/vscode/</link>
-    <description>Recent content in Vscode on Shawn Melton</description>
+    <title>Vscode on Shawn&#39;s Notebook</title>
+    <link>https://wsmelton.github.io/tags/vscode/</link>
+    <description>Recent content in Vscode on Shawn&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 07 Jun 2018 08:00:00 -0500</lastBuildDate>
     
-	<atom:link href="https://blog.wsmelton.info/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wsmelton.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VS Code Profile</title>
-      <link>https://blog.wsmelton.info/blog/vs-code-profile/</link>
+      <link>https://wsmelton.github.io/post/vs-code-profile/</link>
       <pubDate>Thu, 07 Jun 2018 08:00:00 -0500</pubDate>
       
-      <guid>https://blog.wsmelton.info/blog/vs-code-profile/</guid>
+      <guid>https://wsmelton.github.io/post/vs-code-profile/</guid>
       <description>If you have not started using Visual Studio Code just yet you can take a look at the intro videos on the basics. One item that is dug into the documentation that I have commonly seen asked on SO a few times is around the PowerShell extension and the extension&amp;rsquo;s Integrated Terminal.
 The main question asked is around creating the profile, or they already have a profile for PowerShell but the integrated terminal is not &amp;ldquo;seeing&amp;rdquo; it (or picking it up).</description>
     </item>
     
     <item>
       <title>Code with Code (for Windows)</title>
-      <link>https://blog.wsmelton.info/blog/code-with-code-for-windows/</link>
+      <link>https://wsmelton.github.io/post/code-with-code/</link>
       <pubDate>Sat, 24 Dec 2016 06:30:00 -0600</pubDate>
       
-      <guid>https://blog.wsmelton.info/blog/code-with-code-for-windows/</guid>
+      <guid>https://wsmelton.github.io/post/code-with-code/</guid>
       <description>In aprevious post on PowerShell Editors I included Visual Studio Code (Code) in that list. In this post I wanted to introduce Code a bit more to you, and walk you through how you can interact with GitHub repositories. I mean now a days, who doesn&amp;rsquo;t have a GitHub account?
 Now I will make a caveat that I&amp;rsquo;m not going to go into the workflow and details of how Git works.</description>
     </item>

@@ -3,422 +3,411 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/azure-automation-bug/</loc>
-    <lastmod>2018-08-10T15:28:32-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/azure-automation-bug/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/vs-code-profile/</loc>
-    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/vs-code-profile/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/github-issue-templates/</loc>
-    <lastmod>2018-05-13T21:35:18-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/github-issue-templates/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/visual-studio-community/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/visual-studio-ide/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/powershell-debugging/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-debugging/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/dbatools-sql-agent/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/debugging-dbatools/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/draft-powershell-debugging-dbatools/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/powershell-learning-path/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-learning-path/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/code-with-code-for-windows/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/code-with-code/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/building-ad-domain-on-windows-core-edition/</loc>
-    <lastmod>2018-06-15T09:38:49-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/building-active-directory-domain-windows-core-edition/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/extended-events---fetching-api-cursors/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/extended-events-fetching-api-cursors/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/hyper-v-lab-for-sql-server/</loc>
-    <lastmod>2018-06-15T09:38:49-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/hyper-v-lab-for-sql-server/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/powershell-editors/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-editors/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/updates-and-work/</loc>
-    <lastmod>2018-06-15T09:38:49-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/updates-and-work/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/windows-10-and-sscm-disappearing/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/windows-10-and-sscm-disappearing/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/modifying-sql-server-startup-parameters/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/improve-load-time-on-sqlps/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/improve-load-time-on-sqlps/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/dynamically-build-rdp-files/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/dynamically-build-rdp-files/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server---feed-the-beast/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-feed-the-beast/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/parse-deadlock-graph-from-system_health-session/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/parse-deadlock-graph-from-system_health-session/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/build-your-own-stackexchange-database/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/build-your-own-stackexchange-database/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/dont-just-do-it-love-doing-it/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/dont-just-do-it-love-doing-it/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/to-be-mentored-or-not-to-be/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/to-be-mentored-or-not-to-be/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/search-sqlerrorlog/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-and-sql-server-search-sqlerrorlog/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-sentry-plan-explorer-and-deadlock-xml-report/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-maintenance-plan-logging/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/tidbit-sql-server-maintenance-plan-logging/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/filezilla-logs-to-sql-server-via-powershell/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/filezilla-logs-to-sql-server-via-powershell/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-group-by-in-powershell/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-group-by-in-powershell/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/max-user-connections-set-to-one-oops/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/max-user-connections-set-to-one-oops/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/i-am-biml-bacon-integrated-markup-language/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/i-am-biml-bacon-integrated-markup-language/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/backup-files-to-tape/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-backup-files-to-tape/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-data-tools-a-spork-of-sorts-part-two/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-data-tools-a-spork-of-sorts-part-two/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-data-tools-a-spork-of-sorts-part-one/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-data-tools-a-spork-of-sorts-part-one/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-prerequisites-.net-framework/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-prerequisites-net-framework/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/the-treasures-of-the-sql-server-error-log/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/the-treasures-of-the-sql-server-error-log/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/ctrl-plus-alt-plus-what/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ctrl-plus-alt-plus-what/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-server-activity-monitor-script/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-activity-monitor-script/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/ssms-2012object-reference-issue-with-maintenance-plans/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ssms-2012object-reference-issue-with-maintenance-plans/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/check-instanceconfig-part-2/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ps-check-instanceconfig-part-2/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/check-instanceconfig-part-1/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ps-check-instanceconfig-part-1/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/calc-maxsample/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ps-c-calc-maxsample/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/powershell-tidbit/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/powershell-tidbit-492/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/create-serverdirectory/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ps-c-create-serverdirectory/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/with-powershell-comes-great-things/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/with-powershell-comes-great-things/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/to-the-future/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/to-the-future/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/whittling-away-at-xml/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/whittling-away-xml/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/ssdtimporting-script-does-nothing/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/ssdtimporting-script-does-nothing/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/windows-8-and-me/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/windows-8-and-me/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/view-server-level-permissions-in-ssms/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/view-server-level-permissions-ssms/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/mentoree/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/mentoree/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/adjusting-and-learning/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/adjusting-and-learning/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/what-a-few-lines-of-code-can-do/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/what-a-few-lines-of-code-can-do/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/the-rest-of-the-story-powershell-errors/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/the-rest-of-the-story-powershell-errors/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/what-os-permissions-does-sql-server-have/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/what-os-permissions-does-sql-server-have/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/get-those-acls-with-powershell/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/get-those-acls-with-powershell/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/books-i-get-to-read-e-books/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/books-i-get-to-read-e-books/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/training-for-the-master-from-the-masters/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/training-for-the-master-from-the-masters/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/how-to-remember-everything-in-one-step/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/how-to-remember-everything-in-1-one-step/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/with-power-comes-great-responsibility./</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/with-power-comes-great-responsibility/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/how-do-i-open-powershell-and-something-else-toopart-2/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/how-do-i-open-powershell-and-something-else-toopart-2/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/how-do-i-open-powershell-and-something-else-toopart-1/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/how-do-i-open-powershell-and-something-else-toopart-1/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/comments-anyone---vote-for-the-cause/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/comments-anyone-vote-for-the-cause/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/mcp-benefits/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/mcp-benefits/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/keeping-up-with-the-jones-or-microsoft/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/keeping-up-with-the-jones-or-microsoft/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/book-review---sql-in-a-nutshell/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/book-review-sql-in-a-nutshell/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/sql-serverfeatures/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/sql-server-features/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/remembering-why/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/remebering-why/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/project-management/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/book-review-project-management/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/step-1-start-newblog/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/step-1-start-new-blog/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/aboutme/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/about/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/tags/azure/</loc>
-    <lastmod>2018-08-10T15:28:32-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/azure/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/blog/</loc>
-    <lastmod>2018-08-10T15:28:32-05:00</lastmod>
+    <loc>https://wsmelton.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/categories/</loc>
+    <loc>https://wsmelton.github.io/tags/dbatools/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/tags/dbatools/</loc>
-    <lastmod>2018-05-13T21:35:18-05:00</lastmod>
+    <loc>https://wsmelton.github.io/post/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/tags/powershell/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/powershell/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/projects/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/scripts/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/tags/scripts/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/</loc>
-    <lastmod>2018-08-10T15:28:32-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/sqlserver/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/tags/sqlserver/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.wsmelton.info/fixed/projects/</loc>
-    <lastmod>2018-05-13T19:43:27-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.wsmelton.info/tags/</loc>
-    <lastmod>2018-08-10T15:28:32-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.wsmelton.info/tags/vscode/</loc>
-    <lastmod>2018-06-07T08:41:35-05:00</lastmod>
+    <loc>https://wsmelton.github.io/tags/vscode/</loc>
+    <lastmod>2018-09-20T14:00:54-05:00</lastmod>
     <priority>0</priority>
   </url>
   
