@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>Remembering Why</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/wsmelton" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Shawn&#39;s Notebook</a></h1>
+          <span id="author-name">
+            <h6><a href="/about/">Shawn Melton</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Remembering Why</h1>
+  <div class="blog-post-subheader">
+    <time>27 Apr 2010</time>
+  </div>
+  <div class="blog-post-content">
+    <p>You have someone come to you and say they want to implement &ldquo;it&rdquo; on  the database or SQL Server instance.  Or it could be maybe you hear a  conversation about implementing &ldquo;it&rdquo;.  Unlike me, I don&rsquo;t recall things  &ldquo;word for word&rdquo; but remember reading about &ldquo;it&rdquo; not being a good idea in  certain circumstances or at all.</p>
+
+<p>One particular thing I know of that  will get the blog post rolling is posting on a forum  &ldquo;how can I schedule or how often should I shrink my database(s)?&rdquo;.  Which I  had this come up recently when a customer put in a request to have a  shrink job added prior to the backup occurring each day.  (Wait keep  reading first&hellip;).  I asked them why they thought they needed a shrink  job.  The customer returned with &ldquo;we are trying to make them as small as  possible for zipping and shipping the data off to the customer&rdquo;.  Which  a few lines into the conversation I found he was referring to the  backup file, and trying to make it as small as possible.</p>
+
+<p>I read a good bit of blogs and articles (at least try too).  I know from all that reading that shrinking the database can cause server fragmentation.  If you designed and configured the database right to begin with, there should be no reason to continually shrink the database (or at most very, very, very few occasions where you need to).  As well, all shrinking is going to do is cause the database to grow when more data is written.</p>
+
+<p>Anyway, all that got me to thinking&hellip;where do I keep all those &ldquo;justification&rdquo; articles as to why you don&rsquo;t do this or that?  Sad to say, I can&rsquo;t remember where I keep it or even if I do have such a document laying around.  So&hellip;what else is a blog for than for documenting things you want to keep up with, and share with other people too.  So from this post I will try to start working on a page (title yet to be determined) that includes my favorite articles on why you don&rsquo;t do certain things.  (I will update this post with the link once I create and publish it.)</p>
+
+<p>Hopefully the ambition to do this stays with me.  I will have to look at first checking with those authors to make sure they are aware I&rsquo;m doing it :).  I know there are a few &ldquo;wiki&rdquo; sites that gather some of this information for you, and will include those as well.</p>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Shawn Melton.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+
