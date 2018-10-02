@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
+
+        <title>Check-InstanceConfig (part 2)</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+
+          
+          <span class="navbar-brand mb-0 h1"></span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/wsmelton" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Shawn&#39;s Notebook</a></h1>
+          <span id="author-name">
+            <h6><a href="/about/">Shawn Melton</a></h6>
+          </span>
+        </section>
+
+
+<div class="blog-post">
+  <h1>Check-InstanceConfig (part 2)</h1>
+  <div class="blog-post-subheader">
+    <time>09 Dec 2013</time>
+  </div>
+  <div class="blog-post-content">
+    
+
+<p>In the <a href="/2013-12-04-ps-check-instanceconfig-part-1" target="_blank">previous post</a> I discussed the data table that holds the default values for the configuration options in SQL Server 2000 up to SQL Server 2014.</p>
+
+<p>In this post I will go over the function(s) that are included in the script. I will keep the same format as I did in the previous post:</p>
+
+<ul>
+<li>How it was written</li>
+<li>What it contains</li>
+<li>A few examples</li>
+</ul>
+
+<h3 id="how-it-was-written">How it was written</h3>
+
+<p>If you have already downloaded the script you notice it had one function. I was attempting to make the output similar to what Mike did in his T-SQL script with the text output. After looking at it a bit more and thinking on best practices for PowerShell, I chose a different route. I always try to ensure whatever my functions output, you can do something with them down the pipeline. In order to keep that going I opted to break this up into separate functions. I also included a function that allows you to just pull the raw configuration options from the instance as you wish.</p>
+
+<h3 id="what-it-contains">What it contains</h3>
+
+<p>There are 4 functions included in the current version of the script:</p>
+
+<ul>
+<li>Pull-SqlConfig – Just pull the configuration options information on the instance</li>
+<li>Check-SqlRunConfig – Compare the running value to the configured value</li>
+<li>Check-SqlRunDefault – Compare the running value to the default value</li>
+<li>Check-SqlBadDefaults – Compare the running value to the default value for specific options.</li>
+</ul>
+
+<p>I decided to also include help text with each function so loading the script into your PowerShell session you can simply use the Get-Help cmdlet and it will show you the information on each function. Adding the <code>-full</code> switch to the command will output more detailed information as well.</p>
+
+<p><img src="/img/check_instances_p2_1.png" alt="" /></p>
+
+<h3 id="a-few-examples">A few examples</h3>
+
+<p>As mentioned above the function help information also includes a few examples of each function. So if you want to see them you can simply use the Get-Help function along with the <code>–Examples</code> switch.</p>
+
+<p><img src="/img/check_instances_p2_2.png" alt="" /></p>
+
+<p>Here is the <a href="https://github.com/wsmelton/scripts/blob/master/posh/Check-InstanceConfig.ps1" target="_blank">full script</a>. This link will always point to the current version of the script. My next blog post will explain the function in the script.</p>
+
+  </div>
+</div>
+
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Shawn Melton.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
+

@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Powershell on Shawn Melton</title>
-    <link>http://blog.wsmelton.info/tags/powershell/</link>
-    <description>Recent content in Powershell on Shawn Melton</description>
+    <title>Powershell on Shawn&#39;s Notebook</title>
+    <link>https://wsmelton.github.io/tags/powershell/</link>
+    <description>Recent content in Powershell on Shawn&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Dec 2015 08:00:00 -0600</lastBuildDate>
     
-	<atom:link href="http://blog.wsmelton.info/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wsmelton.github.io/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Modifying SQL Server Startup Parameters</title>
-      <link>http://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</link>
+      <link>https://wsmelton.github.io/post/modifying-sql-server-startup-parameters/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/modifying-sql-server-startup-parameters/</guid>
+      <guid>https://wsmelton.github.io/post/modifying-sql-server-startup-parameters/</guid>
       <description>Mike, Mike, Mike, Mike, Mike&amp;hellip;.guess what I figured out? Well it all started by reading Mike Fal&amp;rsquo;s post on Managing SQL Server Services with #PowerShell. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.
 If you go search right now for using PowerShell to alter the startup parameters for SQL Server&amp;hellip;go ahead&amp;hellip;.</description>
     </item>
     
     <item>
       <title>Improve Load Time on SQLPS</title>
-      <link>http://blog.wsmelton.info/blog/improve-load-time-on-sqlps/</link>
+      <link>https://wsmelton.github.io/post/improve-load-time-on-sqlps/</link>
       <pubDate>Mon, 16 Nov 2015 07:30:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/improve-load-time-on-sqlps/</guid>
+      <guid>https://wsmelton.github.io/post/improve-load-time-on-sqlps/</guid>
       <description>Over the month of November a fellow PowerShell enthusiast, Mike Fal (blog|@Mike_Fal), did a series on the SQL Server PowerShell module (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just answered a question on DBA.SE that I figured out by tweaking a particular file for this module, so thought I would share more details.
 WARNING: You are modifying the files at your own risk.</description>
     </item>
     
     <item>
       <title>Dynamically Build RDP Files</title>
-      <link>http://blog.wsmelton.info/blog/dynamically-build-rdp-files/</link>
+      <link>https://wsmelton.github.io/post/dynamically-build-rdp-files/</link>
       <pubDate>Mon, 26 Oct 2015 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/dynamically-build-rdp-files/</guid>
+      <guid>https://wsmelton.github.io/post/dynamically-build-rdp-files/</guid>
       <description>This post was originally published 26 July 2011, updated the script and the post since I have learned a good bit on PowerShell since the original post.
 I was pretty excited that work was finally going to install Remote Desktop Connection Manager v2.2 on our laptops, until I started using it. It is nice if you work on one server at a time but sometimes I multitask while something is running, or I need to compare something to the results on another server.</description>
     </item>
     
     <item>
       <title>SQL Server - Feed the Beast</title>
-      <link>http://blog.wsmelton.info/blog/sql-server---feed-the-beast/</link>
+      <link>https://wsmelton.github.io/post/sql-server-feed-the-beast/</link>
       <pubDate>Thu, 22 Oct 2015 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/sql-server---feed-the-beast/</guid>
+      <guid>https://wsmelton.github.io/post/sql-server-feed-the-beast/</guid>
       <description>This content was originally posted on here.
 An environment where you have a high number of databases on one server, or many, can be time consuming to something as simple as adding a user account. You have the option of using the GUI with SQL Server Management Studio (SSMS), which if it was a rush to get something in place for 8 or 10 databases I can see possibly doing that to get it done.</description>
     </item>
     
     <item>
       <title>Build your own StackExchange Database</title>
-      <link>http://blog.wsmelton.info/blog/build-your-own-stackexchange-database/</link>
+      <link>https://wsmelton.github.io/post/build-your-own-stackexchange-database/</link>
       <pubDate>Mon, 20 Jul 2015 07:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/build-your-own-stackexchange-database/</guid>
+      <guid>https://wsmelton.github.io/post/build-your-own-stackexchange-database/</guid>
       <description>&amp;rdquo;)
 Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
 If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about.</description>
@@ -64,29 +64,29 @@ If you at least answered yes to the first and last question, I am here to help. 
     
     <item>
       <title>Search-SqlErrorLog</title>
-      <link>http://blog.wsmelton.info/blog/search-sqlerrorlog/</link>
+      <link>https://wsmelton.github.io/post/powershell-and-sql-server-search-sqlerrorlog/</link>
       <pubDate>Mon, 22 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/search-sqlerrorlog/</guid>
+      <guid>https://wsmelton.github.io/post/powershell-and-sql-server-search-sqlerrorlog/</guid>
       <description>I have had a thought on how I might write this function for some time and finally decided to just sit down and do it.
 When you have alerts setup or just in general need to troubleshoot a given instance of SQL Server one of the first steps is always looking through the ERRORLOG files for the instance. You can do this via SSMS or even via T-SQL with a known (but undocumented) stored procedure sp_readerrorlog.</description>
     </item>
     
     <item>
       <title>FileZilla Logs to SQL Server via PowerShell</title>
-      <link>http://blog.wsmelton.info/blog/filezilla-logs-to-sql-server-via-powershell/</link>
+      <link>https://wsmelton.github.io/post/filezilla-logs-to-sql-server-via-powershell/</link>
       <pubDate>Mon, 01 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/filezilla-logs-to-sql-server-via-powershell/</guid>
+      <guid>https://wsmelton.github.io/post/filezilla-logs-to-sql-server-via-powershell/</guid>
       <description>I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&amp;rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.</description>
     </item>
     
     <item>
       <title>SQL Server GROUP BY in PowerShell</title>
-      <link>http://blog.wsmelton.info/blog/sql-server-group-by-in-powershell/</link>
+      <link>https://wsmelton.github.io/post/sql-server-group-by-in-powershell/</link>
       <pubDate>Mon, 17 Nov 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/sql-server-group-by-in-powershell/</guid>
+      <guid>https://wsmelton.github.io/post/sql-server-group-by-in-powershell/</guid>
       <description>I usually don&amp;rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&amp;rsquo;s server, and find out how many tables each database had.
 Now something like this can easily be done in T-SQL for a single database with this bit of code:
 SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND type=&#39;U&#39;  The above works but then you have to write the additional code to execute that against every database on a given server.</description>
@@ -94,47 +94,47 @@ SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND t
     
     <item>
       <title>Max User Connections set to one (oops)</title>
-      <link>http://blog.wsmelton.info/blog/max-user-connections-set-to-one-oops/</link>
+      <link>https://wsmelton.github.io/post/max-user-connections-set-to-one-oops/</link>
       <pubDate>Tue, 11 Nov 2014 07:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/max-user-connections-set-to-one-oops/</guid>
+      <guid>https://wsmelton.github.io/post/max-user-connections-set-to-one-oops/</guid>
       <description>I frequent Database Administrators forum over on Stack Exchange Network, and came across a question that intrigued me enough to play around with the setting noted in the first sentence: Maximum number of concurrent connections. What happens when you set this to one, and how do you set it back to default?
 To make a small note the method or process this OP tried to use just to get a database restored was completely the wrong way to go about it.</description>
     </item>
     
     <item>
       <title>Backup Files to Tape</title>
-      <link>http://blog.wsmelton.info/blog/backup-files-to-tape/</link>
+      <link>https://wsmelton.github.io/post/powershell-backup-files-to-tape/</link>
       <pubDate>Tue, 28 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/backup-files-to-tape/</guid>
+      <guid>https://wsmelton.github.io/post/powershell-backup-files-to-tape/</guid>
       <description>I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan.</description>
     </item>
     
     <item>
       <title>SQL Server Prerequisites .NET Framework</title>
-      <link>http://blog.wsmelton.info/blog/sql-server-prerequisites-.net-framework/</link>
+      <link>https://wsmelton.github.io/post/sql-server-prerequisites-net-framework/</link>
       <pubDate>Thu, 02 Oct 2014 07:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/sql-server-prerequisites-.net-framework/</guid>
+      <guid>https://wsmelton.github.io/post/sql-server-prerequisites-net-framework/</guid>
       <description>As of SQL Server 2012 the .NET Framework prerequisite of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.</description>
     </item>
     
     <item>
       <title>The treasures of the SQL Server Error Log</title>
-      <link>http://blog.wsmelton.info/blog/the-treasures-of-the-sql-server-error-log/</link>
+      <link>https://wsmelton.github.io/post/the-treasures-of-the-sql-server-error-log/</link>
       <pubDate>Tue, 23 Sep 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/the-treasures-of-the-sql-server-error-log/</guid>
+      <guid>https://wsmelton.github.io/post/the-treasures-of-the-sql-server-error-log/</guid>
       <description>I am fairly active on Database Administrators QA site on StackExchange.com. On average, most questions you find folks asking are about troubleshooting some error they are getting running code or some application is returning. I have noticed one of the most common comments we end up adding to a question is “have you looked in the error log” or “what error messages show up in the error log”, at least with SQL Server related questions.</description>
     </item>
     
     <item>
       <title>CTRL plus ALT plus what?</title>
-      <link>http://blog.wsmelton.info/blog/ctrl-plus-alt-plus-what/</link>
+      <link>https://wsmelton.github.io/post/ctrl-plus-alt-plus-what/</link>
       <pubDate>Mon, 15 Sep 2014 08:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/ctrl-plus-alt-plus-what/</guid>
+      <guid>https://wsmelton.github.io/post/ctrl-plus-alt-plus-what/</guid>
       <description>Depending on how far back you go in the technology field you all remember having to use CTRL+ALT+DELETE to change your password for your domain account.
 Well, I always remote into servers now a days with consulting for various clients. I never like to keep the password assigned and generally will attempt to change it using PowerShell:
 $cn = gpresult /R | Where {$_ -match &amp;quot;CN&amp;quot;} | Select -Skip 1 | clip $acct = [adsi]&amp;quot;LDAP://$cn&amp;quot; $acct.</description>
@@ -142,10 +142,10 @@ $cn = gpresult /R | Where {$_ -match &amp;quot;CN&amp;quot;} | Select -Skip 1 | 
     
     <item>
       <title>Check-InstanceConfig (part 2)</title>
-      <link>http://blog.wsmelton.info/blog/check-instanceconfig-part-2/</link>
+      <link>https://wsmelton.github.io/post/ps-check-instanceconfig-part-2/</link>
       <pubDate>Mon, 09 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/check-instanceconfig-part-2/</guid>
+      <guid>https://wsmelton.github.io/post/ps-check-instanceconfig-part-2/</guid>
       <description>In the previous post I discussed the data table that holds the default values for the configuration options in SQL Server 2000 up to SQL Server 2014.
 In this post I will go over the function(s) that are included in the script. I will keep the same format as I did in the previous post:
  How it was written What it contains A few examples  How it was written If you have already downloaded the script you notice it had one function.</description>
@@ -153,20 +153,20 @@ In this post I will go over the function(s) that are included in the script. I w
     
     <item>
       <title>Check-InstanceConfig (part 1)</title>
-      <link>http://blog.wsmelton.info/blog/check-instanceconfig-part-1/</link>
+      <link>https://wsmelton.github.io/post/ps-check-instanceconfig-part-1/</link>
       <pubDate>Wed, 04 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/check-instanceconfig-part-1/</guid>
+      <guid>https://wsmelton.github.io/post/ps-check-instanceconfig-part-1/</guid>
       <description>I was reading a blog post Mike Walsh published on Linchpin People last week: SQL Server Configuration Check Script.
 In that script he is, as the title says, checking the configuration of a SQL Server instance for particular things like those options not set to default values and a few particular ones that still are set to default. I was intrigued by this and by the time I got to the end of the blog post was like “bet I can do that in PowerShell too”.</description>
     </item>
     
     <item>
       <title>Calc-MaxSample</title>
-      <link>http://blog.wsmelton.info/blog/calc-maxsample/</link>
+      <link>https://wsmelton.github.io/post/ps-c-calc-maxsample/</link>
       <pubDate>Wed, 13 Nov 2013 10:00:00 -0600</pubDate>
       
-      <guid>http://blog.wsmelton.info/blog/calc-maxsample/</guid>
+      <guid>https://wsmelton.github.io/post/ps-c-calc-maxsample/</guid>
       <description>I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (blog | twitter) blog post here.
 This gave me a starting point, however I also noticed that with the use of the basic Get-Counter cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information.</description>
     </item>
