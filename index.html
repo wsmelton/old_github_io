@@ -1,715 +1,826 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
+    <head>
+	<meta name="generator" content="Hugo 0.40.3" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-<head>
-	<meta name="generator" content="Hugo 0.47.1" />
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-<meta property="og:title" content="Shawn Melton" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.wsmelton.info/" />
-<meta property="og:updated_time" content="2018-08-10T15:10:52-05:00"/>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-<title>
+        <title>Shawn&#39;s Notebook</title>
 
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
 
-     Shawn Melton 
+          
+          <span class="navbar-brand mb-0 h1"></span>
 
-</title>
-<link rel="canonical" href="https://blog.wsmelton.info/">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/wsmelton" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
+            </div>
+          </div>
+        </nav>
 
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
-
+        <section id="page-title">
+          <h1><a href="/">Shawn&#39;s Notebook</a></h1>
+          <span id="author-name">
+            <h6><a href="/about/">Shawn Melton</a></h6>
+          </span>
+        </section>
 
 
+<section>
+  <ul class="posts_listing">
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-08-27%2014%3a01%3a42.2496202%20%2b0000%20GMT%20m%3d%2b0.514927901">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-27%2014%3a01%3a42.2496202%20%2b0000%20GMT%20m%3d%2b0.514927901">
-    <link rel="stylesheet" href="/css/main.css?t=2018-08-27%2014%3a01%3a42.2496202%20%2b0000%20GMT%20m%3d%2b0.514927901">
-    
-
-
-
-
-<link rel="shortcut icon"
-
-    href="/img/favicon.ico"
-
->
-
-
-
-  <link href="https://blog.wsmelton.info/index.xml" rel="alternate" type="application/rss+xml" title="Shawn Melton" />
-
-
-
-
-
-
-</head>
-
-
-<body lang="en">
-
-<section class="header">
-    <div class="container">
-        <div class="content">
-            
-                
-                
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                
-                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="https://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
-            
-            <a href="/"><div class="name">Shawn Melton</div></a>
-            
-            <nav>
-                <ul>
-                    
-                        <li class="nav-"><a href="https://blog.wsmelton.info/"><span>latest</span></a></li>
-                    
-                        <li class="nav-"><a href="https://blog.wsmelton.info/blog"><span>all</span></a></li>
-                    
-                        <li class="nav-about"><a href="https://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
-                    
-                        <li class="nav-tags"><a href="https://blog.wsmelton.info/tags"><span>tags</span></a></li>
-                    
-                        <li class="nav-projects"><a href="https://blog.wsmelton.info/projects/"><span>projects</span></a></li>
-                    
-                </ul>
-            </nav>
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>10 Aug 2018</time>
         </div>
-    </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/azure-automation-bug/">Azure Automation Bug</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>07 Jun 2018</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/vs-code-profile/">VS Code Profile</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>13 May 2018</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/github-issue-templates/">Github Issue Templates</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>04 Jan 2018</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/visual-studio-ide/">Visual Studio Community</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Oct 2017</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-debugging/">PowerShell Debugging</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Aug 2017</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/dbatools-sql-agent/">dbatools and a SQL Agent</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>07 Aug 2017</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/draft-powershell-debugging-dbatools/">Debugging dbatools</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>05 Jun 2017</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-learning-path/">PowerShell Learning Path</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>24 Dec 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/code-with-code/">Code with Code (for Windows)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>03 Dec 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/building-active-directory-domain-windows-core-edition/">Building AD Domain on Windows Core Edition</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>23 Nov 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/extended-events-fetching-api-cursors/">Extended Events - Fetching API Cursors</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>14 Nov 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/hyper-v-lab-for-sql-server/">Hyper-V Lab for SQL Server</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>19 Oct 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-editors/">PowerShell Editors</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>10 Oct 2016</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/updates-and-work/">Updates and Work</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>11 Dec 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/windows-10-and-sscm-disappearing/">Windows 10 and SSCM disappearing</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 Dec 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/modifying-sql-server-startup-parameters/">Modifying SQL Server Startup Parameters</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>16 Nov 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/improve-load-time-on-sqlps/">Improve Load Time on SQLPS</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>26 Oct 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/dynamically-build-rdp-files/">Dynamically Build RDP Files</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>22 Oct 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-feed-the-beast/">SQL Server - Feed the Beast</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>16 Sep 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/parse-deadlock-graph-from-system_health-session/">Parse Deadlock Graph from System_Health session</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>20 Jul 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/build-your-own-stackexchange-database/">Build your own StackExchange Database</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>06 Feb 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/dont-just-do-it-love-doing-it/">Don&#39;t just do it, love doing it</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Jan 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/to-be-mentored-or-not-to-be/">To be mentored or not to be</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>22 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-and-sql-server-search-sqlerrorlog/">Search-SqlErrorLog</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>15 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/">SQL Sentry Plan Explorer and Deadlock XML Report</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>08 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/tidbit-sql-server-maintenance-plan-logging/">SQL Server Maintenance Plan Logging</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>01 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/filezilla-logs-to-sql-server-via-powershell/">FileZilla Logs to SQL Server via PowerShell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>17 Nov 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-group-by-in-powershell/">SQL Server GROUP BY in PowerShell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>11 Nov 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/max-user-connections-set-to-one-oops/">Max User Connections set to one (oops)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>03 Nov 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/i-am-biml-bacon-integrated-markup-language/">I am Biml (Bacon Integrated Markup Language)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>28 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-backup-files-to-tape/">Backup Files to Tape</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>20 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-data-tools-a-spork-of-sorts-part-two/">SQL Server Data Tools: A spork of sorts (part two)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>15 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-data-tools-a-spork-of-sorts-part-one/">SQL Server Data Tools: A spork of sorts (part one)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-prerequisites-net-framework/">SQL Server Prerequisites .NET Framework</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>23 Sep 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/the-treasures-of-the-sql-server-error-log/">The treasures of the SQL Server Error Log</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>15 Sep 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ctrl-plus-alt-plus-what/">CTRL plus ALT plus what?</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Jul 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-activity-monitor-script/">SQL Server Activity Monitor Script</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>21 Jul 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ssms-2012object-reference-issue-with-maintenance-plans/">SSMS 2012–Object Reference issue with Maintenance Plans</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>09 Dec 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-check-instanceconfig-part-2/">Check-InstanceConfig (part 2)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>04 Dec 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-check-instanceconfig-part-1/">Check-InstanceConfig (part 1)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>13 Nov 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-c-calc-maxsample/">Calc-MaxSample</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>05 Nov 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-tidbit-492/">PowerShell Tidbit</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Oct 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-c-create-serverdirectory/">Create-ServerDirectory</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>23 Oct 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/with-powershell-comes-great-things/">With PowerShell comes great things</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>17 Oct 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/to-the-future/">To the future…</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>10 Oct 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/whittling-away-xml/">Whittling away at XML</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>18 Feb 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ssdtimporting-script-does-nothing/">SSDT–Importing Script Does Nothing</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>17 Jan 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/windows-8-and-me/">Windows 8 And Me</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>10 Jan 2012</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/view-server-level-permissions-ssms/">View server-level permissions in SSMS</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>27 Oct 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/mentoree/">Mentoree</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>18 Aug 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/adjusting-and-learning/">Adjusting and learning</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>01 Aug 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/what-a-few-lines-of-code-can-do/">What a few lines of code can do</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>21 Jul 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/the-rest-of-the-story-powershell-errors/">The rest of the story (PowerShell errors)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>28 Apr 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/what-os-permissions-does-sql-server-have/">What OS permissions does SQL Server have?</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>21 Apr 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/get-those-acls-with-powershell/">Get those ACLs with PowerShell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>27 Jan 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/books-i-get-to-read-e-books/">Books I get to read (E-Books)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>21 Jan 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/training-for-the-master-from-the-masters/">Training for the Master from the Masters</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>19 Jan 2011</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/how-to-remember-everything-in-1-one-step/">How To Remember Everything in One Step</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 Aug 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/with-power-comes-great-responsibility/">With power comes great responsibility.</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>01 Aug 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/how-do-i-open-powershell-and-something-else-toopart-2/">How do I open PowerShell? And something else too…Part 2</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Jul 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/how-do-i-open-powershell-and-something-else-toopart-1/">How do I open PowerShell? And something else too…Part 1</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>28 Jul 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/comments-anyone-vote-for-the-cause/">Comments Anyone - Vote for the Cause</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>08 Jul 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/mcp-benefits/">MCP Benefits</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>03 Jun 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/keeping-up-with-the-jones-or-microsoft/">Keeping up with the Jones or Microsoft</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 May 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/book-review-sql-in-a-nutshell/">Book Review - SQL In A Nutshell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>28 Apr 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-features/">SQL Server Features</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>27 Apr 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/remebering-why/">Remembering Why</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>23 Apr 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/book-review-project-management/">Project Management</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>18 Apr 2010</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/step-1-start-new-blog/">Step 1: Start New Blog</a>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
 </section>
 
-<section class="icons">
-    <div class="container">
-        <div class="content">
-        
-            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
-        
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Shawn Melton.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
 
-        
-            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
-        
-
-	
-
-        
-
-        
-
-        
-            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-            <a href="https://blog.wsmelton.info/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
-        
-
-        
-        </div>
-    </div>
-</section>
-
-<section class="main">
-    <div class="container">
-        <div class="content">
-            
-            
-            
-            
-                <div class="page-heading">Latest Posts</div>
-                <ul>
-                    
-                        <li class="post-item">
     
-    <span class="meta"><time datetime='2018-08-10T15:10:52-05:00'>10 Aug 2018</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/azure-automation-bug/"><span>Azure Automation Bug</span></a>
-</li>
-
-                    
-                        <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-06-07T08:00:00-05:00'>7 Jun 2018</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/vs-code-profile/"><span>VS Code Profile</span></a>
-</li>
-
-                    
-                        <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-05-13T20:00:00-06:00'>13 May 2018</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/github-issue-templates/"><span>Github Issue Templates</span></a>
-</li>
-
-                    
-                        <li class="post-item">
-    
-    <span class="meta"><time datetime='2018-01-04T19:35:00-06:00'>4 Jan 2018</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/visual-studio-community/"><span>Visual Studio Community</span></a>
-</li>
-
-                    
-                        <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-10-30T12:30:00-06:00'>30 Oct 2017</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/powershell-debugging/"><span>PowerShell Debugging</span></a>
-</li>
-
-                    
-                        <li class="post-item">
-    
-    <span class="meta"><time datetime='2017-08-30T03:30:00-06:00'>30 Aug 2017</time></span>
-    
-    <a href="https://blog.wsmelton.info/blog/dbatools-and-a-sql-agent/"><span>dbatools and a SQL Agent</span></a>
-</li>
-
-                    
-                    
-                        
-                    
-                </ul>
-            
-        </div>
-    </div>
-</section>
-
-
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-85098649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-  
-
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-  </script>
-
-
-
-
-
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
 </html>
-
 

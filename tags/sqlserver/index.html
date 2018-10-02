@@ -1,703 +1,253 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
-<meta name="author" content="Shawn Melton">
-<meta name="description" content="Life in the day of PowerShell and SQL Server">
-
-<meta property="og:title" content="Sqlserver" />
-<meta property="og:description" content="Life in the day of PowerShell and SQL Server" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.wsmelton.info/tags/sqlserver/" />
-<meta property="og:updated_time" content="2015-12-02T08:00:00-06:00"/>
-
-<title>
-
-
-     Sqlserver 
-
-</title>
-<link rel="canonical" href="https://blog.wsmelton.info/tags/sqlserver/">
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/darcula.min.css">
-
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
-
-
-
-    
-    <link rel="stylesheet" href="/css/reset.css?t=2018-08-27%2014%3a01%3a42.2456184%20%2b0000%20GMT%20m%3d%2b0.510926101">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-08-27%2014%3a01%3a42.2456184%20%2b0000%20GMT%20m%3d%2b0.510926101">
-    <link rel="stylesheet" href="/css/main.css?t=2018-08-27%2014%3a01%3a42.2456184%20%2b0000%20GMT%20m%3d%2b0.510926101">
-    
-
-
-
-
-<link rel="shortcut icon"
-
-    href="/img/favicon.ico"
-
->
-
-
-
-  <link href="https://blog.wsmelton.info/tags/sqlserver/index.xml" rel="alternate" type="application/rss+xml" title="Shawn Melton" />
-
-
-
-
-
-
-</head>
-
-
-<body lang="en">
-
-<section class="header">
-    <div class="container">
-        <div class="content">
-            
-                
-                
-                
-                
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                
-                <a href="/"><img class="avatar" src="/img/myavatar.jpg" srcset="https://blog.wsmelton.info/img/myavatar.jpg 1x"></a>
-            
-            <a href="/"><div class="name">Shawn Melton</div></a>
-            
-            <nav>
-                <ul>
-                    
-                        <li class="nav-"><a href="https://blog.wsmelton.info/"><span>latest</span></a></li>
-                    
-                        <li class="nav-"><a href="https://blog.wsmelton.info/blog"><span>all</span></a></li>
-                    
-                        <li class="nav-about"><a href="https://blog.wsmelton.info/aboutme/"><span>about</span></a></li>
-                    
-                        <li class="nav-tags"><a href="https://blog.wsmelton.info/tags"><span>tags</span></a></li>
-                    
-                        <li class="nav-projects"><a href="https://blog.wsmelton.info/projects/"><span>projects</span></a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </div>
-</section>
-
-<section class="icons">
-    <div class="container">
-        <div class="content">
-        
-            <a href="//github.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
-        
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
         
-            <a href="//twitter.com/wsmelton" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
-        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-	
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet"> 
 
-        
+        <title>Sqlserver</title>
 
-        
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
 
-        
-            <a href="//linkedin.com/in/wshawnmelton" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
-        
+          
+          <span class="navbar-brand mb-0 h1"></span>
 
-        
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation" name="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        
-
-        
-
-        
-
-        
-
-        
-            <a href="https://blog.wsmelton.info/tags/sqlserver/index.xml"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
-        
-
-        
-        </div>
-    </div>
-</section>
-
-<section class="main">
-    <div class="container">
-        <div class="content">
-            <div class="page-heading">
-
-    Sqlserver
-
-</div>
-
-            <div class="markdown">
-                
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link " href="/">Home</a>
+              <a class="nav-item nav-link" href="https://github.com/wsmelton" target="_blank">GitHub</a>
+              
+              <a class="nav-item nav-link " href="/about/">About</a>
             </div>
-            
-            <nav class="section-items">
-                <ul>
-                
-                    <li><a href="/blog/modifying-sql-server-startup-parameters/">Modifying SQL Server Startup Parameters</a></li>
-                
-                    <li><a href="/blog/improve-load-time-on-sqlps/">Improve Load Time on SQLPS</a></li>
-                
-                    <li><a href="/blog/sql-server---feed-the-beast/">SQL Server - Feed the Beast</a></li>
-                
-                    <li><a href="/blog/parse-deadlock-graph-from-system_health-session/">Parse Deadlock Graph from System_Health session</a></li>
-                
-                    <li><a href="/blog/search-sqlerrorlog/">Search-SqlErrorLog</a></li>
-                
-                    <li><a href="/blog/sql-sentry-plan-explorer-and-deadlock-xml-report/">SQL Sentry Plan Explorer and Deadlock XML Report</a></li>
-                
-                    <li><a href="/blog/filezilla-logs-to-sql-server-via-powershell/">FileZilla Logs to SQL Server via PowerShell</a></li>
-                
-                    <li><a href="/blog/sql-server-group-by-in-powershell/">SQL Server GROUP BY in PowerShell</a></li>
-                
-                    <li><a href="/blog/max-user-connections-set-to-one-oops/">Max User Connections set to one (oops)</a></li>
-                
-                    <li><a href="/blog/sql-server-data-tools-a-spork-of-sorts-part-two/">SQL Server Data Tools: A spork of sorts (part two)</a></li>
-                
-                    <li><a href="/blog/sql-server-data-tools-a-spork-of-sorts-part-one/">SQL Server Data Tools: A spork of sorts (part one)</a></li>
-                
-                    <li><a href="/blog/sql-server-prerequisites-.net-framework/">SQL Server Prerequisites .NET Framework</a></li>
-                
-                    <li><a href="/blog/the-treasures-of-the-sql-server-error-log/">The treasures of the SQL Server Error Log</a></li>
-                
-                    <li><a href="/blog/sql-server-activity-monitor-script/">SQL Server Activity Monitor Script</a></li>
-                
-                    <li><a href="/blog/ssms-2012object-reference-issue-with-maintenance-plans/">SSMS 2012–Object Reference issue with Maintenance Plans</a></li>
-                
-                    <li><a href="/blog/check-instanceconfig-part-2/">Check-InstanceConfig (part 2)</a></li>
-                
-                    <li><a href="/blog/check-instanceconfig-part-1/">Check-InstanceConfig (part 1)</a></li>
-                
-                </ul>
-            </nav>
-            
+          </div>
+        </nav>
+
+        <section id="page-title">
+          <h1><a href="/">Shawn&#39;s Notebook</a></h1>
+          <span id="author-name">
+            <h6><a href="/about/">Shawn Melton</a></h6>
+          </span>
+        </section>
+
+
+<section>
+  <ul class="posts_listing">
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 Dec 2015</time>
         </div>
-    </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/modifying-sql-server-startup-parameters/">Modifying SQL Server Startup Parameters</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>16 Nov 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/improve-load-time-on-sqlps/">Improve Load Time on SQLPS</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>22 Oct 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-feed-the-beast/">SQL Server - Feed the Beast</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>16 Sep 2015</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/parse-deadlock-graph-from-system_health-session/">Parse Deadlock Graph from System_Health session</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>22 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/powershell-and-sql-server-search-sqlerrorlog/">Search-SqlErrorLog</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>15 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/">SQL Sentry Plan Explorer and Deadlock XML Report</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>01 Dec 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/filezilla-logs-to-sql-server-via-powershell/">FileZilla Logs to SQL Server via PowerShell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>17 Nov 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-group-by-in-powershell/">SQL Server GROUP BY in PowerShell</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>11 Nov 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/max-user-connections-set-to-one-oops/">Max User Connections set to one (oops)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>20 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-data-tools-a-spork-of-sorts-part-two/">SQL Server Data Tools: A spork of sorts (part two)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>15 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-data-tools-a-spork-of-sorts-part-one/">SQL Server Data Tools: A spork of sorts (part one)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>02 Oct 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-prerequisites-net-framework/">SQL Server Prerequisites .NET Framework</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>23 Sep 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/the-treasures-of-the-sql-server-error-log/">The treasures of the SQL Server Error Log</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>30 Jul 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/sql-server-activity-monitor-script/">SQL Server Activity Monitor Script</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>21 Jul 2014</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ssms-2012object-reference-issue-with-maintenance-plans/">SSMS 2012–Object Reference issue with Maintenance Plans</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>09 Dec 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-check-instanceconfig-part-2/">Check-InstanceConfig (part 2)</a>
+        </div>
+      </div>
+    </li>
+    
+    <li>
+      <div class="row" id="posts">
+        <div class="d-none d-sm-block col-sm-3 date-time-title">
+          <time>04 Dec 2013</time>
+        </div>
+        <div class="col-sm date-time-title post">
+          <a href="/post/ps-check-instanceconfig-part-1/">Check-InstanceConfig (part 1)</a>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
 </section>
 
+      <footer>
+        <hr>
+        <small>
+          &copy; 2018 Shawn Melton.
+          Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> using the <a href="https://github.com/arjunkrishnababu96/basics" target="_blank">Basics</a> theme.
+        </small>
+      </footer>
+    </div> 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-85098649-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-  
-
-  <script type="text/javascript">
-    hljs.initHighlightingOnLoad();
-  </script>
-
-
-
-
-
-</body>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
 </html>
 
