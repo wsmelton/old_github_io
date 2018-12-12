@@ -1,2 +1,0 @@
-# Blog
-gohugo based blog
