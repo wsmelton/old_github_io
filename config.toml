@@ -1,0 +1,9 @@
+baseURL = "https://wsmelton.github.io/"
+languageCode = "en-us"
+title = "Shawn's Notebook"
+theme = "basics"
+googleAnalytics = "UA-85098649-1"
+
+[params]
+author = "Shawn Melton"
+github = "wsmelton"
