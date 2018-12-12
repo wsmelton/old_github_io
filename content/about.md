@@ -12,7 +12,7 @@ I have worked in various operation support roles in my career. Which while some 
 
 I am a [Microsoft Cloud and Datacenter Management MVP](https://www.mvp.microsoft.com/en-us/PublicProfile/5002856?fullName=Shawn%20%20Melton).
 
-![](/img/MVP_Logo_Horizontal_Secondary_White_RGB_300ppi.png)
+![](/static//img/MVP_Logo_Horizontal_Secondary_White_RGB_300ppi.png)
 
 ### Resume
 
@@ -20,10 +20,10 @@ Who uses resume anymore? [Just go check my LinkedIn profile](http://www.linkedin
 
 ### Contributions
 
-I am a major contributor with the [dbatools PowerShell module](https://github.com/sqlcollaborative/dbatools). I contribute to other various projects as well.
+I am a co-owner and major contributor with the [dbatools PowerShell module](https://github.com/sqlcollaborative/dbatools). I contribute to other various projects as well.
 
-### Finding Waldo
+### Online Identities
 
-Twitter: [@wsmelton](https://twitter.com/wsmelton)
-SQL Community Slack: [@wsmelton](https://dbatools.io/slack/).
-PowerShell Slack: [@wsmelton](https://powershell.slack.com)
+* Twitter: [@wsmelton](https://twitter.com/wsmelton)
+* SQL Community Slack: [@wsmelton](https://dbatools.io/slack/).
+* PowerShell Slack: [@wsmelton](https://powershell.slack.com)
