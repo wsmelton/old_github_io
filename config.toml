@@ -1,9 +1,16 @@
 baseURL = "https://wsmelton.github.io/"
-languageCode = "en-us"
 title = "Shawn's Notebook"
-theme = "basics"
+theme = "temple"
+copyright = "(c) 2018 Shawn Melton -- All rights reserved."
 googleAnalytics = "UA-85098649-1"
 
 [params]
-author = "Shawn Melton"
+highlight = true
+hjslangs = ["powershell","sql","python","yaml","plaintext","dockerfile"]
+topmenu = "categories"
+
+[author]
+name = "Shawn Melton"
 github = "wsmelton"
+twitter = "wsmelton"
+linkedin = "wshawnmelton"
