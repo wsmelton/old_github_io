@@ -31,3 +31,69 @@ Once it starts up and accepts connections I can make a connection using SSMS or 
 
 All of the above is nice but it is so time consuming to do this each time I want to get a full ~~development~~ playground up and running as a new CTP version is released.
 
+There are two main files used with automating Docker:
+
+- dockerfile
+- docker-compose.yml
+
+These two files can work together to build a custom image and then create the container(s). Notice I can use the docker-compose file to create one container or multiple.
+
+Since the image is already built for us by Microsoft I'm just going to show the docker-compose file that you can use to automating rebuilding a container with each CTP released for 2019.
+
+### Docker-Compose
+
+Docker compose gets deeper into deploying application services, but in laymen terms it is creating containers. You can use it to also create storage mounts and networking, but I'm just going to cover creating the containers in this post.
+
+The contents of my file `C:\temp\sql19\docker-compose.yml` file are below:
+
+```yaml
+version: '3.2'
+
+services:
+
+  sql19-01:
+    image: mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=db@t00ls12345
+    ports:
+      - '1417:1433'
+    container_name: sql19-01
+
+  sql19-02:
+    image: mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=db@t00ls12345
+    ports:
+      - '1418:1433'
+    container_name: sql19-02
+```
+
+After I save this file I simply issue the following and it will create two containers for me based on the CTP2.2 release image:
+
+```powershell
+docker-compose -f "docker-compose.yml" up -d --no-build
+```
+
+The output of this command:
+
+![](/static/img/dockercompose.png)
+
+As you can see one simple command does all that work for me. So I can now just throw that into my PowerShell profile, with a few adjustments:
+
+```powershell
+function New-SqlContainer {
+	param(
+		[string]$path = 'c:\temp\sql19\docker-compose.yml'
+	)
+
+	docker-compose -f $path up -d --build --force-recreate
+}
+```
+
+If tomorrow Microsoft releases CTP 2.3, I simply update that file and issue the command `New-SqlContainer` in my PowerShell prompt. Docker will go through pull the latest image and then recreate the containers for me:
+
+![](/static/img/dockercompose2.png)
+
+_If a new image had to be pulled down you would see the output for that as well._
