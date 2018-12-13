@@ -5,7 +5,7 @@
     <link>https://wsmelton.github.io/tags/azure/</link>
     <description>Recent content in Azure on Shawn&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <copyright>(c) 2018 Shawn Melton -- All rights reserved.</copyright>
     <lastBuildDate>Fri, 10 Aug 2018 15:10:52 -0500</lastBuildDate>
     
 	<atom:link href="https://wsmelton.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>Azure Automation Bug</title>
-      <link>https://wsmelton.github.io/post/azure-automation-bug/</link>
+      <link>https://wsmelton.github.io/posts/azure-automation-bug/</link>
       <pubDate>Fri, 10 Aug 2018 15:10:52 -0500</pubDate>
       
-      <guid>https://wsmelton.github.io/post/azure-automation-bug/</guid>
+      <guid>https://wsmelton.github.io/posts/azure-automation-bug/</guid>
       <description>Long time, no post&amp;hellip;
 I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &amp;ldquo;new VM&amp;rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.
 Being that it is Azure Automation I am opted to use the AzureRm module as much as I can.</description>

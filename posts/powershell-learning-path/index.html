@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <title>PowerShell Learning Path</title>
+  <meta name="description" content="PowerShell Learning Path">
+  <meta name="author" content="Shawn Melton">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <noscript>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://wsmelton.github.io/css/fonts.css">
+  </noscript>
+  
+  
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+/*!
+normalize.css v^3.0 | MIT License | git.io/normalize
+Copyright (c) Nicolas Gallagher and Jonathan Neal
+*/
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */img,legend{border:0}legend,td,th{padding:0}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre,textarea{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}table{border-collapse:collapse;border-spacing:0}.hidden,[hidden]{display:none!important}.pure-img{max-width:100%;height:auto;display:block}
+  </style>
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-menu{box-sizing:border-box}.pure-menu-fixed{position:fixed;left:0;top:0;z-index:3}.pure-menu-item,.pure-menu-list{position:relative}.pure-menu-list{list-style:none;margin:0;padding:0}.pure-menu-item{padding:0;margin:0;height:100%}.pure-menu-heading,.pure-menu-link{display:block;text-decoration:none;white-space:nowrap}.pure-menu-horizontal{width:100%;white-space:normal}.pure-menu-horizontal .pure-menu-list{display:inline-block}.pure-menu-horizontal .pure-menu-heading,.pure-menu-horizontal .pure-menu-item,.pure-menu-horizontal .pure-menu-separator{display:inline-block;zoom:1;vertical-align:middle}.pure-menu-item .pure-menu-item{display:block}.pure-menu-children{display:none;position:absolute;left:100%;top:0;margin:0;padding:0;z-index:3}.pure-menu-horizontal .pure-menu-children{left:0;top:auto;width:inherit}.pure-menu-active>.pure-menu-children,.pure-menu-allow-hover:hover>.pure-menu-children{display:block;position:absolute}.pure-menu-has-children>.pure-menu-link:after{padding-left:.5em;content:"\25B8";font-size:small}.pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after{content:"\25BE"}.pure-menu-scrollable{overflow-y:scroll;overflow-x:hidden}.pure-menu-scrollable .pure-menu-list{display:block}.pure-menu-horizontal.pure-menu-scrollable .pure-menu-list{display:inline-block}.pure-menu-horizontal.pure-menu-scrollable{white-space:nowrap;overflow-y:hidden;overflow-x:auto;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;padding:.5em 0}.pure-menu-horizontal.pure-menu-scrollable::-webkit-scrollbar{display:none}.pure-menu-horizontal .pure-menu-children .pure-menu-separator,.pure-menu-separator{background-color:#ccc;height:1px;margin:.3em 0}.pure-menu-horizontal .pure-menu-separator{width:1px;height:1.3em;margin:0 .3em}.pure-menu-horizontal .pure-menu-children .pure-menu-separator{display:block;width:auto}.pure-menu-heading{text-transform:uppercase;color:#565d64}.pure-menu-link{color:#777}.pure-menu-children{background-color:#fff}.pure-menu-disabled,.pure-menu-heading,.pure-menu-link{padding:.5em 1em}.pure-menu-disabled{opacity:.5}.pure-menu-disabled .pure-menu-link:hover{background-color:transparent}.pure-menu-active>.pure-menu-link,.pure-menu-link:focus,.pure-menu-link:hover{background-color:#eee}.pure-menu-selected .pure-menu-link,.pure-menu-selected .pure-menu-link:visited{color:#000}
+
+  </style>
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+.pure-g{letter-spacing:-.31em;text-rendering:optimizespeed;font-family:FreeSans,Arimo,"Droid Sans",Helvetica,Arial,sans-serif;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap;-webkit-align-content:flex-start;-ms-flex-line-pack:start;align-content:flex-start}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){table .pure-g{display:block}}.opera-only :-o-prefocus,.pure-g{word-spacing:-.43em}.pure-u,.pure-u-1,.pure-u-1-1,.pure-u-1-12,.pure-u-1-2,.pure-u-1-24,.pure-u-1-3,.pure-u-1-4,.pure-u-1-5,.pure-u-1-6,.pure-u-1-8,.pure-u-10-24,.pure-u-11-12,.pure-u-11-24,.pure-u-12-24,.pure-u-13-24,.pure-u-14-24,.pure-u-15-24,.pure-u-16-24,.pure-u-17-24,.pure-u-18-24,.pure-u-19-24,.pure-u-2-24,.pure-u-2-3,.pure-u-2-5,.pure-u-20-24,.pure-u-21-24,.pure-u-22-24,.pure-u-23-24,.pure-u-24-24,.pure-u-3-24,.pure-u-3-4,.pure-u-3-5,.pure-u-3-8,.pure-u-4-24,.pure-u-4-5,.pure-u-5-12,.pure-u-5-24,.pure-u-5-5,.pure-u-5-6,.pure-u-5-8,.pure-u-6-24,.pure-u-7-12,.pure-u-7-24,.pure-u-7-8,.pure-u-8-24,.pure-u-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-g [class*=pure-u]{font-family:sans-serif}.pure-u-1-24{width:4.1667%}.pure-u-1-12,.pure-u-2-24{width:8.3333%}.pure-u-1-8,.pure-u-3-24{width:12.5%}.pure-u-1-6,.pure-u-4-24{width:16.6667%}.pure-u-1-5{width:20%}.pure-u-5-24{width:20.8333%}.pure-u-1-4,.pure-u-6-24{width:25%}.pure-u-7-24{width:29.1667%}.pure-u-1-3,.pure-u-8-24{width:33.3333%}.pure-u-3-8,.pure-u-9-24{width:37.5%}.pure-u-2-5{width:40%}.pure-u-10-24,.pure-u-5-12{width:41.6667%}.pure-u-11-24{width:45.8333%}.pure-u-1-2,.pure-u-12-24{width:50%}.pure-u-13-24{width:54.1667%}.pure-u-14-24,.pure-u-7-12{width:58.3333%}.pure-u-3-5{width:60%}.pure-u-15-24,.pure-u-5-8{width:62.5%}.pure-u-16-24,.pure-u-2-3{width:66.6667%}.pure-u-17-24{width:70.8333%}.pure-u-18-24,.pure-u-3-4{width:75%}.pure-u-19-24{width:79.1667%}.pure-u-4-5{width:80%}.pure-u-20-24,.pure-u-5-6{width:83.3333%}.pure-u-21-24,.pure-u-7-8{width:87.5%}.pure-u-11-12,.pure-u-22-24{width:91.6667%}.pure-u-23-24{width:95.8333%}.pure-u-1,.pure-u-1-1,.pure-u-24-24,.pure-u-5-5{width:100%}
+  </style>
+  
+  
+  <style type="text/css" media="screen">
+    /*!
+Pure v1.0.0
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+@media screen and (min-width:35.5em){.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-1-12,.pure-u-sm-1-2,.pure-u-sm-1-24,.pure-u-sm-1-3,.pure-u-sm-1-4,.pure-u-sm-1-5,.pure-u-sm-1-6,.pure-u-sm-1-8,.pure-u-sm-10-24,.pure-u-sm-11-12,.pure-u-sm-11-24,.pure-u-sm-12-24,.pure-u-sm-13-24,.pure-u-sm-14-24,.pure-u-sm-15-24,.pure-u-sm-16-24,.pure-u-sm-17-24,.pure-u-sm-18-24,.pure-u-sm-19-24,.pure-u-sm-2-24,.pure-u-sm-2-3,.pure-u-sm-2-5,.pure-u-sm-20-24,.pure-u-sm-21-24,.pure-u-sm-22-24,.pure-u-sm-23-24,.pure-u-sm-24-24,.pure-u-sm-3-24,.pure-u-sm-3-4,.pure-u-sm-3-5,.pure-u-sm-3-8,.pure-u-sm-4-24,.pure-u-sm-4-5,.pure-u-sm-5-12,.pure-u-sm-5-24,.pure-u-sm-5-5,.pure-u-sm-5-6,.pure-u-sm-5-8,.pure-u-sm-6-24,.pure-u-sm-7-12,.pure-u-sm-7-24,.pure-u-sm-7-8,.pure-u-sm-8-24,.pure-u-sm-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-sm-1-24{width:4.1667%}.pure-u-sm-1-12,.pure-u-sm-2-24{width:8.3333%}.pure-u-sm-1-8,.pure-u-sm-3-24{width:12.5%}.pure-u-sm-1-6,.pure-u-sm-4-24{width:16.6667%}.pure-u-sm-1-5{width:20%}.pure-u-sm-5-24{width:20.8333%}.pure-u-sm-1-4,.pure-u-sm-6-24{width:25%}.pure-u-sm-7-24{width:29.1667%}.pure-u-sm-1-3,.pure-u-sm-8-24{width:33.3333%}.pure-u-sm-3-8,.pure-u-sm-9-24{width:37.5%}.pure-u-sm-2-5{width:40%}.pure-u-sm-10-24,.pure-u-sm-5-12{width:41.6667%}.pure-u-sm-11-24{width:45.8333%}.pure-u-sm-1-2,.pure-u-sm-12-24{width:50%}.pure-u-sm-13-24{width:54.1667%}.pure-u-sm-14-24,.pure-u-sm-7-12{width:58.3333%}.pure-u-sm-3-5{width:60%}.pure-u-sm-15-24,.pure-u-sm-5-8{width:62.5%}.pure-u-sm-16-24,.pure-u-sm-2-3{width:66.6667%}.pure-u-sm-17-24{width:70.8333%}.pure-u-sm-18-24,.pure-u-sm-3-4{width:75%}.pure-u-sm-19-24{width:79.1667%}.pure-u-sm-4-5{width:80%}.pure-u-sm-20-24,.pure-u-sm-5-6{width:83.3333%}.pure-u-sm-21-24,.pure-u-sm-7-8{width:87.5%}.pure-u-sm-11-12,.pure-u-sm-22-24{width:91.6667%}.pure-u-sm-23-24{width:95.8333%}.pure-u-sm-1,.pure-u-sm-1-1,.pure-u-sm-24-24,.pure-u-sm-5-5{width:100%}}@media screen and (min-width:48em){.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-1-12,.pure-u-md-1-2,.pure-u-md-1-24,.pure-u-md-1-3,.pure-u-md-1-4,.pure-u-md-1-5,.pure-u-md-1-6,.pure-u-md-1-8,.pure-u-md-10-24,.pure-u-md-11-12,.pure-u-md-11-24,.pure-u-md-12-24,.pure-u-md-13-24,.pure-u-md-14-24,.pure-u-md-15-24,.pure-u-md-16-24,.pure-u-md-17-24,.pure-u-md-18-24,.pure-u-md-19-24,.pure-u-md-2-24,.pure-u-md-2-3,.pure-u-md-2-5,.pure-u-md-20-24,.pure-u-md-21-24,.pure-u-md-22-24,.pure-u-md-23-24,.pure-u-md-24-24,.pure-u-md-3-24,.pure-u-md-3-4,.pure-u-md-3-5,.pure-u-md-3-8,.pure-u-md-4-24,.pure-u-md-4-5,.pure-u-md-5-12,.pure-u-md-5-24,.pure-u-md-5-5,.pure-u-md-5-6,.pure-u-md-5-8,.pure-u-md-6-24,.pure-u-md-7-12,.pure-u-md-7-24,.pure-u-md-7-8,.pure-u-md-8-24,.pure-u-md-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-md-1-24{width:4.1667%}.pure-u-md-1-12,.pure-u-md-2-24{width:8.3333%}.pure-u-md-1-8,.pure-u-md-3-24{width:12.5%}.pure-u-md-1-6,.pure-u-md-4-24{width:16.6667%}.pure-u-md-1-5{width:20%}.pure-u-md-5-24{width:20.8333%}.pure-u-md-1-4,.pure-u-md-6-24{width:25%}.pure-u-md-7-24{width:29.1667%}.pure-u-md-1-3,.pure-u-md-8-24{width:33.3333%}.pure-u-md-3-8,.pure-u-md-9-24{width:37.5%}.pure-u-md-2-5{width:40%}.pure-u-md-10-24,.pure-u-md-5-12{width:41.6667%}.pure-u-md-11-24{width:45.8333%}.pure-u-md-1-2,.pure-u-md-12-24{width:50%}.pure-u-md-13-24{width:54.1667%}.pure-u-md-14-24,.pure-u-md-7-12{width:58.3333%}.pure-u-md-3-5{width:60%}.pure-u-md-15-24,.pure-u-md-5-8{width:62.5%}.pure-u-md-16-24,.pure-u-md-2-3{width:66.6667%}.pure-u-md-17-24{width:70.8333%}.pure-u-md-18-24,.pure-u-md-3-4{width:75%}.pure-u-md-19-24{width:79.1667%}.pure-u-md-4-5{width:80%}.pure-u-md-20-24,.pure-u-md-5-6{width:83.3333%}.pure-u-md-21-24,.pure-u-md-7-8{width:87.5%}.pure-u-md-11-12,.pure-u-md-22-24{width:91.6667%}.pure-u-md-23-24{width:95.8333%}.pure-u-md-1,.pure-u-md-1-1,.pure-u-md-24-24,.pure-u-md-5-5{width:100%}}@media screen and (min-width:64em){.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-1-12,.pure-u-lg-1-2,.pure-u-lg-1-24,.pure-u-lg-1-3,.pure-u-lg-1-4,.pure-u-lg-1-5,.pure-u-lg-1-6,.pure-u-lg-1-8,.pure-u-lg-10-24,.pure-u-lg-11-12,.pure-u-lg-11-24,.pure-u-lg-12-24,.pure-u-lg-13-24,.pure-u-lg-14-24,.pure-u-lg-15-24,.pure-u-lg-16-24,.pure-u-lg-17-24,.pure-u-lg-18-24,.pure-u-lg-19-24,.pure-u-lg-2-24,.pure-u-lg-2-3,.pure-u-lg-2-5,.pure-u-lg-20-24,.pure-u-lg-21-24,.pure-u-lg-22-24,.pure-u-lg-23-24,.pure-u-lg-24-24,.pure-u-lg-3-24,.pure-u-lg-3-4,.pure-u-lg-3-5,.pure-u-lg-3-8,.pure-u-lg-4-24,.pure-u-lg-4-5,.pure-u-lg-5-12,.pure-u-lg-5-24,.pure-u-lg-5-5,.pure-u-lg-5-6,.pure-u-lg-5-8,.pure-u-lg-6-24,.pure-u-lg-7-12,.pure-u-lg-7-24,.pure-u-lg-7-8,.pure-u-lg-8-24,.pure-u-lg-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-lg-1-24{width:4.1667%}.pure-u-lg-1-12,.pure-u-lg-2-24{width:8.3333%}.pure-u-lg-1-8,.pure-u-lg-3-24{width:12.5%}.pure-u-lg-1-6,.pure-u-lg-4-24{width:16.6667%}.pure-u-lg-1-5{width:20%}.pure-u-lg-5-24{width:20.8333%}.pure-u-lg-1-4,.pure-u-lg-6-24{width:25%}.pure-u-lg-7-24{width:29.1667%}.pure-u-lg-1-3,.pure-u-lg-8-24{width:33.3333%}.pure-u-lg-3-8,.pure-u-lg-9-24{width:37.5%}.pure-u-lg-2-5{width:40%}.pure-u-lg-10-24,.pure-u-lg-5-12{width:41.6667%}.pure-u-lg-11-24{width:45.8333%}.pure-u-lg-1-2,.pure-u-lg-12-24{width:50%}.pure-u-lg-13-24{width:54.1667%}.pure-u-lg-14-24,.pure-u-lg-7-12{width:58.3333%}.pure-u-lg-3-5{width:60%}.pure-u-lg-15-24,.pure-u-lg-5-8{width:62.5%}.pure-u-lg-16-24,.pure-u-lg-2-3{width:66.6667%}.pure-u-lg-17-24{width:70.8333%}.pure-u-lg-18-24,.pure-u-lg-3-4{width:75%}.pure-u-lg-19-24{width:79.1667%}.pure-u-lg-4-5{width:80%}.pure-u-lg-20-24,.pure-u-lg-5-6{width:83.3333%}.pure-u-lg-21-24,.pure-u-lg-7-8{width:87.5%}.pure-u-lg-11-12,.pure-u-lg-22-24{width:91.6667%}.pure-u-lg-23-24{width:95.8333%}.pure-u-lg-1,.pure-u-lg-1-1,.pure-u-lg-24-24,.pure-u-lg-5-5{width:100%}}@media screen and (min-width:80em){.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-1-12,.pure-u-xl-1-2,.pure-u-xl-1-24,.pure-u-xl-1-3,.pure-u-xl-1-4,.pure-u-xl-1-5,.pure-u-xl-1-6,.pure-u-xl-1-8,.pure-u-xl-10-24,.pure-u-xl-11-12,.pure-u-xl-11-24,.pure-u-xl-12-24,.pure-u-xl-13-24,.pure-u-xl-14-24,.pure-u-xl-15-24,.pure-u-xl-16-24,.pure-u-xl-17-24,.pure-u-xl-18-24,.pure-u-xl-19-24,.pure-u-xl-2-24,.pure-u-xl-2-3,.pure-u-xl-2-5,.pure-u-xl-20-24,.pure-u-xl-21-24,.pure-u-xl-22-24,.pure-u-xl-23-24,.pure-u-xl-24-24,.pure-u-xl-3-24,.pure-u-xl-3-4,.pure-u-xl-3-5,.pure-u-xl-3-8,.pure-u-xl-4-24,.pure-u-xl-4-5,.pure-u-xl-5-12,.pure-u-xl-5-24,.pure-u-xl-5-5,.pure-u-xl-5-6,.pure-u-xl-5-8,.pure-u-xl-6-24,.pure-u-xl-7-12,.pure-u-xl-7-24,.pure-u-xl-7-8,.pure-u-xl-8-24,.pure-u-xl-9-24{display:inline-block;zoom:1;letter-spacing:normal;word-spacing:normal;vertical-align:top;text-rendering:auto}.pure-u-xl-1-24{width:4.1667%}.pure-u-xl-1-12,.pure-u-xl-2-24{width:8.3333%}.pure-u-xl-1-8,.pure-u-xl-3-24{width:12.5%}.pure-u-xl-1-6,.pure-u-xl-4-24{width:16.6667%}.pure-u-xl-1-5{width:20%}.pure-u-xl-5-24{width:20.8333%}.pure-u-xl-1-4,.pure-u-xl-6-24{width:25%}.pure-u-xl-7-24{width:29.1667%}.pure-u-xl-1-3,.pure-u-xl-8-24{width:33.3333%}.pure-u-xl-3-8,.pure-u-xl-9-24{width:37.5%}.pure-u-xl-2-5{width:40%}.pure-u-xl-10-24,.pure-u-xl-5-12{width:41.6667%}.pure-u-xl-11-24{width:45.8333%}.pure-u-xl-1-2,.pure-u-xl-12-24{width:50%}.pure-u-xl-13-24{width:54.1667%}.pure-u-xl-14-24,.pure-u-xl-7-12{width:58.3333%}.pure-u-xl-3-5{width:60%}.pure-u-xl-15-24,.pure-u-xl-5-8{width:62.5%}.pure-u-xl-16-24,.pure-u-xl-2-3{width:66.6667%}.pure-u-xl-17-24{width:70.8333%}.pure-u-xl-18-24,.pure-u-xl-3-4{width:75%}.pure-u-xl-19-24{width:79.1667%}.pure-u-xl-4-5{width:80%}.pure-u-xl-20-24,.pure-u-xl-5-6{width:83.3333%}.pure-u-xl-21-24,.pure-u-xl-7-8{width:87.5%}.pure-u-xl-11-12,.pure-u-xl-22-24{width:91.6667%}.pure-u-xl-23-24{width:95.8333%}.pure-u-xl-1,.pure-u-xl-1-1,.pure-u-xl-24-24,.pure-u-xl-5-5{width:100%}}
+  </style>
+  
+
+  
+  <style type="text/css" media="screen">
+    html {
+	min-height:100%;
+	width:100%;
+	position:relative;
+}
+
+body {
+	background-color: rgb(252,252,252);
+	color: #484848;
+}
+
+.nav-menu {
+  margin-top: 5px;
+  padding-bottom: 5px;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.pure-menu-heading {
+  text-transform: none;
+  font-size: large;
+}
+
+.header {
+	text-align: left;
+	color: #484848;
+	margin-bottom: .5em;
+}
+
+.header ul li {
+		height: auto;
+}
+
+.header ul li a {
+	font-weight: bold;
+	color: #484848;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header {
+	font-weight: bold;
+	color: #484848;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.site-title {
+	color: #484848;
+  text-transform: none;
+  font-weight: normal;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pull-right {
+	float: right;
+}
+
+.posts-name {
+	text-transform: capitalize;
+	font-weight: bold;
+	padding-left: 1em;
+	margin-top: 1em;
+	font-family: "Source Sans Pro", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.posts {
+	font-family: verdana,arial,helvetica,sans-serif;
+	list-style-type:none;
+	padding-left: 1em;
+}
+
+.posts li p {
+	margin-top: 0;
+}
+
+.posts li {
+	margin-bottom: 1em;
+}
+
+.posts li a {
+	color:#369;
+	text-decoration:none;
+}
+
+.post-list {
+  font-size: large;
+}
+
+.footnote {
+	font-family: verdana,arial,helvetica,sans-serif;
+	color:#888;
+	font-size:0.75em;
+	margin-bottom:0;
+}
+
+.footnote a {
+	color: #888 !important
+}
+
+.footnote a:hover{
+	text-decoration:underline;
+	color:#369;
+}
+
+.footer {
+	position:absolute;
+	z-index:2;
+	height:auto;
+	width:100%;
+	bottom:0;
+}
+
+.footer-content {
+	border-top: 1px solid #e3e3e3;
+	font-size: 80%;
+	color: #bbb;
+}
+
+.footer-content a {
+	color: #bbb;
+}
+
+.footer-content ul {
+	height: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: inline-block;
+	padding-left: 0;
+}
+
+#gototop-btn {
+	display: inline-block;
+}
+
+#foot-name {
+  color: #484848;
+	text-transform: none;
+}
+
+#foot-copyright {
+	padding-left: 1em;
+	padding-bottom: 0.5em;
+	margin: 0;
+}
+
+.post {
+	font-family: proxima-nova,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+	color:#484848;
+	letter-spacing:normal;
+	padding-left: .5em;
+}
+
+.post h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+	letter-spacing:normal;
+}
+
+.post-content {
+	z-index:9;
+	overflow:auto;
+	padding:0;
+	padding-bottom:3em;
+	font-size:16px;
+	line-height:1.4;
+}
+
+.post-content img {
+	max-width: 100%;
+	height: auto;
+}
+
+.post-content code {
+  background-color: #EEE;
+}
+
+.post code {
+  background-color: #EEE;
+}
+
+.post a {
+	color:#c05b4d;
+	text-decoration: none;
+}
+
+.post a:hover {
+	color:#a5473a;
+	text-decoration: underline;
+}
+
+.post h1 {
+	font-size:28px;
+}
+
+.post h2 {
+	font-size:25px;
+}
+
+.post h3 {
+	font-size:23px;
+}
+
+.post h4 {
+	font-size:21px;
+}
+
+.post h5 {
+	font-size:19px;
+}
+
+.post h6 {
+	font-size:18px;
+}
+
+.post-title{
+		margin-top: 0;
+		margin-bottom: 2em;
+}
+
+.post-title h1 {
+	font-weight:bold;
+	font-size:39px;
+	line-height: 40px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+@media screen and (max-width:767px){
+	.desktop {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+	#toggle-btn {
+		display: inline-block;
+		float: right;
+		padding: .5em 1em;
+		text-decoration: none;
+		color: #484848;
+		font-weight: bold;
+	}
+	#toggle-content li {
+		clear: both;
+		height: auto;
+		background-color: rgb(249,249,249);
+	}
+	#toggle-home {
+		display: inline-block;
+	}
+}
+
+@media screen and (min-width:768px){
+	.mobile {
+		display:none;
+	}
+	.desktop {
+		display: block;
+	}
+}
+
+  </style>
+  
+  <style type="text/css" media="screen"> 
+    
+      .hljs{display:block;overflow-x:auto;padding:0.5em;color:#000;background:#f8f8ff}.hljs-comment,.hljs-quote{color:#408080;font-style:italic}.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-subst{color:#954121}.hljs-number{color:#40a070}.hljs-string,.hljs-doctag{color:#219161}.hljs-selector-id,.hljs-selector-class,.hljs-section,.hljs-type{color:#19469d}.hljs-params{color:#00f}.hljs-title{color:#458;font-weight:bold}.hljs-tag,.hljs-name,.hljs-attribute{color:#000080;font-weight:normal}.hljs-variable,.hljs-template-variable{color:#008080}.hljs-regexp,.hljs-link{color:#b68}.hljs-symbol,.hljs-bullet{color:#990073}.hljs-built_in,.hljs-builtin-name{color:#0086b3}.hljs-meta{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+    
+  </style>
+
+  
+  <link rel="shortcut icon" 
+   
+    href="https://wsmelton.github.io/img/favicon.ico"
+  
+  type="image/x-icon">
+
+  
+  
+
+  <meta name="generator" content="Hugo 0.40.3" />
+
+  
+  
+</head>
+<body>
+
+<div class="header pure-g">
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+    <div class="pure-u-11-12 pure-u-md-7-12">
+        <div class="desktop pure-menu pure-menu-horizontal nav-menu">
+            
+            <a href="https://wsmelton.github.io/" class="site-title pure-menu-heading">Shawn&#39;s Notebook</a>
+            <ul class="pure-menu-list pull-right">
+				
+                
+				
+                <li class="pure-menu-item">
+                    <a href="https://wsmelton.github.io/about/" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile pure-menu nav-menu">
+            <a href="/" class="site-title pure-menu-heading" id="toggle-home">Shawn&#39;s Notebook</a>
+            <a href="#" id="toggle-btn">&#9776;</a>
+            <ul class="pure-menu-list" id="toggle-content" style="display:none;">
+                
+				
+                
+				
+                <li class="pure-menu-item">
+                    <a href="https://wsmelton.github.io/about" class="pure-menu-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+
+
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+  <div class="pure-u-11-12 pure-u-md-7-12">
+    <div class="post">
+
+      <div class="post-title">
+        <p class="footnote">
+          <time datetime="2017-06-05 09:00:00 -0600 -0600">
+            
+              06-05-2017
+            
+          </time>
+        
+        
+        
+
+        
+
+        
+        </p>
+        <h1>PowerShell Learning Path</h1>
+      </div>
+
+      <div class="post-content">
+        
+
+<p>How much do you automate in your job? The question is not necessarily specific to SQL Server, whether you work as a system administrator or even business analyst. There are areas of your job that can be, and should be, automated. Ok, now back to SQL Server specifics&hellip;</p>
+
+<h1 id="day-to-day-task">Day-To-Day Task</h1>
+
+<p>A database administrator always has some mundane task to do each day, if they want to keep their job. These little things are the best candidates for automating, as a starting point. Once you get those automated you will see the benefit and it will help your mindset change to start thinking in that manner more and more.</p>
+
+<h1 id="the-tool-of-choice">The Tool of Choice</h1>
+
+<p>One tool that is growing more and more each year in both features and use, is PowerShell. As a beginner you will ask, &ldquo;what is PowerShell&rdquo;. I give you <a href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/02/what-is-powershell/">this quote from The Scripting Guy</a> at Microsoft that I think sums it up well:</p>
+
+<blockquote>
+<p>Windows PowerShell is an interactive object-oriented command environment with scripting language features that utilizes small programs called cmdlets to simplify configuration, administration, and management of heterogeneous environments in both standalone and networked typologies by utilizing standards-based remoting protocols.</p>
+</blockquote>
+
+<h1 id="learning-path">Learning Path</h1>
+
+<p>An endeavor at Pythian (my current employer) began a few months back to get folks mindset moved more toward automation. One of those paths for the teams that support Microsoft Data Platform products is PowerShell. I drew up a list of courses and books to give the team a learning path to take. Now mind you this is not an exhaustive list, just the ones I know worked for me and are well structured.</p>
+
+<p>These are listed in order of progression, so if you are already familiar with certain areas you can skip over to the next.</p>
+
+<h2 id="microsoft-virtual-academy">Microsoft Virtual Academy</h2>
+
+<h3 id="getting-started-with-microsoft-powershell">Getting Started with Microsoft PowerShell</h3>
+
+<ul>
+<li>Total Time: 6 hours (excluding labs and such)</li>
+<li>Link: <a href="https://mva.microsoft.com/en-US/training-courses/getting-started-with-microsoft-powershell-8276?l=r54IrOWy_2304984382">here</a></li>
+<li>Summary: Jeffrey Snover goes over a good bit of background and just Microsoft’s intention with PowerShell. It has some very good information on how to get started. Anyone starting to learn it should watch this at most.</li>
+</ul>
+
+<h3 id="powershell-for-sql-data-professionals">PowerShell for SQL Data Professionals</h3>
+
+<ul>
+<li>Total Time: 3 hours (excluding labs and such)</li>
+<li>Link: <a href="https://mva.microsoft.com/en-US/training-courses/powershell-for-sql-data-professionals-16532?l=XgA5w0PgC_8805121157">here</a></li>
+<li>Summary: Mike Fal is good guy I know from PowerShell world. He is DBA and has long background in SQL Server and using PowerShell with it. This course has good overview of the basics, and then dives in to automation for PS and SQL Server and some Azure stuff.</li>
+</ul>
+
+<h3 id="getting-started-with-powershell-desired-state-configuration-dsc">Getting Started with PowerShell Desired State Configuration (DSC)</h3>
+
+<ul>
+<li>Total Time: 6 hours (excluding labs and such)</li>
+
+<li><p>Link: <a href="https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-desired-state-configuration-dsc-8672?l=ZwHuclG1_2504984382">here</a></p></li>
+
+<li><p>Summary: This is the platform for automating building of servers, and validating configuration of servers, with PowerShell. This includes speaking from Jeffrey Snover (creator of PowerShell) so will get more information on PS itself and DSC if they listen to it.</p></li>
+</ul>
+
+<h2 id="books">Books</h2>
+
+<h3 id="learn-windows-powershell-in-a-month-of-lunches-third-edition">Learn Windows PowerShell in a Month of Lunches, Third Edition</h3>
+
+<ul>
+<li>Link: <a href="https://www.manning.com/books/learn-windows-powershell-in-a-month-of-lunches-third-edition">Manning Publications</a></li>
+<li>Description: This book walks you through PowerShell and provides just about everything you need to get down the basics of PowerShell. Most anyone that goes through this book comes out reading to automate.</li>
+</ul>
+
+<h3 id="learn-powershell-toolmaking-in-a-month-of-lunches">Learn PowerShell Toolmaking in a Month of Lunches</h3>
+
+<ul>
+<li>Link: <a href="https://www.manning.com/books/learn-powershell-toolmaking-in-a-month-of-lunches">Manning Publications</a></li>
+<li>Description: Is next in the series for PowerShell lunches. Begins to go through how you write scripts as tools and not just a PS1 file that you run. Also starts into the advanced things of PowerShell such as error handling and debugging.</li>
+</ul>
+
+<h3 id="the-pester-book">The Pester Book</h3>
+
+<ul>
+<li>Link: <a href="https://leanpub.com/the-pester-book">Leanpub.com</a></li>
+<li>Description: This book is in progress so you buy what is currently available and then will get free updates as the book is completed. It provides an excellent walk-through of what Pester is and how to start using it. Authors are Don Jones and Adam Bertram, same ones from Pluralsight courses.</li>
+</ul>
+
+<h3 id="the-dsc-book">The DSC Book</h3>
+
+<ul>
+<li><p>Link: <a href="https://www.penflip.com/powershellorg/the-dsc-book">Penflip.com</a></p></li>
+
+<li><p>Description: Book written for PowerShell 4.0 version of DSC, no longer being maintained but still relevant for learning DSC.</p></li>
+</ul>
+
+<h2 id="pluralsight">Pluralsight</h2>
+
+<h3 id="introduction-to-powershell">Introduction to PowerShell</h3>
+
+<ul>
+<li>Total Time: 2h 41m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-intro/">here</a></li>
+<li>Description: PowerShell is Microsoft’s full featured scripting language. Built on the .Net Framework, it is extensible, powerful, and easy to work with. In this course you’ll begin your path to PowerShell mastery by learning the basics, including: how to customize the User Interfaces; basic PowerShell commands; variables; loops; branching; script blocks; working with files; processing user input; creating and extending functions.</li>
+</ul>
+
+<h3 id="powershell-toolmaking-fundamentals">PowerShell Toolmaking Fundamentals</h3>
+
+<ul>
+<li>Total Time: 3h 55m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-toolmaking-fundamentals/">here</a></li>
+<li>Description: PowerShell can be many things to many different people. PowerShell can be a simple command-line replacement or a scripting language. Beginners to intermediate-level scripters are probably still writing one-liners and simple scripts. They’re probably starting to see the potential of PowerShell not as a simple scripting language but as a way to build “tools” to use over and over again. Don’t recreate the wheel. Learn how to create reusable scripts so you don’t have to recreate that wheel.</li>
+</ul>
+
+<h3 id="powershell-and-sql-server">PowerShell and SQL Server</h3>
+
+<ul>
+<li>Total Time: 2h 48m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-and-sql-server/">here</a></li>
+<li>Description: This course is designed to teach you the fundamentals of using PowerShell to manage your SQL Servers, as well as develop on them. In Module 1, we cover basic DBA tasks using just PowerShell. With Module 2, we provide an introduction to the two main tools for working with SQL Server, the SMO, or SQL Management Objects, and the SQL Server Provider. Module 3 will cover basic DBA tasks using both SMO and the SQL Provider. With Module 4 we switch to Developer mode and cover development using the SQL Provider. Module 5 continues the developer theme, this time using the SQL Management Objects. We finally wrap things up with Module 6, in which we go over a real world example of using PowerShell and SQL Server. We also cover the SQL PS mode of PowerShell, as well as how to make effective use of PowerShell from a SQL Server job.</li>
+</ul>
+
+<h3 id="windows-powershell-best-practices-and-patterns">Windows PowerShell Best Practices and Patterns</h3>
+
+<ul>
+<li>Total Time: 2h 55m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/windows-powershell-best-practices-patterns/">here</a></li>
+<li>Description: Windows PowerShell MVP Don Jones helps you take your Windows PowerShell skills to a new, more professional level through the application of best practices and patterns. Developed and vetted by the overall PowerShell community, these patterns focus on maintainability, reliability, and conformance with native PowerShell approaches. Designed for administrators who are developing mission-critical and production-use PowerShell scripts, these patterns will help you - and your scripts - be taken more seriously.</li>
+</ul>
+
+<h3 id="formatting-with-powershell">Formatting with PowerShell</h3>
+
+<ul>
+<li>Total Time: 2h 28m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/formatwithpowershell/">here</a></li>
+<li>Description: This course takes a close look at a variety of mechanisms you can leverage to get great looking output from Powershell. The first two modules focus on string formatting and using the ToString() method. The rest of the course looks at using Format-* cmdlets, hash tables, and using format files and Format XML.</li>
+</ul>
+
+<h3 id="powershell-gotchas">PowerShell Gotchas</h3>
+
+<ul>
+<li>Total Time: 1h 40m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-gotchas/">here</a></li>
+<li>Description: PowerShell is the de facto standard for automation and administration on Windows systems. The central design mantra in PowerShell is Think-Type-Get. That is: Think what you want, Type it, and Get the results. Unfortunately this mantra doesn’t always work - PowerShell combines concepts from other languages (Perl, Python, and VBScript for example) and borrows ideas from other platforms (like pipelining in Bash). This creates an experience that feels familiar, but fails to behave consistently with our experiences. This creates “gotchas.” In this course, we will analyze some specific cases of PowerShell’s strange behavior in order to better understand how and why PowerShell works the way it does.</li>
+</ul>
+
+<h3 id="creating-powershell-modules">Creating PowerShell Modules</h3>
+
+<ul>
+<li>Total Time: 2h 33m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/psmodules/">here</a></li>
+<li>Description: PowerShell modules allow scripts, cmdlets and other assets to be integrated into PowerShell in order to extend its functionality. This course starts with an overview of PowerShell module fundamentals, and then proceeds to explore and explain script modules, binary and manifest modules, as well as dynamic modules. The course concludes with a look at how integrated help documentation for PowerShell scripts and modules can be created, deployed and updated.</li>
+</ul>
+
+<h3 id="building-advanced-powershell-functions-and-modules">Building Advanced PowerShell Functions and Modules</h3>
+
+<ul>
+<li>Total Time: 4h 0m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-modules-advanced-functions-building">here</a></li>
+<li>Description: In this course, we are going to cover nearly everything there is to know about advanced functions and modules. Overall, this course can be broken down into six main components: differences between basic and advanced functions, advanced functions and how to build them, leveraging the PowerShell pipeline in your advanced functions, how to build safeguards into your functions with WhatIf and Confirm support, building and managing script and manifest modules, and, finally, writing help content for both your advanced functions and modules.</li>
+</ul>
+
+<h3 id="windows-powershell-desired-state-configuration-fundaments">Windows PowerShell Desired State Configuration Fundaments</h3>
+
+<ul>
+<li>Total Time: 2h 57m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-desired-state-configuration-fundamentals/">here</a></li>
+<li>Description: <em>This course lays out how DSC works very well.</em> This course is designed to provide an introduction to Desired State Configuration (DSC). With DSC, you create server configurations and deploy them to your servers. The best part is that you can leverage your PowerShell skills to easily create and deploy configurations. Desired State Configuration Fundamentals is designed to get you started as quickly as possible. It is assumed that the viewer has some previous experience in Windows PowerShell, including writing scripts in the PowerShell ISE, and is familiar with installing and configuring Windows servers and operating systems.</li>
+</ul>
+
+<h3 id="advanced-windows-powershell-desired-state-configuration">Advanced Windows PowerShell Desired State Configuration</h3>
+
+<ul>
+<li>Total Time: 3h 9m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/advanced-powershell-dsc/">here</a></li>
+<li>Description: The purpose of this course is to provide advanced coverage of PowerShell Desired State Configuration. The material in this course is what IT Pros who want to use DSC in their environments will be using in production. We’ll look at how to build and use a pull server, including deploying resources. We’ll also explore how to use certificates to create a secure DSC environment. The course will wrap up with walkthroughs of using DSC to configure Windows and Linux servers. This course will focus on DSC as it exists in PowerShell 4.0.</li>
+</ul>
+
+<h3 id="practice-desired-state-configuration">Practice Desired State Configuration</h3>
+
+<ul>
+<li>Total Time: 3h 1m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/practical-desired-state-configuration/">here</a></li>
+<li>Description: <em>Do not start this course unless you have completed the one above by Jeff Hicks.</em> The way you are expected to manage and administer Windows servers is changing. In this course, Practical Desired State Configuration (DSC), you’ll learn how to use Desired State Configuration by applying it to several real-world scenarios. First, you’ll learn how to expand DSC beyond its built-in resources by learning about custom DSC resources. Next, you’ll learn how to secure DSC. Then, you’ll learn how to build and administer Active Directory with DSC. Lastly, you’ll learn how to set up and configure Windows Event forwarding with DSC. When you’ve finished this course, you’ll have the skills and knowledge required to securely bring DSC into your environments.</li>
+</ul>
+
+<h3 id="testing-powershell-with-pester">Testing PowerShell with Pester</h3>
+
+<ul>
+<li>Total Time: 4h 11m</li>
+<li>Link: <a href="https://app.pluralsight.com/library/courses/powershell-testing-pester/">here</a></li>
+<li>Description: <em>A very good storyline naritive to show how Pester is used.</em> Having a good testing framework will ensure your PowerShell scripts function as designed, and will ensure they continue to work correctly after you make changes. In this course, Testing PowerShell with Pester, you’ll learn how to use Pester, the new open source testing tool, to create tests for all of your PowerShell scripts and modules. You’ll start with seeing how to use Pester to test an existing code base. After that, Pester will be used to validate change requests to a module. Finally, you’ll use Pester along with Test Driven Development to craft a brand new module. After watching this course, you’ll have the confidence to test and use your own PowerShell scripts in your own projects.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+
+<div class="footer pure-g">
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+  <div class="pure-u-11-12 pure-u-md-7-12">
+    <div class="footer-content">
+      <div class="pure-menu pure-menu-horizontal">
+        <ul>
+          
+          <li class="pure-menu-item" id="foot-name">© Shawn Melton</li>
+          
+
+          
+
+          
+          <li class="pure-menu-item">
+            <a href="https://github.com/wsmelton" class="pure-menu-link">GitHub</a>
+          </li>
+          
+
+          
+          <li class="pure-menu-item">
+            <a href="https://twitter.com/wsmelton" class="pure-menu-link">Twitter</a>
+          </li>
+          
+
+          
+
+        </ul>
+        <a href="#" class="pure-menu-link pull-right" id="gototop-btn">↑↑</a>
+        
+      </div>
+      
+      <p id="foot-copyright">(c) 2018 Shawn Melton -- All rights reserved.</p>
+      
+    </div>
+  </div>
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+
+
+
+  <script src="https://wsmelton.github.io/highlight/highlight.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/powershell.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/sql.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/plaintext.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+   
+  <script>hljs.initHighlighting();</script>
+
+
+<script type="text/javascript">
+  go();
+  window.addEventListener('resize', go);
+  function go(){
+    var d=document.querySelector(".desktop")
+    if(document.documentElement.clientWidth > 768) {
+      d.style.display="";
+    } else {
+      d.style.display="none";
+    }
+  }
+</script>
+<script type="text/javascript">
+  var a=document.querySelector("#toggle-btn"),b=document.querySelector("#toggle-content");a.addEventListener("click",function(){""==b.style.display?(b.style.display="none",a.innerHTML="☰"):(b.style.display="",a.innerHTML="X")});</script>
+
+
+</body>
+</html>
+
