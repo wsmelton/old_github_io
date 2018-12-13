@@ -6,30 +6,10 @@
     <description>Recent content in Posts on Shawn&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>(c) 2018 Shawn Melton -- All rights reserved.</copyright>
-    <lastBuildDate>Fri, 11 Sep 2020 08:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 15:10:52 -0500</lastBuildDate>
     
 	<atom:link href="https://wsmelton.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Counting the Days in PowerShell</title>
-      <link>https://wsmelton.github.io/posts/counting-the-days-in-powershell/</link>
-      <pubDate>Fri, 11 Sep 2020 08:00:00 -0600</pubDate>
-      
-      <guid>https://wsmelton.github.io/posts/counting-the-days-in-powershell/</guid>
-      <description>At times you need to figure out various ways to count the days for a script. In some cases you may need to do things like:
- How many days are in the month What is the last day of the month How many work days are in the month  There are various reasons for knowing the answers to the above, but they are always questions I have to look up how to do them in PowerShell.</description>
-    </item>
-    
-    <item>
-      <title>Automating Docker</title>
-      <link>https://wsmelton.github.io/posts/automating-docker/</link>
-      <pubDate>Thu, 13 Dec 2018 08:00:00 -0600</pubDate>
-      
-      <guid>https://wsmelton.github.io/posts/automating-docker/</guid>
-      <description>If you do something more than once it should be automated or scripted in a repeatable manner. You likely have heard this before, and it applies across various task that support commands being run via any scripting language.
-Docker is no different and has been picking up speed. Many post I have seen folks show how to run individual commands to pull down images. Microsoft has started publishing beta releases of Windows Server, SQL Server and even PowerShell via Docker images.</description>
-    </item>
     
     <item>
       <title>Azure Automation Bug</title>
