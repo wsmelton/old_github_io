@@ -1,7 +1,7 @@
 ---
 title: "Automating Docker"
-date: 2018-12-12T08:00:00-06:00
-draft: true
+date: 2018-12-13T08:00:00-06:00
+tags: [docker]
 ---
 
 If you do something more than once it should be automated or scripted in a repeatable manner. You likely have heard this before, and it applies across various task that support commands being run via any scripting language.
