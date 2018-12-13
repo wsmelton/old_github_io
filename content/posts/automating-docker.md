@@ -1,6 +1,6 @@
 ---
 title: "Automating Docker"
-date: 2018-12-13T08:00:00-06:00
+date: 2018-12-13T07:00:00-06:00
 tags: [docker]
 ---
 
@@ -80,7 +80,9 @@ The output of this command:
 
 ![](/img/dockercompose.png)
 
-As you can see one simple command does all that work for me. So I can now just throw that into my PowerShell profile, with a few adjustments:
+As you can see one simple command does all that work for me. If you check `docker network ls` you will also see that a network for the containers is created as `sql19_network`, so whether you create 2 or 20 they will all be on the same network and be able to see each other.
+
+I can now just throw that into my PowerShell profile, with a few adjustments:
 
 ```powershell
 function New-SqlContainer {
@@ -92,7 +94,7 @@ function New-SqlContainer {
 }
 ```
 
-If tomorrow Microsoft releases CTP 2.3, I simply update that file and issue the command `New-SqlContainer` in my PowerShell prompt. Docker will go through pull the latest image and then recreate the containers for me:
+If tomorrow Microsoft releases CTP 2.3, I simply update that docker-compose file, to increment the version, and issue the command `New-SqlContainer` in my PowerShell prompt. Docker will go through pull the latest image and then recreate the containers for me:
 
 ![](/img/dockercompose2.png)
 
