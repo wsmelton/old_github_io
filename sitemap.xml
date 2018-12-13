@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wsmelton.github.io/posts/automating-docker/</loc>
+    <lastmod>2018-12-13T07:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wsmelton.github.io/posts/azure-automation-bug/</loc>
     <lastmod>2018-08-10T15:10:52-05:00</lastmod>
   </url>
@@ -370,8 +375,14 @@
   </url>
   
   <url>
+    <loc>https://wsmelton.github.io/tags/docker/</loc>
+    <lastmod>2018-12-13T07:00:00-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wsmelton.github.io/posts/</loc>
-    <lastmod>2018-08-10T15:10:52-05:00</lastmod>
+    <lastmod>2018-12-13T07:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -389,7 +400,7 @@
   
   <url>
     <loc>https://wsmelton.github.io/</loc>
-    <lastmod>2018-08-10T15:10:52-05:00</lastmod>
+    <lastmod>2018-12-13T07:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
