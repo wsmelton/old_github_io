@@ -36,9 +36,7 @@ There are two main files used with automating Docker:
 - dockerfile
 - docker-compose.yml
 
-These two files can work together to build a custom image and then create the container(s). Notice I can use the docker-compose file to create one container or multiple.
-
-Since the image is already built for us by Microsoft I'm just going to show the docker-compose file that you can use to automating rebuilding a container with each CTP released for 2019.
+These two files can work together to build a custom image and then create the container(s). Note I can use the docker-compose file to create one container or multiple. Since the image is already built for us by Microsoft, I am just going to show the docker-compose file that can be used to automate rebuilding a container as each CTP is released for 2019.
 
 ### Docker-Compose
 
