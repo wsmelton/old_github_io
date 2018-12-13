@@ -78,7 +78,7 @@ docker-compose -f "docker-compose.yml" up -d --no-build
 
 The output of this command:
 
-![](/static/img/dockercompose.png)
+![](/img/dockercompose.png)
 
 As you can see one simple command does all that work for me. So I can now just throw that into my PowerShell profile, with a few adjustments:
 
@@ -94,6 +94,6 @@ function New-SqlContainer {
 
 If tomorrow Microsoft releases CTP 2.3, I simply update that file and issue the command `New-SqlContainer` in my PowerShell prompt. Docker will go through pull the latest image and then recreate the containers for me:
 
-![](/static/img/dockercompose2.png)
+![](/img/dockercompose2.png)
 
 _If a new image had to be pulled down you would see the output for that as well._
