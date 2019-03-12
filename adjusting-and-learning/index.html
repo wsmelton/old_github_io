@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Adjusting and learning | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Adjusting and learning</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2011-Aug-18
+  </small>
+  
+</p>
+<p>Short and sweet post here&hellip;not the sugar sweet, the awesome sweet!!!</p>
+
+<p>So I&rsquo;m still working on the script I talked about in a <a href="/2011-08-01-what-a-few-lines-of-code-can-do" target="_blank">previous post</a>. I wanted to try to drop using the parameter and try to work it all out in the script if it comes across more than one instance.</p>
+
+<p>So I came up with this, initially:</p>
+
+<pre><code class="language-powershell">$regInstance = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances
+if ($regInstance.Count -gt 1)
+{
+   &quot;More than one instance found on server.&quot;
+   foreach ($ins in $regInstance)
+   {
+     $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$ins
+     $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+   }
+}
+else
+{
+   $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$ins
+   $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+}
+</code></pre>
+
+<p>So that was nice, but you probably already noticed an issue? The way it is written the <code>$fullpath</code> will only have the last value it hits in the foreach loop, if more than one SQL instance exist. That will not work. So where do we turn&hellip;hash tables. How you might ask? While we pause for station identification, go read this <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2011/07/05/automatically-create-a-powershell-hash-table.aspx" target="_blank">post</a> from The Scripting Guy! Blog.</p>
+
+<p>The example in that post that helped me was adding 100 intergers as key/value pairs in a hash table. I could capture both the InstalledInstances and the Instance Names values, and keep them associated with each other  in a hash table. This improves the options I have of reusing this snippet in other scripts possibly. (One example comes to mind is being able to pass the instance name in SMO scripts.)</p>
+
+<p>So the 18 lines of code from above, turned into this:</p>
+
+<pre><code class="language-powershell">#create hash table
+$hashInst = @{}
+#populate hash table with values
+$inst = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server').InstalledInstances
+foreach ($i in $inst)
+{
+   $hashInst.Add($i,(Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$i)
+}
+</code></pre>
+
+<p>A total of just 6 lines of code for readability, could go down to 3 if you put the foreach on one line.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

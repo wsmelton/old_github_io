@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Modifying SQL Server Startup Parameters | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Modifying SQL Server Startup Parameters</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2015-Dec-02
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/sqlserver">sqlserver</a></code></small>
+
+
+<small><code><a href="https://example.com/tags/powershell">powershell</a></code></small>
+
+
+<small><code><a href="https://example.com/tags/scripts">scripts</a></code></small>
+
+</p>
+<p><a href="https://youtu.be/8s3C1him6Lk" target="_blank">Mike, Mike, Mike, Mike, Mike</a>&hellip;.guess what I figured out? Well it all started by reading Mike Fal&rsquo;s post on <a href="http://www.mikefal.net/2015/12/01/managing-sql-server-services-with-powershell/" target="_blank">Managing SQL Server Services with #PowerShell</a>. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.</p>
+
+<p>If you go search right now for using PowerShell to alter the startup parameters for SQL Server&hellip;go ahead&hellip;.you mostly saw post for modifying the registry keys that hold the values. I was not fond of doing this because I knew it could be done using the same method (well not exactly) that Mike&rsquo;s post discusses. The class used in SMO for the services have methods that easily let you manipulate the Service accounts, but the startup parameters are simply a property of the object <a href="https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.management.smo.wmi.service.aspx" target="_blank">Microsoft.SqlServer.Management.Smo.Wmi.Service</a>.</p>
+
+<p>If you did not know this when you look at MSDN for the properties of a class you can find out which properties can be manipulated. They will start out with one of two phrases:</p>
+
+<ul>
+<li>&ldquo;Gets the&hellip;&rdquo; = You can only read this property</li>
+<li>&ldquo;Gets or sets the&hellip;&rdquo; = You can read and change the property.</li>
+</ul>
+
+<p>Low and behold the StartupParameters property is one that can be read and set. So how do you set it? Well the one thing to remember is you DO NOT need to remove what is already in that property because IT WILL BREAK YOUR SERVER!</p>
+
+<p>Let me be clear, setting the property means you need to append to what is already there, so don&rsquo;t just go setting it equal to something like &ldquo;-T1118&rdquo;. Doing this will remove the required parameters to start SQL Server itself, and no it will never warn you of this&hellip;so proceed at your own risk.</p>
+
+<p>So all I wanted to do was append some additional startup parameters that I add to any server build I do, or touch after the fact:</p>
+
+<ul>
+<li>1118</li>
+<li>1117</li>
+<li>3226</li>
+</ul>
+
+<p>To do that I simply run this bit of code:</p>
+
+<pre><code class="language-powershell">$server = 'MyServer'
+$sqlservice = &quot;MSSQLSERVER&quot;
+$sqlagentservice = &quot;SQLSERVERAGENT&quot;
+$flagsToAdd = &quot;;-T1117;-T1118;-T3226&quot;
+
+Add-Type -AssemblyName &quot;Microsoft.SqlServer.SqlWmiManagement,Version=11.0.0.0,Culture=neutral,PublicKeyToken=89845dcd8080cc91&quot;
+$sqlwmi = New-Object Microsoft.SqlServer.Management.Smo.Wmi.ManagedComputer $server
+$wmisvc = $sqlwmi.Services | where {$_.name -eq $sqlservice}
+$wmisvc.StartupParameters = $wmisvc.StartupParameters + $flagsToAdd
+$wmisvc.Alter()
+
+$wmisvc.Stop()
+Start-Sleep -seconds 15
+$wmisvc.Start()
+
+$wmiAgent = $sqlwmi.Services | where {$_.name -eq $sqlagentservice}
+$wmiAgent.Start()
+</code></pre>
+
+<p>Now the last bit for starting SQL Agent is because when I stop SQL Server it will also stop any dependent service.</p>
+
+<p>One thought I also had was &ldquo;what if I want to remove a trace flag?&rdquo;, that was say just added by accident, or in troubleshooting? You simply do a replace for the property and just modify the line for setting it to be:</p>
+
+<pre><code class="language-powershell">$wmisvc.StartupParameters = $wmisvc.StartupParameters.Replace(&quot;;-T1118&quot;,'')
+</code></pre>
+
+<p>Now some folks might see the risk in using this method, but to me it is just as risky changing some registry key. If you get the wrong format SQL Server will not start back up, but it is generally going to give you a clear message in Event Viewer that the parameters are the issue. Just be careful, and test it before using it.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

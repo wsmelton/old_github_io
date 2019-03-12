@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>I am Biml (Bacon Integrated Markup Language) | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>I am Biml (Bacon Integrated Markup Language)</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2014-Nov-03
+  </small>
+  
+</p>
+
+
+<p>Wouldn’t it be awesome if that is what it was really called? Maybe not, so what does Biml really stand for?</p>
+
+<p><img src="/img/bimllogo.png" alt="" /></p>
+
+<h2 id="small-background">Small Background</h2>
+
+<p><a href="http://www.varigence.com/Company" target="_blank">Varigence</a> is the company that created Biml, particularly Scott Currie, back in 2008. You can check their page to get the full store, it is worth a read. It is a pretty remarkable story that they took a thought and turned it into a full technology that includes a proprietary and an open source product. I can remember hearing about it within the past year or so but it never clicked with me at the time (it does now). I think around 2012 it started to get an uptick in exposure. It has begun showing up in sessions at PASS Summit and at SQL Saturdays in some places more and more in the past year.</p>
+
+<p>Now BimlScript is the use of C# (by default) code within your Biml that offers an enormous amount of flexibility into what you can do. This is where you can get into dynamically creating things within an SSIS projects or even SSAS projects.</p>
+
+<h2 id="the-potential">The Potential</h2>
+
+<p>I think back to a contract job I had with the Army handling ETL design. Through <a href="http://www.foia.gov/how-to.html" target="_blank">FOA request</a> I was responsible for making packages that would pull data out of the source and dump it into an Access Database or Excel spreadsheet. The design pattern I had to used there was creating a package per table of data that needed to be pulled and then a master package that would simply iterate through all of those “table” packages.</p>
+
+<p>We used AGILE development process so one request would generally take me a few days to build out the project, deploy it into test, then staging, and then finally production. So depending on what amount of data was being requested it could take up to a week to get everything designed and finalized to send the file to the requestor.</p>
+
+<p>If I could have used Biml for this process I would have cut down the initial design time considerably. With it providing me the ability using C# (which I would have had to learn as well back then) to iterate over the table list of a given source to generate all the Data Flow tasks; man think of the clicks you do just setting up one data flow task and how much time this would have saved.</p>
+
+<h2 id="biml-products">Biml Products</h2>
+
+<p>The most common product referenced in the community, at least that I have seen, with Biml is <a href="http://bidshelper.codeplex.com" target="_blank">BidsHelper</a>. Which BimlScript is one part of what is included in BidsHelper, there are a ton of little things that were added in there that creators of BIDS left off. If you are using SSDT-BI now a few of those things included may be obsolete possibly now. You can look at the <a href="http://bidshelper.codeplex.com/documentation" target="_blank">list under documentation</a> of what is included.</p>
+
+<p>BidsHelper is something that is used with Visual Studio (BIDS or SSDT-BI) and is an excellent starting point to get started using Biml. If you find you need to go to the next step Varigence has an IDE they created called <a href="http://www.varigence.com/Products/Mist/Capabilities" target="_blank">Mist</a> that provides a very robust environment to develop SSIS and SSAS. I link to a few videos below that show off what this product can do, very cool stuff! The other product they have is <a href="http://www.varigence.com/Products/Vivid/Features" target="_blank">Vivid</a>, this is an add-on for Excel users that handle data analysis.</p>
+
+<h2 id="resources-to-note">Resources to Note</h2>
+
+<p>When I wanted to learn more about Biml I found myself asking, “where do I start?”. Similar to how a lot of folks ask when they want to go into being a DBA or Database Developer. Below are just some links to articles and videos that can help you get started.</p>
+
+<h2 id="articles">Articles:</h2>
+
+<ul>
+<li><a href="http://www.sqlservercentral.com/stairway/100550/" target="_blank">SQLServerCentral’s Stairway to Biml</a> (yes, you should register…just do it)</li>
+<li><a href="http://billfellows.blogspot.com/search/label/Biml" target="_blank">Bill Fellow’s Blog post on Biml</a> (some good nuggets if you learn by seeing)</li>
+<li><a href="http://bimlscript.com/GetStarted/InitialWalkthroughs" target="_blank">BimlScript Walkthroughs, Getting Started</a></li>
+<li><a href="http://varigence.com/Documentation/Language/Element/AstRootNode" target="_blank">Biml Language Reference</a> (similar to MSDN for SQL Server)</li>
+<li><a href="http://varigence.com/Documentation" target="_blank">Biml Snippets</a> (ton of examples to learn from here)</li>
+</ul>
+
+<h2 id="videos-that-i-found-the-most-helpful">Videos that I found the most helpful:</h2>
+
+<ul>
+<li><a href="http://youtu.be/YeUbFfNQ-9o" target="_blank">SQLug.se - Peter Hansen&rsquo;s - Biml, session 1</a></li>
+<li><a href="http://youtu.be/pzNIyjTrnSg" target="_blank">SQLug.se - Scott Currie&rsquo;s - Biml, session 2</a></li>
+<li><a href="http://youtu.be/YeZesq29d9U" target="_blank">Using BIML as an SSIS Design Patterns Engine (PASS DW/BI Virtual Chapter)</a> (Andy Leonard does a great walkthrough of Biml)</li>
+<li><a href="http://youtu.be/6DiuJxb49Gs" target="_blank">Biml Introduction and Fundamentals Webinar</a> (Peter Avenant with Varigence, great video showing Mist and Biml, you should subscribe to their channel)</li>
+<li><a href="http://youtu.be/NJdsV8hu74Y" target="_blank">Working with BimlScript to ease and automate your SSIS development</a> (Session done by Jeff Mlakar, just this month. Some excellent tips and examples)</li>
+</ul>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

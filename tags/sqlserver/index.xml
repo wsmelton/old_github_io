@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sqlserver on Shawn&#39;s Notebook</title>
-    <link>https://wsmelton.github.io/tags/sqlserver/</link>
+    <link>https://example.com/tags/sqlserver/</link>
     <description>Recent content in Sqlserver on Shawn&#39;s Notebook</description>
     <generator>Hugo -- gohugo.io</generator>
-    <copyright>(c) 2018 Shawn Melton -- All rights reserved.</copyright>
+    <language>en-us</language>
     <lastBuildDate>Wed, 02 Dec 2015 08:00:00 -0600</lastBuildDate>
     
-	<atom:link href="https://wsmelton.github.io/tags/sqlserver/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/sqlserver/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Modifying SQL Server Startup Parameters</title>
-      <link>https://wsmelton.github.io/posts/modifying-sql-server-startup-parameters/</link>
+      <link>https://example.com/modifying-sql-server-startup-parameters/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/modifying-sql-server-startup-parameters/</guid>
+      <guid>https://example.com/modifying-sql-server-startup-parameters/</guid>
       <description>Mike, Mike, Mike, Mike, Mike&amp;hellip;.guess what I figured out? Well it all started by reading Mike Fal&amp;rsquo;s post on Managing SQL Server Services with #PowerShell. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.
 If you go search right now for using PowerShell to alter the startup parameters for SQL Server&amp;hellip;go ahead&amp;hellip;.</description>
     </item>
     
     <item>
       <title>Improve Load Time on SQLPS</title>
-      <link>https://wsmelton.github.io/posts/improve-load-time-on-sqlps/</link>
+      <link>https://example.com/improve-load-time-on-sqlps/</link>
       <pubDate>Mon, 16 Nov 2015 07:30:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/improve-load-time-on-sqlps/</guid>
+      <guid>https://example.com/improve-load-time-on-sqlps/</guid>
       <description>Over the month of November a fellow PowerShell enthusiast, Mike Fal (blog|@Mike_Fal), did a series on the SQL Server PowerShell module (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just answered a question on DBA.SE that I figured out by tweaking a particular file for this module, so thought I would share more details.
 WARNING: You are modifying the files at your own risk.</description>
     </item>
     
     <item>
       <title>SQL Server - Feed the Beast</title>
-      <link>https://wsmelton.github.io/posts/sql-server-feed-the-beast/</link>
+      <link>https://example.com/sql-server-feed-the-beast/</link>
       <pubDate>Thu, 22 Oct 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-feed-the-beast/</guid>
+      <guid>https://example.com/sql-server-feed-the-beast/</guid>
       <description>This content was originally posted on here.
 An environment where you have a high number of databases on one server, or many, can be time consuming to something as simple as adding a user account. You have the option of using the GUI with SQL Server Management Studio (SSMS), which if it was a rush to get something in place for 8 or 10 databases I can see possibly doing that to get it done.</description>
     </item>
     
     <item>
       <title>Parse Deadlock Graph from System_Health session</title>
-      <link>https://wsmelton.github.io/posts/parse-deadlock-graph-from-system_health-session/</link>
+      <link>https://example.com/parse-deadlock-graph-from-system_health-session/</link>
       <pubDate>Wed, 16 Sep 2015 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/parse-deadlock-graph-from-system_health-session/</guid>
+      <guid>https://example.com/parse-deadlock-graph-from-system_health-session/</guid>
       <description>Way back in October (2014) I published the post: XML, Glad that is over (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway&amp;hellip;
 It was brought up to me recently on an answer I provided on DBA.</description>
     </item>
     
     <item>
       <title>Search-SqlErrorLog</title>
-      <link>https://wsmelton.github.io/posts/powershell-and-sql-server-search-sqlerrorlog/</link>
+      <link>https://example.com/powershell-and-sql-server-search-sqlerrorlog/</link>
       <pubDate>Mon, 22 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/powershell-and-sql-server-search-sqlerrorlog/</guid>
+      <guid>https://example.com/powershell-and-sql-server-search-sqlerrorlog/</guid>
       <description>I have had a thought on how I might write this function for some time and finally decided to just sit down and do it.
 When you have alerts setup or just in general need to troubleshoot a given instance of SQL Server one of the first steps is always looking through the ERRORLOG files for the instance. You can do this via SSMS or even via T-SQL with a known (but undocumented) stored procedure sp_readerrorlog.</description>
     </item>
     
     <item>
       <title>SQL Sentry Plan Explorer and Deadlock XML Report</title>
-      <link>https://wsmelton.github.io/posts/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</link>
+      <link>https://example.com/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</link>
       <pubDate>Mon, 15 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</guid>
+      <guid>https://example.com/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</guid>
       <description>OK, I just found one of those things that I can remember reading about but forgot until I saw it again. Back in October I had the privilege of being the recipient of a SQL Sentry Plan Explorer Pro license via one of their contest: [Blog] : #ILovePlanExplorer update: @wsmelton won the #PlanExplorerPRO license. Thanks to everyone who participated! http://t.co/G3jQp62Udx
 &amp;mdash; SentryOne (@SQLSentry) October 23, 2014 
 If you are not familar with SQL Sentry, you should be.</description>
@@ -74,19 +74,19 @@ If you are not familar with SQL Sentry, you should be.</description>
     
     <item>
       <title>FileZilla Logs to SQL Server via PowerShell</title>
-      <link>https://wsmelton.github.io/posts/filezilla-logs-to-sql-server-via-powershell/</link>
+      <link>https://example.com/filezilla-logs-to-sql-server-via-powershell/</link>
       <pubDate>Mon, 01 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/filezilla-logs-to-sql-server-via-powershell/</guid>
+      <guid>https://example.com/filezilla-logs-to-sql-server-via-powershell/</guid>
       <description>I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&amp;rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.</description>
     </item>
     
     <item>
       <title>SQL Server GROUP BY in PowerShell</title>
-      <link>https://wsmelton.github.io/posts/sql-server-group-by-in-powershell/</link>
+      <link>https://example.com/sql-server-group-by-in-powershell/</link>
       <pubDate>Mon, 17 Nov 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-group-by-in-powershell/</guid>
+      <guid>https://example.com/sql-server-group-by-in-powershell/</guid>
       <description>I usually don&amp;rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&amp;rsquo;s server, and find out how many tables each database had.
 Now something like this can easily be done in T-SQL for a single database with this bit of code:
 SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND type=&#39;U&#39;  The above works but then you have to write the additional code to execute that against every database on a given server.</description>
@@ -94,75 +94,75 @@ SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND t
     
     <item>
       <title>Max User Connections set to one (oops)</title>
-      <link>https://wsmelton.github.io/posts/max-user-connections-set-to-one-oops/</link>
+      <link>https://example.com/max-user-connections-set-to-one-oops/</link>
       <pubDate>Tue, 11 Nov 2014 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/max-user-connections-set-to-one-oops/</guid>
+      <guid>https://example.com/max-user-connections-set-to-one-oops/</guid>
       <description>I frequent Database Administrators forum over on Stack Exchange Network, and came across a question that intrigued me enough to play around with the setting noted in the first sentence: Maximum number of concurrent connections. What happens when you set this to one, and how do you set it back to default?
 To make a small note the method or process this OP tried to use just to get a database restored was completely the wrong way to go about it.</description>
     </item>
     
     <item>
       <title>SQL Server Data Tools: A spork of sorts (part two)</title>
-      <link>https://wsmelton.github.io/posts/sql-server-data-tools-a-spork-of-sorts-part-two/</link>
+      <link>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-two/</link>
       <pubDate>Mon, 20 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-data-tools-a-spork-of-sorts-part-two/</guid>
+      <guid>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-two/</guid>
       <description>In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.
 If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1 (another interesting post to read response to this in the comments).</description>
     </item>
     
     <item>
       <title>SQL Server Data Tools: A spork of sorts (part one)</title>
-      <link>https://wsmelton.github.io/posts/sql-server-data-tools-a-spork-of-sorts-part-one/</link>
+      <link>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-one/</link>
       <pubDate>Wed, 15 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-data-tools-a-spork-of-sorts-part-one/</guid>
+      <guid>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-one/</guid>
       <description>Prior to SQL Server 2012 the Business Intelligence (BI) toolset was made up of just Business Intelligence Development Studio (BIDS). Easy to install as it was part of the SQL Server installation media. Now with database development tools you had to go the route of getting a license for Visual Studio where it allowed you to create database projects. Oh, how that is all changing now, and in some ways go back in time.</description>
     </item>
     
     <item>
       <title>SQL Server Prerequisites .NET Framework</title>
-      <link>https://wsmelton.github.io/posts/sql-server-prerequisites-net-framework/</link>
+      <link>https://example.com/sql-server-prerequisites-net-framework/</link>
       <pubDate>Thu, 02 Oct 2014 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-prerequisites-net-framework/</guid>
+      <guid>https://example.com/sql-server-prerequisites-net-framework/</guid>
       <description>As of SQL Server 2012 the .NET Framework prerequisite of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.</description>
     </item>
     
     <item>
       <title>The treasures of the SQL Server Error Log</title>
-      <link>https://wsmelton.github.io/posts/the-treasures-of-the-sql-server-error-log/</link>
+      <link>https://example.com/the-treasures-of-the-sql-server-error-log/</link>
       <pubDate>Tue, 23 Sep 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/the-treasures-of-the-sql-server-error-log/</guid>
+      <guid>https://example.com/the-treasures-of-the-sql-server-error-log/</guid>
       <description>I am fairly active on Database Administrators QA site on StackExchange.com. On average, most questions you find folks asking are about troubleshooting some error they are getting running code or some application is returning. I have noticed one of the most common comments we end up adding to a question is “have you looked in the error log” or “what error messages show up in the error log”, at least with SQL Server related questions.</description>
     </item>
     
     <item>
       <title>SQL Server Activity Monitor Script</title>
-      <link>https://wsmelton.github.io/posts/sql-server-activity-monitor-script/</link>
+      <link>https://example.com/sql-server-activity-monitor-script/</link>
       <pubDate>Wed, 30 Jul 2014 13:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/sql-server-activity-monitor-script/</guid>
+      <guid>https://example.com/sql-server-activity-monitor-script/</guid>
       <description>You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&amp;ldquo;http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&amp;quot;). I work over VPN supporting clients remotely and it never been that useful to me.</description>
     </item>
     
     <item>
       <title>SSMS 2012–Object Reference issue with Maintenance Plans</title>
-      <link>https://wsmelton.github.io/posts/ssms-2012object-reference-issue-with-maintenance-plans/</link>
+      <link>https://example.com/ssms-2012object-reference-issue-with-maintenance-plans/</link>
       <pubDate>Mon, 21 Jul 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/ssms-2012object-reference-issue-with-maintenance-plans/</guid>
+      <guid>https://example.com/ssms-2012object-reference-issue-with-maintenance-plans/</guid>
       <description>I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was this one on SQLTeam’s forum site, the post by “prett”, and note that this is posted back in 2013: The Maintenance Plan is actually built with few services which Microsoft releases such as SSIS and SQL Server Job Agent, hence if you want to schedule the maintenance plan then your server needs to have SSIS in order to build the maintenance plan, and Job Agent in order to run at regular periods.</description>
     </item>
     
     <item>
       <title>Check-InstanceConfig (part 2)</title>
-      <link>https://wsmelton.github.io/posts/ps-check-instanceconfig-part-2/</link>
+      <link>https://example.com/ps-check-instanceconfig-part-2/</link>
       <pubDate>Mon, 09 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/ps-check-instanceconfig-part-2/</guid>
+      <guid>https://example.com/ps-check-instanceconfig-part-2/</guid>
       <description>In the previous post I discussed the data table that holds the default values for the configuration options in SQL Server 2000 up to SQL Server 2014.
 In this post I will go over the function(s) that are included in the script. I will keep the same format as I did in the previous post:
  How it was written What it contains A few examples  How it was written If you have already downloaded the script you notice it had one function.</description>
@@ -170,10 +170,10 @@ In this post I will go over the function(s) that are included in the script. I w
     
     <item>
       <title>Check-InstanceConfig (part 1)</title>
-      <link>https://wsmelton.github.io/posts/ps-check-instanceconfig-part-1/</link>
+      <link>https://example.com/ps-check-instanceconfig-part-1/</link>
       <pubDate>Wed, 04 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/posts/ps-check-instanceconfig-part-1/</guid>
+      <guid>https://example.com/ps-check-instanceconfig-part-1/</guid>
       <description>I was reading a blog post Mike Walsh published on Linchpin People last week: SQL Server Configuration Check Script.
 In that script he is, as the title says, checking the configuration of a SQL Server instance for particular things like those options not set to default values and a few particular ones that still are set to default. I was intrigued by this and by the time I got to the end of the blog post was like “bet I can do that in PowerShell too”.</description>
     </item>

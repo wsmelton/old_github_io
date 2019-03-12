@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>The rest of the story (PowerShell errors) | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>The rest of the story (PowerShell errors)</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2011-Jul-21
+  </small>
+  
+</p>
+<p>So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.</p>
+
+<p>It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is available to me for my perusing.</p>
+
+<p>Open up PowerShell firing off a few commands as such:</p>
+
+<pre><code class="language-powershell">[System.Reflection.Assembly]::LoadWithPartialName('Microsoft.SqlServer.Smo') | Out-Null
+$s = New-Object 'Microsoft.SqlServer.Management.Smo.Server' MyInstance
+</code></pre>
+
+<p>So good so far. I then go to check a few things to find out what the build number is and what the directory path is for the instance.</p>
+
+<p><code>$s.Information.version</code></p>
+
+<p>This will give you the Major, Minor, Build, and Revision information of that instance. It returns that no issue. However the next command returns nothing:</p>
+
+<p><code>$s.Information.RootDirectory</code></p>
+
+<p>What this should have given me is the path to the files for that instance on the server. The <code>\MSSQL10_50.InstanceName\MSSQL\</code> path. However all it did was send me back to a prompt, without any output or error message. So I decided to just look at all of the information to see if it returned anything.</p>
+
+<p><code>$s.Information</code></p>
+
+<p>Which that line returns an error that looked like this:</p>
+
+<pre><code>format-default : An exception occurred while executing a Transact-SQL statement or batch.
++ CategoryInfo : NotSpecified: (:) [format-default], ExecutionFailureException
++ FullyQualifiedErrorId : Microsoft.SqlServer.Management.Common.ExecutionFailureException,Microsoft...
+</code></pre>
+
+<p>Which did not really help me, but I had an idea it had something to do with my permissions not being setup correctly. So I took that CategoryInfo line and popped it into the mighty <a href="http://en.wikipedia.org/wiki/Oracle_%28The_Matrix%29" target="_blank">Oracle</a> (aka Google). The first link that came up was a blog post from 2009 by Michiel Wories on <a href="http://blogs.msdn.com/b/mwories/archive/2009/06/08/powershell-tips-tricks-getting-more-detailed-error-information-from-powershell.aspx" target="_blank">how to get more detailed error information from PowerShell</a>. Which stemmed from a blog post Allen White (<a href="http://sqlblog.com/blogs/allen_white/default.aspx" target="_blank">b</a><code>|</code><a href="http://twitter.com/SQLRunr" target="_blank">t</a>) had written on actually how to <a href="http://sqlblog.com/blogs/allen_white/archive/2009/06/08/handling-errors-in-powershell.aspx" target="_blank">handle errors in PowerShell</a>.</p>
+
+<p>Apparently the message outputted to the console does not include all of the error. There is an &ldquo;InnerException&rdquo; that has all the meat of the error. To get that you can execute the command below. Now I believe you can only do this if you are working interactively with the console. If you are running a script you would need to check Allen&rsquo;s post to see how you can capture the error itself when your script is executed.</p>
+
+<p><code>$error[0] | Format-List InnerException -Force</code></p>
+
+<p>From the output of this command I see the rest of the story:</p>
+
+<pre><code>An exception occurred while executing a Transact-SQL statement or batch. ---&amp;gt; The EXECUTE permission was denied on the ojbect 'xp_instance_regread', database 'mssqlsystemresource', schema 'sys'.
+The EXECUTE permissions was denied...on and on.
+</code></pre>
+
+<p>Each object that should have been returned from executing <code>$s.Information</code> shows the <code>EXECUTE permission denied</code> message for that object. Which by itself is cool because you see what is happening in the background, and I now know what is being executed to return that information to me.</p>
+
+<p>So now you know how to get to this information when you get an error in PowerShell that just may not give you enough info to go on. I am now off to get my permissions fixed.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>SQL Server Data Tools: A spork of sorts (part one) | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>SQL Server Data Tools: A spork of sorts (part one)</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2014-Oct-15
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/sqlserver">sqlserver</a></code></small>
+
+</p>
+<p>Prior to SQL Server 2012 the Business Intelligence (BI) toolset was made up of just Business Intelligence Development Studio (BIDS). Easy to install as it was part of the SQL Server installation media. Now with database development tools you had to go the route of getting a license for Visual Studio where it allowed you to create database projects. Oh, how that is all changing now, and in some ways go back in time.</p>
+
+<p>SQL Server Data Tools (SSDT) brought about changes in BI and database development. First <strong>Database Development</strong> changed to SQL Server Projects and no longer required a fully licensed version of Visual Studio, it used the integrated shell. It stayed this way up until Visual Studio 2013. With VS 2013 it now appears it might have gone back to requiring a licensed version of VS. A bit more on this part below.</p>
+
+<p><strong>Business Intelligence development</strong> also changed tools from BIDS to SQL Server Data Tools. Wait, wasn’t SSDT for database development? It is actually for both but actually require separate installs. It is now being referred to as SSDT-BI. Nice work there Microsoft.</p>
+
+<p>If you have installed SSDT for SQL Server 2012 you will note that it actually is only installing SSDT-BI by viewing the new project window:</p>
+
+<p><img src="/img/spork1.png" alt="" /></p>
+
+<p>What?!!?? You want me to install the same thing again? Well it appears that even though they share the same title of application they are now separate. If you read the blog post on MSDN, <a href="http://blogs.msdn.com/b/ssdt/archive/2014/01/31/ssdt-and-visual-studio-versions.aspx" target="_blank">SSDT and Visual Studio Versions</a>, and note the comments. I particular liked this one:</p>
+
+<p><img src="/img/spork2.png" alt="" /></p>
+
+<p>What that means is SSDT is now something that encompasses two things: Database Development and BI Development (reference a fork + spoon = spork) but two different teams are developing each one. Glad that confusion is over.</p>
+
+<p>Now if you go to the page for <a title="http://msdn.microsoft.com/en-us/data/hh297027" href="http://msdn.microsoft.com/en-us/data/hh297027" target="_blank">Microsoft SQL Server Data Tools</a> it will provide al ink to “Download Visual Studio 2013 with SQL Server Tooling” that basically points you to the Visual Studio 2013 product page. Which I have installed VS 2013 for Desktop and no where can I find how to make it update to include SQL Server Tooling. If you visit the <a href="http://www.visualstudio.com/en-us/products/compare-visual-studio-products-vs.aspx" target="_blank">Visual Studio 2013 production comparison to Visual Studio Online</a> and view under “Development Platform Support” you will notice that SSDT only shows up for Pro, Premium, and Ultimate Editions. So they went back to 2010? So right now it appears if you want to do database development stick with VS 2012 and down. I think VS 2012 includes support for SQL Azure development but I have not dove into that as of right now.</p>
+
+<p>In the next post I will go over some things with SSDT-BI and how installation for this changed.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

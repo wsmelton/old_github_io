@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>SQL Server Activity Monitor Script | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>SQL Server Activity Monitor Script</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2014-Jul-30
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/sqlserver">sqlserver</a></code></small>
+
+</p>
+<p>You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&ldquo;<a href="http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;">http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&quot;</a>). I work over VPN supporting clients remotely and it never been that useful to me.</p>
+
+<p>I liked all the information it showed but just did not like having to use the UI it provided to filter and such. So I did a trace against an instance while I opened Activity Monitor to pull out what query it was running to populate the active sessions.</p>
+
+<p>So this post is pretty much just a bookmark for the script:</p>
+
+<pre><code class="language-sql">SELECT [Session ID] = s.session_id
+    ,[User Process] = CONVERT(CHAR(1), s.is_user_process)
+    ,[Login] = s.login_name
+    ,[Database] = ISNULL(db_name(p.dbid), N'')
+    ,[Task State] = ISNULL(t.task_state, N'')
+    ,[Command] = ISNULL(r.command, N'')
+    ,[Application] = ISNULL(s.program_name, N'')
+    ,[Wait Time (ms)] = ISNULL(w.wait_duration_ms, 0)
+    ,[Wait Type] = ISNULL(w.wait_type, N'')
+    ,[Wait Resource] = ISNULL(w.resource_description, N'')
+    ,[Blocked By] = ISNULL(CONVERT(VARCHAR, w.blocking_session_id), '')
+    ,[Head Blocker] = CASE
+        WHEN r2.session_id IS NOT NULL
+            AND (
+                r.blocking_session_id = 0
+                OR r.session_id IS NULL
+                )
+            THEN '1'
+        ELSE ''
+        END
+    ,[Total CPU (ms)] = s.cpu_time
+    ,[Total Physical I/O (MB)] = (s.reads + s.writes) * 8 / 1024
+    ,[Memory Use (KB)] = s.memory_usage * 8192 / 1024
+    ,[Open Transactions] = ISNULL(r.open_transaction_count, 0)
+    ,[Login Time] = s.login_time
+    ,[Last Request Start Time] = s.last_request_start_time
+    ,[Host Name] = ISNULL(s.host_name, N'')
+    ,[Net Address] = ISNULL(c.client_net_address, N'')
+    ,[Execution Context ID] = ISNULL(t.exec_context_id, 0)
+    ,[Request ID] = ISNULL(r.request_id, 0)
+    ,[Workload Group] = N''
+FROM sys.dm_exec_sessions s
+LEFT JOIN sys.dm_exec_connections c ON (s.session_id = c.session_id)
+LEFT JOIN sys.dm_exec_requests r ON (s.session_id = r.session_id)
+LEFT JOIN sys.dm_os_tasks t ON (
+        r.session_id = t.session_id
+        AND r.request_id = t.request_id
+        )
+LEFT JOIN (
+    SELECT *
+        ,ROW_NUMBER() OVER (
+            PARTITION BY waiting_task_address &lt;br /&gt;            ORDER BY wait_duration_ms DESC
+            ) AS row_num
+    FROM sys.dm_os_waiting_tasks
+    ) w ON (t.task_address = w.waiting_task_address)
+    AND w.row_num = 1
+LEFT JOIN sys.dm_exec_requests r2 ON (s.session_id = r2.blocking_session_id)
+LEFT JOIN sys.sysprocesses p ON (s.session_id = p.spid)
+WHERE s.is_user_process = 1
+ORDER BY s.session_id;
+</code></pre>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

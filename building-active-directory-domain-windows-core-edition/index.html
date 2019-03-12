@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Building AD Domain on Windows Core Edition | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Building AD Domain on Windows Core Edition</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2016-Dec-03
+  </small>
+  
+</p>
+
+
+<p>This is a follow up post <a href="2016-11-14-hyper-v-lab-for-sql-server.md" target="_blank">on building an Hyper-V lab</a> to learn SQL Server.</p>
+
+<p>Active Directory offers the PowerShell module <a href="https://technet.microsoft.com/en-us/library/ee617195.aspx" target="_blank">ActiveDirectory</a> for managing various aspects of the domain. If you are a full-time AD Administrator you may need to learn the commands in this module in great detail, but for lab purposes we only need to be familiar with a few of them. However, first things first&hellip;we need to create our domain in the lab.</p>
+
+<h1 id="building-the-domain">Building the Domain</h1>
+
+<p>If you recall from the previous post we built out a server running Windows 2012 R2 Core Edition. You can <a href="https://blog.wsmelton.info/slides/hyper-v-lab-build/#/10" target="_blank">check here</a> to see how that server was configured.</p>
+
+<p>There were some initial tools that we installed on that server but to actually create the domain you have to install 2 specific Windows features. You can do that with the following command:</p>
+
+<pre><code class="language-powershell">    Install-WindowsFeature AD-Domain-Services,RSAT-ADDS
+</code></pre>
+
+<p>The feature &ldquo;RSAT-ADDS&rdquo; installs the needed module ADDSDeployment that includes the command we need to create our first Active Directory Forest. Just to provide a little bit of context, in a lab setting our first domain is the top-level forest, but in real-world you can have a top-level forest domain that has multiple sub-domains.</p>
+
+<p>The &ldquo;AD-Domain-Services&rdquo; feature is the services and binaries requires to run the Active Directory Forest itself.</p>
+
+<h2 id="secure-string">Secure String</h2>
+
+<p>One thing to remember with some modules in PowerShell is when you need to pass in a password, most of the commands do not allow you to simply pass in a string value. They will require a specific string type for that password: <a href="https://msdn.microsoft.com/en-us/library/system.security.securestring(v=vs.110).aspx" target="_blank">System.Security.SecureString</a>.</p>
+
+<p>There are a few ways to create this type of object:</p>
+
+<pre><code class="language-powershell">    # Passing in the password on the command line prompt (in plain text)
+    $pwd = ConvertTo-SecureString -String 'MyT0p#3cr3tP@ssw0rd' -AsPlainText  -Force
+
+    # More secretive method that does not show the password to anyone watching over your shoulder
+    $pwd = (Get-Credential).Password
+</code></pre>
+
+<p>The second part I generally use and is most common, but I will show both in this article.</p>
+
+<h2 id="create-that-forest">Create that Forest</h2>
+
+<p>The command to create your forest is &ldquo;Install-ADDSForest&rdquo;, and it has a lot of parameters to build the forest. In order to make it readable I formated the table below, but just understand that this is a one-liner to execute on the server. First though we need a few lines of code to get the one password we need to pass to the command:</p>
+
+<pre><code class="language-powershell">    $SafeModeAdminPassword = ConvertTo-SecureString &quot;Your choice of password&quot; -AsPlainText -Force
+</code></pre>
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Value</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>CreateDNSDelegation</td>
+        <td>$false</td>
+        <td>-CreateDNSDelegation:$false</td>
+    </tr>
+    <tr>
+        <td>DatabasePath</td>
+        <td>C:\Windows\NTDS</td>
+        <td>-DatabasePath "C:\Windows\NTDS"</td>
+    </tr>
+    <tr>
+        <td>DomainMode</td>
+        <td>Win2012</td>
+        <td>-DomainMode "Win2012"</td>
+    </tr>
+    <tr>
+        <td>ForestMode</td>
+        <td>Win2012</td>
+        <td>-ForestMode "Win2012"</td>
+    </tr>
+    <tr>
+        <td>DomainName</td>
+        <td>LAB.LOCAL</td>
+        <td>-DomainName "LAB.LOCAL"</td>
+    </tr>
+    <tr>
+        <td>DomainNetbiosName</td>
+        <td>LAB</td>
+        <td>-DomainNetbiosName "LAB"</td>
+    </tr>
+    <tr>
+        <td>InstallDNS</td>
+        <td>$true</td>
+        <td>-InstallDNS:$true</td>
+    </tr>
+    <tr>
+        <td>LogPath</td>
+        <td>C:\Windows\NTDS</td>
+        <td>-LogPath "C:\Windows\NTDS"</td>
+    </tr>
+    <tr>
+        <td>NoRebootOnCompletion</td>
+        <td>$false</td>
+        <td>-NoRebootOnCompletion:$false</td>
+    </tr>
+    <tr>
+        <td>SysvolPath</td>
+        <td>"C:\Windows\SYSVOL"</td>
+        <td>-SysvolPath "C:\Windows\SYSVOL"</td>
+    </tr>
+    <tr>
+        <td>Force</td>
+        <td>$true</td>
+        <td>-Force:$true</td>
+    </tr>
+    <tr>
+        <td>SafeModeAdministratorPassword</td>
+        <td>$SafeModeAdminPassword</td>
+        <td>-SafeModeAdministratorPassword $SafeModeAdminPassword</td>
+    </tr>
+</table>
+
+<p>Once you run this command you will see some action occurring while the forest is being built. Your server should restart once the command completes. You will login as the Domain Administrator using the same password you set for the local Administrator account, once the server restarts.</p>
+
+<h1 id="active-directory-commands">Active Directory Commands</h1>
+
+<p>The module you will use to work with Active Directory is named appropriately &ldquo;ActiveDirectory&rdquo;. There are only are a handful of commands we need to remember to manage our lab environment. You can obviously utilize &ldquo;Get-Help&rdquo; to see more details on the commands, but just for reference I&rsquo;ll give examples of the ones I use most often.</p>
+
+<h2 id="get-aduser">Get-ADUser</h2>
+
+<pre><code class="language-powershell">    Get-ADUser -Filter * -Properties Description | select Name, SamAccountName, Enabled, Description | ft -auto
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_getaduser.png" alt="" /></p>
+
+<p>The &ldquo;Filter&rdquo; parameter is required for this command, and then the &ldquo;Properties&rdquo; is used to pull back properties that are not output by default (e.g. Description, PasswordExpired, etc.). You can use an asterick to have every property, but would stress doing this only in your lab environment.</p>
+
+<h2 id="get-adgroup">Get-ADGroup</h2>
+
+<pre><code class="language-powershell">    Get-ADGroup -Filter * | select Name, SamAccountName | ft -auto
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_getadgroup.png" alt="" /></p>
+
+<h2 id="get-adgroupmember">Get-ADGroupMember</h2>
+
+<p><img src="/img/lab_ad_domain_getadgroupmember.png" alt="" /></p>
+
+<pre><code class="language-powershell">    Get-ADGroup -Filter * | select Name, SamAccountName, GroupCategory, GroupScope | ft -auto
+</code></pre>
+
+<p>This command returns an &ldquo;ADPrincipal&rdquo; object, which is similar to the &ldquo;ADUser&rdquo; object that is returned by &ldquo;Get-ADUser&rdquo;, the exception is you only get a subset of properties on that user/group.</p>
+
+<h2 id="new-aduser">New-ADUser</h2>
+
+<p>One prerequisite that is needed to create an account is providing the password. Which for my lab environment I just use the same password for any account I am creating.</p>
+
+<pre><code class="language-powershell">    $pwd = ConvertTo-SecureString &quot;P@ssword123&quot; -AsPlainText -Force
+    New-ADUser -Name 'Bob The Builder' -SamAccountName BobTheBuilder -PasswordNeverExpires $true -AccountPassword $pwd -Enabled $true
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_newaduser.png" alt="" /></p>
+
+<h2 id="new-adgroup">New-ADGroup</h2>
+
+<p>One parameter to note ont his command is the <a href="https://technet.microsoft.com/en-us/library/cc755692(v=ws.10).aspx" target="_blank">Group Scope</a> parameter. This parameter has 3 options: Global, DomainLocal, Universal. Setting this to Global is sufficient for your lab environment.</p>
+
+<pre><code class="language-powershell">    New-ADGroup -Name Tractors -GroupScope Global
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_newadgroup.png" alt="" /></p>
+
+<h2 id="add-adgroupmember">Add-ADGroupMember</h2>
+
+<p>The 2 parameters you deal with are the identity (group you want to work with) and members (AD identities to add to the group). You can add a single member using this command or multiple, as the members parameter will accept an array of values.</p>
+
+<pre><code class="language-powershell">    Add-ADGroupMember -Identity Tractors -Members Scoop,Stretch
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_addadgroupmembers.png" alt="" /></p>
+
+<h2 id="set-adaccountpassword">Set-ADAccountPassword</h2>
+
+<p>You will need this to change the password for a given account. In this example I just show how you can use the &ldquo;Get-Credential&rdquo; command to pass in the password.</p>
+
+<pre><code class="language-powershell">    Set-ADAccountPassword -Identity BobTheBuilder -Reset -NewPassword (Get-Credential).Password
+</code></pre>
+
+<p><img src="/img/lab_ad_domain_setadaccountpassword.png" alt="" /></p>
+
+<h2 id="unlock-adaccount">Unlock-ADAccount</h2>
+
+<p>For those situations where you locked an account, there is nothing special about this command.</p>
+
+<pre><code class="language-powershell">    Set-ADAccountPassword BobTheBuilder
+</code></pre>
+
+<h2 id="set-aduser">Set-ADUser</h2>
+
+<p>I&rsquo;m not going to show any examples on this one, but just bring it up. If you happen to be doing any testing with AD scripts and you want to set some of the many properties for a given account, then you can use this account. You can find all the various parameters that can be used <a href="https://technet.microsoft.com/en-us/library/ee617215.aspx" target="_blank">here</a>.</p>
+
+<p>The content of this post can also be found <a href="https://www.pythian.com/blog/building-ad-domain-on-windows-core-edition" target="_blank">here</a>.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Improve Load Time on SQLPS | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Improve Load Time on SQLPS</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2015-Nov-16
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/sqlserver">sqlserver</a></code></small>
+
+
+<small><code><a href="https://example.com/tags/powershell">powershell</a></code></small>
+
+</p>
+<p>Over the month of November a fellow PowerShell enthusiast, Mike Fal (<a href="http://www.mikefal.net" target="_blank">blog</a><code>|</code><a href="http://twitter.com/mike_fal" target="_blank">@Mike_Fal</a>), did a <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">series on the SQL Server PowerShell module</a> (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just <a href="http://www.mikefal.net/tag/sqlps/" target="_blank">answered a question on DBA.SE</a> that I figured out by tweaking a particular file for this module, so thought I would share more details.</p>
+
+<p><em><strong>WARNING: You are modifying the files at your own risk. You have been warned.</strong></em></p>
+
+<p>If you are not familiar with the files involved with a module, you can read more on that <a href="https://technet.microsoft.com/en-us/library/dd878324(v=vs.85).aspx" target="_blank">here</a>. The file I found most interesting is the &ldquo;<em>SqlPsPostScript.PS1</em>&rdquo; file, located in the SQLPS module folder for the given version of SQL Server:</p>
+
+<pre><code>C:\Program Files (x86)\Microsoft SQL Server\&lt;version&gt;\Tools\PowerShell\Modules\SQLPS\
+</code></pre>
+
+<p>This file is being called after the module is loaded as a nested module. You can find all of this by reading through the manifest file for SQLPS, <code>SQLPS.PSD1</code>.</p>
+
+<p>The post script file does a handful things:</p>
+
+<ul>
+<li>Sets the location of your session to SQLSERVER:\ (the provider)</li>
+<li>Has a function that does the same thing, if you just enter &ldquo;SQLSERVER:&rdquo; at the prompt instead of typing the Set-Location. Could be a waste of 47 characters to me.</li>
+<li>Loads the DAC assemblies for managing and creating DAC packages with PowerShell.</li>
+<li>Loads the SQLAS module, if not already loaded.</li>
+</ul>
+
+<p>Now the most annoying thing I always have with the SQLPS module is that it puts me in the location of the provider after it loads. I stop that by simply commenting out that first line in the file. A <code>Measure-Command</code> on loading the module before and after, shaves off a whole second (time is money).</p>
+
+<p>The other thing I found was the warnings on the WMI service the poster on DBA.SE was getting, was strictly due to the SQLAS module being loaded. Which in the documentation I linked to in that question shows that this module utilizes WMI. Which that begs the question for Microsoft: Why you put WMI management into SQLAS, and not SQLPS?</p>
+
+<p>Now the module itself when loading also loads numerous DLL files, which all those contain the magic that is SQLPS.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Calc-MaxSample | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Calc-MaxSample</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2013-Nov-13
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/powershell">powershell</a></code></small>
+
+</p>
+<p>I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (<a href="http://sqlblog.com/blogs/aaron_bertrand/default.aspx" target="_blank">blog</a> <code>|</code> <a href="http://twitter.com/AaronBertrand" target="_blank">twitter</a>) blog post <a href="http://sqlblog.com/blogs/aaron_bertrand/archive/2011/01/31/how-i-use-powershell-to-collect-performance-counter-data.aspx" target="_blank">here</a>.</p>
+
+<p>This gave me a starting point, however I also noticed that with the use of the basic <a href="http://technet.microsoft.com/en-us/library/dd367892.aspx" target="_blank">Get-Counter</a> cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information.</p>
+
+<p>You would want to calculate this based on the –SampleInterval value. A few examples of this can be found in the comments on Aaron’s blog post. If you want to cover a 2 hour period and get a sample every 30 seconds, you would set MaxSamples to 240.</p>
+
+<p>This is a mathematical equation that I did not want to have to keep doing every time. So I decided to build a small function that I added to my PowerShell ISE profile. I don’t use the the console all that much anymore with PowerShell 4.0. The below function includes a bit of help information as well. So, once you load this function into the console or your profile you can use Get-Help cmdlet if needed.</p>
+
+<pre><code class="language-powershell">&lt;#
+.Synopsis
+  Assist calculating the max sample for Get-Counter
+.DESCRIPTION
+  Calculates from the sampling value and the hours desired what the max sample value should be for the Get-Counter cmdlet
+.EXAMPLE
+  Cal-MaxSample -secSample 15 -hours 3
+   This example based on the SampleInterval and the number of hours desired output what the MaxSample value should be
+.PARAMETER secSample
+    The SampleInterval value to be used in Get-Counter command, Int32 value between 2 - 60. The default value for
+   Get-Counter command is 1 (one)
+.PARAMETER hours
+   The number of hours desired for capturing performance counter data with Get-Counter command
+#&gt;
+function Calc-MaxSample
+{
+   [CmdletBinding()]
+    [OutputType([int])]
+   Param
+    (
+       [Parameter(Mandatory=$true,
+                   Position=0)]
+       [ValidateRange(2,60)]
+        [int32]
+       $secSample,
+       [Parameter(Mandatory=$true,
+                    Position=1)]
+       [int]
+        $hours
+   )
+   [int]$calValue = (($hours * 60) * 60) / $secSample
+   Write-Host &quot;Based on following calculation: (($hours * 60) * 60) / $secSample)&quot; -ForegroundColor Yellow -BackgroundColor Red
+    Write-Host &quot;MaxSample value = $calValue&quot; -ForegroundColor Yellow -BackgroundColor DarkGray
+}
+</code></pre>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

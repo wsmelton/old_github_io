@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>Remembering Why | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Remembering Why</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2010-Apr-27
+  </small>
+  
+</p>
+<p>You have someone come to you and say they want to implement &ldquo;it&rdquo; on  the database or SQL Server instance.  Or it could be maybe you hear a  conversation about implementing &ldquo;it&rdquo;.  Unlike me, I don&rsquo;t recall things  &ldquo;word for word&rdquo; but remember reading about &ldquo;it&rdquo; not being a good idea in  certain circumstances or at all.</p>
+
+<p>One particular thing I know of that  will get the blog post rolling is posting on a forum  &ldquo;how can I schedule or how often should I shrink my database(s)?&rdquo;.  Which I  had this come up recently when a customer put in a request to have a  shrink job added prior to the backup occurring each day.  (Wait keep  reading first&hellip;).  I asked them why they thought they needed a shrink  job.  The customer returned with &ldquo;we are trying to make them as small as  possible for zipping and shipping the data off to the customer&rdquo;.  Which  a few lines into the conversation I found he was referring to the  backup file, and trying to make it as small as possible.</p>
+
+<p>I read a good bit of blogs and articles (at least try too).  I know from all that reading that shrinking the database can cause server fragmentation.  If you designed and configured the database right to begin with, there should be no reason to continually shrink the database (or at most very, very, very few occasions where you need to).  As well, all shrinking is going to do is cause the database to grow when more data is written.</p>
+
+<p>Anyway, all that got me to thinking&hellip;where do I keep all those &ldquo;justification&rdquo; articles as to why you don&rsquo;t do this or that?  Sad to say, I can&rsquo;t remember where I keep it or even if I do have such a document laying around.  So&hellip;what else is a blog for than for documenting things you want to keep up with, and share with other people too.  So from this post I will try to start working on a page (title yet to be determined) that includes my favorite articles on why you don&rsquo;t do certain things.  (I will update this post with the link once I create and publish it.)</p>
+
+<p>Hopefully the ambition to do this stays with me.  I will have to look at first checking with those authors to make sure they are aware I&rsquo;m doing it :).  I know there are a few &ldquo;wiki&rdquo; sites that gather some of this information for you, and will include those as well.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

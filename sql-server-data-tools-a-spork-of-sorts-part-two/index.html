@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>SQL Server Data Tools: A spork of sorts (part two) | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>SQL Server Data Tools: A spork of sorts (part two)</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2014-Oct-20
+  </small>
+  
+
+<small><code><a href="https://example.com/tags/sqlserver">sqlserver</a></code></small>
+
+</p>
+<p>In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.</p>
+
+<p>If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on <a href="http://blogs.msdn.com/b/mattm/archive/2013/07/02/sql-server-data-tools-business-intelligence-ssdt-bi-for-sql-server-2014-ctp1.aspx" target="_blank">SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1</a> (another interesting post to read response to this in the comments). This is where it was told that you will not be able to install SSDT BI on a new machine with SQL Server 2014 installation media. It became a separate download. You would get this download from <a href="http://msdn.microsoft.com/en-us/data/hh297027" target="_blank">Microsoft SQL Server Data Tools</a> page on MSDN, scroll down to the bottom of the page to find SSDT-BI download links for VS 2012 and VS 2013.</p>
+
+<p>I opted to just go ahead and move to Visual Studio 2013 version and downloaded that from <a href="http://www.microsoft.com/en-us/download/details.aspx?id=42313" target="_blank">here</a>. If you have installed the version for VS 2012 before it has not changed from that installation process. I will go over the installation for VS 2013 version to just provide a walkthrough for those that may be just starting out.</p>
+
+<p>You start out with a file named “SSDTBI_x86_ENU.exe&rdquo;, yeah no 64-bit version still. After the download is complete just double click. Now this is a basic clicking next through the wizard and I will just point out a few notes from my experience installing this on a new Windows 7 machine.</p>
+
+<ul>
+<li>The file downloaded is going to extract the files to a directory of your choice. If you end up having to cancel and start over, you go into that extracted directory and run the setup.exe file. You are actually going to get the SQL Server Installation Center similar to this:</li>
+</ul>
+
+<p><img src="/img/spork_p2_1.png" alt="" /></p>
+
+<p>Just click on “New SQL Server stand-alone installation…” and it will bring you to the starting point of accepting the license terms.</p>
+
+<ul>
+<li>It states in the feature selection that .NET Framework 4.5 is installed through this media. In my instance it actually did not install this and failed with a feature rule check. Might be worth verifying that is installed if you are on a new machine.</li>
+</ul>
+
+<p><img src="/img/spork_p2_2.png" alt="" /></p>
+
+<ul>
+<li>Also note above what it is also going to install, Visual Studio 2012. If you don’t believe it, check out my own laptop:</li>
+</ul>
+
+<p><img src="/img/spork_p2_3.png" alt="" /></p>
+
+<p>Once you get done with the installation you are ready to get started with Business Intelligence development.</p>
+
+<p><img src="/img/spork_p2_4.png" alt="" /></p>
+
+<p>Happy learning!</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>

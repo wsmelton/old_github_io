@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://example.com/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+
+  
+  <title>What a few lines of code can do | Shawn&#39;s Notebook</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>What a few lines of code can do</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2011-Aug-01
+  </small>
+  
+</p>
+<p>You find out PowerShell is fun when you start playing with it and actually try to perform a task with it. I have been using it the past few months to try and decrease the time it takes me to perform a scan of a SQL Server. What I mean by scan is I work with the IASE Security Technical Implementation Guide checklist (STIG). You can find the checklist for SQL Server <a href="http://iase.disa.mil/stigs/app_security/database/sql.html" target="_blank">here</a>, they have not published one for SQL 2008 so I just use the SQL 2005 checklist for now.</p>
+
+<p>Anyway some of the findings in that checklist have you check configuration settings that could be checked through SSMS or through registry keys. I prefer to check registry keys or use SQL SMO if I can, cause guess what&hellip;PowerShell can do it for me.</p>
+
+<p>I am not going to provide the complete script right now cause it is still a work in progress. I have a parameter required to pass with the script, the instance name. I was just using that to connect with SQL SMO, but now I have just figured out how I can use that with looking at the registry.</p>
+
+<p>With a SQL Server installs (SQL 2005 and higher) it adds a registry hive of <code>HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server</code>. To really get deeper than that you have to know what the path is for the instance and it varies between SQL Server versions and default/named instances. In SQL Server 2005 it is <code>MSSQL.#</code> (&ldquo;#&rdquo; being a number between 1 - 9). With SQL Server 2008 it changed to <code>MSSQL10.&lt;InstanceName&gt;</code> and SQL 2008 R2 it is <code>MSSQL10_50.&lt;Instance Name&gt;</code>. So if you were working with a default instance the path for SQL Server 2008 and R2 would be <code>MSSQL10.MSSQLSERVER</code> or <code>MSSQL10_50.MSSQLSERVER</code>. With SQL Server 2005 it would be your best guess cause if there are multiple instances it will depend on the order it was installed. If the default instance was first it would be <code>MSSQL.1</code>, then any named instance after that would have that number incremented.</p>
+
+<p>Needless to say it took me a few minutes to get it down right but this is the code I came up with, and there is probably another way of doing it (or even doing it with less). I have not tested it on every version of SQL Server. If I come across any bugs I will update this post.</p>
+
+<p><em>Note: <code>$InstanceName</code> is the variable used to pull in the parameter passed when calling the script.</em></p>
+
+<pre><code class="language-powershell">#find registry path to work with for the instance
+$regInstance = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server'.InstalledInstances
+
+#build registry path to output according to instance name passed with script
+if ($InstanceName -eq $env:COMPUTERNAME)
+{
+    #default instance
+    $currentValue = $regInstance | Where-Object {$_ -eq &quot;MSSQLSERVER&quot;}
+    $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$currentValue
+    $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+}
+else
+{
+#named instance passed
+    $currentValue = $regInstance | Where-Object {$_ -eq $InstanceName}
+    $regPath = (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL').$currentValue
+    $fullpath = &quot;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\$regpath&quot;
+}
+</code></pre>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>
