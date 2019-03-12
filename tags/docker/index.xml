@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Shawn Melton</title>
-    <link>https://wsmelton.github.io/tags/docker/</link>
+    <link>http://localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 31 Dec 2018 00:00:00 -0600</lastBuildDate>
     
-	<atom:link href="https://wsmelton.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automating Docker</title>
-      <link>https://wsmelton.github.io/automating-docker/</link>
+      <link>http://localhost:1313/automating-docker/</link>
       <pubDate>Mon, 31 Dec 2018 00:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/automating-docker/</guid>
+      <guid>http://localhost:1313/automating-docker/</guid>
       <description>If you do something more than once it should be automated or scripted in a repeatable manner. You likely have heard this before, and it applies across various task that support commands being run via any scripting language.
 Docker is no different and has been picking up speed. Many post I have seen folks show how to run individual commands to pull down images. Microsoft has started publishing beta releases of Windows Server, SQL Server and even PowerShell via Docker images.</description>
     </item>

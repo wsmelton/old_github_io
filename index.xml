@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shawn Melton</title>
-    <link>https://wsmelton.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 31 Dec 2018 00:00:00 -0600</lastBuildDate>
     
-	<atom:link href="https://wsmelton.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automating Docker</title>
-      <link>https://wsmelton.github.io/automating-docker/</link>
+      <link>http://localhost:1313/automating-docker/</link>
       <pubDate>Mon, 31 Dec 2018 00:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/automating-docker/</guid>
+      <guid>http://localhost:1313/automating-docker/</guid>
       <description>If you do something more than once it should be automated or scripted in a repeatable manner. You likely have heard this before, and it applies across various task that support commands being run via any scripting language.
 Docker is no different and has been picking up speed. Many post I have seen folks show how to run individual commands to pull down images. Microsoft has started publishing beta releases of Windows Server, SQL Server and even PowerShell via Docker images.</description>
     </item>
     
     <item>
       <title>Azure Automation Bug</title>
-      <link>https://wsmelton.github.io/azure-automation-bug/</link>
+      <link>http://localhost:1313/azure-automation-bug/</link>
       <pubDate>Fri, 10 Aug 2018 15:10:52 -0500</pubDate>
       
-      <guid>https://wsmelton.github.io/azure-automation-bug/</guid>
+      <guid>http://localhost:1313/azure-automation-bug/</guid>
       <description>Long time, no post&amp;hellip;
 I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &amp;ldquo;new VM&amp;rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.
 Being that it is Azure Automation I am opted to use the AzureRm module as much as I can.</description>
@@ -34,49 +34,49 @@ Being that it is Azure Automation I am opted to use the AzureRm module as much a
     
     <item>
       <title>VS Code Profile</title>
-      <link>https://wsmelton.github.io/vs-code-profile/</link>
+      <link>http://localhost:1313/vs-code-profile/</link>
       <pubDate>Thu, 07 Jun 2018 08:00:00 -0500</pubDate>
       
-      <guid>https://wsmelton.github.io/vs-code-profile/</guid>
+      <guid>http://localhost:1313/vs-code-profile/</guid>
       <description>If you have not started using Visual Studio Code just yet you can take a look at the intro videos on the basics. One item that is dug into the documentation that I have commonly seen asked on SO a few times is around the PowerShell extension and the extension&amp;rsquo;s Integrated Terminal.
 The main question asked is around creating the profile, or they already have a profile for PowerShell but the integrated terminal is not &amp;ldquo;seeing&amp;rdquo; it (or picking it up).</description>
     </item>
     
     <item>
       <title>Github Issue Templates</title>
-      <link>https://wsmelton.github.io/github-issue-templates/</link>
+      <link>http://localhost:1313/github-issue-templates/</link>
       <pubDate>Sun, 13 May 2018 20:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/github-issue-templates/</guid>
+      <guid>http://localhost:1313/github-issue-templates/</guid>
       <description>Who has not heard of GitHub yet? For those embarrassed to raise your hand, it is simply a hosting service for version control and offers free subscriptions along with paid (allows private repositories and such). It has become common place for PowerShell modules and the like to be hosted on GitHub. Microsoft has moved a number of projects and products to GitHub, big one being PowerShell.
 The benefit you can have hosting your project on GitHub is it includes a bug report system and workflow.</description>
     </item>
     
     <item>
       <title>Visual Studio Community</title>
-      <link>https://wsmelton.github.io/visual-studio-ide/</link>
+      <link>http://localhost:1313/visual-studio-ide/</link>
       <pubDate>Thu, 04 Jan 2018 19:35:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/visual-studio-ide/</guid>
+      <guid>http://localhost:1313/visual-studio-ide/</guid>
       <description>I have typed a good bit in the past year evangelizing about Visual Studio Code on social media and other forms. As a major contributor for the PowerShell module dbatools I have made VS Code my primary development tool. You may not know that I actually started out using the big brother Visual Studio 2015 Community Edition (&amp;ldquo;VS&amp;rdquo;) before I found VS Code. VS, now at version 2017, and the PowerShell Tools for Visual Studio have come a long way since I last used them.</description>
     </item>
     
     <item>
       <title>PowerShell Debugging</title>
-      <link>https://wsmelton.github.io/powershell-debugging/</link>
+      <link>http://localhost:1313/powershell-debugging/</link>
       <pubDate>Mon, 30 Oct 2017 12:30:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-debugging/</guid>
+      <guid>http://localhost:1313/powershell-debugging/</guid>
       <description>The what and why Debugging code can be a fun undertaking whether you just want to figure out why something broke or how it works. As well, in the age of &amp;ldquo;everything is a module&amp;rdquo; in PowerShell we can&amp;rsquo;t discount having the ability to troubleshoot why a function or command does not do what is expected.
 An alternative is to just fill your script(s) with Write-Output and Write-Debug statements. Which work, but is time consuming to put in on something you already wrote.</description>
     </item>
     
     <item>
       <title>dbatools and a SQL Agent</title>
-      <link>https://wsmelton.github.io/dbatools-sql-agent/</link>
+      <link>http://localhost:1313/dbatools-sql-agent/</link>
       <pubDate>Wed, 30 Aug 2017 03:30:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/dbatools-sql-agent/</guid>
+      <guid>http://localhost:1313/dbatools-sql-agent/</guid>
       <description>The mission:  Tell every DBA around the world about a secret formula that will give them powers.
  What power do you think that is? Freedom! Freedom to go work on projects that you want to do versus constantly putting out fires. Freedom to go learn something new.
 What is this secret formula? PowerShell and the dbatools module. This module is meant to make our jobs as a DBA easier and our time managing SQL Server environments more efficient.</description>
@@ -84,147 +84,147 @@ What is this secret formula? PowerShell and the dbatools module. This module is 
     
     <item>
       <title>Debugging dbatools</title>
-      <link>https://wsmelton.github.io/draft-powershell-debugging-dbatools/</link>
+      <link>http://localhost:1313/draft-powershell-debugging-dbatools/</link>
       <pubDate>Mon, 07 Aug 2017 02:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/draft-powershell-debugging-dbatools/</guid>
+      <guid>http://localhost:1313/draft-powershell-debugging-dbatools/</guid>
       <description>Keeping it Real I thought it would be helpful to walk you through a true-to-life scenario that I had where I needed to debug the dbatools module. An issue was filed on the repository that pointed out in certain cases multiple login failed messages are written to the SQL Server instance passed into a command when a credential is provided. The login failure is generally showing as the Windows account running the PowerShell session (powershel.</description>
     </item>
     
     <item>
       <title>PowerShell Learning Path</title>
-      <link>https://wsmelton.github.io/powershell-learning-path/</link>
+      <link>http://localhost:1313/powershell-learning-path/</link>
       <pubDate>Mon, 05 Jun 2017 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-learning-path/</guid>
+      <guid>http://localhost:1313/powershell-learning-path/</guid>
       <description>How much do you automate in your job? The question is not necessarily specific to SQL Server, whether you work as a system administrator or even business analyst. There are areas of your job that can be, and should be, automated. Ok, now back to SQL Server specifics&amp;hellip;
 Day-To-Day Task A database administrator always has some mundane task to do each day, if they want to keep their job. These little things are the best candidates for automating, as a starting point.</description>
     </item>
     
     <item>
       <title>Code with Code (for Windows)</title>
-      <link>https://wsmelton.github.io/code-with-code/</link>
+      <link>http://localhost:1313/code-with-code/</link>
       <pubDate>Sat, 24 Dec 2016 06:30:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/code-with-code/</guid>
+      <guid>http://localhost:1313/code-with-code/</guid>
       <description>In aprevious post on PowerShell Editors I included Visual Studio Code (Code) in that list. In this post I wanted to introduce Code a bit more to you, and walk you through how you can interact with GitHub repositories. I mean now a days, who doesn&amp;rsquo;t have a GitHub account?
 Now I will make a caveat that I&amp;rsquo;m not going to go into the workflow and details of how Git works.</description>
     </item>
     
     <item>
       <title>Building AD Domain on Windows Core Edition</title>
-      <link>https://wsmelton.github.io/building-active-directory-domain-windows-core-edition/</link>
+      <link>http://localhost:1313/building-active-directory-domain-windows-core-edition/</link>
       <pubDate>Sat, 03 Dec 2016 11:42:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/building-active-directory-domain-windows-core-edition/</guid>
+      <guid>http://localhost:1313/building-active-directory-domain-windows-core-edition/</guid>
       <description>This is a follow up post on building an Hyper-V lab to learn SQL Server.
 Active Directory offers the PowerShell module ActiveDirectory for managing various aspects of the domain. If you are a full-time AD Administrator you may need to learn the commands in this module in great detail, but for lab purposes we only need to be familiar with a few of them. However, first things first&amp;hellip;we need to create our domain in the lab.</description>
     </item>
     
     <item>
       <title>Extended Events - Fetching API Cursors</title>
-      <link>https://wsmelton.github.io/extended-events-fetching-api-cursors/</link>
+      <link>http://localhost:1313/extended-events-fetching-api-cursors/</link>
       <pubDate>Wed, 23 Nov 2016 20:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/extended-events-fetching-api-cursors/</guid>
+      <guid>http://localhost:1313/extended-events-fetching-api-cursors/</guid>
       <description>Forum questions can sometimes cause distractions for me just because they pique my interest at times, especially when I see someone say &amp;ldquo;Extended Event (XE) session is not showing the expensive query&amp;rdquo;. Extended Events are just&amp;hellip;
 The particular forum question that caught my attention span today was on DBA StackExchange (DBA.SE) site: Expensive Query not showing in extended events trace. In this question the individual was troubleshooting the infamous FETCH_API_CURSORxxxxxxx queries.</description>
     </item>
     
     <item>
       <title>Hyper-V Lab for SQL Server</title>
-      <link>https://wsmelton.github.io/hyper-v-lab-for-sql-server/</link>
+      <link>http://localhost:1313/hyper-v-lab-for-sql-server/</link>
       <pubDate>Mon, 14 Nov 2016 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/hyper-v-lab-for-sql-server/</guid>
+      <guid>http://localhost:1313/hyper-v-lab-for-sql-server/</guid>
       <description>Whether you are playing with features or learning them in a server operating system, or SQL Server, you need to first have somewhere to run it all. All of us would love to have a server rack in our garage/basement/workshop, but that incurs a pretty high cost. You might consider using Azure or AWS services, which for the most part are a good source. Once you get into working with SQL Server though, the price for both cloud providers can fluctuate pretty high based on what feature or component you want to play with or learn.</description>
     </item>
     
     <item>
       <title>PowerShell Editors</title>
-      <link>https://wsmelton.github.io/powershell-editors/</link>
+      <link>http://localhost:1313/powershell-editors/</link>
       <pubDate>Wed, 19 Oct 2016 22:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-editors/</guid>
+      <guid>http://localhost:1313/powershell-editors/</guid>
       <description>PowerShell Editors are the bread and butter in the life of an individual that wants to write PowerShell, whether for serious development or just starting. You could also be ready to get involved in open source projects around PowerShell, they do exist. There is even one specific to SQL Server on GitHub.
 What we use to write scripts in is another tool in our belt, with the main purpose of making development of said scripts more efficient, or even easier.</description>
     </item>
     
     <item>
       <title>Updates and Work</title>
-      <link>https://wsmelton.github.io/updates-and-work/</link>
+      <link>http://localhost:1313/updates-and-work/</link>
       <pubDate>Mon, 10 Oct 2016 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/updates-and-work/</guid>
+      <guid>http://localhost:1313/updates-and-work/</guid>
       <description>Well you may have noticed the different look and format of my blog. I ended up making the decision last week to go ahead and move off of WordPress.com and moved it be hosted by GitHub. It was an interesting process that if many show interest I can write up what I had to go through.
 I also decided to go ahead and get my own domain name: blog.wsmelton.info. Which I had to do the sub-domain link with GitHub pages because (as I understand so far) GitHub will not let search engines crawl an apex domain address, but will a sub-domain address because it is just a CNAME record and not an A record.</description>
     </item>
     
     <item>
       <title>Windows 10 and SSCM disappearing</title>
-      <link>https://wsmelton.github.io/windows-10-and-sscm-disappearing/</link>
+      <link>http://localhost:1313/windows-10-and-sscm-disappearing/</link>
       <pubDate>Fri, 11 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/windows-10-and-sscm-disappearing/</guid>
+      <guid>http://localhost:1313/windows-10-and-sscm-disappearing/</guid>
       <description>I have been using Windows 10 since it was released on my main (well only) laptop. I found some issues with the SQL Server management tools through the upgrade process, specifically SQL Server Configuration Manager (SSCM). The issue I had was SSCM disappearing from the Start Menu when I upgraded to Windows 10. I also had a repeat of this issue after applying the latest update to Windows 10 for December 2015.</description>
     </item>
     
     <item>
       <title>Modifying SQL Server Startup Parameters</title>
-      <link>https://wsmelton.github.io/modifying-sql-server-startup-parameters/</link>
+      <link>http://localhost:1313/modifying-sql-server-startup-parameters/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/modifying-sql-server-startup-parameters/</guid>
+      <guid>http://localhost:1313/modifying-sql-server-startup-parameters/</guid>
       <description>Mike, Mike, Mike, Mike, Mike&amp;hellip;.guess what I figured out? Well it all started by reading Mike Fal&amp;rsquo;s post on Managing SQL Server Services with #PowerShell. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.
 If you go search right now for using PowerShell to alter the startup parameters for SQL Server&amp;hellip;go ahead&amp;hellip;.</description>
     </item>
     
     <item>
       <title>Improve Load Time on SQLPS</title>
-      <link>https://wsmelton.github.io/improve-load-time-on-sqlps/</link>
+      <link>http://localhost:1313/improve-load-time-on-sqlps/</link>
       <pubDate>Mon, 16 Nov 2015 07:30:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/improve-load-time-on-sqlps/</guid>
+      <guid>http://localhost:1313/improve-load-time-on-sqlps/</guid>
       <description>Over the month of November a fellow PowerShell enthusiast, Mike Fal (blog|@Mike_Fal), did a series on the SQL Server PowerShell module (SQLPS). In reading his series curiosity struck on what the module does when it was loading. I also just answered a question on DBA.SE that I figured out by tweaking a particular file for this module, so thought I would share more details.
 WARNING: You are modifying the files at your own risk.</description>
     </item>
     
     <item>
       <title>Dynamically Build RDP Files</title>
-      <link>https://wsmelton.github.io/dynamically-build-rdp-files/</link>
+      <link>http://localhost:1313/dynamically-build-rdp-files/</link>
       <pubDate>Mon, 26 Oct 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/dynamically-build-rdp-files/</guid>
+      <guid>http://localhost:1313/dynamically-build-rdp-files/</guid>
       <description>This post was originally published 26 July 2011, updated the script and the post since I have learned a good bit on PowerShell since the original post.
 I was pretty excited that work was finally going to install Remote Desktop Connection Manager v2.2 on our laptops, until I started using it. It is nice if you work on one server at a time but sometimes I multitask while something is running, or I need to compare something to the results on another server.</description>
     </item>
     
     <item>
       <title>SQL Server - Feed the Beast</title>
-      <link>https://wsmelton.github.io/sql-server-feed-the-beast/</link>
+      <link>http://localhost:1313/sql-server-feed-the-beast/</link>
       <pubDate>Thu, 22 Oct 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-feed-the-beast/</guid>
+      <guid>http://localhost:1313/sql-server-feed-the-beast/</guid>
       <description>This content was originally posted on here.
 An environment where you have a high number of databases on one server, or many, can be time consuming to something as simple as adding a user account. You have the option of using the GUI with SQL Server Management Studio (SSMS), which if it was a rush to get something in place for 8 or 10 databases I can see possibly doing that to get it done.</description>
     </item>
     
     <item>
       <title>Parse Deadlock Graph from System_Health session</title>
-      <link>https://wsmelton.github.io/parse-deadlock-graph-from-system_health-session/</link>
+      <link>http://localhost:1313/parse-deadlock-graph-from-system_health-session/</link>
       <pubDate>Wed, 16 Sep 2015 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/parse-deadlock-graph-from-system_health-session/</guid>
+      <guid>http://localhost:1313/parse-deadlock-graph-from-system_health-session/</guid>
       <description>Way back in October (2014) I published the post: XML, Glad that is over (yeah, I know such a good title). In that post I published a script built from researching how to get the deadlock report out of the Extended Event system_health session. Think of this session like the default trace of SQL Server 2005, but way cooler. Anyway&amp;hellip;
 It was brought up to me recently on an answer I provided on DBA.</description>
     </item>
     
     <item>
       <title>Build your own StackExchange Database</title>
-      <link>https://wsmelton.github.io/build-your-own-stackexchange-database/</link>
+      <link>http://localhost:1313/build-your-own-stackexchange-database/</link>
       <pubDate>Mon, 20 Jul 2015 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/build-your-own-stackexchange-database/</guid>
+      <guid>http://localhost:1313/build-your-own-stackexchange-database/</guid>
       <description>&amp;rdquo;)
 Have you ever wanted to be like Mike Brent and have your own local, sample StackExchange database? Do you know what PowerShell is?
 If you at least answered yes to the first and last question, I am here to help. I published a PowerShell script on GitHub and created a dedicated page to show you how I solved the problem with PowerShell. Travel over to me resource page page: StackExchange and you will see what I am talking about.</description>
@@ -232,19 +232,19 @@ If you at least answered yes to the first and last question, I am here to help. 
     
     <item>
       <title>Don&#39;t just do it, love doing it</title>
-      <link>https://wsmelton.github.io/dont-just-do-it-love-doing-it/</link>
+      <link>http://localhost:1313/dont-just-do-it-love-doing-it/</link>
       <pubDate>Fri, 06 Feb 2015 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/dont-just-do-it-love-doing-it/</guid>
+      <guid>http://localhost:1313/dont-just-do-it-love-doing-it/</guid>
       <description>I attended a meeting today with the founder of the company I am now employed by. It was a session to hear the story and the background of the company and founder himself. It was very interesting. One part of the discussion near the end was a subject area that I think can define a person&amp;rsquo;s character and demeanor to some extent. It was regarding dealing with the policy and tools required for various processes that are to be used in my day-to-day responsibilities.</description>
     </item>
     
     <item>
       <title>To be mentored or not to be</title>
-      <link>https://wsmelton.github.io/to-be-mentored-or-not-to-be/</link>
+      <link>http://localhost:1313/to-be-mentored-or-not-to-be/</link>
       <pubDate>Fri, 30 Jan 2015 15:48:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/to-be-mentored-or-not-to-be/</guid>
+      <guid>http://localhost:1313/to-be-mentored-or-not-to-be/</guid>
       <description>This happens to be the first post of 2015 for me, and actually one of the few non-technical post I have written. Paul Randal recently posted on Twitter offering to mentor a select number individuals.
 RT [Blog] Want to be mentored by me? http://t.co/AGTpagin08 #sql #sqlserver #sqlfamily
 &amp;mdash; Paul Randal (@PaulRandal) January 30, 2015 
@@ -253,20 +253,20 @@ Which I have read he also does this for a select few that go through the SQL Ski
     
     <item>
       <title>Search-SqlErrorLog</title>
-      <link>https://wsmelton.github.io/powershell-and-sql-server-search-sqlerrorlog/</link>
+      <link>http://localhost:1313/powershell-and-sql-server-search-sqlerrorlog/</link>
       <pubDate>Mon, 22 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-and-sql-server-search-sqlerrorlog/</guid>
+      <guid>http://localhost:1313/powershell-and-sql-server-search-sqlerrorlog/</guid>
       <description>I have had a thought on how I might write this function for some time and finally decided to just sit down and do it.
 When you have alerts setup or just in general need to troubleshoot a given instance of SQL Server one of the first steps is always looking through the ERRORLOG files for the instance. You can do this via SSMS or even via T-SQL with a known (but undocumented) stored procedure sp_readerrorlog.</description>
     </item>
     
     <item>
       <title>SQL Sentry Plan Explorer and Deadlock XML Report</title>
-      <link>https://wsmelton.github.io/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</link>
+      <link>http://localhost:1313/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</link>
       <pubDate>Mon, 15 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</guid>
+      <guid>http://localhost:1313/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</guid>
       <description>OK, I just found one of those things that I can remember reading about but forgot until I saw it again. Back in October I had the privilege of being the recipient of a SQL Sentry Plan Explorer Pro license via one of their contest: [Blog] : #ILovePlanExplorer update: @wsmelton won the #PlanExplorerPRO license. Thanks to everyone who participated! http://t.co/G3jQp62Udx
 &amp;mdash; SentryOne (@SQLSentry) October 23, 2014 
 If you are not familar with SQL Sentry, you should be.</description>
@@ -274,28 +274,28 @@ If you are not familar with SQL Sentry, you should be.</description>
     
     <item>
       <title>SQL Server Maintenance Plan Logging</title>
-      <link>https://wsmelton.github.io/tidbit-sql-server-maintenance-plan-logging/</link>
+      <link>http://localhost:1313/tidbit-sql-server-maintenance-plan-logging/</link>
       <pubDate>Mon, 08 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/tidbit-sql-server-maintenance-plan-logging/</guid>
+      <guid>http://localhost:1313/tidbit-sql-server-maintenance-plan-logging/</guid>
       <description>Whether you are an advocate of Maintenance Plans or not, they have their place in some situations. However, when you do use them there is one thing you should understand that is turned on by default with every maintenance plan you create: report and logging. I am not sure why, but Microsoft decided that any sub-plan that exist within a maintenance plan should have a log created for it by date.</description>
     </item>
     
     <item>
       <title>FileZilla Logs to SQL Server via PowerShell</title>
-      <link>https://wsmelton.github.io/filezilla-logs-to-sql-server-via-powershell/</link>
+      <link>http://localhost:1313/filezilla-logs-to-sql-server-via-powershell/</link>
       <pubDate>Mon, 01 Dec 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/filezilla-logs-to-sql-server-via-powershell/</guid>
+      <guid>http://localhost:1313/filezilla-logs-to-sql-server-via-powershell/</guid>
       <description>I had a client that uses FileZilla for FTP, where little files are constantly being sent to this server from numerous devices. In this situation I needed to be able to have it log those connections so I could try and track down an issue. [I&amp;rsquo;m a man with many hats.] So I went into FileZilla Server Interface and enabled logs to be created by day. I thought I might be able to just parse them easily with PowerShell, but yeah not really.</description>
     </item>
     
     <item>
       <title>SQL Server GROUP BY in PowerShell</title>
-      <link>https://wsmelton.github.io/sql-server-group-by-in-powershell/</link>
+      <link>http://localhost:1313/sql-server-group-by-in-powershell/</link>
       <pubDate>Mon, 17 Nov 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-group-by-in-powershell/</guid>
+      <guid>http://localhost:1313/sql-server-group-by-in-powershell/</guid>
       <description>I usually don&amp;rsquo;t have any specific reason to play with PowerShell other than strict joy of doing it, but this time I did. I wanted to go through a client&amp;rsquo;s server, and find out how many tables each database had.
 Now something like this can easily be done in T-SQL for a single database with this bit of code:
 SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND type=&#39;U&#39;  The above works but then you have to write the additional code to execute that against every database on a given server.</description>
@@ -303,76 +303,76 @@ SELECT COUNT(*) AS TotalCount FROM sys.all_objects WHERE is_ms_shipped = 0 AND t
     
     <item>
       <title>Max User Connections set to one (oops)</title>
-      <link>https://wsmelton.github.io/max-user-connections-set-to-one-oops/</link>
+      <link>http://localhost:1313/max-user-connections-set-to-one-oops/</link>
       <pubDate>Tue, 11 Nov 2014 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/max-user-connections-set-to-one-oops/</guid>
+      <guid>http://localhost:1313/max-user-connections-set-to-one-oops/</guid>
       <description>I frequent Database Administrators forum over on Stack Exchange Network, and came across a question that intrigued me enough to play around with the setting noted in the first sentence: Maximum number of concurrent connections. What happens when you set this to one, and how do you set it back to default?
 To make a small note the method or process this OP tried to use just to get a database restored was completely the wrong way to go about it.</description>
     </item>
     
     <item>
       <title>I am Biml (Bacon Integrated Markup Language)</title>
-      <link>https://wsmelton.github.io/i-am-biml-bacon-integrated-markup-language/</link>
+      <link>http://localhost:1313/i-am-biml-bacon-integrated-markup-language/</link>
       <pubDate>Mon, 03 Nov 2014 06:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/i-am-biml-bacon-integrated-markup-language/</guid>
+      <guid>http://localhost:1313/i-am-biml-bacon-integrated-markup-language/</guid>
       <description>Wouldn’t it be awesome if that is what it was really called? Maybe not, so what does Biml really stand for?
 Small Background Varigence is the company that created Biml, particularly Scott Currie, back in 2008. You can check their page to get the full store, it is worth a read. It is a pretty remarkable story that they took a thought and turned it into a full technology that includes a proprietary and an open source product.</description>
     </item>
     
     <item>
       <title>Backup Files to Tape</title>
-      <link>https://wsmelton.github.io/powershell-backup-files-to-tape/</link>
+      <link>http://localhost:1313/powershell-backup-files-to-tape/</link>
       <pubDate>Tue, 28 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-backup-files-to-tape/</guid>
+      <guid>http://localhost:1313/powershell-backup-files-to-tape/</guid>
       <description>I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan.</description>
     </item>
     
     <item>
       <title>SQL Server Data Tools: A spork of sorts (part two)</title>
-      <link>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-two/</link>
+      <link>http://localhost:1313/sql-server-data-tools-a-spork-of-sorts-part-two/</link>
       <pubDate>Mon, 20 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-two/</guid>
+      <guid>http://localhost:1313/sql-server-data-tools-a-spork-of-sorts-part-two/</guid>
       <description>In the previous post (a bit of a rant too) I went over SSDT and how it has evolved for whatever reason by Microsoft into SSDT (Database development) and SSDT-BI (Business Intelligence development). In this post I wanted to go over how you actually get this installed so you can start the fun work of working with SQL Server 2014.
 If during the CTP phases of SQL Server 2014 releases you may have caught the blog post on SQL Server Data Tools – Business Intelligence (SSDT BI) for SQL Server 2014 CTP1 (another interesting post to read response to this in the comments).</description>
     </item>
     
     <item>
       <title>SQL Server Data Tools: A spork of sorts (part one)</title>
-      <link>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-one/</link>
+      <link>http://localhost:1313/sql-server-data-tools-a-spork-of-sorts-part-one/</link>
       <pubDate>Wed, 15 Oct 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-one/</guid>
+      <guid>http://localhost:1313/sql-server-data-tools-a-spork-of-sorts-part-one/</guid>
       <description>Prior to SQL Server 2012 the Business Intelligence (BI) toolset was made up of just Business Intelligence Development Studio (BIDS). Easy to install as it was part of the SQL Server installation media. Now with database development tools you had to go the route of getting a license for Visual Studio where it allowed you to create database projects. Oh, how that is all changing now, and in some ways go back in time.</description>
     </item>
     
     <item>
       <title>SQL Server Prerequisites .NET Framework</title>
-      <link>https://wsmelton.github.io/sql-server-prerequisites-net-framework/</link>
+      <link>http://localhost:1313/sql-server-prerequisites-net-framework/</link>
       <pubDate>Thu, 02 Oct 2014 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-prerequisites-net-framework/</guid>
+      <guid>http://localhost:1313/sql-server-prerequisites-net-framework/</guid>
       <description>As of SQL Server 2012 the .NET Framework prerequisite of .NET 3.5 SP1 is no longer installed for you by the SQL Server installer if it is found to be missing from the server. Now with Window Server 2008 R2 SP1 or higher this is simply enabling the feature within Windows Server, no actual installation. This can be easily accomplished with PowerShell as a quick script to run prior to doing the installation of SQL Server.</description>
     </item>
     
     <item>
       <title>The treasures of the SQL Server Error Log</title>
-      <link>https://wsmelton.github.io/the-treasures-of-the-sql-server-error-log/</link>
+      <link>http://localhost:1313/the-treasures-of-the-sql-server-error-log/</link>
       <pubDate>Tue, 23 Sep 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/the-treasures-of-the-sql-server-error-log/</guid>
+      <guid>http://localhost:1313/the-treasures-of-the-sql-server-error-log/</guid>
       <description>I am fairly active on Database Administrators QA site on StackExchange.com. On average, most questions you find folks asking are about troubleshooting some error they are getting running code or some application is returning. I have noticed one of the most common comments we end up adding to a question is “have you looked in the error log” or “what error messages show up in the error log”, at least with SQL Server related questions.</description>
     </item>
     
     <item>
       <title>CTRL plus ALT plus what?</title>
-      <link>https://wsmelton.github.io/ctrl-plus-alt-plus-what/</link>
+      <link>http://localhost:1313/ctrl-plus-alt-plus-what/</link>
       <pubDate>Mon, 15 Sep 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ctrl-plus-alt-plus-what/</guid>
+      <guid>http://localhost:1313/ctrl-plus-alt-plus-what/</guid>
       <description>Depending on how far back you go in the technology field you all remember having to use CTRL+ALT+DELETE to change your password for your domain account.
 Well, I always remote into servers now a days with consulting for various clients. I never like to keep the password assigned and generally will attempt to change it using PowerShell:
 $cn = gpresult /R | Where {$_ -match &amp;quot;CN&amp;quot;} | Select -Skip 1 | clip $acct = [adsi]&amp;quot;LDAP://$cn&amp;quot; $acct.</description>
@@ -380,28 +380,28 @@ $cn = gpresult /R | Where {$_ -match &amp;quot;CN&amp;quot;} | Select -Skip 1 | 
     
     <item>
       <title>SQL Server Activity Monitor Script</title>
-      <link>https://wsmelton.github.io/sql-server-activity-monitor-script/</link>
+      <link>http://localhost:1313/sql-server-activity-monitor-script/</link>
       <pubDate>Wed, 30 Jul 2014 13:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-activity-monitor-script/</guid>
+      <guid>http://localhost:1313/sql-server-activity-monitor-script/</guid>
       <description>You ever wonder what goes in the background of Activity Monitor? Me neither, I just used it every so often when I wanted a quick peek at what was going on for a server. Microsoft has actually made changes to Activity Monitor in SQL Server 2012 Service Pack 1 that can cause errors, and requires you to modify OS level permissions, [reference](&amp;ldquo;http://blogs.msdn.com/b/sqlagent/archive/2013/02/07/activity-monitor-in-sql-server-2012-sp1.aspx&amp;quot;). I work over VPN supporting clients remotely and it never been that useful to me.</description>
     </item>
     
     <item>
       <title>SSMS 2012–Object Reference issue with Maintenance Plans</title>
-      <link>https://wsmelton.github.io/ssms-2012object-reference-issue-with-maintenance-plans/</link>
+      <link>http://localhost:1313/ssms-2012object-reference-issue-with-maintenance-plans/</link>
       <pubDate>Mon, 21 Jul 2014 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ssms-2012object-reference-issue-with-maintenance-plans/</guid>
+      <guid>http://localhost:1313/ssms-2012object-reference-issue-with-maintenance-plans/</guid>
       <description>I am amazed at some of the information you can find on the Internet when searching for an issue. Especially with forum posts that mention your issue (or flat out are the exact same), but do not include any final resolution. The best one I came across was this one on SQLTeam’s forum site, the post by “prett”, and note that this is posted back in 2013: The Maintenance Plan is actually built with few services which Microsoft releases such as SSIS and SQL Server Job Agent, hence if you want to schedule the maintenance plan then your server needs to have SSIS in order to build the maintenance plan, and Job Agent in order to run at regular periods.</description>
     </item>
     
     <item>
       <title>Check-InstanceConfig (part 2)</title>
-      <link>https://wsmelton.github.io/ps-check-instanceconfig-part-2/</link>
+      <link>http://localhost:1313/ps-check-instanceconfig-part-2/</link>
       <pubDate>Mon, 09 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ps-check-instanceconfig-part-2/</guid>
+      <guid>http://localhost:1313/ps-check-instanceconfig-part-2/</guid>
       <description>In the previous post I discussed the data table that holds the default values for the configuration options in SQL Server 2000 up to SQL Server 2014.
 In this post I will go over the function(s) that are included in the script. I will keep the same format as I did in the previous post:
  How it was written What it contains A few examples  How it was written If you have already downloaded the script you notice it had one function.</description>
@@ -409,59 +409,59 @@ In this post I will go over the function(s) that are included in the script. I w
     
     <item>
       <title>Check-InstanceConfig (part 1)</title>
-      <link>https://wsmelton.github.io/ps-check-instanceconfig-part-1/</link>
+      <link>http://localhost:1313/ps-check-instanceconfig-part-1/</link>
       <pubDate>Wed, 04 Dec 2013 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ps-check-instanceconfig-part-1/</guid>
+      <guid>http://localhost:1313/ps-check-instanceconfig-part-1/</guid>
       <description>I was reading a blog post Mike Walsh published on Linchpin People last week: SQL Server Configuration Check Script.
 In that script he is, as the title says, checking the configuration of a SQL Server instance for particular things like those options not set to default values and a few particular ones that still are set to default. I was intrigued by this and by the time I got to the end of the blog post was like “bet I can do that in PowerShell too”.</description>
     </item>
     
     <item>
       <title>Calc-MaxSample</title>
-      <link>https://wsmelton.github.io/ps-c-calc-maxsample/</link>
+      <link>http://localhost:1313/ps-c-calc-maxsample/</link>
       <pubDate>Wed, 13 Nov 2013 10:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ps-c-calc-maxsample/</guid>
+      <guid>http://localhost:1313/ps-c-calc-maxsample/</guid>
       <description>I am working on building a function that will allow me to gather performance counter data across multiple servers. I knew this had done by someone in the SQL Server family and went to search the inter-web. I came across Aaron Bertrand’s (blog | twitter) blog post here.
 This gave me a starting point, however I also noticed that with the use of the basic Get-Counter cmdlet you provide the –MaxSamples value to tell PowerShell how long you want to collect counter information.</description>
     </item>
     
     <item>
       <title>PowerShell Tidbit</title>
-      <link>https://wsmelton.github.io/powershell-tidbit-492/</link>
+      <link>http://localhost:1313/powershell-tidbit-492/</link>
       <pubDate>Tue, 05 Nov 2013 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/powershell-tidbit-492/</guid>
+      <guid>http://localhost:1313/powershell-tidbit-492/</guid>
       <description>I do remote support work now as a DBA and have clients that provide my password for VPN login or Active Directory login. I usually access their network through a central remote server that I will use to manage their SQL Server environment. As some of you may know there is no way to change your password through remote desktop until it expires and prompts you to upon login. Depending on the version of Active Directory they are running you may get a little bubble down by the clock that you can use as well, but I tend to miss that most of the time.</description>
     </item>
     
     <item>
       <title>Create-ServerDirectory</title>
-      <link>https://wsmelton.github.io/ps-c-create-serverdirectory/</link>
+      <link>http://localhost:1313/ps-c-create-serverdirectory/</link>
       <pubDate>Wed, 30 Oct 2013 11:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ps-c-create-serverdirectory/</guid>
+      <guid>http://localhost:1313/ps-c-create-serverdirectory/</guid>
       <description>If you have to do it more than once, script it and blog about it…
 function Create-ServerDirectory { [CmdletBinding()] Param ( # server name or instance name of SQL Server to run assessment against [Parameter(Mandatory=$true,Position=0)] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string]$location, [Parameter(Mandatory=$true,Position=1, ValueFromPipeline=$true, HelpMessage=&#39;Provide a single or comma separated list of server names.&#39; )] [ValidateNotNull()] [ValidateNotNullOrEmpty()] [string[]]$server ) foreach ($s in $server) { $dirName = $s.Replace(&amp;quot;\&amp;quot;,&amp;quot;_&amp;quot;) $fullPath = &amp;quot;$location\$dirName&amp;quot; if(Test-Path $fullPath) { Write-Warning &amp;quot;The path $fullPath already exist&amp;quot; } else { New-Item -Path $fullPath -ItemType Directory | Out-Null if(Test-Path $fullPath){ Write-Host &amp;quot;$fullPath created successfully&amp;quot; } else { Write-Warning &amp;quot;Some issue occurred creating the directory&amp;quot; } } } }  So a few examples:</description>
     </item>
     
     <item>
       <title>With PowerShell comes great things</title>
-      <link>https://wsmelton.github.io/with-powershell-comes-great-things/</link>
+      <link>http://localhost:1313/with-powershell-comes-great-things/</link>
       <pubDate>Wed, 23 Oct 2013 11:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/with-powershell-comes-great-things/</guid>
+      <guid>http://localhost:1313/with-powershell-comes-great-things/</guid>
       <description>I have been working with PowerShell since sometime around 2010 I think. I don’t recall the exact date because it started somewhat slowly. The previous employers I worked for were not environments I could really take advantage of it very well. I now work as a consultant so I have gotten much more involved in learning the advanced side of PowerShell.
 I have developed and continue to evolve a PowerShell script that is utilized for making assessment reports on clients SQL Server environment.</description>
     </item>
     
     <item>
       <title>To the future…</title>
-      <link>https://wsmelton.github.io/to-the-future/</link>
+      <link>http://localhost:1313/to-the-future/</link>
       <pubDate>Thu, 17 Oct 2013 10:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/to-the-future/</guid>
+      <guid>http://localhost:1313/to-the-future/</guid>
       <description>I decided to jump into playing with Windows Azure today. I heard on Twitter yesterday that Azure had SQL Server 2014 CTP2 available. After waiting about 30 minutes I was able to login and see this:
 Well the first thing I wanted to check out was the SQLPS module. Fired up PowerShell and fired off this command: Import-Module SQLPS –Verbose
 After which I ran the following command, to get a full list of “cmdlets” that are available: Get-Command -Module SQLPS | Out-GridView</description>
@@ -469,47 +469,47 @@ After which I ran the following command, to get a full list of “cmdlets” tha
     
     <item>
       <title>Whittling away at XML</title>
-      <link>https://wsmelton.github.io/whittling-away-xml/</link>
+      <link>http://localhost:1313/whittling-away-xml/</link>
       <pubDate>Thu, 10 Oct 2013 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/whittling-away-xml/</guid>
+      <guid>http://localhost:1313/whittling-away-xml/</guid>
       <description>XML can be one of those things you come across and say “ah, there has got to be a better way”. It is something I have held off working with in SQL Server. However with things for SQL Server performance (e.g. query plans) and such it is hard to stay away from it, if you are a true DBA. My particular desire to understand it more came about after find the deadlock graphs accessible from the System Health session in SQL Server 2008 R2.</description>
     </item>
     
     <item>
       <title>SSDT–Importing Script Does Nothing</title>
-      <link>https://wsmelton.github.io/ssdtimporting-script-does-nothing/</link>
+      <link>http://localhost:1313/ssdtimporting-script-does-nothing/</link>
       <pubDate>Mon, 18 Feb 2013 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/ssdtimporting-script-does-nothing/</guid>
+      <guid>http://localhost:1313/ssdtimporting-script-does-nothing/</guid>
       <description>I have been working with SSDT the past few months at my day job, in order to get a database versioned. I am also trying to use it for a few things with a side job as well.
 So, a simple task to start with is create a new SQL Database Project, and import a script (.sql) file to bring in all the database objects. You would think it was simple until you go through the process, get no errors and no objects in your project.</description>
     </item>
     
     <item>
       <title>Windows 8 And Me</title>
-      <link>https://wsmelton.github.io/windows-8-and-me/</link>
+      <link>http://localhost:1313/windows-8-and-me/</link>
       <pubDate>Thu, 17 Jan 2013 07:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/windows-8-and-me/</guid>
+      <guid>http://localhost:1313/windows-8-and-me/</guid>
       <description>Finally purchasing a laptop, I ended up passing the deadline to get one loaded with Windows 7. So I have been working on Windows 8 now for about 3 or 4 months probably. I have an HP Pavilion g6-2238dx, the prime reason I picked this particular model was price at Best Buy and it had a quad-core processor. It came with 4GB of RAM and have since moved this up to 8GB.</description>
     </item>
     
     <item>
       <title>View server-level permissions in SSMS</title>
-      <link>https://wsmelton.github.io/view-server-level-permissions-ssms/</link>
+      <link>http://localhost:1313/view-server-level-permissions-ssms/</link>
       <pubDate>Tue, 10 Jan 2012 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/view-server-level-permissions-ssms/</guid>
+      <guid>http://localhost:1313/view-server-level-permissions-ssms/</guid>
       <description>I was tooling around in SSMS the other day. In this particular instance I was granting a login instance-level permissions to test out a third party application at work. I did not want to give it sysadmin privileges for this so I just started out with giving it VIEW SERVER STATE (which most DMVs require in order to query them) and VIEW ANY DATABASE. [If you have never heard of these permissions, check out this little tidbit of info here from Brian Kelley (b|t).</description>
     </item>
     
     <item>
       <title>Mentoree</title>
-      <link>https://wsmelton.github.io/mentoree/</link>
+      <link>http://localhost:1313/mentoree/</link>
       <pubDate>Thu, 27 Oct 2011 06:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/mentoree/</guid>
+      <guid>http://localhost:1313/mentoree/</guid>
       <description>Fair warning that some religious terminology may be mentioned in this blog post, continue reading at your own risk.
 I recently took part in the first round of the Mentoring Experiment. This is a program that Steve Jones (t|b) and Andy Warren (t|b) started (they seem to do that alot).
 I acted as the mentoree and had someone mentor me. Overall it was a great experience. I want to send my thanks out to Steve and Andy for allowing me to participate.</description>
@@ -517,10 +517,10 @@ I acted as the mentoree and had someone mentor me. Overall it was a great experi
     
     <item>
       <title>Adjusting and learning</title>
-      <link>https://wsmelton.github.io/adjusting-and-learning/</link>
+      <link>http://localhost:1313/adjusting-and-learning/</link>
       <pubDate>Thu, 18 Aug 2011 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/adjusting-and-learning/</guid>
+      <guid>http://localhost:1313/adjusting-and-learning/</guid>
       <description>Short and sweet post here&amp;hellip;not the sugar sweet, the awesome sweet!!!
 So I&amp;rsquo;m still working on the script I talked about in a previous post. I wanted to try to drop using the parameter and try to work it all out in the script if it comes across more than one instance.
 So I came up with this, initially:
@@ -529,39 +529,39 @@ $regInstance = (Get-ItemProperty &#39;HKLM:\SOFTWARE\Microsoft\Microsoft SQL Ser
     
     <item>
       <title>What a few lines of code can do</title>
-      <link>https://wsmelton.github.io/what-a-few-lines-of-code-can-do/</link>
+      <link>http://localhost:1313/what-a-few-lines-of-code-can-do/</link>
       <pubDate>Mon, 01 Aug 2011 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/what-a-few-lines-of-code-can-do/</guid>
+      <guid>http://localhost:1313/what-a-few-lines-of-code-can-do/</guid>
       <description>You find out PowerShell is fun when you start playing with it and actually try to perform a task with it. I have been using it the past few months to try and decrease the time it takes me to perform a scan of a SQL Server. What I mean by scan is I work with the IASE Security Technical Implementation Guide checklist (STIG). You can find the checklist for SQL Server here, they have not published one for SQL 2008 so I just use the SQL 2005 checklist for now.</description>
     </item>
     
     <item>
       <title>The rest of the story (PowerShell errors)</title>
-      <link>https://wsmelton.github.io/the-rest-of-the-story-powershell-errors/</link>
+      <link>http://localhost:1313/the-rest-of-the-story-powershell-errors/</link>
       <pubDate>Thu, 21 Jul 2011 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/the-rest-of-the-story-powershell-errors/</guid>
+      <guid>http://localhost:1313/the-rest-of-the-story-powershell-errors/</guid>
       <description>So I got a new server given to me to check over. Unlike most folks I like to open up PowerShell to get quick fix on the configuration. I seem to have gotten used to using PowerShell enough now that it takes me about as much time to do it PowerShell as it would in SSMS. So I like hitting the keyboard more than I do clicking the mouse.
 It is a Window Server 2008 box and SQL Server 2008 R2 so I know PowerShell is available to me for my perusing.</description>
     </item>
     
     <item>
       <title>What OS permissions does SQL Server have?</title>
-      <link>https://wsmelton.github.io/what-os-permissions-does-sql-server-have/</link>
+      <link>http://localhost:1313/what-os-permissions-does-sql-server-have/</link>
       <pubDate>Thu, 28 Apr 2011 09:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/what-os-permissions-does-sql-server-have/</guid>
+      <guid>http://localhost:1313/what-os-permissions-does-sql-server-have/</guid>
       <description>If you set the service account for the SQL Server services up at installation you are ahead of the game when dealing with securing your SQL Server installation. However there are some environments where the DBA does not do the initial installation of SQL Server. That requires the DBA to go back and configure a custom account for the services after the installation.
 In most instances if you use the SQL Server Configuration Manager (SSCM) to set the service account it should configure all the file, registry, and operating system permissions SQL Server needs for you.</description>
     </item>
     
     <item>
       <title>Get those ACLs with PowerShell</title>
-      <link>https://wsmelton.github.io/get-those-acls-with-powershell/</link>
+      <link>http://localhost:1313/get-those-acls-with-powershell/</link>
       <pubDate>Thu, 21 Apr 2011 13:31:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/get-those-acls-with-powershell/</guid>
+      <guid>http://localhost:1313/get-those-acls-with-powershell/</guid>
       <description>If I want to view the access permissions to a particular directory in Windows I can always go to the folder itself and check the security properties on the folder:
 But that is boring, lets use PowerShell!!!
 The cmdlet (commandlet) of choice for this is going to be: Get-Acl
@@ -570,19 +570,19 @@ I will let you dive into this command and try to figure it out, but this is the 
     
     <item>
       <title>Books I get to read (E-Books)</title>
-      <link>https://wsmelton.github.io/books-i-get-to-read-e-books/</link>
+      <link>http://localhost:1313/books-i-get-to-read-e-books/</link>
       <pubDate>Thu, 27 Jan 2011 22:07:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/books-i-get-to-read-e-books/</guid>
+      <guid>http://localhost:1313/books-i-get-to-read-e-books/</guid>
       <description>I thought I would share some of the E-books I have purchased recently. I did not like them to begin with but have an iPod Touch now and it is not too bad reading on it. It just depends on what format it is in. I found a free app to read PDF files and I use Stanza to read ePub files. Reading ePub files is much easier than trying to read the PDFs.</description>
     </item>
     
     <item>
       <title>Training for the Master from the Masters</title>
-      <link>https://wsmelton.github.io/training-for-the-master-from-the-masters/</link>
+      <link>http://localhost:1313/training-for-the-master-from-the-masters/</link>
       <pubDate>Fri, 21 Jan 2011 08:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/training-for-the-master-from-the-masters/</guid>
+      <guid>http://localhost:1313/training-for-the-master-from-the-masters/</guid>
       <description>(Bottom left corner of this photo you’ll see the nose of the sniper) 
 A talent and a gift, what is the difference? I follow the definition that a talent is something you learn and a gift is something you were born with.
 I believe one of my gifts is helping people, or sometimes called the gift of service. I enjoy offering myself as a service to people whether it be helping them move some furniture or fixing that virus on their computer.</description>
@@ -590,30 +590,30 @@ I believe one of my gifts is helping people, or sometimes called the gift of ser
     
     <item>
       <title>How To Remember Everything in One Step</title>
-      <link>https://wsmelton.github.io/how-to-remember-everything-in-1-one-step/</link>
+      <link>http://localhost:1313/how-to-remember-everything-in-1-one-step/</link>
       <pubDate>Wed, 19 Jan 2011 23:11:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/how-to-remember-everything-in-1-one-step/</guid>
+      <guid>http://localhost:1313/how-to-remember-everything-in-1-one-step/</guid>
       <description>Before I get to that step let me tell you a story&amp;hellip;I try to keep up with webcast and virtual presentations as much as I can, especially ones that deal with either SQL Server or PowerShell. I do tend to miss a lot of them. I do find the needle in the hay stack every now and then though.
 I remember being up late one night last year (around 1:00 AM CST).</description>
     </item>
     
     <item>
       <title>With power comes great responsibility.</title>
-      <link>https://wsmelton.github.io/with-power-comes-great-responsibility/</link>
+      <link>http://localhost:1313/with-power-comes-great-responsibility/</link>
       <pubDate>Mon, 02 Aug 2010 05:53:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/with-power-comes-great-responsibility/</guid>
+      <guid>http://localhost:1313/with-power-comes-great-responsibility/</guid>
       <description>If you have not heard yet I submitted an email in a contest a few months back now, that was run by Jeremiah Peschka (blog | twitter) for 1 of 3 MSDN subscriptions. I found out not long after that I was one of the winners.
 With the contest Jeremiah wanted to know how we would use it. The short answer of what I sent him, I mentioned I wanted to speak more at my local user group and to not really advance my career but advance my knowledge on things that I can then turn around and share with you (if &amp;ldquo;you&amp;rdquo; are out there).</description>
     </item>
     
     <item>
       <title>How do I open PowerShell? And something else too…Part 2</title>
-      <link>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-2/</link>
+      <link>http://localhost:1313/how-do-i-open-powershell-and-something-else-toopart-2/</link>
       <pubDate>Sun, 01 Aug 2010 23:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-2/</guid>
+      <guid>http://localhost:1313/how-do-i-open-powershell-and-something-else-toopart-2/</guid>
       <description>This is a two part post on me opening PowerShell and then finding out something peculiar…You can see part one here.
 In the previous post I left you with the Jump List that shows for the Windows PowerShell window when you right-click the program in the taskbar:
 The “Import system modules” caught my fancy. Now most of the things I have read on PowerShell from blogs and such speak of snap-ins and not necessarily modules.</description>
@@ -621,10 +621,10 @@ The “Import system modules” caught my fancy. Now most of the things I have r
     
     <item>
       <title>How do I open PowerShell? And something else too…Part 1</title>
-      <link>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-1/</link>
+      <link>http://localhost:1313/how-do-i-open-powershell-and-something-else-toopart-1/</link>
       <pubDate>Fri, 30 Jul 2010 23:00:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-1/</guid>
+      <guid>http://localhost:1313/how-do-i-open-powershell-and-something-else-toopart-1/</guid>
       <description>This is part one of two post on me opening PowerShell and then finding out something peculiar…
 If you use or want to start using PowerShell what’s the first thing you need to do:
 OPEN IT!!!! (oh sorry didn’t mean to yell, but I talk a little louder when I figure out new things…not really).
@@ -633,40 +633,40 @@ Anyway, I thought I would go through how I open the PowerShell prompt..&amp;#160
     
     <item>
       <title>Comments Anyone - Vote for the Cause</title>
-      <link>https://wsmelton.github.io/comments-anyone-vote-for-the-cause/</link>
+      <link>http://localhost:1313/comments-anyone-vote-for-the-cause/</link>
       <pubDate>Wed, 28 Jul 2010 08:05:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/comments-anyone-vote-for-the-cause/</guid>
+      <guid>http://localhost:1313/comments-anyone-vote-for-the-cause/</guid>
       <description>I recently attended Quest&amp;rsquo;s Virtual Conference on Performance and Wait Events back on July 21. Which by the way is on demand until August 23, 2010 so get over there and start a watching while you can. Honestly I did not get to watch everything live so I have some things to go back and watch as well.
 The event was awesome of what I got to watch. This is the second time Quest has done this and I attended the last one they had as well.</description>
     </item>
     
     <item>
       <title>MCP Benefits</title>
-      <link>https://wsmelton.github.io/mcp-benefits/</link>
+      <link>http://localhost:1313/mcp-benefits/</link>
       <pubDate>Thu, 08 Jul 2010 09:06:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/mcp-benefits/</guid>
+      <guid>http://localhost:1313/mcp-benefits/</guid>
       <description>Certifications&amp;hellip;it&amp;rsquo;s a hot topic for some people. The main argument comes from those that get them and those that don&amp;rsquo;t. If you are a student of SQL University you may have caught Thomas LaRock&amp;rsquo;s (blog | twitter) lecture on Certification Week
 Anyway I was actually logging into the MCP site (not linking it because a login required) and found a new feature that I don&amp;rsquo;t recall being there&amp;hellip;&amp;ldquo;Virtual Business Card&amp;rdquo;. They have added in the ability to create a business card of sorts as a web page.</description>
     </item>
     
     <item>
       <title>Keeping up with the Jones or Microsoft</title>
-      <link>https://wsmelton.github.io/keeping-up-with-the-jones-or-microsoft/</link>
+      <link>http://localhost:1313/keeping-up-with-the-jones-or-microsoft/</link>
       <pubDate>Thu, 03 Jun 2010 07:52:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/keeping-up-with-the-jones-or-microsoft/</guid>
+      <guid>http://localhost:1313/keeping-up-with-the-jones-or-microsoft/</guid>
       <description>You ever wonder how people keep up with when service packs, hotfixes, or cumulative updates (aka CUs) are released by Microsoft?
 Well I cannot speak for everyone, but I can tell you where I get my notices from. Microsoft does not actually have a notification system in place for just SQL Server. They do for Windows. So other than using the blogs that I follow, I use these 2 sites:</description>
     </item>
     
     <item>
       <title>Book Review - SQL In A Nutshell</title>
-      <link>https://wsmelton.github.io/book-review-sql-in-a-nutshell/</link>
+      <link>http://localhost:1313/book-review-sql-in-a-nutshell/</link>
       <pubDate>Sun, 02 May 2010 19:48:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/book-review-sql-in-a-nutshell/</guid>
+      <guid>http://localhost:1313/book-review-sql-in-a-nutshell/</guid>
       <description>| Title | SQL In A Nutshell – Desktop Quick Reference | Author | Kevin Kline (with Daniel Kline &amp;amp; Brandon Hunt) | Publisher | O&amp;rsquo;Reilly
 
 First thought I had when pulling this book out of the box: How do you write a review about a dictionary for SQL commands? However, reading the first few pages of the preface (yes I read that part of a book), I found this book includes a little history and a little fundamental information on SQL commands.</description>
@@ -674,49 +674,49 @@ First thought I had when pulling this book out of the box: How do you write a re
     
     <item>
       <title>SQL Server Features</title>
-      <link>https://wsmelton.github.io/sql-server-features/</link>
+      <link>http://localhost:1313/sql-server-features/</link>
       <pubDate>Wed, 28 Apr 2010 22:01:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/sql-server-features/</guid>
+      <guid>http://localhost:1313/sql-server-features/</guid>
       <description>Every wonder how new features get added to SQL Server editions? Well I saw a tweet from Jonathan Kehayias (blog  | twitter) that reminded me of how. Click here to see the suggestion mentioned in the tweet.
 Microsoft Connect is a community site that users of just about any Microsoft product can submit feedback on any issue or request they have on a Microsoft product. This is the link to SQL Server&amp;rsquo;s Connect site.</description>
     </item>
     
     <item>
       <title>Remembering Why</title>
-      <link>https://wsmelton.github.io/remebering-why/</link>
+      <link>http://localhost:1313/remebering-why/</link>
       <pubDate>Tue, 27 Apr 2010 08:25:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/remebering-why/</guid>
+      <guid>http://localhost:1313/remebering-why/</guid>
       <description>You have someone come to you and say they want to implement &amp;ldquo;it&amp;rdquo; on the database or SQL Server instance. Or it could be maybe you hear a conversation about implementing &amp;ldquo;it&amp;rdquo;. Unlike me, I don&amp;rsquo;t recall things &amp;ldquo;word for word&amp;rdquo; but remember reading about &amp;ldquo;it&amp;rdquo; not being a good idea in certain circumstances or at all.
 One particular thing I know of that will get the blog post rolling is posting on a forum &amp;ldquo;how can I schedule or how often should I shrink my database(s)?</description>
     </item>
     
     <item>
       <title>Project Management</title>
-      <link>https://wsmelton.github.io/book-review-project-management/</link>
+      <link>http://localhost:1313/book-review-project-management/</link>
       <pubDate>Fri, 23 Apr 2010 07:01:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/book-review-project-management/</guid>
+      <guid>http://localhost:1313/book-review-project-management/</guid>
       <description>Title Author Publisher     SharePoint for Project Management Dux Raymond Sy O&amp;rsquo;Reilly    “&amp;hellip;each individual spent about 45 minutes looking for information.” The author goes on to mention that 45 minutes can add up when you are dealing with a 3 person team on a 3 month project. I don’t directly deal with project management in my career yet but I do work on projects as part of the team.</description>
     </item>
     
     <item>
       <title>Step 1: Start New Blog</title>
-      <link>https://wsmelton.github.io/step-1-start-new-blog/</link>
+      <link>http://localhost:1313/step-1-start-new-blog/</link>
       <pubDate>Sun, 18 Apr 2010 19:23:00 -0600</pubDate>
       
-      <guid>https://wsmelton.github.io/step-1-start-new-blog/</guid>
+      <guid>http://localhost:1313/step-1-start-new-blog/</guid>
       <description>Well like many people in 2010 they decided (or try) to start a blog in their particular field of work/study, or just for personal use. My decision is two-fold. (1) I want to do it in my field of work and/or study, then also (2) for doing book reviews for publishers.
 My field of work is currently working with Microsoft SQL Server. I am a database administrator working in Montgomery, AL.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://wsmelton.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sun, 21 Jan 1979 00:00:00 +0000</pubDate>
       
-      <guid>https://wsmelton.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>Located in the Southeast US, I grew up in the country playing with tractors and farm equipment. My college career started out wanting to go into Wildlife Science, but biology proved to be my weakness. I ended up switching to a degree in information systems and made it out of college.
 I have worked in various operation support roles in my career. Which while some may look at my resume and say I was jumping between jobs, there is more to the story.</description>
     </item>
