@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+  <meta name="description" content="Data and automation professional grounded in the cloud">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/bootstrap.min.css" />
+
+  
+  <title>Azure Data Studio User Interface | Shawn Melton</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Azure Data Studio User Interface</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2019-Mar-11
+  </small>
+  
+</p>
+
+
+<blockquote>
+<p>Warning: This post is long but if you want to get familiar with Azure Data Studio as a first time user, hopefully it will be a good read for you.</p>
+</blockquote>
+
+<h2 id="short-intro">Short intro</h2>
+
+<p>In September of 2018, Microsoft brought us Azure Data Studio (ADS). This is a cross-platform tool for querying and managing data development. It is meant to compliment SQL Server Management Studio (SSMS) but for those that do not wish to work on Windows it can be a tool of choice for connecting to both SQL Server and Azure SQL DB.</p>
+
+<p>ADS itself was built using <a href="https://aka.ms/vscode">Visual Studio Code</a> (Code) as the base and then Microsoft built upon that to what we have today. If you are not familiar with Code or have never used it it can be a bit daunting to get around. The purpose of this post is to give you a starting point and map (of sorts) on how to get around and start using it.</p>
+
+<h2 id="release-channels">Release Channels</h2>
+
+<p>Code has two build streams and as such ADS has followed the same suite. So when you prepare to deploy this tool for your team (or yourself) you can choose between two &ldquo;channels&rdquo; (as they are called):</p>
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/download">Stable Build</a></li>
+<li><a href="https://github.com/Microsoft/azuredatastudio#azure-data-studio">Insiders Build</a></li>
+</ul>
+
+<p><em>Check the list of links in the readme for the insider installation based on your OS preference.</em></p>
+
+<p>The Stable Build would be considered the general available (GA) release of ADS. It is a production ready version of the software; while the Insiders Build is pre-release and understood that bugs may (and will) be introduced with each release of the software. Now one thing to note is the while the stable release is considered production ready, that does not mean it won&rsquo;t come with some bugs as you use it in your particular environment.</p>
+
+<h2 id="extense-and-extensibility">Extense and Extensibility</h2>
+
+<p>The power that comes with ADS being based on Code is the ability to extend it via extensions. You can have an extension that offers additional data views, formatting queries or search a database for particular object or text string (e.g. RedGate SQL Search).</p>
+
+<p>I would say the most common extension you will find useful will be the ones that provide Dashboard Insights. These allow you to visualize data in various ways and more easily access the information. These are similar in nature to the &ldquo;Reports&rdquo; that came backed into SSMS.</p>
+
+<h2 id="report-bugs-issues-or-feature-request">Report Bugs, Issues or Feature Request</h2>
+
+<p>First and foremost it should be understood that ADS is an open source project that Microsoft maintains and host. As such, bugs and issues you find cannot be fixed if Microsoft does not know about them. They are very keen on getting things fixed for you and the same goes for feature request. In the help menu of ADS you will find an option &ldquo;Report Issue&rdquo; that offers a simple form to fill out with the details of what you found or want.</p>
+
+<p><img src="/img/ads_reportissue.png" alt="" /></p>
+
+<p>You can find a bit more detail on submitting bugs and suggestions on their wiki <a href="https://github.com/Microsoft/azuredatastudio/wiki/Submitting-Bugs-and-Suggestions">here</a>.</p>
+
+<h2 id="basic-lay-of-the-land">Basic lay of the land</h2>
+
+<p>This is a common view of ADS (as of this writing):</p>
+
+<p><img src="/img/ads_basicui.png" alt="" /></p>
+
+<p>Let&rsquo;s just go left to right on this screenshot:</p>
+
+<ol>
+<li>Activity Bar - You can switch between views of the side bar and gives you additional context-specific indicators or content. (More on this later on&hellip;)</li>
+<li>Side Bar - Based on the currently active view but in general will be additional data or items to interact with in some fashion (e.g. file list)</li>
+<li>Status Bar - Information on current files or projects you have opened. The information will change based on the editor you have in focus.</li>
+<li>Panels - The 3 that are included right now are not all really utilized at the time of writing. The &ldquo;Problems&rdquo; panel is associated with displaying information related to editors that you may have open. The example in the screenshot shows syntax errors for the query window I have open.</li>
+<li>Editor Groups - The main area where you will do your work. The example shows I have two editors open. The left is what is referred to as an &ldquo;Insights Dashboard&rdquo;. The right is just a new query editor where I have executed a basic T-SQL statement.</li>
+<li>Query Output Options - This is where the power comes in for the query editor in ADS. You have the ability to chart a given dataset returned by your query. You can also output the data to JSON, CSV, XML or export it directly into an Excel file (does not have to be installed).</li>
+</ol>
+
+<h2 id="activity-bar">Activity Bar</h2>
+
+<h3 id="servers">Servers</h3>
+
+<p>The first side bar you interact with is Servers, you can quickly focus this side bar using the keystroke <code>CTRL + G</code>. Upon making a successful connection to a given Azure SQL or SQL Server instance you will be presented with this view:</p>
+
+<p><img src="/img/ads_activitybar_servers.png" alt="" /></p>
+
+<p>This side bar gives you the folder view of the databases, security and server objects. You can do a bit of organizing for your servers (if you need to work with multiple). If you worked with Local Groups in SSMS you will be familiar with this feature.</p>
+
+<p><img src="/img/ads_activitybar_servers_icons.png" alt="" /></p>
+
+<p>Clicking on &ldquo;New Group&rdquo; you are presented with the dialog to name the group, add a description and pick a color for it:</p>
+
+<p><img src="/img/ads_activitybar_servers_newgroup.png" alt="" /></p>
+
+<p>Once added you can see it shows up in the Servers side bar, and you can actually just drag the server name down onto the &ldquo;Local&rdquo; and it will organize that instance to that group, on the fly.</p>
+
+<p><img src="/img/ads_activitybar_servers_localgroup.png" alt="" /></p>
+
+<p>One added bonus is as you add groups they also show up in the connection dialog. This allows you to add a server directly to the group on first connection.</p>
+
+<p><img src="/img/ads_activitybar_servers_newconnection.png" alt="" /></p>
+
+<h3 id="task-history">Task History</h3>
+
+<p>This side bar can be accessed using the <code>CTRL + T</code> keystroke. The purpose of this side bar is to view progress status of backups and restores, down the road it may hold progress status for other task as well.</p>
+
+<p><img src="/img/ads_activitybar_taskhistory.png" alt="" /></p>
+
+<p>Once you run a restore or backup you will then see a list of the status whether it was successful or failed. You can double-click on a given failure to see the full context of the error message.</p>
+
+<p><img src="/img/ads_activitybar_taskhistory_failure1.png" alt="" /></p>
+
+<p>Which as of this writing the error for a failed backup only displays a generic one. I have <a href="https://github.com/Microsoft/azuredatastudio/issues/4397">submitted a feature request</a> to have this error be more descriptive on the actual issue than a generic one.</p>
+
+<p><img src="/img/ads_activitybar_taskhistory_failure2.png" alt="" /></p>
+
+<h3 id="explorer">Explorer</h3>
+
+<p>Access using <code>CTRL + SHIFT + E</code>. This side bar is only active (or usable) when you have opened up a workspace (aka &ldquo;folder&rdquo;).</p>
+
+<p><img src="/img/ads_activitybar_explorer.png" alt="" /></p>
+
+<h3 id="search">Search</h3>
+
+<p>Access using <code>CTRL + SHIFT + F</code>. This one is only usable when you have a workspace open. It allows you to search and do the find/replace against files you have in the workspace.</p>
+
+<p><img src="/img/ads_activitybar_search.png" alt="" /></p>
+
+<h3 id="source-control">Source Control</h3>
+
+<p>Access using <code>CTRL + SHIFT + G</code>. If you have a workspace open that has been initialized as a Git repository (or other source provider) then it will display various options for you to commit, stash, stage, add a comment message, etc. In the example screenshot I have a GitHub repository open from my local machine:</p>
+
+<p><img src="/img/ads_activitybar_sourcecontrol.png" alt="" /></p>
+
+<h3 id="extensions">Extensions</h3>
+
+<p>Access using <code>CTRL + SHIFT + X</code>. This will be something you want to keep an eye on as time goes to find out what new extensions have been released by Microsoft and the community. The main ability of ADS is being able to extend it using extensions. Just go through and explorer this list when you have time; install one and give it a try (on a test instance obviously).</p>
+
+<p><img src="/img/ads_activitybar_extensions.png" alt="" /></p>
+
+<h3 id="azure">Azure</h3>
+
+<p>There is no shortcut key to access this one. Extensions that will support an activity bar item do not always include a shortcut keybinding. I&rsquo;m going to spend a bit more time on this one as it requires a bit of setup to use. This revolves around access an Azure subscription and the Azure SQL service.</p>
+
+<p><img src="/img/ads_activitybar_azure1.png" alt="" /></p>
+
+<p>The following illustrates the steps needed to add your Azure account to ADS.</p>
+
+<p><img src="/img/ads_activitybar_azure_addaccount.png" alt="" /></p>
+
+<p>After a few seconds, you will have access to any subscription and Azure SQL resources your login has access to:</p>
+
+<p><img src="/img/ads_activitybar_azure_account.png" alt="" /></p>
+
+<p>Now you may wonder what all does this allow you to do or help you with? Basically just saves you the hassle of having to save all those connections and remembering what the full server name is for that new Azure SQL DB that was just deployed. When you put your mouse/cursor on a given server or database you will see a connect icon. Clicking on it will open the Connection dialog and have the Server and Database auto-populated for you.</p>
+
+<p><img src="/img/ads_activitybar_azure_connecticon.png" alt="" /></p>
+
+<p><img src="/img/ads_activitybar_azure_connection.png" alt="" /></p>
+
+<p>The above you can see the server name and database were populated. Since I chose a server it uses master database, if you choose a database though that given database would be placed in the box. (<em>It defaults to use <code>dbadmin</code> for the login no matter what server or database I selected.</em>)</p>
+
+<h2 id="extensions-1">Extensions</h2>
+
+<p>I want to circle back around to this one as it will vary how you actually get a given extension installed. The extensions that Microsoft published will just need you to click on that install button, and ADS will install it for you. The extensions that come from the community or vendors will tend to send you to GitHub repository.</p>
+
+<p><img src="/img/ads_extensions_frk.png" alt="" /></p>
+
+<p>When you click on the install you are taken to the release page on GitHub, which you will then need to download the vsix file on that page:</p>
+
+<p><img src="/img/ads_extensions_frk_github.png" alt="" /></p>
+
+<p>Then go back into ADS, under the extensions side bar you will click on the 3 dots and click on <code>Install from VSIX...</code></p>
+
+<p><img src="/img/ads_extensions_frk_addvsix.png" alt="" /></p>
+
+<p>After that you will be prompted to browse to where you saved that file from GitHub. Then just click on the &ldquo;Install&rdquo; button, and since this particular one is a 3rd party (non-Microsoft item) you will get a security warning to click yes or no. If you chose to click yes you, after it installs, you will receive a prompt to <code>reload now</code>. ADS has to restart for any new extension to become active.</p>
+
+<h2 id="additional-help">Additional help</h2>
+
+<p>If you are looking to ask any more questions around using ADS, bugs you found or questions about documentation&hellip;.or you just want to chat about Azure Data Studio you can come chat it up in SQLCommunity Slack channel. You will find us under <code>#azure-data-studio</code> and Microsoft is involved in this channel as well. You will commonly find Alan Yu checking in often during the day (he is one of the PMs over ADS).</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10"></' + 'script>')</script></body>
+
+</html>

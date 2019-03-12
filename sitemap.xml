@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://localhost:1313/ads-userinterface/</loc>
+    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/automating-docker/</loc>
     <lastmod>2018-12-31T00:00:00-06:00</lastmod>
   </url>
@@ -377,7 +382,7 @@
   
   <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-12-31T00:00:00-06:00</lastmod>
+    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -395,7 +400,7 @@
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2018-12-31T00:00:00-06:00</lastmod>
+    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   

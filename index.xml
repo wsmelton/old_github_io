@@ -6,10 +6,20 @@
     <description>Recent content on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Dec 2018 00:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 12:00:00 -0600</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Azure Data Studio User Interface</title>
+      <link>http://localhost:1313/ads-userinterface/</link>
+      <pubDate>Mon, 11 Mar 2019 12:00:00 -0600</pubDate>
+      
+      <guid>http://localhost:1313/ads-userinterface/</guid>
+      <description>Warning: This post is long but if you want to get familiar with Azure Data Studio as a first time user, hopefully it will be a good read for you.
+ Short intro In September of 2018, Microsoft brought us Azure Data Studio (ADS). This is a cross-platform tool for querying and managing data development. It is meant to compliment SQL Server Management Studio (SSMS) but for those that do not wish to work on Windows it can be a tool of choice for connecting to both SQL Server and Azure SQL DB.</description>
+    </item>
     
     <item>
       <title>Automating Docker</title>
