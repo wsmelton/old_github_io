@@ -8,31 +8,33 @@
   <meta name="generator" content="Hugo 0.54.0" />
 
   
+  <meta name="description" content="Data and automation professional grounded in the cloud">
+  
 
   
-  <link rel="apple-touch-icon" sizes="180x180" href="https://example.com/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://wsmelton.github.io/apple-touch-icon.png">
 
   
-  <link rel="icon" type="image/png" sizes="32x32" href="https://example.com/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://wsmelton.github.io/favicon-32x32.png">
 
   
-  <link rel="icon" type="image/png" sizes="16x16" href="https://example.com/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://wsmelton.github.io/favicon-16x16.png">
 
   
-  <link rel="manifest" href="https://example.com/site.webmanifest">
+  <link rel="manifest" href="https://wsmelton.github.io/site.webmanifest">
 
   
-  <link rel="mask-icon" href="https://example.com/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="mask-icon" href="https://wsmelton.github.io/safari-pinned-tab.svg" color="#5bbad5">
 
   <meta name="msapplication-TileColor" content="#da532c">
 
   <meta name="theme-color" content="#ffffff">
 
   
-  <link rel="stylesheet" href="https://example.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://wsmelton.github.io/css/bootstrap.min.css" />
 
   
-  <title>Backup Files to Tape | Shawn&#39;s Notebook</title>
+  <title>Backup Files to Tape | Shawn Melton</title>
   
 
   <style>
@@ -190,7 +192,7 @@ blockquote,
   </small>
   
 
-<small><code><a href="https://example.com/tags/powershell">powershell</a></code></small>
+<small><code><a href="https://wsmelton.github.io/tags/powershell">powershell</a></code></small>
 
 </p>
 <p>I had a maintenance plan on a server with a client that was having issues running successfully each night because it ended up filling the drive. This as it turns out ended up being that the clean up task was set to delete backups older than 1 day. Ok you would think that was sufficient, however it appears in this instance that was not working. The time stamps showing for the previous day backup was within a minute of the next run of the maintenance plan. So I took it to mean that it was not actually seeing them as over a day old and therefore skipped them. I decided to change it to 21 hours instead of one day and that seemed to work for this client.</p>

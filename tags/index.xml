@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Shawn&#39;s Notebook</title>
-    <link>https://example.com/tags/</link>
-    <description>Recent content in Tags on Shawn&#39;s Notebook</description>
+    <title>Tags on Shawn Melton</title>
+    <link>https://wsmelton.github.io/tags/</link>
+    <description>Recent content in Tags on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Aug 2018 15:10:52 -0500</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wsmelton.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Azure</title>
-      <link>https://example.com/tags/azure/</link>
+      <link>https://wsmelton.github.io/tags/azure/</link>
       <pubDate>Fri, 10 Aug 2018 15:10:52 -0500</pubDate>
       
-      <guid>https://example.com/tags/azure/</guid>
+      <guid>https://wsmelton.github.io/tags/azure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dbatools</title>
-      <link>https://example.com/tags/dbatools/</link>
+      <link>https://wsmelton.github.io/tags/dbatools/</link>
       <pubDate>Sun, 13 May 2018 20:00:00 -0600</pubDate>
       
-      <guid>https://example.com/tags/dbatools/</guid>
+      <guid>https://wsmelton.github.io/tags/dbatools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://example.com/tags/docker/</link>
+      <link>https://wsmelton.github.io/tags/docker/</link>
       <pubDate>Mon, 31 Dec 2018 00:00:00 -0600</pubDate>
       
-      <guid>https://example.com/tags/docker/</guid>
+      <guid>https://wsmelton.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Powershell</title>
-      <link>https://example.com/tags/powershell/</link>
+      <link>https://wsmelton.github.io/tags/powershell/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://example.com/tags/powershell/</guid>
+      <guid>https://wsmelton.github.io/tags/powershell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scripts</title>
-      <link>https://example.com/tags/scripts/</link>
+      <link>https://wsmelton.github.io/tags/scripts/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://example.com/tags/scripts/</guid>
+      <guid>https://wsmelton.github.io/tags/scripts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sqlserver</title>
-      <link>https://example.com/tags/sqlserver/</link>
+      <link>https://wsmelton.github.io/tags/sqlserver/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://example.com/tags/sqlserver/</guid>
+      <guid>https://wsmelton.github.io/tags/sqlserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vscode</title>
-      <link>https://example.com/tags/vscode/</link>
+      <link>https://wsmelton.github.io/tags/vscode/</link>
       <pubDate>Thu, 07 Jun 2018 08:00:00 -0500</pubDate>
       
-      <guid>https://example.com/tags/vscode/</guid>
+      <guid>https://wsmelton.github.io/tags/vscode/</guid>
       <description></description>
     </item>
     

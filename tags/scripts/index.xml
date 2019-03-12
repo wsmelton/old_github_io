@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scripts on Shawn&#39;s Notebook</title>
-    <link>https://example.com/tags/scripts/</link>
-    <description>Recent content in Scripts on Shawn&#39;s Notebook</description>
+    <title>Scripts on Shawn Melton</title>
+    <link>https://wsmelton.github.io/tags/scripts/</link>
+    <description>Recent content in Scripts on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Dec 2015 08:00:00 -0600</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wsmelton.github.io/tags/scripts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Modifying SQL Server Startup Parameters</title>
-      <link>https://example.com/modifying-sql-server-startup-parameters/</link>
+      <link>https://wsmelton.github.io/modifying-sql-server-startup-parameters/</link>
       <pubDate>Wed, 02 Dec 2015 08:00:00 -0600</pubDate>
       
-      <guid>https://example.com/modifying-sql-server-startup-parameters/</guid>
+      <guid>https://wsmelton.github.io/modifying-sql-server-startup-parameters/</guid>
       <description>Mike, Mike, Mike, Mike, Mike&amp;hellip;.guess what I figured out? Well it all started by reading Mike Fal&amp;rsquo;s post on Managing SQL Server Services with #PowerShell. In that post he goes over manipulating the SQL Server service account and how to update it. In my case I needed to create a script that would let me alter the Startup Parameters.
 If you go search right now for using PowerShell to alter the startup parameters for SQL Server&amp;hellip;go ahead&amp;hellip;.</description>
     </item>

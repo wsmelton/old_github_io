@@ -3,416 +3,416 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/automating-docker/</loc>
+    <loc>https://wsmelton.github.io/automating-docker/</loc>
     <lastmod>2018-12-31T00:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/azure-automation-bug/</loc>
+    <loc>https://wsmelton.github.io/azure-automation-bug/</loc>
     <lastmod>2018-08-10T15:10:52-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/vs-code-profile/</loc>
+    <loc>https://wsmelton.github.io/vs-code-profile/</loc>
     <lastmod>2018-06-07T08:00:00-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/github-issue-templates/</loc>
+    <loc>https://wsmelton.github.io/github-issue-templates/</loc>
     <lastmod>2018-05-13T20:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/visual-studio-ide/</loc>
+    <loc>https://wsmelton.github.io/visual-studio-ide/</loc>
     <lastmod>2018-01-04T19:35:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-debugging/</loc>
+    <loc>https://wsmelton.github.io/powershell-debugging/</loc>
     <lastmod>2017-10-30T12:30:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/dbatools-sql-agent/</loc>
+    <loc>https://wsmelton.github.io/dbatools-sql-agent/</loc>
     <lastmod>2017-08-30T03:30:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/draft-powershell-debugging-dbatools/</loc>
+    <loc>https://wsmelton.github.io/draft-powershell-debugging-dbatools/</loc>
     <lastmod>2017-08-07T02:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-learning-path/</loc>
+    <loc>https://wsmelton.github.io/powershell-learning-path/</loc>
     <lastmod>2017-06-05T09:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/code-with-code/</loc>
+    <loc>https://wsmelton.github.io/code-with-code/</loc>
     <lastmod>2016-12-24T06:30:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/building-active-directory-domain-windows-core-edition/</loc>
+    <loc>https://wsmelton.github.io/building-active-directory-domain-windows-core-edition/</loc>
     <lastmod>2016-12-03T11:42:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/extended-events-fetching-api-cursors/</loc>
+    <loc>https://wsmelton.github.io/extended-events-fetching-api-cursors/</loc>
     <lastmod>2016-11-23T20:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/hyper-v-lab-for-sql-server/</loc>
+    <loc>https://wsmelton.github.io/hyper-v-lab-for-sql-server/</loc>
     <lastmod>2016-11-14T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-editors/</loc>
+    <loc>https://wsmelton.github.io/powershell-editors/</loc>
     <lastmod>2016-10-19T22:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/updates-and-work/</loc>
+    <loc>https://wsmelton.github.io/updates-and-work/</loc>
     <lastmod>2016-10-10T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/windows-10-and-sscm-disappearing/</loc>
+    <loc>https://wsmelton.github.io/windows-10-and-sscm-disappearing/</loc>
     <lastmod>2015-12-11T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/modifying-sql-server-startup-parameters/</loc>
+    <loc>https://wsmelton.github.io/modifying-sql-server-startup-parameters/</loc>
     <lastmod>2015-12-02T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/improve-load-time-on-sqlps/</loc>
+    <loc>https://wsmelton.github.io/improve-load-time-on-sqlps/</loc>
     <lastmod>2015-11-16T07:30:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/dynamically-build-rdp-files/</loc>
+    <loc>https://wsmelton.github.io/dynamically-build-rdp-files/</loc>
     <lastmod>2015-10-26T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-feed-the-beast/</loc>
+    <loc>https://wsmelton.github.io/sql-server-feed-the-beast/</loc>
     <lastmod>2015-10-22T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/parse-deadlock-graph-from-system_health-session/</loc>
+    <loc>https://wsmelton.github.io/parse-deadlock-graph-from-system_health-session/</loc>
     <lastmod>2015-09-16T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/build-your-own-stackexchange-database/</loc>
+    <loc>https://wsmelton.github.io/build-your-own-stackexchange-database/</loc>
     <lastmod>2015-07-20T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/dont-just-do-it-love-doing-it/</loc>
+    <loc>https://wsmelton.github.io/dont-just-do-it-love-doing-it/</loc>
     <lastmod>2015-02-06T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/to-be-mentored-or-not-to-be/</loc>
+    <loc>https://wsmelton.github.io/to-be-mentored-or-not-to-be/</loc>
     <lastmod>2015-01-30T15:48:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-and-sql-server-search-sqlerrorlog/</loc>
+    <loc>https://wsmelton.github.io/powershell-and-sql-server-search-sqlerrorlog/</loc>
     <lastmod>2014-12-22T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</loc>
+    <loc>https://wsmelton.github.io/tidbit-sql-sentry-plan-explorer-and-deadlock-xml-report/</loc>
     <lastmod>2014-12-15T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tidbit-sql-server-maintenance-plan-logging/</loc>
+    <loc>https://wsmelton.github.io/tidbit-sql-server-maintenance-plan-logging/</loc>
     <lastmod>2014-12-08T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/filezilla-logs-to-sql-server-via-powershell/</loc>
+    <loc>https://wsmelton.github.io/filezilla-logs-to-sql-server-via-powershell/</loc>
     <lastmod>2014-12-01T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-group-by-in-powershell/</loc>
+    <loc>https://wsmelton.github.io/sql-server-group-by-in-powershell/</loc>
     <lastmod>2014-11-17T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/max-user-connections-set-to-one-oops/</loc>
+    <loc>https://wsmelton.github.io/max-user-connections-set-to-one-oops/</loc>
     <lastmod>2014-11-11T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/i-am-biml-bacon-integrated-markup-language/</loc>
+    <loc>https://wsmelton.github.io/i-am-biml-bacon-integrated-markup-language/</loc>
     <lastmod>2014-11-03T06:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-backup-files-to-tape/</loc>
+    <loc>https://wsmelton.github.io/powershell-backup-files-to-tape/</loc>
     <lastmod>2014-10-28T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-two/</loc>
+    <loc>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-two/</loc>
     <lastmod>2014-10-20T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-data-tools-a-spork-of-sorts-part-one/</loc>
+    <loc>https://wsmelton.github.io/sql-server-data-tools-a-spork-of-sorts-part-one/</loc>
     <lastmod>2014-10-15T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-prerequisites-net-framework/</loc>
+    <loc>https://wsmelton.github.io/sql-server-prerequisites-net-framework/</loc>
     <lastmod>2014-10-02T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/the-treasures-of-the-sql-server-error-log/</loc>
+    <loc>https://wsmelton.github.io/the-treasures-of-the-sql-server-error-log/</loc>
     <lastmod>2014-09-23T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ctrl-plus-alt-plus-what/</loc>
+    <loc>https://wsmelton.github.io/ctrl-plus-alt-plus-what/</loc>
     <lastmod>2014-09-15T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-activity-monitor-script/</loc>
+    <loc>https://wsmelton.github.io/sql-server-activity-monitor-script/</loc>
     <lastmod>2014-07-30T13:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ssms-2012object-reference-issue-with-maintenance-plans/</loc>
+    <loc>https://wsmelton.github.io/ssms-2012object-reference-issue-with-maintenance-plans/</loc>
     <lastmod>2014-07-21T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ps-check-instanceconfig-part-2/</loc>
+    <loc>https://wsmelton.github.io/ps-check-instanceconfig-part-2/</loc>
     <lastmod>2013-12-09T09:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ps-check-instanceconfig-part-1/</loc>
+    <loc>https://wsmelton.github.io/ps-check-instanceconfig-part-1/</loc>
     <lastmod>2013-12-04T09:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ps-c-calc-maxsample/</loc>
+    <loc>https://wsmelton.github.io/ps-c-calc-maxsample/</loc>
     <lastmod>2013-11-13T10:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/powershell-tidbit-492/</loc>
+    <loc>https://wsmelton.github.io/powershell-tidbit-492/</loc>
     <lastmod>2013-11-05T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ps-c-create-serverdirectory/</loc>
+    <loc>https://wsmelton.github.io/ps-c-create-serverdirectory/</loc>
     <lastmod>2013-10-30T11:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/with-powershell-comes-great-things/</loc>
+    <loc>https://wsmelton.github.io/with-powershell-comes-great-things/</loc>
     <lastmod>2013-10-23T11:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/to-the-future/</loc>
+    <loc>https://wsmelton.github.io/to-the-future/</loc>
     <lastmod>2013-10-17T10:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/whittling-away-xml/</loc>
+    <loc>https://wsmelton.github.io/whittling-away-xml/</loc>
     <lastmod>2013-10-10T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/ssdtimporting-script-does-nothing/</loc>
+    <loc>https://wsmelton.github.io/ssdtimporting-script-does-nothing/</loc>
     <lastmod>2013-02-18T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/windows-8-and-me/</loc>
+    <loc>https://wsmelton.github.io/windows-8-and-me/</loc>
     <lastmod>2013-01-17T07:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/view-server-level-permissions-ssms/</loc>
+    <loc>https://wsmelton.github.io/view-server-level-permissions-ssms/</loc>
     <lastmod>2012-01-10T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/mentoree/</loc>
+    <loc>https://wsmelton.github.io/mentoree/</loc>
     <lastmod>2011-10-27T06:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/adjusting-and-learning/</loc>
+    <loc>https://wsmelton.github.io/adjusting-and-learning/</loc>
     <lastmod>2011-08-18T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/what-a-few-lines-of-code-can-do/</loc>
+    <loc>https://wsmelton.github.io/what-a-few-lines-of-code-can-do/</loc>
     <lastmod>2011-08-01T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/the-rest-of-the-story-powershell-errors/</loc>
+    <loc>https://wsmelton.github.io/the-rest-of-the-story-powershell-errors/</loc>
     <lastmod>2011-07-21T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/what-os-permissions-does-sql-server-have/</loc>
+    <loc>https://wsmelton.github.io/what-os-permissions-does-sql-server-have/</loc>
     <lastmod>2011-04-28T09:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/get-those-acls-with-powershell/</loc>
+    <loc>https://wsmelton.github.io/get-those-acls-with-powershell/</loc>
     <lastmod>2011-04-21T13:31:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/books-i-get-to-read-e-books/</loc>
+    <loc>https://wsmelton.github.io/books-i-get-to-read-e-books/</loc>
     <lastmod>2011-01-27T22:07:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/training-for-the-master-from-the-masters/</loc>
+    <loc>https://wsmelton.github.io/training-for-the-master-from-the-masters/</loc>
     <lastmod>2011-01-21T08:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/how-to-remember-everything-in-1-one-step/</loc>
+    <loc>https://wsmelton.github.io/how-to-remember-everything-in-1-one-step/</loc>
     <lastmod>2011-01-19T23:11:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/with-power-comes-great-responsibility/</loc>
+    <loc>https://wsmelton.github.io/with-power-comes-great-responsibility/</loc>
     <lastmod>2010-08-02T05:53:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/how-do-i-open-powershell-and-something-else-toopart-2/</loc>
+    <loc>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-2/</loc>
     <lastmod>2010-08-01T23:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/how-do-i-open-powershell-and-something-else-toopart-1/</loc>
+    <loc>https://wsmelton.github.io/how-do-i-open-powershell-and-something-else-toopart-1/</loc>
     <lastmod>2010-07-30T23:00:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/comments-anyone-vote-for-the-cause/</loc>
+    <loc>https://wsmelton.github.io/comments-anyone-vote-for-the-cause/</loc>
     <lastmod>2010-07-28T08:05:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/mcp-benefits/</loc>
+    <loc>https://wsmelton.github.io/mcp-benefits/</loc>
     <lastmod>2010-07-08T09:06:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/keeping-up-with-the-jones-or-microsoft/</loc>
+    <loc>https://wsmelton.github.io/keeping-up-with-the-jones-or-microsoft/</loc>
     <lastmod>2010-06-03T07:52:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/book-review-sql-in-a-nutshell/</loc>
+    <loc>https://wsmelton.github.io/book-review-sql-in-a-nutshell/</loc>
     <lastmod>2010-05-02T19:48:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/sql-server-features/</loc>
+    <loc>https://wsmelton.github.io/sql-server-features/</loc>
     <lastmod>2010-04-28T22:01:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/remebering-why/</loc>
+    <loc>https://wsmelton.github.io/remebering-why/</loc>
     <lastmod>2010-04-27T08:25:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/book-review-project-management/</loc>
+    <loc>https://wsmelton.github.io/book-review-project-management/</loc>
     <lastmod>2010-04-23T07:01:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/step-1-start-new-blog/</loc>
+    <loc>https://wsmelton.github.io/step-1-start-new-blog/</loc>
     <lastmod>2010-04-18T19:23:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://wsmelton.github.io/about/</loc>
     <lastmod>1979-01-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/azure/</loc>
+    <loc>https://wsmelton.github.io/tags/azure/</loc>
     <lastmod>2018-08-10T15:10:52-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/dbatools/</loc>
+    <loc>https://wsmelton.github.io/tags/dbatools/</loc>
     <lastmod>2018-05-13T20:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/docker/</loc>
+    <loc>https://wsmelton.github.io/tags/docker/</loc>
     <lastmod>2018-12-31T00:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/post/</loc>
+    <loc>https://wsmelton.github.io/post/</loc>
     <lastmod>2018-12-31T00:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/powershell/</loc>
+    <loc>https://wsmelton.github.io/tags/powershell/</loc>
     <lastmod>2015-12-02T08:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/scripts/</loc>
+    <loc>https://wsmelton.github.io/tags/scripts/</loc>
     <lastmod>2015-12-02T08:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://wsmelton.github.io/</loc>
     <lastmod>2018-12-31T00:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/sqlserver/</loc>
+    <loc>https://wsmelton.github.io/tags/sqlserver/</loc>
     <lastmod>2015-12-02T08:00:00-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://wsmelton.github.io/tags/</loc>
     <lastmod>2018-08-10T15:10:52-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/vscode/</loc>
+    <loc>https://wsmelton.github.io/tags/vscode/</loc>
     <lastmod>2018-06-07T08:00:00-05:00</lastmod>
     <priority>0</priority>
   </url>
