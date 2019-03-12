@@ -1,1 +1,246 @@
-<!DOCTYPE html><html><head><title>http://localhost:1313/azure-automation-bug/</title><link rel="canonical" href="http://localhost:1313/azure-automation-bug/"/><meta name="robots" content="noindex"><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url=http://localhost:1313/azure-automation-bug/" /></head></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+  <meta name="description" content="Data and automation professional grounded in the cloud">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://wsmelton.github.io/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://wsmelton.github.io/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://wsmelton.github.io/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://wsmelton.github.io/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://wsmelton.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://wsmelton.github.io/css/bootstrap.min.css" />
+
+  
+  <title>Azure Automation Bug | Shawn Melton</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Azure Automation Bug</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2018-Aug-10
+  </small>
+  
+
+<small><code><a href="https://wsmelton.github.io/tags/azure">azure</a></code></small>
+
+</p>
+<p>Long time, no post&hellip;</p>
+
+<p>I have recently changed positions at Pythian and now work on projects full time. My current project has lead me down the road of finally getting to dig into Azure more. This particular project, I am working on automating SQL Server builds from the point of &ldquo;new VM&rdquo;, push the button and it installs and configures SQL Server to cover various scenarios for the client.</p>
+
+<p>Being that it is Azure Automation I am opted to use the <a href="https://powershellgallery.com/packages/azurerm">AzureRm</a> module as much as I can. I have been going back and forth trying to figure out a few things around Azure DSC and configurations I am writing for the project. When I happened upon a bug in the AzureRm module.</p>
+
+<p>I have already submitted an issue to the repository for this <a href="https://github.com/Azure/azure-powershell/issues/6899">here</a>. The gist is the <code>Import-AzureRmDscConfiguration</code> is not validating the characters in the configuration name itself. Which causes you to have false hopes 😞.</p>
+
+<p>When you go to delete the configuration via the portal you get a lovely error that actually tells you it is an invalid name and cannot complete the operation. The only way to drop it is to use the PowerShell command <code>Remove-AzureRmDscConfiguration</code>.</p>
+
+<p>The irony of all this is you can sit there thinking everything is hunky dory and being wondering for days why hitting the compile button in the portal does not work. You can also run <code>Start-AzureRmDscCompilationJob</code> until you are blue or dead from starvation because it runs and completes the compilation, but does not output anything or give any error.</p>
+
+<p>Just a heads up until that is fixed on the module side&hellip;.hopefully you didn&rsquo;t spend a few days wondering why the configurations were not working. Not saying I did of course it was just one or two days of my time 🌧️.</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>
