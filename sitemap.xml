@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wsmelton.github.io/ads-dashboards/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wsmelton.github.io/ads-userinterface/</loc>
-    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
+    <lastmod>2019-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -369,6 +374,12 @@
   </url>
   
   <url>
+    <loc>https://wsmelton.github.io/tags/azuredatastudio/</loc>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wsmelton.github.io/tags/dbatools/</loc>
     <lastmod>2018-05-13T20:00:00-06:00</lastmod>
     <priority>0</priority>
@@ -382,7 +393,7 @@
   
   <url>
     <loc>https://wsmelton.github.io/post/</loc>
-    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -400,7 +411,7 @@
   
   <url>
     <loc>https://wsmelton.github.io/</loc>
-    <lastmod>2019-03-11T12:00:00-06:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

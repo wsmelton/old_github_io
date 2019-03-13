@@ -6,10 +6,20 @@
     <description>Recent content on Shawn Melton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2019 12:00:00 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2019 17:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://wsmelton.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Dash of Azure Data Studio</title>
+      <link>https://wsmelton.github.io/ads-dashboards/</link>
+      <pubDate>Wed, 13 Mar 2019 17:00:00 -0500</pubDate>
+      
+      <guid>https://wsmelton.github.io/ads-dashboards/</guid>
+      <description>If you are not familiar with Azure Data Studio (ADS) please check out my previous post on Azure Data Studio - User Interface.
+Visualize The power of ADS offers the ability to use extensions that offer visual insights and functionality via dashboards, or customize it yourself creating custom insight widgets. A good portion of extensions offerred as of this writing are insight dashboards, where they offer up information of various areas.</description>
+    </item>
     
     <item>
       <title>Azure Data Studio User Interface</title>

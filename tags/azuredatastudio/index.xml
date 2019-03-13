@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azuredatastudio on Shawn Melton</title>
+    <link>https://wsmelton.github.io/tags/azuredatastudio/</link>
+    <description>Recent content in Azuredatastudio on Shawn Melton</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Mar 2019 17:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://wsmelton.github.io/tags/azuredatastudio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Dash of Azure Data Studio</title>
+      <link>https://wsmelton.github.io/ads-dashboards/</link>
+      <pubDate>Wed, 13 Mar 2019 17:00:00 -0500</pubDate>
+      
+      <guid>https://wsmelton.github.io/ads-dashboards/</guid>
+      <description>If you are not familiar with Azure Data Studio (ADS) please check out my previous post on Azure Data Studio - User Interface.
+Visualize The power of ADS offers the ability to use extensions that offer visual insights and functionality via dashboards, or customize it yourself creating custom insight widgets. A good portion of extensions offerred as of this writing are insight dashboards, where they offer up information of various areas.</description>
+    </item>
+    
+    <item>
+      <title>Azure Data Studio User Interface</title>
+      <link>https://wsmelton.github.io/ads-userinterface/</link>
+      <pubDate>Mon, 11 Mar 2019 12:00:00 -0600</pubDate>
+      
+      <guid>https://wsmelton.github.io/ads-userinterface/</guid>
+      <description>Warning: This post is long but if you want to get familiar with Azure Data Studio as a first time user, hopefully it will be a good read for you.
+ Short intro In September of 2018, Microsoft brought us Azure Data Studio (ADS). This is a cross-platform tool for querying and managing data development. It is meant to compliment SQL Server Management Studio (SSMS) but for those that do not wish to work on Windows it can be a tool of choice for connecting to both SQL Server and Azure SQL DB.</description>
+    </item>
+    
+  </channel>
+</rss>

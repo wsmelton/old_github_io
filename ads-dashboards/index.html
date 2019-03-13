@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.54.0" />
+
+  
+  <meta name="description" content="Data and automation professional grounded in the cloud">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://wsmelton.github.io/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://wsmelton.github.io/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://wsmelton.github.io/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://wsmelton.github.io/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://wsmelton.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+  <meta name="msapplication-TileColor" content="#da532c">
+
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <link rel="stylesheet" href="https://wsmelton.github.io/css/bootstrap.min.css" />
+
+  
+  <title>A Dash of Azure Data Studio | Shawn Melton</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+pre {
+  display: block;
+  padding: 9.5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: .9em;
+}
+
+
+
+blockquote,
+.blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1em;
+  border-left: 5px solid #6c757d;
+}
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>A Dash of Azure Data Studio</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  2019-Mar-13
+  </small>
+  
+
+<small><code><a href="https://wsmelton.github.io/tags/azuredatastudio">azuredatastudio</a></code></small>
+
+</p>
+
+
+<p><em>If you are not familiar with Azure Data Studio (ADS) please check out my previous post on <a href="/ads-userinterface/">Azure Data Studio - User Interface</a>.</em></p>
+
+<h2 id="visualize">Visualize</h2>
+
+<p>The power of ADS offers the ability to use extensions that offer visual insights and functionality via dashboards, or customize it yourself creating <a href="https://docs.microsoft.com/en-us/sql/azure-data-studio/tutorial-build-custom-insight-sql-server?view=sql-server-2017">custom insight widgets</a>. A good portion of extensions offerred as of this writing are insight dashboards, where they offer up information of various areas. A dashboard usually has two layers:</p>
+
+<ol>
+<li>Overview visual (graphs, pretty pictures)</li>
+<li>Detail visual (generally list format)</li>
+</ol>
+
+<p>Others will offer things like being able to script an item or create an item (e.g. databases). In this post though I&rsquo;m going to focus on the insight dashboards as they seem to be most common of the extensions I&rsquo;ve seen so far.</p>
+
+<h2 id="overview-visual">Overview Visual</h2>
+
+<p>I&rsquo;m going to use the Home tab from the Manage dashboard in ADS as it is built-in to ADS and illustrates the most common functionality you will find going forward.</p>
+
+<p><img src="/img/ads_dash_visual.png" alt="" /></p>
+
+<p>In the above you can see the static information across the top (&ldquo;Server Dashboard&rdquo;). You have the option to refresh this information in the menu list. The next section offers more interaction. You can open the menu on the &ldquo;Database Size&rdquo; graph and see you can <code>Run Query</code> or <code>Refresh</code>.</p>
+
+<p><img src="/img/ads_dash_visual_1.png" alt="" /></p>
+
+<p>Refresh, is exactly what you would think and simply updates the current visual (e.g if you have added database you would see it listed). <em>It is worth noting that the data in the dashboards will not refresh automatically.</em></p>
+
+<p>The <code>Run Query</code> will open a new query editor and populate it with the query used to pull the data for that visual. It will automatically execute it once the query window makes a connection:</p>
+
+<p><img src="/img/ads_dash_visual_2.png" alt="" /></p>
+
+<h2 id="details">Details</h2>
+
+<p>If you we look at the Backup Status menu we can see an additional option: <code>Show Details</code>:</p>
+
+<p><img src="/img/ads_dash_visual_3.png" alt="" /></p>
+
+<p>Clicking on that a pop-out side bar will show up on the right:</p>
+
+<p><img src="/img/ads_dash_visual_4.png" alt="" /></p>
+
+<p>In additional to showing the row-level details of each database identified you also have the option to open the backup task (by clicking on &ldquo;Backup&rdquo;) for a database listed. <em>The Backup task is a built-in feature of ADS.</em></p>
+
+<h2 id="preview-extensions">Preview Extensions</h2>
+
+<p>One thing of importance is there are a number of extensions from Microsoft (at the time of this writing) that you will are noted as being in preview.</p>
+
+<p><img src="/img/ads_dash_preview_extension.png" alt="" /></p>
+
+<p>This is associated with a preview setting in ADS that you have to enable in order to use them. You go into your settings, you have two options to access your settings:</p>
+
+<ul>
+<li>Use the sprocket on the bottom of the Activity Bar, then click on &ldquo;User Settings&rdquo;</li>
+<li><code>CTRL + SHIFT P</code> to bring up the command palette, type <code>users</code> and select the <code>Preferences: Open User Settings</code></li>
+</ul>
+
+<p>You can search for <code>preview features</code> and then simply ensure this is checked:</p>
+
+<p><img src="/img/ads_dash_preview.png" alt="" /></p>
+
+<p>If you operate via the <code>settings.json</code> file you will want to add this entry:</p>
+
+<pre><code>&quot;workbench.enablePreviewFeatures&quot;: true
+</code></pre>
+
+<p>You can see with this setting enabled (set to true) I have the options for <code>SQL Agent</code>, <code>Server Reports</code> and <code>whoisactive</code> showing:</p>
+
+<p><img src="/img/ads_dash_preview_enabled.png" alt="" /></p>
+
+<p>When it is disabled I loose those tabs:</p>
+
+<p><img src="/img/ads_dash_preview_disabled.png" alt="" /></p>
+
+<h2 id="additional-help">Additional Help</h2>
+
+<p>If you find any issues with ADS you can submit issues to their repository <a href="https://github.com/microsoft/azuredatastudio/issues">https://github.com/microsoft/azuredatastudio/issues</a>. If you find issues with any extensions that are not authored by Microsoft you will need to submit an issue to that author&rsquo;s repository. Sadly at the time of this writing a good bit of them do not provide information in the extension details, when you view them in ADS. You can take the name and simply search on GitHub or clicking on the &ldquo;Install&rdquo; at this time would be the quickest way to get to their repository on GitHub. (Maybe Microsoft will enforce more information being included down the road).</p>
+
+    </article>
+  </div>
+
+  
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#216942",
+      "text": "#b2d192"
+    },
+    "button": {
+      "background": "#afed71"
+    }
+  }
+})});
+</script>
+
+</body>
+
+</html>
